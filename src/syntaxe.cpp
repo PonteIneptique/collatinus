@@ -37,6 +37,11 @@
 #include <QRegExp>
 #include "flexion.h"
 
+//////////////////////////////
+//   Classe ElS             //
+//   (Element de Syntaxe    //
+//////////////////////////////
+
 /**
  * \fn ElS::ElS(QString lin, RegleS *parent)
  * \brief La classe ElS enregistre les éléments requis
@@ -79,8 +84,15 @@ bool ElS::okPos(QString p) { return _pos.isEmpty() || _pos.contains(p); }
 
 QStringList ElS::pos() { return _pos; }
 
-RegleS::RegleS(QStringList lignes)
+
+//////////////////////////////
+//   Classe RegleS          //
+//   (Règle Syntaxique)     //
+//////////////////////////////
+
+RegleS::RegleS(QStringList lignes, QObject *parent)
 {
+    syntaxe = qobject_cast<Syntaxe*>(parent);
     QStringList cles = QStringList() << "id"      // 0
                                      << "doc"     // 1  
                                      << "pere"    // 2
@@ -104,7 +116,17 @@ RegleS::RegleS(QStringList lignes)
                 _doc = ecl.at(1);
                 break;
             case 2:
-                _idPere = ecl.at(1);
+                {
+                    _idPere = ecl.at(1);
+                    RegleS *rp = syntaxe->regle(_idPere);
+                    if (rp != NULL)
+                    {
+                        _sens   = rp->sens();
+                        _accord = rp->accord();
+                        _f      = rp->f();
+                        _synt   = rp->synt();
+                    }
+                }
                 break;
             case 3:
                 _super = new ElS(lin, this);
@@ -133,13 +155,25 @@ RegleS::RegleS(QStringList lignes)
     }
 }
 
-QString RegleS::accord() { return _accord; }
+QString RegleS::accord()
+{
+    return _accord;
+}
 
-bool RegleS::bloquant() { return _synt.contains('b'); }
+bool RegleS::bloquant()
+{
+    return _synt.contains('b');
+}
 
-QString RegleS::doc() { return _doc; }
+QString RegleS::doc()
+{
+    return _doc;
+}
 
-QString RegleS::id() { return _id; }
+QString RegleS::id()
+{
+    return _id;
+}
 
 bool RegleS::estSub(Lemme *l, QString morpho, bool ante)
 {
@@ -165,6 +199,11 @@ bool RegleS::estSuper(Lemme *l, QString morpho)
     return true;
 }
 
+QString RegleS::f()
+{
+    return _f;
+}
+
 QString RegleS::fonction(Mot *super, Mot *sub)
 {
     QString ret = _f;
@@ -173,8 +212,41 @@ QString RegleS::fonction(Mot *super, Mot *sub)
     return ret;
 }
 
-QString RegleS::synt() { return _synt; }
-QString RegleS::tr() { return _tr; }
+QString RegleS::idPere()
+{
+    return _idPere;
+}
+
+QString RegleS::sens()
+{
+    return _sens;
+}
+
+ElS* RegleS::sub()
+{
+    return _sub;
+}
+
+ElS* RegleS::super()
+{
+    return _super;
+}
+
+QString RegleS::synt()
+{
+    return _synt;
+}
+
+QString RegleS::tr()
+{
+    return _tr;
+}
+
+//////////////////////////////////
+//   Classe Super               //
+//  (superordonné d'une règle)  //
+//////////////////////////////////
+
 Super::Super(RegleS *r, Lemme *l, QString m, Mot *parent)
 {
     _regle = r;
@@ -185,7 +257,12 @@ Super::Super(RegleS *r, Lemme *l, QString m, Mot *parent)
     _traduction = "<em>non traduit</em>";
 }
 
-void Super::addSub(Mot *m) { _motSub = m; }
+void Super::addSub(Mot *m, Lemme *l, SLem sl)
+{
+    _motSub = m;
+    _lemmeSub = l;
+    _slemSub = sl;
+}
 
 bool Super::estSub(Lemme *l, QString morpho, bool ante)
 {
@@ -200,17 +277,45 @@ bool Super::estSub(Lemme *l, QString morpho, bool ante)
     return true;
 }
 
-Lemme *Super::lemme() { return _lemme; }
+Lemme *Super::lemme()
+{
+    return _lemme;
+}
 
-QString Super::morpho() { return _morpho; }
+Lemme *Super::lemmeSub()
+{
+    return _lemmeSub;
+}
 
-Mot *Super::mot() { return _mot; }
+QString Super::morpho()
+{
+    return _morpho;
+}
 
-Mot *Super::motSub() { return _motSub; }
+Mot *Super::mot()
+{
+    return _mot;
+}
 
-RegleS *Super::regle() { return _regle; }
+Mot *Super::motSub()
+{
+    return _motSub;
+}
 
-void Super::setTraduction(QString t) { _traduction = t; }
+RegleS *Super::regle()
+{
+    return _regle;
+}
+
+void Super::setTraduction(QString t)
+{
+    _traduction = t;
+}
+
+SLem Super::slemSub()
+{
+    return _slemSub;
+}
 
 QString Super::traduction() { return _traduction; }
 
@@ -237,6 +342,12 @@ void Mot::addRSub(RegleS *r) { _rSub.append(r); }
 void Mot::addSuper(RegleS *r, Lemme *l, QString m)
 {
     _super.append(new Super(r, l, m, this));
+}
+
+void Mot::delSuper(Super *s)
+{
+    _super.removeOne(s);
+    delete s;
 }
 
 QString Mot::gr() { return _gr; }
@@ -287,9 +398,15 @@ bool Mot::orphelin()
     return true;
 }
 
-QString Mot::ponctD() { return _ponctD; }
+QString Mot::ponctD()
+{
+    return _ponctD;
+}
 
-int Mot::rang() { return _rang; }
+int Mot::rang()
+{
+    return _rang;
+}
 
 QString Mot::ponctG() { return _ponctG; }
 
@@ -343,18 +460,13 @@ Syntaxe::Syntaxe(QString t, Lemmat *parent)
     {
         QString l = fls.readLine().simplified();
         if ((l.isEmpty() && !fls.atEnd()) || l.startsWith("!")) continue;
-        /*
-        // variable
-        if (l.startsWith ('$'))
-        {
-        _variables[l.section('=',0,0)]=l.section('=',1,1);
-        continue;
-        }
-        */
         QStringList eclats = l.split(":");
         if ((eclats.at(0) == "id" || fls.atEnd()) && !slr.empty())
         {
-            _regles.append(new RegleS(slr));
+            RegleS *nrs = new RegleS(slr, this);
+            //if (!nrs->idPere().isEmpty())
+             //   RegleS *reglePere = regle(nrs->idPere());
+            _regles.insert(nrs->id(), nrs);
             slr.clear();
         }
         slr.append(l);
@@ -757,10 +869,16 @@ bool Syntaxe::orphelin(Mot *m)
     return true;
 }
 
+RegleS* Syntaxe::regle(QString id)
+{
+    return _regles.value(id);
+}
+
 void Syntaxe::setText(QString t) { _texte = t; }
 
 bool Syntaxe::super(Mot *sup, Mot *sub)
 {
+    bool retour = false;
     foreach (Super *s, sup->super())
     {
         // tester toutes les possibilités du mot sub :
@@ -775,21 +893,37 @@ bool Syntaxe::super(Mot *sup, Mot *sub)
                     (accord(s->morpho(), sl.morpho, s->regle()->accord())) &&
                     (!(s->regle()->synt().contains('c') && virgule(sup, sub))))
                 {
-                    s->addSub(sub);
-                    // ajouter les chaînes d'affichage (règle, lien, traduction)
-                    QString lien = s->regle()->fonction(sup, sub);
-                    QString trad =
-                        tr(s->regle(), s->lemme(), s->morpho(), l, sl.morpho);
-                    QTextStream ts(&lien);
-                    ts << " tr. <em>" << trad << "</em>";
-                    sup->addLien(lien);
-                    sub->addLien(lien);
+                    /*
+                    // si une règle fille est validée, supprimer la règle mère.
+                    foreach (Super *sm, sup->super())
+                    {
+                        if (sm->motSub() != NULL && s->regle()->idPere() == sm->regle()->id())
+                        {
+                            sup->delSuper(sm);
+                        }
+                    }
+                    */
+                    s->addSub(sub, l, sl);
                 }
             }
         }
-        if (s->motSub() == sub) return true;
+        retour = retour || (s->motSub() == sub);
+        //if (s->motSub() == sub) return true;
     }
-    return false;
+    // ajouter les chaînes d'affichage (règle, lien, traduction)
+    foreach (Super *s, sup->super())
+    {
+        if (s->motSub() == NULL) continue;
+        QString lien = s->regle()->fonction(sup, sub);
+        QString trad =
+            tr(s->regle(), s->lemme(), s->morpho(), s->lemmeSub(), s->slemSub().morpho);
+        QTextStream ts(&lien);
+        ts << " tr. <em>" << trad << "</em>";
+        sup->addLien(lien);
+        sub->addLien(lien);
+    }
+    return retour;
+    //return false;
 }
 
 QString Syntaxe::tr(RegleS *r, Lemme *sup, QString msup, Lemme *sub,

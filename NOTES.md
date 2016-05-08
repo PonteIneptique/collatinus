@@ -71,10 +71,10 @@ Requis :
      Forte potantibus his apud Sextum Tarquinium, ubi et Collatinus cenabat Tarquinius, Egeri filius, incidit de uxoribus mentio.  
      ^     |  ^ | |   ^   ^ ||  ^ |        ^      ^ | ^   | | ^      | ^      ^  |         ^   | ^     | | |  ^|    ^       ^  
      |     |  | | |   |   | ||  | |        |      | | |   | | |      | |      |  |         |   | |     | | |  ||    |       |  
-     +----/   | | +---+   | ||  | |        |      | | +---+ | +------+ |      |  |         +---+ |     | | +--/ \---+       |  
-              | +---------+ | \-+ +--------+      | |       +----------|------+  +---------------+     | +------------------+  
-              |             +---------------------/ \------------------+                               |  
-              +----------------------------------------------------------------------------------------+  
+     +-cc-/   | | +---+   | ||  | |        |      | | +---+ | +--S---+ |      |  |         +cdn+ |     | | +pr/ \reg+       |  
+              | +--prep---+ | \-+ +--app---+      | |       +-----app--|------+  +------app------+     | +-------S----------+  
+              |             +--------reg----------/ \-------cc---------+                               |  
+              +-------------------------------------cc-------------------------------------------------+  
    * **Contrainte** : Tout mot doit trouver son sub, sauf un, qui est
       un verbe conjugué à l'indicatif ou à l'impératif, Quelquefois un
 	  nom.
@@ -92,6 +92,11 @@ Requis :
        ^   |     |        ^
        |   +-----|--------+
        +---------+    
+   * 8 mai 2016 - Commencé la récupération des expressions de C10 dans la base
+     syntaxique de C11.
+     - Une expression est un dérivé d'une règle syntaxique ;
+     - Il faut modifier la recherche de liens, qui semble s'arrêter 
+       à sujet, et ne pas chercher l'expression dérivée de sujet.
 
 ## Branche maj
 Branche de mise à jour des lexiques.

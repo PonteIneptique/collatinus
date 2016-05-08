@@ -84,7 +84,7 @@ class ElS : public QObject
     Q_OBJECT
 
    private:
-    RegleS *_regle;
+    RegleS     *_regle;
     QStringList _lemmes;
     QStringList _pos;
     QStringList _morphos;
@@ -97,6 +97,7 @@ class ElS : public QObject
     QStringList pos();
 };
 
+class Syntaxe;
 class Mot;
 
 class RegleS : public QObject
@@ -111,22 +112,28 @@ class RegleS : public QObject
     QString _idPere;
     RegleS *_pere;
     QString _sens;
-    ElS *_super;
-    ElS *_sub;
+    ElS    *_super;
+    ElS    *_sub;
     QString _synt;
+    Syntaxe *syntaxe;
     QString _tr;
 
    public:
-    RegleS(QStringList lignes);
-    QString accord();
-    bool bloquant();
-    QString doc();
-    bool estSub(Lemme *l, QString morpho, bool ante);
-    bool estSuper(Lemme *l, QString morpho);
-    QString fonction(Mot *super = 0, Mot *sub = 0);
-    QString id();
-    QString synt();
-    QString tr();
+    RegleS(QStringList lignes, QObject *parent=0);
+    QString   accord();
+    bool      bloquant();
+    QString   doc();
+    bool      estSub(Lemme *l, QString morpho, bool ante);
+    bool      estSuper(Lemme *l, QString morpho);
+    QString   f();
+    QString   fonction(Mot *super = 0, Mot *sub = 0);
+    QString   id();
+    QString   idPere();
+    QString   sens();
+    ElS    *  super();
+    ElS    *  sub();
+    QString   synt();
+    QString   tr();
 };
 
 class Super : public QObject
@@ -135,22 +142,26 @@ class Super : public QObject
 
    private:
     RegleS *_regle;
-    Lemme *_lemme;
+    Lemme  *_lemme;
+    Lemme  *_lemmeSub;
     QString _morpho;
-    Mot *_mot;
-    Mot *_motSub;
+    Mot    *_mot;
+    Mot    *_motSub;
+    SLem    _slemSub;
     QString _traduction;
 
    public:
     Super(RegleS *r, Lemme *l, QString m, Mot *parent);
-    void addSub(Mot *m);
-    bool estSub(Lemme *l, QString morpho, bool ante);
-    Lemme *lemme();
+    void    addSub(Mot *m, Lemme *l, SLem sl);
+    bool    estSub(Lemme *l, QString morpho, bool ante);
+    Lemme  *lemme();
+    Lemme  *lemmeSub();
     QString morpho();
-    Mot *mot();
-    Mot *motSub();
+    Mot    *mot();
+    Mot    *motSub();
     RegleS *regle();
-    void setTraduction(QString t);
+    SLem    slemSub();
+    void    setTraduction(QString t);
     QString traduction();
 };
 
@@ -179,6 +190,7 @@ class Mot : public QObject
     void           addLien(QString l);
     void           addRSub(RegleS *r);
     void           addSuper(RegleS *r, Lemme *l, QString m);
+    void           delSuper(Super *s);
     QString        gr();
     void           grCalc();  // met à jour _grPrim et _grUlt;
     int            grPrim(); // rang du premier mot du groupe du mot
@@ -211,7 +223,7 @@ class Syntaxe : public QObject
     bool accord(QString ma, QString mb, QString cgn);
     int groupe(int r);
     Lemmat *_lemmatiseur;
-    QList<RegleS *> _regles;
+    QMap<QString, RegleS*> _regles;
     Mot *superDe(Mot *m);
     QString _texte;
     // variables motCour
@@ -227,15 +239,16 @@ class Syntaxe : public QObject
     Syntaxe(QString t, Lemmat *parent);
     QString analyse(QString t, int p);
     //QString analyseM(QString t, int p);
-    bool estSuper(Mot *sup, Mot *sub);
+    bool    estSuper(Mot *sup, Mot *sub);
     QString motSous(int p);
-    bool orphelin(Mot *m);
-    void setText(QString t);
-    bool super(Mot *sup, Mot *sub);  // construit le lien
+    bool    orphelin(Mot *m);
+    RegleS* regle(QString id);
+    void    setText(QString t);
+    bool    super(Mot *sup, Mot *sub);  // construit le lien
     QString tr(RegleS *r, Lemme *sup, QString msup, Lemme *sub, QString msub);
     QString trLemme(Lemme *l, QString m);
-    bool virgule(Mot *ma,
-                 Mot *mb);  // vrai si une virgule sépare 2 mots successifs
+    bool    virgule(Mot *ma,
+                    Mot *mb);  // vrai si une virgule sépare 2 mots successifs
 };
 
 #endif

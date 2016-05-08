@@ -109,6 +109,14 @@ synt:cu
 tr:<sub> <super>
 accord:n
 
+! expression
+id:inciditMentio
+pere:sujet
+doc:incidit mentio = la conversation vient
+super:incido:v:indic 3 sing actif
+sub:mentio:n:nomin
+tr:la conversation vient (vint)
+
 id:sujetInfNarr
 doc:un nom ou un pronom au nominatif peut être sujet d'un verbe à l'infinitif de narration
 f:<sub> ѕujet du verbe <super>
