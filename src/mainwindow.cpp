@@ -1085,7 +1085,7 @@ void MainWindow::createDockWindows()
     QHBoxLayout *hLayoutScand = new QHBoxLayout();
     lineEditScand = new QLineEdit(dockWidgetScand);
     QSpacerItem *hSpacerScand =
-        new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+       new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
     hLayoutScand->addWidget(lineEditScand);
     // ajouter ici des boutons...
     QToolButton *tbAccent = new QToolButton(this);
@@ -1103,7 +1103,7 @@ void MainWindow::createDockWindows()
     hLayoutScand->addWidget(tbBreve);
     hLayoutScand->addWidget(tbAmbigue);
     hLayoutScand->addWidget(tbHyphen);
-    //    hLayoutScand->addItem (hSpacerScand);
+        hLayoutScand->addItem (hSpacerScand);
     textEditScand = new QTextEdit(dockWidgetScand);
     vLayoutScand->addLayout(hLayoutScand);
     vLayoutScand->addWidget(textEditScand);
