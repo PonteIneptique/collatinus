@@ -299,9 +299,11 @@ MapLem Lemmat::lemmatise(QString f)
     MapLem result;
     if (f.isEmpty()) return result;
     QString f_lower = f.toLower();
-    int cnt_v = f_lower.count("v");
+    // ne pas merger - commenté par commodité
+    // int cnt_v = f_lower.count("v");
     int cnt_ae = f_lower.count("æ");
-    int cnt_oe = f_lower.count("œ");
+    // ne pas merger - commenté par commodité
+    //int cnt_oe = f_lower.count("œ");
     if (f_lower.endsWith("æ")) cnt_ae -= 1;
     f = Ch::deramise(f);
     // formes irrégulières

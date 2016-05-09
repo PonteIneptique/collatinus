@@ -34,7 +34,6 @@ Requis :
   ou après avoir installé un raccourci.
 
 ## BOGUES ET PROBLÈMES
-- Plantage après Fichier/Nouveau
 - Syntaxe : sujet, verbe : la virgule ne bloque pas le lien.
 - Flexion de multus et ses degrés allogènes (plus, plurimus)
 
@@ -94,9 +93,7 @@ Requis :
        +---------+    
    * 8 mai 2016 - Commencé la récupération des expressions de C10 dans la base
      syntaxique de C11.
-     - Une expression est un dérivé d'une règle syntaxique ;
-     - Il faut modifier la recherche de liens, qui semble s'arrêter 
-       à sujet, et ne pas chercher l'expression dérivée de sujet.
+     - anomalie dans addLiens : affLiens pour incidit mentio ajoute un lien d'id prep.
 
 ## Branche maj
 Branche de mise à jour des lexiques.

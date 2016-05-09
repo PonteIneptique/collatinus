@@ -264,6 +264,11 @@ void Super::addSub(Mot *m, Lemme *l, SLem sl)
     _slemSub = sl;
 }
 
+bool Super::complet()
+{
+    return _motSub != NULL;
+}
+
 bool Super::estSub(Lemme *l, QString morpho, bool ante)
 {
     if (!_regle->estSub(l, morpho, ante))
@@ -334,10 +339,14 @@ Mot::Mot(QString g)
 
 void Mot::addLien(QString l)
 {
-    if (!_affLiens.contains(l)) _affLiens.append(l);
+    if (!_affLiens.contains(l))
+        _affLiens.append(l);
 }
 
-void Mot::addRSub(RegleS *r) { _rSub.append(r); }
+void Mot::addRSub(RegleS *r)
+{
+    _rSub.append(r);
+}
 
 void Mot::addSuper(RegleS *r, Lemme *l, QString m)
 {
@@ -387,7 +396,10 @@ QString Mot::humain()
     return ret;
 }
 
-QString Mot::liens() { return _affLiens.join("<br/>"); }
+QString Mot::liens()
+{
+    return _affLiens.join("<br/>\n");
+}
 
 MapLem Mot::morphos() { return _morphos; }
 
@@ -464,8 +476,6 @@ Syntaxe::Syntaxe(QString t, Lemmat *parent)
         if ((eclats.at(0) == "id" || fls.atEnd()) && !slr.empty())
         {
             RegleS *nrs = new RegleS(slr, this);
-            //if (!nrs->idPere().isEmpty())
-             //   RegleS *reglePere = regle(nrs->idPere());
             _regles.insert(nrs->id(), nrs);
             slr.clear();
         }
@@ -881,28 +891,22 @@ bool Syntaxe::super(Mot *sup, Mot *sub)
     bool retour = false;
     foreach (Super *s, sup->super())
     {
+        bool debog = sup->gr()=="filius" && sub->gr()=="incidit" && s->regle()->id()=="cdn";
         // tester toutes les possibilités du mot sub :
         // pour chaque lemme du mot sub
         foreach (Lemme *l, sub->morphos().keys())
         {
+            if (debog) qDebug()<<" filius incidit 1"<<s->regle()->id()<<l->gr()<<l->gr();
             // pour chaque morpho du lemme
             QList<SLem> lsl = sub->morphos().value(l);
             foreach (SLem sl, lsl)
             {
+                if (debog) qDebug()<<"  filius incidit 2"<<s->regle()->id()<<l->gr()<<sl.morpho; 
                 if (s->estSub(l, sl.morpho, false) &&
                     (accord(s->morpho(), sl.morpho, s->regle()->accord())) &&
                     (!(s->regle()->synt().contains('c') && virgule(sup, sub))))
                 {
-                    /*
-                    // si une règle fille est validée, supprimer la règle mère.
-                    foreach (Super *sm, sup->super())
-                    {
-                        if (sm->motSub() != NULL && s->regle()->idPere() == sm->regle()->id())
-                        {
-                            sup->delSuper(sm);
-                        }
-                    }
-                    */
+                    if (debog) qDebug()<<"   filius incidit 3"<<s->regle()->id()<<l->gr()<<sl.morpho; 
                     s->addSub(sub, l, sl);
                 }
             }
@@ -910,11 +914,25 @@ bool Syntaxe::super(Mot *sup, Mot *sub)
         retour = retour || (s->motSub() == sub);
         //if (s->motSub() == sub) return true;
     }
+    // supprimer les règles parentes si règle une dérivée est validée
+    foreach (Super *s, sup->super())
+    {
+        QString rp = s->regle()->idPere();
+        if (s->complet() && (!rp.isEmpty()))
+        {
+            foreach (Super *sp, sup->super())
+                if (sp->complet() && sp->regle()->id() == rp)
+                    sup->delSuper (sp);
+        }
+    }
+
     // ajouter les chaînes d'affichage (règle, lien, traduction)
     foreach (Super *s, sup->super())
     {
-        if (s->motSub() == NULL) continue;
+        if (!s->complet()) continue;
+        //bool debog = sup->gr()=="filius" && sub->gr()=="incidit" && s->regle()->id()=="cdn";
         QString lien = s->regle()->fonction(sup, sub);
+        //if (debog) qDebug()<<"filius incidit" << lien;
         QString trad =
             tr(s->regle(), s->lemme(), s->morpho(), s->lemmeSub(), s->slemSub().morpho);
         QTextStream ts(&lien);
@@ -957,24 +975,6 @@ QString Syntaxe::trLemme(Lemme *l, QString m)
         if (pos.contains('p')) ret << _pronom->accorde(tr, m);
         if (pos.contains('v')) ret << conjnat(tr, m);
         if (ret.empty()) ret << tr;
-        /*
-        switch (l->pos().unicode())
-        {
-            // TODO : l'adjectif français doit avoir la
-            // morpho de son super !
-            case 'a': ret << accorde(tr, m); break;
-            case 'n':
-                      {
-                          if (m.contains("plur"))
-                              ret << pluriel(tr, m);
-                          else ret << tr;
-                          break;
-                      }
-            case 'p': ret << _pronom->accorde(tr,m);break;
-            case 'v': ret << conjnat(tr, m); break;
-            default: ret << tr;
-        }
-        */
     }
     ret.removeDuplicates();
     return ret.join(", ");

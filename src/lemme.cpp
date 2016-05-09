@@ -329,8 +329,9 @@ QString Lemme::traduction(QString l)
 {
     if (_traduction.keys().contains(l))
         return _traduction[l];
-    else
+    else if (_traduction.keys().contains("fr"))
         return _traduction["fr"];
+    else return _traduction["uk"];
 }
 
 /**

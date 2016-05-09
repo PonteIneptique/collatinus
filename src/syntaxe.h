@@ -153,6 +153,7 @@ class Super : public QObject
    public:
     Super(RegleS *r, Lemme *l, QString m, Mot *parent);
     void    addSub(Mot *m, Lemme *l, SLem sl);
+    bool    complet(); // vrai si super a un sub validé
     bool    estSub(Lemme *l, QString morpho, bool ante);
     Lemme  *lemme();
     Lemme  *lemmeSub();
