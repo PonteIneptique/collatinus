@@ -627,11 +627,11 @@ int Syntaxe::groupe(int r)
         // si cour orphelin, tester mTest comme super de cour
         if (cour->orphelin() && (super(mTest, cour)))
             return r + x;
-        super(cour, mTest);
         if (super(cour, mTest))
             x = groupe(r+x)-r+1;
         //else break;
-        else x = groupe(r+x)-r;
+        //else x = groupe(r+x)-r;
+        else ++x;
     }
     cour->setVu();
     return ++r;
@@ -704,7 +704,7 @@ bool Syntaxe::super(Mot *sup, Mot *sub)
     // ajouter les chaînes d'affichage (règle, lien, traduction)
     foreach (Super *s, sup->super())
     {
-        if (!s->complet()) continue;
+        if (!s->complet() || (s->motSub() != sub)) continue;
         QString lien = s->fonction();
         QTextStream ts(&lien);
         QString trad = tr(s->regle(), s->lemme(),

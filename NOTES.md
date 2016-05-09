@@ -91,9 +91,11 @@ Requis :
        ^   |     |        ^
        |   +-----|--------+
        +---------+    
-   * 8 mai 2016 - Commencé la récupération des expressions de C10 dans la base
-     syntaxique de C11.
-     - anomalie dans addLiens : affLiens pour incidit mentio ajoute un lien d'id prep.
+   * 8 mai 2016 - Commencé la récupération des
+     expressions de C10 dans la base syntaxique de C11.
+   * 9 mai - Dans le texte d'exemple l'analyse
+     syntaxique de /inde/ provoque une erreur de
+     segmentation.
 
 ## Branche maj
 Branche de mise à jour des lexiques.

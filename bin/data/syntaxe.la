@@ -44,7 +44,7 @@ tr:<super>..., <sub>...
 
 id:cod
 doc:complément d'objet direct
-f:<super> COD de <sub>
+f:<sub> COD de <super>
 super::v:act
 sub::n,p:acc
 tr:<super> <sub>
