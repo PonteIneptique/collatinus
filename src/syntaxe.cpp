@@ -80,9 +80,19 @@ bool ElS::okMorpho(QString m)
     return true;
 }
 
-bool ElS::okPos(QString p) { return _pos.isEmpty() || _pos.contains(p); }
+bool ElS::okPos(QString p)
+{
+    if (_pos.empty()) return true;
+    bool ret = false;
+    foreach (QString ep, _pos)
+        ret = ret || p.contains(ep);
+    return ret;
+}
 
-QStringList ElS::pos() { return _pos; }
+QStringList ElS::pos()
+{
+    return _pos;
+}
 
 
 //////////////////////////////
@@ -617,9 +627,11 @@ int Syntaxe::groupe(int r)
         // si cour orphelin, tester mTest comme super de cour
         if (cour->orphelin() && (super(mTest, cour)))
             return r + x;
+        super(cour, mTest);
         if (super(cour, mTest))
             x = groupe(r+x)-r+1;
-        else break;
+        //else break;
+        else x = groupe(r+x)-r;
     }
     cour->setVu();
     return ++r;
