@@ -111,23 +111,23 @@ Lemme::Lemme(QString linea, QObject *parent)
     _pos.clear();
     if (_indMorph.contains("adj."))
         _pos.append('a');
-    else if (_indMorph.contains("conj"))
+    if (_indMorph.contains("conj"))
         _pos.append('c');
-    else if (_indMorph.contains("excl"))
+    if (_indMorph.contains("excl"))
         _pos.append('e');
-    else if (_indMorph.contains("interj"))
+    if (_indMorph.contains("interj"))
         _pos.append('i');
-    else if (_indMorph.contains("num"))
+    if (_indMorph.contains("num"))
         _pos.append('m');
-    else if (_indMorph.contains("pron."))
+    if (_indMorph.contains("pron."))
         _pos.append('p');
-    else if (_indMorph.contains("prép"))
+    if (_indMorph.contains("prép"))
         _pos.append('r');
-    else if (_indMorph.contains("adv"))
+    if (_indMorph.contains("adv"))
         _pos.append('d');
-    else if (_indMorph.contains("n. "))
+    if (_indMorph.contains("n. "))
         _pos.append('n');
-    else
+    if (_pos.isEmpty())
         _pos.append(_modele->pos());
 
     QRegExp c("cf\\.\\s(\\w+)$");
