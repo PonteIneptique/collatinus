@@ -264,6 +264,11 @@ void Super::addSub(Mot *m, Lemme *l, SLem sl)
     _slemSub = sl;
 }
 
+void Super::annule()
+{
+    _motSub = NULL;
+}
+
 bool Super::complet()
 {
     return _motSub != NULL;
@@ -280,6 +285,11 @@ bool Super::estSub(Lemme *l, QString morpho, bool ante)
         return false;
     }
     return true;
+}
+
+QString Super::fonction()
+{
+    return _regle->fonction(_mot, _motSub);
 }
 
 Lemme *Super::lemme()
@@ -353,13 +363,10 @@ void Mot::addSuper(RegleS *r, Lemme *l, QString m)
     _super.append(new Super(r, l, m, this));
 }
 
-void Mot::delSuper(Super *s)
+QString Mot::gr()
 {
-    _super.removeOne(s);
-    delete s;
+    return _gr;
 }
-
-QString Mot::gr() { return _gr; }
 
 void Mot::grCalc()
 {
@@ -587,245 +594,6 @@ QString Syntaxe::analyse(QString t, int p)
     else return "";
 }
 
-/*
-QString Syntaxe::analyseM(QString t, int p)
-{
-    const QList<QChar> chl;
-    const int tl = t.length() - 1;
-    const QString pp = ".;!?";
-    // Les listes _motsP et _motsS sont ordonnées suivant leur
-    // proximité de motCourant. La liste _motsP est donc ordonné
-    // de manière régressive par rapport au sens de lecture G->D.
-
-    // avancer jusqu'à la fin du mot sous le curseur
-    while (p < tl - 1 && t.at(p + 1).isLetter()) ++p;
-    QString m;
-    QChar ponctD = '\0';
-    QChar ponctG = '\0';
-    // mots à gauche de motCour
-    int i = p;
-    bool limite = false;
-    while (i > -1 && !limite)
-    {
-        QChar c = t.at(i);
-        if (c.isLetter()) m.prepend(c);
-        if ((!c.isLetter() || i == 0) && !m.isEmpty())
-        {
-            Mot *nm = new Mot(m);
-            nm->setMorphos(_lemmatiseur->lemmatiseM(m, true));
-            _motsP << nm;
-            m.clear();
-            nm->setPonctG(ponctG);
-            nm->setPonctD(ponctD);
-            ponctG = ponctD;
-            ponctD = '\0';
-        }
-        limite =
-            (pp.contains(c) || (i > 0 && c == '\n' && t.at(i - 1) == '\n'));
-        if (!limite && c.isPunct()) ponctD = c;
-        --i;
-    }
-
-    // le premier mot de la liste est le mot Courant.
-    _motCour = _motsP.takeFirst();
-
-    // Peuplement de la liste _super
-    // pour chaque règle syntaxique
-    foreach (RegleS *r, _regles)
-    {
-        // pour chaque lemme de motCour
-        foreach (Lemme *l, _motCour->morphos().keys())
-        {
-            // pour chaque morpho du lemme
-            QList<SLem> lsl = _motCour->morphos().value(l);
-            foreach (SLem sl, lsl)
-            {
-                QString msup = sl.morpho;
-                if (r->estSuper(l, msup)) _motCour->addSuper(r, l, msup);
-            }
-        }
-    }
-    limite = false;
-    i = p + 1;
-    while (i < tl && !limite)
-    {
-        QChar c = t.at(i);
-        if (c.isLetter())
-            m.append(c);
-        else if (!m.isEmpty())
-        {
-            Mot *nm = new Mot(m);
-            nm->setMorphos(_lemmatiseur->lemmatiseM(m));
-            _motsS << nm;
-            m.clear();
-            nm->setPonctD(ponctG);
-            nm->setPonctG(ponctD);
-            ponctD = ponctG;
-            ponctG = '\0';
-        }
-        limite = (pp.contains(c) ||
-                  (i < tl - 1 && c == '\n' && t.at(i + 1) == '\n'));
-        if (!limite && c.isPunct()) ponctG = c;
-        ++i;
-    }
-    // RECHERCHE DES LIENS
-    QStringList ret;
-    // divs à griser après la sortie du groupe ou l'entrée dans un sous-groupe
-    QString divP = "<div>";
-    QString divS = "<div>";
-    bool courSubP = false;  // _motCour n'est pas encore sub à gauche
-    bool courSubS = false;  // _motCour n'est pas encore sub à droite
-    // pour chaque mot précédent
-    for (int i = 0; (i < _motsP.count() || i < _motsS.count()); ++i)
-    {
-        if (i < _motsP.count())
-        {
-            bool estLie = false;
-            Mot *mp = _motsP.at(i);
-            // provisoire : une ponctuation rend le
-            // lien improbable.
-            if (mp->ponctD() != '\0') divP = "<div style=\"color:grey\">";
-            // si _motCour a un père, il ne peux pas avoir de sub plus loin.
-            // On brise donc la boucle.
-            if (courSubP) break;
-            // mp est-іl subordonné à _motCour ?
-            // pour chaque Super de _motCour
-            foreach (Super *sup, _motCour->super())
-            {
-                // pour chaque lemme de mp
-                foreach (Lemme *l, mp->morphos().keys())
-                {
-                    // pour chaque morpho du lemme
-                    QList<SLem> lsl = mp->morphos().value(l);
-                    foreach (SLem sl, lsl)
-                    {
-                        if (sup->estSub(l, sl.morpho, true) &&
-                            (accord(sup->morpho(), sl.morpho,
-                                    sup->regle()->accord()))
-                            // contiguïté sans virgule
-                            && (!(sup->regle()->synt().contains('c') &&
-                                  virgule(_motCour, mp))))
-                        {
-                            QString lin;
-                            QTextStream(&lin)
-                                << divP << sup->regle()->fonction(_motCour, mp)
-                                << "<br/>    " << sup->regle()->doc()
-                                << "<br/>    <em>"
-                                << tr(sup->regle(), sup->lemme(), sup->morpho(),
-                                      l, sl.morpho)
-                                << "</em></div>";
-                            ret << lin;
-                            estLie = true;
-                        }
-                    }
-                }
-            }
-            // _motCour est-il subordonné à mp ?
-            // pour chaque Super de _mp
-            foreach (Super *sup, mp->super())
-            {
-                // pour chaque lemme de _motCour
-                foreach (Lemme *l, _motCour->morphos().keys())
-                {
-                    // pour chaque morpho du lemme
-                    QList<SLem> lsl = _motCour->morphos().value(l);
-                    foreach (SLem sl, lsl)
-                    {
-                        if (sup->estSub(l, sl.morpho, true) &&
-                            (accord(sup->morpho(), sl.morpho,
-                                    sup->regle()->accord())))
-                        {
-                            QString lin;
-                            QTextStream(&lin)
-                                << divP << sup->regle()->fonction(_motCour, mp)
-                                << "<br/>    " << sup->regle()->doc()
-                                << "<br/>    <em>"
-                                << tr(sup->regle(), sup->lemme(), sup->morpho(),
-                                      l, sl.morpho)
-                                << "</em></div>";
-                            ret << lin;
-                            courSubP = true;
-                        }
-                    }
-                }
-            }
-            if (!estLie) divP = "<div style=\"color:grey\">";
-        }
-        // motCour est-il subordonné à mp ?
-        // pour chaque mot suivant
-        if (i < _motsS.count())
-        {
-            bool estLie = false;
-            Mot *ms = _motsS.at(i);
-            // si _motCour a un père, il ne peux pas avoir de sub plus loin.
-            // On brise donc la boucle.
-            if (courSubS) break;
-            // mp est-іl subordonné à _motCour ?
-            // pour chaque Super de _motCour
-            foreach (Super *sup, _motCour->super())
-            {
-                // pour chaque lemme de mp
-                foreach (Lemme *l, ms->morphos().keys())
-                {
-                    // pour chaque morpho du lemme
-                    QList<SLem> lsl = ms->morphos().value(l);
-                    foreach (SLem sl, lsl)
-                    {
-                        if (sup->estSub(l, sl.morpho, false) &&
-                            (accord(sup->morpho(), sl.morpho,
-                                    sup->regle()->accord())))
-                        {
-                            QString lin;
-                            QTextStream(&lin)
-                                << divS << sup->regle()->fonction(_motCour, ms)
-                                << "<br/>    " << sup->regle()->doc()
-                                << "<br/>    <em>"
-                                << tr(sup->regle(), sup->lemme(), sup->morpho(),
-                                      l, sl.morpho)
-                                << "</em>";
-                            ret << lin;
-                            estLie = true;
-                        }
-                    }
-                }
-            }
-            if (!estLie) divS = "<div style=\"color:grey\">";
-            // _motCour est-іl subordonné à mp
-            // pour chaque Super de _ms
-            foreach (Super *sup, ms->super())
-            {
-                // pour chaque lemme de _motCour
-                foreach (Lemme *l, _motCour->morphos().keys())
-                {
-                    // pour chaque morpho du lemme
-                    QList<SLem> lsl = _motCour->morphos().value(l);
-                    foreach (SLem sl, lsl)
-                    {
-                        if (sup->estSub(l, sl.morpho, false) &&
-                            (accord(sup->morpho(), sl.morpho,
-                                    sup->regle()->accord())))
-                        {
-                            QString lin;
-                            QTextStream(&lin)
-                                << divS << sup->regle()->fonction(_motCour, ms)
-                                << "<br/>    " << sup->regle()->doc()
-                                << "<br/>    <em>"
-                                << tr(sup->regle(), sup->lemme(), sup->morpho(),
-                                      l, sl.morpho)
-                                << "</em>";
-                            ret << lin;
-                            courSubS = true;
-                        }
-                    }
-                }
-            }
-        }
-    }
-    ret.removeDuplicates();
-    return ret.join("<hr/>");
-}
-*/
-
 bool Syntaxe::estSuper(Mot *sup, Mot *sub)
 {
     foreach (Super *s, sup->super())
@@ -891,28 +659,23 @@ bool Syntaxe::super(Mot *sup, Mot *sub)
     bool retour = false;
     foreach (Super *s, sup->super())
     {
-        bool debog = sup->gr()=="filius" && sub->gr()=="incidit" && s->regle()->id()=="cdn";
         // tester toutes les possibilités du mot sub :
         // pour chaque lemme du mot sub
         foreach (Lemme *l, sub->morphos().keys())
         {
-            if (debog) qDebug()<<" filius incidit 1"<<s->regle()->id()<<l->gr()<<l->gr();
             // pour chaque morpho du lemme
             QList<SLem> lsl = sub->morphos().value(l);
             foreach (SLem sl, lsl)
             {
-                if (debog) qDebug()<<"  filius incidit 2"<<s->regle()->id()<<l->gr()<<sl.morpho; 
                 if (s->estSub(l, sl.morpho, false) &&
                     (accord(s->morpho(), sl.morpho, s->regle()->accord())) &&
                     (!(s->regle()->synt().contains('c') && virgule(sup, sub))))
                 {
-                    if (debog) qDebug()<<"   filius incidit 3"<<s->regle()->id()<<l->gr()<<sl.morpho; 
                     s->addSub(sub, l, sl);
                 }
             }
         }
         retour = retour || (s->motSub() == sub);
-        //if (s->motSub() == sub) return true;
     }
     // supprimer les règles parentes si règle une dérivée est validée
     foreach (Super *s, sup->super())
@@ -922,7 +685,7 @@ bool Syntaxe::super(Mot *sup, Mot *sub)
         {
             foreach (Super *sp, sup->super())
                 if (sp->complet() && sp->regle()->id() == rp)
-                    sup->delSuper (sp);
+                    sp->annule();
         }
     }
 
@@ -930,18 +693,16 @@ bool Syntaxe::super(Mot *sup, Mot *sub)
     foreach (Super *s, sup->super())
     {
         if (!s->complet()) continue;
-        //bool debog = sup->gr()=="filius" && sub->gr()=="incidit" && s->regle()->id()=="cdn";
-        QString lien = s->regle()->fonction(sup, sub);
-        //if (debog) qDebug()<<"filius incidit" << lien;
-        QString trad =
-            tr(s->regle(), s->lemme(), s->morpho(), s->lemmeSub(), s->slemSub().morpho);
+        QString lien = s->fonction();
         QTextStream ts(&lien);
-        ts << " tr. <em>" << trad << "</em>";
+        QString trad = tr(s->regle(), s->lemme(),
+                          s->morpho(), s->lemmeSub(),
+                          s->slemSub().morpho);
+        ts << " <span style=\"color:blue;font-style:italic;\">" << trad << "</span>";
         sup->addLien(lien);
         sub->addLien(lien);
     }
     return retour;
-    //return false;
 }
 
 QString Syntaxe::tr(RegleS *r, Lemme *sup, QString msup, Lemme *sub,

@@ -153,8 +153,10 @@ class Super : public QObject
    public:
     Super(RegleS *r, Lemme *l, QString m, Mot *parent);
     void    addSub(Mot *m, Lemme *l, SLem sl);
+    void    annule();
     bool    complet(); // vrai si super a un sub validé
     bool    estSub(Lemme *l, QString morpho, bool ante);
+    QString fonction();
     Lemme  *lemme();
     Lemme  *lemmeSub();
     QString morpho();
@@ -191,7 +193,6 @@ class Mot : public QObject
     void           addLien(QString l);
     void           addRSub(RegleS *r);
     void           addSuper(RegleS *r, Lemme *l, QString m);
-    void           delSuper(Super *s);
     QString        gr();
     void           grCalc();  // met à jour _grPrim et _grUlt;
     int            grPrim(); // rang du premier mot du groupe du mot
@@ -221,17 +222,17 @@ class Syntaxe : public QObject
     Q_OBJECT
 
    private:
-    bool accord(QString ma, QString mb, QString cgn);
-    int groupe(int r);
-    Lemmat *_lemmatiseur;
+    bool                    accord(QString ma, QString mb, QString cgn);
+    int                     groupe(int r);
+    Lemmat                *_lemmatiseur;
     QMap<QString, RegleS*> _regles;
-    Mot *superDe(Mot *m);
-    QString _texte;
-    // variables motCour
-    Mot *_motCour;  // mot courant
+    Mot*                    superDe(Mot *m);
+    QString                _texte;
+    // variables
+    Mot         *_motCour; // mot courant
     QList<Mot *> _mots;
-    QList<Mot *> _motsP;  // mots précédents
-    QList<Mot *> _motsS;  // mots suivants
+    QList<Mot *> _motsP;   // mots précédents
+    QList<Mot *> _motsS;   // mots suivants
     Pronom *_pronom;
     int r, x;
     QString _rapport;
@@ -239,7 +240,6 @@ class Syntaxe : public QObject
    public:
     Syntaxe(QString t, Lemmat *parent);
     QString analyse(QString t, int p);
-    //QString analyseM(QString t, int p);
     bool    estSuper(Mot *sup, Mot *sub);
     QString motSous(int p);
     bool    orphelin(Mot *m);
