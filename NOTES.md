@@ -65,6 +65,26 @@ Requis :
   un hyperlien vers plus, pluris, et vers plurimus, a, um.
 
 ## Branche syntaxe
+   * 10 mai 2016 - Certains liens, surtout dans les
+     expressions reprises de C10, ont plus de deux éléments :
+     . incidit mentio de : 3
+     . non solum ... sed etiam : 4.
+     il faudrait donc que le principe de lien
+     syntaxique soit récursif, càd que l'élément d'un
+     lien puisse être lui même un lien.
+     . super:inciditMentio
+     . sub:de
+     ... ou
+     . super:incidit+de
+     . ѕub:mentio
+     L'ablatif absolu en est un autre exemple :
+     . super:verbe
+     . sub:ablAbs
+
+   * 9 mai - Dans le texte d'exemple l'analyse
+     syntaxique de /inde/ provoque une erreur de
+     segmentation.
+     expressions de C10 dans la base syntaxique de C11.
    * But : ne donner que le(s) père(s) du mot cliqué, avec traduction.
    * Arbre en arcs :
      Forte potantibus his apud Sextum Tarquinium, ubi et Collatinus cenabat Tarquinius, Egeri filius, incidit de uxoribus mentio.  
@@ -91,11 +111,6 @@ Requis :
        ^   |     |        ^
        |   +-----|--------+
        +---------+    
-   * 8 mai 2016 - Commencé la récupération des
-     expressions de C10 dans la base syntaxique de C11.
-   * 9 mai - Dans le texte d'exemple l'analyse
-     syntaxique de /inde/ provoque une erreur de
-     segmentation.
 
 ## Branche maj
 Branche de mise à jour des lexiques.
