@@ -617,9 +617,9 @@ QString Syntaxe::analyse(QString t, int p)
         _mots.append(nm);
         nm->setRang(_mots.count());
     }
-    int nbmots = _mots.count();
+    _nbmots = _mots.count();
     r = 0;
-    while (r < nbmots && r > -1)
+    while (r < _nbmots)
         r = groupe(r);
     if (_mots.count() > pmc)
         return liens(_mots.at(pmc)); 
@@ -686,9 +686,10 @@ int Syntaxe::groupe(int r)
     // incidit de uxoribus mentio
     Mot *cour = _mots.at(r);
     // éviter les passages inutiles
-    if (cour->vu()) return ++r;
+    //if (cour->vu()) return ++r;
+    if (cour->vu()) return cour->grUlt()+1;
     int x = 1;
-    while (r + x < _mots.count())
+    while (r + x < _nbmots)
     {
         Mot *mTest = _mots.at(r + x);
         // si cour orphelin, tester mTest comme super de cour
@@ -696,9 +697,14 @@ int Syntaxe::groupe(int r)
             return r + x;
         if (super(cour, mTest))
         {
-            x = groupe(r+x)-r+1;
+            //x = groupe(r+x)-r+1;
+            x = groupe(r+x)-r;
+            if ((r+x < _nbmots-1) && _mots.at(r+x)->clos()) ++x;
         }
-        else break;
+        else
+        {
+            break;
+        }
         // else ++x;
         //else x = groupe(r+x)-r;
     }

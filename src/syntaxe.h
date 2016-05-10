@@ -219,17 +219,18 @@ class Syntaxe : public QObject
     bool                    accord(QString ma, QString mb, QString cgn);
     int                     groupe(int r);
     Lemmat                *_lemmatiseur;
+    int                    _nbmots;
     QMap<QString, RegleS*> _regles;
     Mot*                    superDe(Mot *m);
     QString                _texte;
     // variables
-    Mot         *_motCour; // mot courant
-    QList<Mot *> _mots;
-    QList<Mot *> _motsP;   // mots précédents
-    QList<Mot *> _motsS;   // mots suivants
-    Pronom *_pronom;
-    int r, x;
-    QString _rapport;
+    Mot                   *_motCour; // mot courant
+    QList<Mot *>           _mots;
+    QList<Mot *>           _motsP;   // mots précédents
+    QList<Mot *>           _motsS;   // mots suivants
+    Pronom                *_pronom;
+    int                    r; //, x;
+    QString                _rapport;
 
    public:
     Syntaxe(QString t, Lemmat *parent);
