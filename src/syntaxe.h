@@ -170,7 +170,6 @@ class Mot : public QObject
     Q_OBJECT
 
    private:
-    QStringList     _affLiens;
     bool            _clos;
     QString         _gr;
     int             _grPrim;  // rang du premier mot du groupe
@@ -185,16 +184,14 @@ class Mot : public QObject
 
    public:
     Mot(QString g);
-    void           addLien(QString l);
     void           addRSub(RegleS *r);
     void           addSuper(RegleS *r, Lemme *l, QString m);
     bool           clos();
     QString        gr();
     void           grCalc();  // met à jour _grPrim et _grUlt;
-    int            grPrim(); // rang du premier mot du groupe du mot
-    int            grUlt();  //  "      dernier  "
+    int            grPrim();  // rang du premier mot du groupe du mot
+    int            grUlt();   //  "      dernier  "
     QString        humain();
-    QString        liens();  // renvoie _affliens
     MapLem         morphos();
     bool           orphelin();
     QString        ponctD();
@@ -238,9 +235,11 @@ class Syntaxe : public QObject
     Syntaxe(QString t, Lemmat *parent);
     QString analyse(QString t, int p);
     bool    estSuper(Mot *sup, Mot *sub);
+    QString liens(Mot *m);
     QString motSous(int p);
     bool    orphelin(Mot *m);
     RegleS* regle(QString id);
+    void    selectionne(Mot *m, Super *s); // élimine tous les autres liens que s faisant de m leur sub
     void    setText(QString t);
     bool    super(Mot *sup, Mot *sub);  // construit le lien
     QString tr(RegleS *r, Lemme *sup, QString msup, Lemme *sub, QString msub);

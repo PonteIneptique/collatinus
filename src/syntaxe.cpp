@@ -357,17 +357,10 @@ QString Super::traduction() { return _traduction; }
 Mot::Mot(QString g)
 {
     _gr = g;
-    _affLiens.clear();
     _ponctD = '\0';
     _ponctG = '\0';
     _clos = false;
     _vu = false;
-}
-
-void Mot::addLien(QString l)
-{
-    if (!_affLiens.contains(l))
-        _affLiens.append(l);
 }
 
 void Mot::addRSub(RegleS *r)
@@ -423,11 +416,6 @@ QString Mot::humain()
     foreach (Lemme *lem, _morphos.keys())
         fl << lem->grq() << "    - " << lem->traduction("fr") << "\n";
     return ret;
-}
-
-QString Mot::liens()
-{
-    return _affLiens.join("<br/>\n");
 }
 
 MapLem Mot::morphos() { return _morphos; }
@@ -634,8 +622,51 @@ QString Syntaxe::analyse(QString t, int p)
     while (r < nbmots && r > -1)
         r = groupe(r);
     if (_mots.count() > pmc)
-        return _mots.at(pmc)->liens();
+        return liens(_mots.at(pmc)); 
     else return "";
+}
+
+QString Syntaxe::liens(Mot *m)
+{
+    QStringList lignes;
+    // superordonné
+    for (int i=0;i<_mots.count();++i)
+    {
+        if (i==m->rang()) continue;
+        Mot *sup = _mots.at(i);
+        foreach(Super *s, sup->super())
+        {
+            if (!s->complet()) continue;
+            QString ligne;
+            QTextStream ts(&ligne);
+            if (s->motSub() == m)
+            {
+                ts << s->fonction()
+                    << " <span style=\"color:blue;font-style:italic;\">" 
+                    << tr(s->regle(), s->lemme(),
+                          s->morpho(), s->lemmeSub(),
+                          s->slemSub().morpho)
+                    << "</span>";
+                lignes.append(ligne);
+            }
+        }
+    }
+    // subordonnés
+    foreach(Super *s, m->super())
+    {
+        if (!s->complet()) continue;
+        QString ligne;
+        QTextStream ts(&ligne);
+        ts << s->fonction()
+            << " <span style=\"color:blue;font-style:italic;\">" 
+            << tr(s->regle(), s->lemme(),
+                  s->morpho(), s->lemmeSub(),
+                  s->slemSub().morpho)
+            << "</span>";
+        lignes.append(ligne);
+    }
+    lignes.removeDuplicates();
+    return lignes.join("<br/>");
 }
 
 bool Syntaxe::estSuper(Mot *sup, Mot *sub)
@@ -647,14 +678,12 @@ bool Syntaxe::estSuper(Mot *sup, Mot *sub)
 
 /**
  * \fn int Syntaxe::groupe()
- * \brief renvoie le rang du père de mot[r]
+ * \brief renvoie le rang du père de mot[r],
  */
 int Syntaxe::groupe(int r)
 {
     // Forte potantibus his apud Sextum ...
-    // apud -> Sextum : lien bloquant
-    // donc Sextum ne peut être le COD de potantibus
-    //
+    // incidit de uxoribus mentio
     Mot *cour = _mots.at(r);
     // éviter les passages inutiles
     if (cour->vu()) return ++r;
@@ -667,12 +696,11 @@ int Syntaxe::groupe(int r)
             return r + x;
         if (super(cour, mTest))
         {
-            //x = groupe(r+x)-r+1;
-            x = groupe(r+x)-r;
+            x = groupe(r+x)-r+1;
         }
         else break;
+        // else ++x;
         //else x = groupe(r+x)-r;
-        //else ++x;
     }
     cour->setVu();
     return ++r;
@@ -705,7 +733,23 @@ RegleS* Syntaxe::regle(QString id)
     return _regles.value(id);
 }
 
-void Syntaxe::setText(QString t) { _texte = t; }
+void Syntaxe::selectionne(Mot *m, Super *s)
+{
+    for (int i=0;i<m->rang();++i)
+    {
+        Mot *mprec = _mots.at(i);
+        foreach(Super *sprec, mprec->super())
+            if (sprec->motSub()==m && sprec != s)
+            {
+                sprec->annule();
+            }
+    }
+}
+
+void Syntaxe::setText(QString t)
+{
+    _texte = t;
+}
 
 bool Syntaxe::super(Mot *sup, Mot *sub)
 {
@@ -726,13 +770,17 @@ bool Syntaxe::super(Mot *sup, Mot *sub)
                     (!(s->regle()->synt().contains('c') && virgule(sup, sub))))
                 {
                     s->addSub(sub, l, sl);
-                    if (s->bloquant()) sub->setClos();
+                    if (s->bloquant())
+                    {
+                        sub->setClos();
+                        selectionne(sub, s);
+                    }
                 }
             }
         }
         retour = retour || (s->motSub() == sub);
     }
-    // supprimer les règles parentes si règle une dérivée est validée
+    // supprimer les règles parentes si une règle dérivée est validée
     foreach (Super *s, sup->super())
     {
         QString rp = s->regle()->idPere();
@@ -740,23 +788,12 @@ bool Syntaxe::super(Mot *sup, Mot *sub)
         {
             foreach (Super *sp, sup->super())
                 if (sp->complet() && sp->regle()->id() == rp)
+                {
                     sp->annule();
+                }
         }
     }
 
-    // ajouter les chaînes d'affichage (règle, lien, traduction)
-    foreach (Super *s, sup->super())
-    {
-        if (!s->complet() || (s->motSub() != sub)) continue;
-        QString lien = s->fonction();
-        QTextStream ts(&lien);
-        QString trad = tr(s->regle(), s->lemme(),
-                          s->morpho(), s->lemmeSub(),
-                          s->slemSub().morpho);
-        ts << " <span style=\"color:blue;font-style:italic;\">" << trad << "</span>";
-        sup->addLien(lien);
-        sub->addLien(lien);
-    }
     return retour;
 }
 
