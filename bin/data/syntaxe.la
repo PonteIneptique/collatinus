@@ -79,7 +79,6 @@ doc:Une préposition dépend le plus souvent d'un verbe
 f:<sub> prép. dépendant du verbe <super>
 super::v:
 sub::r:
-synt:b
 tr:<super> <sub>
 
 id:regimeAbl
@@ -88,7 +87,7 @@ f:<sub> régime à l'ablatif de la préposition <super>
 sens:>
 super:a,ab,de,ex:r::
 sub::n,p:abl
-synt:u
+synt:ub
 tr:<super> <sub>
 
 id:regimeAcc
@@ -97,7 +96,7 @@ f:<sub> régime à l'accusatif de la préposition <super>
 sens:>
 super:ad,adversus,apud,contra,in,intra,ob,per,post,praeter,propter,super,usque:::
 sub::n,p:acc
-synt:u
+synt:ub
 tr:<super> <sub>
 
 id:sujet

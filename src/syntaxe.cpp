@@ -276,7 +276,13 @@ void Super::addSub(Mot *m, Lemme *l, SLem sl)
 
 void Super::annule()
 {
+    // libérer l'attribut clos() ?
     _motSub = NULL;
+}
+
+bool Super::bloquant()
+{
+    return _regle->bloquant();
 }
 
 bool Super::complet()
@@ -354,6 +360,7 @@ Mot::Mot(QString g)
     _affLiens.clear();
     _ponctD = '\0';
     _ponctG = '\0';
+    _clos = false;
     _vu = false;
 }
 
@@ -371,6 +378,11 @@ void Mot::addRSub(RegleS *r)
 void Mot::addSuper(RegleS *r, Lemme *l, QString m)
 {
     _super.append(new Super(r, l, m, this));
+}
+
+bool Mot::clos()
+{
+    return _clos;
 }
 
 QString Mot::gr()
@@ -437,11 +449,25 @@ int Mot::rang()
     return _rang;
 }
 
-QString Mot::ponctG() { return _ponctG; }
+QString Mot::ponctG()
+{
+    return _ponctG;
+}
 
-void Mot::setMorphos(MapLem m) { _morphos = m; }
+void Mot::setClos()
+{
+    _clos = true;
+}
 
-void Mot::setPonctD(QString p) { _ponctD = p; }
+void Mot::setMorphos(MapLem m)
+{
+    _morphos = m;
+}
+
+void Mot::setPonctD(QString p)
+{
+    _ponctD = p;
+}
 
 void Mot::setRang(int r)
 {
@@ -450,8 +476,16 @@ void Mot::setRang(int r)
     _grUlt = r;
 }
 
-void Mot::setPonctG(QString p) { _ponctG = p; }
-QList<Super *> Mot::super() { return _super; }
+void Mot::setPonctG(QString p)
+{
+    _ponctG = p;
+}
+
+QList<Super *> Mot::super()
+{
+    return _super;
+}
+
 bool Mot::superDe(Mot *m)
 {
     foreach (Super *s, _super)
@@ -617,6 +651,10 @@ bool Syntaxe::estSuper(Mot *sup, Mot *sub)
  */
 int Syntaxe::groupe(int r)
 {
+    // Forte potantibus his apud Sextum ...
+    // apud -> Sextum : lien bloquant
+    // donc Sextum ne peut être le COD de potantibus
+    //
     Mot *cour = _mots.at(r);
     // éviter les passages inutiles
     if (cour->vu()) return ++r;
@@ -628,10 +666,13 @@ int Syntaxe::groupe(int r)
         if (cour->orphelin() && (super(mTest, cour)))
             return r + x;
         if (super(cour, mTest))
-            x = groupe(r+x)-r+1;
-        //else break;
+        {
+            //x = groupe(r+x)-r+1;
+            x = groupe(r+x)-r;
+        }
+        else break;
         //else x = groupe(r+x)-r;
-        else ++x;
+        //else ++x;
     }
     cour->setVu();
     return ++r;
@@ -668,6 +709,7 @@ void Syntaxe::setText(QString t) { _texte = t; }
 
 bool Syntaxe::super(Mot *sup, Mot *sub)
 {
+    if (sub->clos()) return false;
     bool retour = false;
     foreach (Super *s, sup->super())
     {
@@ -684,6 +726,7 @@ bool Syntaxe::super(Mot *sup, Mot *sub)
                     (!(s->regle()->synt().contains('c') && virgule(sup, sub))))
                 {
                     s->addSub(sub, l, sl);
+                    if (s->bloquant()) sub->setClos();
                 }
             }
         }

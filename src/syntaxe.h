@@ -51,7 +51,7 @@
       | +---++----+       |
       +-------------------+
 
- . Il faudrait que certains mots+lien soient bloquants.  Une
+ . TODO Il faudrait que certains mots+lien soient bloquants.  Une
    préposition bloque les expansions à droite du verbe
    jusqu'à ce que son régime soit lu.
    bloquant = lien prioritaire ? Soit la phrase
@@ -61,13 +61,6 @@
    dire que le lien de -> uxoribus est prioritaire
    sur le lien uxoribus <- incidit.
 
- . TODO : rejeter les liens grisés en fin d'affichage.
-
- . Hypothèse : lorsque un mot a trouvé son super, les
-     mots suivants ne peuvent être sub de ce mot.
-
- .  Solution 1: Analyser toute la phrase avant d'afficher les
-    liens du mot cliqué ?
 */
 
 #ifndef SYNTAXE_H
@@ -154,6 +147,7 @@ class Super : public QObject
     Super(RegleS *r, Lemme *l, QString m, Mot *parent);
     void    addSub(Mot *m, Lemme *l, SLem sl);
     void    annule();
+    bool    bloquant();
     bool    complet(); // vrai si super a un sub validé
     bool    estSub(Lemme *l, QString morpho, bool ante);
     QString fonction();
@@ -177,6 +171,7 @@ class Mot : public QObject
 
    private:
     QStringList     _affLiens;
+    bool            _clos;
     QString         _gr;
     int             _grPrim;  // rang du premier mot du groupe
     int             _grUlt;   // rang du dernier mot du groupe
@@ -193,6 +188,7 @@ class Mot : public QObject
     void           addLien(QString l);
     void           addRSub(RegleS *r);
     void           addSuper(RegleS *r, Lemme *l, QString m);
+    bool           clos();
     QString        gr();
     void           grCalc();  // met à jour _grPrim et _grUlt;
     int            grPrim(); // rang du premier mot du groupe du mot
@@ -210,6 +206,7 @@ class Mot : public QObject
     void           setRang(int r);
     void           setRSub(QList<RegleS *>);
     void           setRSuper(QList<RegleS *>);
+    void           setClos();
     void           setVu();
     QList<Super *> super();  // liste des règles qui peuvent faire du mot un super
     bool           superDe(Mot *m);
