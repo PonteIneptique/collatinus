@@ -122,6 +122,7 @@ class RegleS : public QObject
     QString   fonction(Mot *super = 0, Mot *sub = 0);
     QString   id();
     QString   idPere();
+    bool      multiple();
     QString   sens();
     ElS    *  super();
     ElS    *  sub();
@@ -149,6 +150,7 @@ class Super : public QObject
     void    annule();
     bool    bloquant();
     bool    complet(); // vrai si super a un sub validé
+    Super  *copie();   // clone, avec motsub à NULL
     bool    estSub(Lemme *l, QString morpho, bool ante);
     QString fonction();
     Lemme  *lemme();
@@ -186,6 +188,7 @@ class Mot : public QObject
     Mot(QString g);
     void           addRSub(RegleS *r);
     void           addSuper(RegleS *r, Lemme *l, QString m);
+    void           addSuper(Super *s);
     bool           clos();
     QString        gr();
     void           grCalc();  // met à jour _grPrim et _grUlt;
