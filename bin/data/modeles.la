@@ -20,12 +20,12 @@
 !
 ! modele:<nom du modèle>
 !    nom du modèle, comme donné dans lemmes.la.
-!    ligne suivie des autres clés qui décrivent 
+!    ligne suivie des autres clés qui décrivent
 !    le modèle.
 ! R:<n1>:<n2>,<ch>
 !    Description d'un radical.
 !    n1 : numéro du radical
-!    n2 : nombre de caractères à ôter de la forme canonique 
+!    n2 : nombre de caractères à ôter de la forme canonique
 !    ch : chaîne à ajouter à la chaîne obtenue pour avoir le radical
 !
 ! des:<intervalle>:<numMorph>:<listeDes>
@@ -546,7 +546,7 @@ R:2:1,āt
 des:121-126:0:ō̆;ās;ăt;āmŭs;ātĭs;ānt
 des:127-132:0:ābăm;ābās;ābăt;ābāmŭs;ābātĭs;ābānt
 des:133-138:0:ābō̆;ābĭs;ābĭt;ābĭmŭs;ābĭtĭs;ābūnt
-des:139-144:1:ī;īstī;ĭt;ĭmŭs;īstĭs;ĕrūnt,ērĕ
+des:139-144:1:ī;īstī;ĭt;ĭmŭs;īstĭs;ērūnt,ērĕ
 des:145-150:1:ĕrăm;ĕrās;ĕrăt;ĕrāmŭs;ĕrātĭs;ĕrānt
 des:151-156:1:ĕrō̆;ĕrī̆s;ĕrĭt;ĕrī̆mŭs;ĕrī̆tĭs;ĕrīnt
 ! subjonctif
