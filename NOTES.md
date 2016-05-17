@@ -19,9 +19,8 @@ Requis :
   à l'adresse [http://outils.biblissima.fr/collatinus/](http://outils.biblissima.fr/collatinus/)
 - Générer le fichier de traductions anglaises :    
   $ lrelease collatinus.pro    
-… et le déplacer dans bin/ :    
+    … et le déplacer dans bin/ :    
   $ mv collatinus\_en.qm bin/
->>>>>>> master
 - Placer dans bin/data/dicos les dictionnaires xml et
   djvu les dictionnaires téléchargeables à la même adresse ;
 - Générer le fichier de traductions anglaises :    
@@ -65,6 +64,8 @@ Requis :
   un hyperlien vers plus, pluris, et vers plurimus, a, um.
 
 ## Branche syntaxe
+   * mardi 17 mai 2016 -
+     vérifier Super::addSub : un return si le sub est occupé
    * 10 mai 2016 - Certains liens, surtout dans les
      expressions reprises de C10, ont plus de deux éléments :
      . incidit mentio de : 3

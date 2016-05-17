@@ -65,6 +65,14 @@ sub::a:
 accord:cgn
 tr:<super> <sub>
 
+id:determinant
+pere:epithete
+doc:En latin, le déterminant fonctionne comme l'épithète. En français, il est antéposé au nom
+f:<sub> déterminant de <super>
+super::n:
+sub:meus,tuus,suus,hic,iste,ille::
+tr:<sub> <super>
+
 id:nApp
 doc:un nom apposé suit directement un autre nom, est complètement accordé avec lui, et représente la même personne ou chose.
 f:<sub> apposé à <super>
@@ -87,7 +95,7 @@ f:<sub> régime à l'ablatif de la préposition <super>
 sens:>
 super:a,ab,de,ex:r::
 sub::n,p:abl
-synt:ub
+synt:bu
 tr:<super> <sub>
 
 id:regimeAcc
@@ -96,7 +104,7 @@ f:<sub> régime à l'accusatif de la préposition <super>
 sens:>
 super:ad,adversus,apud,contra,in,intra,ob,per,post,praeter,propter,super,usque:::
 sub::n,p:acc
-synt:ub
+synt:bu
 tr:<super> <sub>
 
 id:sujet
@@ -107,6 +115,21 @@ sub::n,p:nomin
 synt:cu
 tr:<sub> <super>
 accord:n
+
+id:sujetSubj
+doc:un nom ou un pronom au nominatif peut être sujet d'un verbe au subjonctif
+f:<sub> ѕujet du verbe <super>
+super::v:subj
+sub::n,p:nomin
+synt:cu
+tr:<sub> <super>
+accord:n
+
+id:sujetInfNarr
+pere:sujet
+doc:Le sujet de l'infinitif de narration, quelquefois exprimé, est au nominatif
+super::v:inf
+sub::n,p:nomin
 
 ! expression
 id:inciditMentio

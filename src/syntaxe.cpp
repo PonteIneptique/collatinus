@@ -1,5 +1,6 @@
-/*                 syntaxe.cpp * *  This file is part of COLLATINUS.  *
- * *  COLLATINUS is free software; you can redistribute it and/or modify *  it
+/*                 syntaxe.cpp
+ * This file is part of COLLATINUS.  *
+ * COLLATINUS is free software; you can redistribute it and/or modify *  it
  * under the terms of the GNU General Public License as published by *  the Free
  * Software Foundation; either version 2 of the License, or *  (at your option)
  * any later version.
@@ -31,6 +32,9 @@
  * \brief module d'analyse syntaxique
  */
 
+// XXX vérifier que suam a bien les deux morphos pronom
+// et adjectif et qu'elles sont soumises à la recherche
+// de liens.
 
 #include "syntaxe.h"
 #include <QFile>
@@ -119,13 +123,13 @@ RegleS::RegleS(QStringList lignes, QObject *parent)
         int i = cles.indexOf(ecl.at(0));
         switch (i)
         {
-            case 0:
+            case 0: // id
                 _id = ecl.at(1);
                 break;
-            case 1:
+            case 1: // doc
                 _doc = ecl.at(1);
                 break;
-            case 2:
+            case 2: // pere
                 {
                     _idPere = ecl.at(1);
                     RegleS *rp = syntaxe->regle(_idPere);
@@ -135,6 +139,7 @@ RegleS::RegleS(QStringList lignes, QObject *parent)
                         _accord = rp->accord();
                         _f      = rp->f();
                         _synt   = rp->synt();
+                        // sub et super non clonés !
                     }
                 }
                 break;
@@ -227,6 +232,16 @@ QString RegleS::idPere()
     return _idPere;
 }
 
+/**
+ * \fn bool RegleS::multiple()
+ * \brief vrai si le superordonné accepte plusieurs
+ *     subordonnés via la même règle.
+ */
+bool RegleS::multiple()
+{
+    return !_synt.contains('u');
+}
+
 QString RegleS::sens()
 {
     return _sens;
@@ -269,6 +284,7 @@ Super::Super(RegleS *r, Lemme *l, QString m, Mot *parent)
 
 void Super::addSub(Mot *m, Lemme *l, SLem sl)
 {
+    if (_motSub != NULL) return;
     _motSub = m;
     _lemmeSub = l;
     _slemSub = sl;
@@ -290,14 +306,29 @@ bool Super::complet()
     return _motSub != NULL;
 }
 
+Super* Super::copie()
+{
+    return new Super(_regle, _lemme, _morpho, _mot);
+}
+
+/**
+ * \fn bool Super::estSub(Lemme *l, QString morpho, bool ante)
+ * \brief renvoie vrai si le lemme l de morphno morpho et ante = true si
+ *        le mot sub est placé avant _mot, peut être subordonné à _mot
+ *        via la règle _regle.
+ */
 bool Super::estSub(Lemme *l, QString morpho, bool ante)
 {
+    //bool debog=_mot->gr()=="laudare"; // && l->gr()=="quisque" && _regle->id()=="sujet";
+    //if (debog) qDebug()<<_mot->gr()<<"estsub"<<l->gr()<<"morpho"<<morpho<<"ante"<<ante;
     if (!_regle->estSub(l, morpho, ante))
     {
+        //if (debog) qDebug()<<"      !regle->estsu l"<<l->pos();
         return false;
     }
     if (_motSub != NULL && _regle->synt().contains('u'))
     {
+        //if (debog) qDebug()<<"      contains u";
         return false;
     }
     return true;
@@ -348,7 +379,10 @@ SLem Super::slemSub()
     return _slemSub;
 }
 
-QString Super::traduction() { return _traduction; }
+QString Super::traduction()
+{
+    return _traduction;
+}
 
 /**
  * \fn Mot::Mot(QString g)
@@ -371,6 +405,11 @@ void Mot::addRSub(RegleS *r)
 void Mot::addSuper(RegleS *r, Lemme *l, QString m)
 {
     _super.append(new Super(r, l, m, this));
+}
+
+void Mot::addSuper(Super *s)
+{
+    _super.append(s);
 }
 
 bool Mot::clos()
@@ -418,7 +457,10 @@ QString Mot::humain()
     return ret;
 }
 
-MapLem Mot::morphos() { return _morphos; }
+MapLem Mot::morphos()
+{
+    return _morphos;
+}
 
 bool Mot::orphelin()
 {
@@ -615,7 +657,7 @@ QString Syntaxe::analyse(QString t, int p)
             }
         }
         _mots.append(nm);
-        nm->setRang(_mots.count());
+        nm->setRang(_mots.count()-1);
     }
     _nbmots = _mots.count();
     r = 0;
@@ -636,6 +678,8 @@ QString Syntaxe::liens(Mot *m)
         Mot *sup = _mots.at(i);
         foreach(Super *s, sup->super())
         {
+            //bool debog=s->mot()->gr()=="laudare" && s->regle()->id()=="sujet";
+            //if (debog) qDebug()<<s->fonction();
             if (!s->complet()) continue;
             QString ligne;
             QTextStream ts(&ligne);
@@ -685,30 +729,41 @@ int Syntaxe::groupe(int r)
     // Forte potantibus his apud Sextum ...
     // incidit de uxoribus mentio
     Mot *cour = _mots.at(r);
+    //qDebug()<<"groupe"<<cour->gr();
     // éviter les passages inutiles
     //if (cour->vu()) return ++r;
-    if (cour->vu()) return cour->grUlt()+1;
+    if (cour->vu()) 
+    {
+        //qDebug()<<"      vu, retour pour"<<_mots.at(cour->grUlt()+1)->gr();
+        return cour->grUlt()+1;
+    }
+    //qDebug()<<"cour"<<cour->gr();
     int x = 1;
     while (r + x < _nbmots)
     {
         Mot *mTest = _mots.at(r + x);
+        //qDebug()<<"    mTest"<<mTest->gr();
         // si cour orphelin, tester mTest comme super de cour
         if (cour->orphelin() && (super(mTest, cour)))
+        {
+            //qDebug()<<"        orphelin, super retour pour"<<_mots.at(r+x)->gr();
             return r + x;
+        }
         if (super(cour, mTest))
         {
-            //x = groupe(r+x)-r+1;
+            //qDebug()<<"              super cour mTest";
             x = groupe(r+x)-r;
             if ((r+x < _nbmots-1) && _mots.at(r+x)->clos()) ++x;
         }
         else
         {
-            break;
+            //qDebug()<<"              échec, ++x"<<x+1;
+            x = groupe(r+x);
+            //++x;            
         }
-        // else ++x;
-        //else x = groupe(r+x)-r;
     }
     cour->setVu();
+    //qDebug()<<"              retour ++r"<<_mots.at(r+1)->gr();
     return ++r;
 }
 
@@ -759,6 +814,8 @@ void Syntaxe::setText(QString t)
 
 bool Syntaxe::super(Mot *sup, Mot *sub)
 {
+    //bool debog = sup->gr()=="laudare" && sub->gr()=="quisque";
+    //if (debog) qDebug()<<"     Syntaxe::super"<<sup->gr()<<sub->gr();
     if (sub->clos()) return false;
     bool retour = false;
     foreach (Super *s, sup->super())
@@ -775,11 +832,21 @@ bool Syntaxe::super(Mot *sup, Mot *sub)
                     (accord(s->morpho(), sl.morpho, s->regle()->accord())) &&
                     (!(s->regle()->synt().contains('c') && virgule(sup, sub))))
                 {
-                    s->addSub(sub, l, sl);
-                    if (s->bloquant())
+                    if (!s->complet())
                     {
-                        sub->setClos();
-                        selectionne(sub, s);
+                        s->addSub(sub, l, sl);
+                        if (s->bloquant())
+                        {
+                            sub->setClos();
+                            selectionne(sub, s);
+                        }
+                    }
+                    else if (s->regle()->multiple())
+                    {
+                        // cloner s, le compléter
+                        Super *nSuper = s->copie();
+                        nSuper->addSub(sub, l, sl);
+                        sup->addSuper(nSuper);
                     }
                 }
             }
