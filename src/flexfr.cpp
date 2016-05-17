@@ -30,13 +30,14 @@ using namespace std;
 QString personne[7] = {" ", "je", "tu", "i", "nous", "vous", "ils"};
 
 /*
-QString temps[9] = {" ", "présent", "futur", "imparfait", "passé simple",
-    "passé [composé]", "futur antérieur",
-    "plus-que-parfait", "passé antérieur"};
+   QString temps[9] = {" ", "présent", "futur", "imparfait", "passé simple",
+   "passé [composé]", "futur antérieur",
+   "plus-que-parfait", "passé antérieur"};
 */
 
-QString mode[8] = {" ",         "indicatif", "subjonctif", "conditionnel",
-                   "impératif", "infinitif", "participe",  "gérondif"};
+QString mode[8] = {" ",         "indicatif",
+    "subjonctif", "conditionnel", "impératif",
+    "infinitif", "participe",  "gérondif"};
 
 // QString voix[3] = {" ", "actif", "passif"};
 
@@ -44,122 +45,125 @@ QString genre[3] = {" ", "masculin", "féminin"};
 
 QString nombre[3] = {" ", "singulier", "pluriel"};
 
-QStringList AuxEtre = QStringList() << "accourir"
-                                    << "advenir"
-                                    << "aller"
-                                    << "arriver"
-                                    << "décéder"
-                                    << "devenir"
-                                    << "échoir"
-                                    << "enlaidir"
-                                    << "entrer,"
-                                    << "intervenir"
-                                    << "monter"
-                                    << "mourir"
-                                    << "naître"
-                                    << "obvenir"
-                                    << "partir"
-                                    << "parvenir"
-                                    << "provenir"
-                                    << "redevenir"
-                                    << "rentrer"
-                                    << "reparaître"
-                                    << "repartir"
-                                    << "ressortir"
-                                    << "rester"
-                                    << "retomber"
-                                    << "retourner"
-                                    << "revenir"
-                                    << "sortir"
-                                    << "survenir"
-                                    << "tomber"
-                                    << "venir";
+QStringList AuxEtre = QStringList()
+    << "accourir"
+    << "advenir"
+    << "aller"
+    << "arriver"
+    << "décéder"
+    << "devenir"
+    << "échoir"
+    << "enlaidir"
+    << "entrer,"
+    << "intervenir"
+    << "monter"
+    << "mourir"
+    << "naître"
+    << "obvenir"
+    << "partir"
+    << "parvenir"
+    << "provenir"
+    << "redevenir"
+    << "rentrer"
+    << "reparaître"
+    << "repartir"
+    << "ressortir"
+    << "rester"
+    << "retomber"
+    << "retourner"
+    << "revenir"
+    << "sortir"
+    << "survenir"
+    << "tomber"
+    << "venir";
 
-QStringList Eter = QStringList() << "acheter"
-                                 << "racheter"
-                                 << "bégueter"
-                                 << "corseter"
-                                 << "crocheter"
-                                 << "fileter"
-                                 << "fureter"
-                                 << "haleter"
-                                 << "celer"
-                                 << "déceler"
-                                 << "receler"
-                                 << "ciseler"
-                                 << "démanteler"
-                                 << "écarteler"
-                                 << "encasteler"
-                                 << "geler"
-                                 << "dégeler"
-                                 << "congeler"
-                                 << "surgeler"
-                                 << "marteler"
-                                 << "modeler"
-                                 << "peler";
+QStringList Eter = QStringList()
+    << "acheter"
+    << "racheter"
+    << "bégueter"
+    << "corseter"
+    << "crocheter"
+    << "fileter"
+    << "fureter"
+    << "haleter"
+    << "celer"
+    << "déceler"
+    << "receler"
+    << "ciseler"
+    << "démanteler"
+    << "écarteler"
+    << "encasteler"
+    << "geler"
+    << "dégeler"
+    << "congeler"
+    << "surgeler"
+    << "marteler"
+    << "modeler"
+    << "peler";
 
-QStringList intransitifs = QStringList() << "aboutir"
-                                         << "agir"
-                                         << "appartenir"
-                                         << "bavarder"
-                                         << "boiter"
-                                         << "bondir"
-                                         << "bourdonner"
-                                         << "briller"
-                                         << "circuler"
-                                         << "consister"
-                                         << "contribuer"
-                                         << "daigner"
-                                         << "déjeuner"
-                                         << "déplaire"
-                                         << "dîner"
-                                         << "durer"
-                                         << "errer"
-                                         << "étinceler"
-                                         << "exister"
-                                         << "falloir"
-                                         << "frémir"
-                                         << "frissonner"
-                                         << "gambader"
-                                         << "grelotter"
-                                         << "grincer"
-                                         << "hésiter"
-                                         << "insister"
-                                         << "jouir"
-                                         << "luire"
-                                         << "lutter"
-                                         << "marcher"
-                                         << "mentir"
-                                         << "obéir"
-                                         << "paître"
-                                         << "parler"
-                                         << "paraître"
-                                         << "plaire"
-                                         << "pleuvoir"
-                                         << "pouvoir"
-                                         << "procéder"
-                                         << "profiter"
-                                         << "réagir"
-                                         << "résonner"
-                                         << "resplendir"
-                                         << "ressembler"
-                                         << "retentir"
-                                         << "rire"
-                                         << "ronronner"
-                                         << "rougir"
-                                         << "ruisseler"
-                                         << "sembler"
-                                         << "sévir"
-                                         << "souper"
-                                         << "sourire"
-                                         << "suffire"
-                                         << "tarder"
-                                         << "tinter"
-                                         << "tournoyer"
-                                         << "tressaillir"
-                                         << "triompher"
-                                         << "voltiger"
-                                         << "voyager";
+QStringList intransitifs = QStringList()
+    << "aboutir"
+    << "agir"
+    << "appartenir"
+    << "bavarder"
+    << "boiter"
+    << "bondir"
+    << "bourdonner"
+    << "briller"
+    << "circuler"
+    << "consister"
+    << "contribuer"
+    << "daigner"
+    << "déjeuner"
+    << "déplaire"
+    << "dîner"
+    << "durer"
+    << "errer"
+    << "étinceler"
+    << "exister"
+    << "falloir"
+    << "frémir"
+    << "frissonner"
+    << "gambader"
+    << "grelotter"
+    << "grincer"
+    << "hésiter"
+    << "insister"
+    << "jouir"
+    << "luire"
+    << "lutter"
+    << "marcher"
+    << "mentir"
+    << "obéir"
+    << "paître"
+    << "parler"
+    << "paraître"
+    << "plaire"
+    << "pleuvoir"
+    << "pouvoir"
+    << "procéder"
+    << "profiter"
+    << "réagir"
+    << "résonner"
+    << "resplendir"
+    << "ressembler"
+    << "retentir"
+    << "rire"
+    << "ronronner"
+    << "rougir"
+    << "ruisseler"
+    << "sembler"
+    << "sévir"
+    << "souper"
+    << "sourire"
+    << "suffire"
+    << "tarder"
+    << "tinter"
+    << "tournoyer"
+    << "tressaillir"
+    << "triompher"
+    << "voltiger"
+    << "voyager";
 
 const int actif = 1;
 const int passif = 2;
@@ -185,21 +189,24 @@ QChar derniere(QString s)
 {
     return s.at(s.length() - 1);
     /*
-    if (s.isEmpty ()) return '\0';
-    return s[s.length () - 1];
-    */
+       if (s.isEmpty ()) return '\0';
+       return s[s.length () - 1];
+     */
 }
 
 QString dernieres(QString s, size_t n)
 {
     return s.right(n);
     /*
-    if (s.isEmpty ()) return "";
-    return s.substr (s.length () - n, n);
-    */
+       if (s.isEmpty ()) return "";
+       return s.substr (s.length () - n, n);
+     */
 }
 
-QString deuxder(QString s) { return s.right(2); }
+QString deuxder(QString s)
+{
+    return s.right(2);
+}
 QString npremieres(QString s, int n)
 {
     return s.left(n);
@@ -249,10 +256,10 @@ bool pas_de_passif(QString inf)
 {
     if (inf.startsWith("s'") || inf.startsWith("se ")) return true;
     /*
-    inf.insert (0, 1, ','); inf.push_back (',');
-    if (npremieres (inf, 2) == "s'" || npremieres (inf, 3) == "se ") return
-    true;
-    */
+       inf.insert (0, 1, ','); inf.push_back (',');
+       if (npremieres (inf, 2) == "s'" || npremieres (inf, 3) == "se ") return
+       true;
+     */
     return (intransitifs.contains(inf) || AuxEtre.contains(inf));
 }
 
@@ -268,30 +275,31 @@ Verbe::Verbe(QString i)
 }
 
 Verbe::~Verbe() {}
-const QStringList personnes = QStringList() << "1ère"
-                                            << "2ème"
-                                            << "3ème";
-const QStringList temps = QStringList() << "présent"
-                                        << "futur"
-                                        << "imparfait"
-                                        << "parfait"  //"passé simple"
-                                        << "passé composé"
-                                        << "futur antérieur"
-                                        << "plus-que-parfait"
-                                        << "passé antérieur";
-const QStringList modes = QStringList() << "indicatif"
-                                        << "subjonctif"
-                                        << "conditionnel"
-                                        << "impératif"
-                                        << "infinitif"
-                                        << "participe"
-                                        << "gérondif";
-const QStringList voix = QStringList() << "actif"
-                                       << "passif";
-const QStringList genres = QStringList() << "masculin"
-                                         << "féminin";
-const QStringList nombres = QStringList() << "singulier"
-                                          << "pluriel";
+const QStringList personnes = QStringList()
+    << "1ère" << "2ème" << "3ème";
+const QStringList temps = QStringList()
+    << "présent"
+    << "futur"
+    << "imparfait"
+    << "parfait"  //"passé simple"
+    << "passé composé"
+    << "futur antérieur"
+    << "PQP"
+    << "passé antérieur";
+const QStringList modes = QStringList()
+    << "indicatif"
+    << "subjonctif"
+    << "conditionnel"
+    << "impératif"
+    << "infinitif"
+    << "participe"
+    << "gérondif";
+const QStringList voix = QStringList()
+    << "actif" << "passif";
+const QStringList genres = QStringList()
+    << "masculin" << "féminin";
+const QStringList nombres = QStringList()
+    << "singulier" << "pluriel";
 
 /*
 QString Verbe::conjnat(QString inf, QString morpho)
@@ -319,7 +327,11 @@ QString Verbe::conjnat(QString inf, QString morpho)
 }
 */
 
-QString Verbe::GetModele() { return modele; }
+QString Verbe::GetModele()
+{
+    return modele;
+}
+
 QString Verbe::GetDesFut(int index)
 {
     QString D[7] = {"", "ai", "as", "a", "ons", "ez", "ont"};
@@ -406,7 +418,11 @@ QString Verbe::RadFut()
     return otedernieres(inf, 1);
 }
 
-QString Verbe::RadPs() { return otedernieres(inf, 2); }
+QString Verbe::RadPs()
+{
+    return otedernieres(inf, 2);
+}
+
 // manipulations : pronoms-radical-désinence
 QString Verbe::elide(QString A, QString B)
 {
@@ -449,8 +465,16 @@ QString Verbe::IndPres(int P)
     return RD(R, D[P]);
 }
 
-QString Verbe::IndFut(int P) { return RD(RadFut(), GetDesFut(P)); }
-QString Verbe::IndImpf(int P) { return RD(RadPres(4), GetDesImpf(P)); }
+QString Verbe::IndFut(int P)
+{
+    return RD(RadFut(), GetDesFut(P));
+}
+
+QString Verbe::IndImpf(int P)
+{
+    return RD(RadPres(4), GetDesImpf(P));
+}
+
 QString Verbe::IndPs(int P)
 {
     if (RadPs().isEmpty()) return "";
@@ -475,7 +499,11 @@ QString Verbe::ImperPres(int P)
     return "";
 }
 
-QString Verbe::PartPres() { return RadPres(4) + "ant"; }
+QString Verbe::PartPres()
+{
+    return RadPres(4) + "ant";
+}
+
 QString Verbe::OteReflechi(QString F)
 {
     // éliminer le pronom réfléchi.
@@ -605,12 +633,12 @@ QString Verbe::conjugue(int P, int T, int M, int V, bool pr, int g, int n)
                 case pres:
                     return PartPres();
                 case psimple:
-                {
-                    QString res = PP();
-                    if (g == 2) res.append("e");
-                    if (n == 2 && (!res.endsWith("s"))) res.append("s");
-                    return res;
-                }
+                    {
+                        QString res = PP();
+                        if (g == 2) res.append("e");
+                        if (n == 2 && (!res.endsWith("s"))) res.append("s");
+                        return res;
+                    }
                 default:
                     break;
             }
@@ -696,15 +724,27 @@ QString TVyer::RadFut()
     return otedernieres(inf, 3) + "ier";
 }
 
-QString TVavoir::RadFut() { return "aur"; }
+QString TVavoir::RadFut()
+{
+    return "aur";
+}
+
 QString TVavoir::IndPres(int P)
 {
     QString D[7] = {"", "ai", "as", "a", "avons", "avez", "ont"};
     return D[P];
 }
 
-QString TVavoir::IndImpf(int P) { return RD("av", GetDesImpf(P)); }
-QString TVavoir::IndPs(int P) { return RD("e", TVavoir::GetDesPsU(P)); }
+QString TVavoir::IndImpf(int P)
+{
+    return RD("av", GetDesImpf(P));
+}
+
+QString TVavoir::IndPs(int P)
+{
+    return RD("e", TVavoir::GetDesPsU(P));
+}
+
 QString TVavoir::SubjPres(int P)
 {
     QString D[7] = {"", "aie", "aies", "ait", "ayons", "ayez", "aient"};
@@ -717,18 +757,42 @@ QString TVavoir::ImperPres(int P)
     return D[P];
 }
 
-QString TVavoir::PartPres() { return "ayant"; }
-QString TVavoir::PP() { return "eu"; }
-QString TVetre::RadFut() { return "ser"; }
-QString TVetre::RadPs() { return "f"; }
+QString TVavoir::PartPres()
+{
+    return "ayant";
+}
+
+QString TVavoir::PP()
+{
+    return "eu";
+}
+
+QString TVetre::RadFut()
+{
+    return "ser";
+}
+
+QString TVetre::RadPs()
+{
+    return "f";
+}
+
 QString TVetre::IndPres(int P)
 {
     QString D[7] = {"", "suis", "es", "est", "sommes", "êtes", "sont"};
     return D[P];
 }
 
-QString TVetre::IndImpf(int P) { return RD("ét", GetDesImpf(P)); }
-QString TVetre::IndPs(int P) { return RD(RadPs(), GetDesPsU(P)); }
+QString TVetre::IndImpf(int P)
+{
+    return RD("ét", GetDesImpf(P));
+}
+
+QString TVetre::IndPs(int P)
+{
+    return RD(RadPs(), GetDesPsU(P));
+}
+
 QString TVetre::SubjPres(int P)
 {
     QString D[7] = {"", "sois", "sois", "soit", "soyons", "soyez", "soient"};
@@ -743,9 +807,21 @@ QString TVetre::ImperPres(int P)
         return "";
 }
 
-QString TVetre::PartPres() { return "étant"; }
-QString TVetre::PP() { return "été"; }
-QString TValler::RadFut() { return otedernieres(inf, 5) + "ir"; }
+QString TVetre::PartPres()
+{
+    return "étant";
+}
+
+QString TVetre::PP()
+{
+    return "été";
+}
+
+QString TValler::RadFut()
+{
+    return otedernieres(inf, 5) + "ir";
+}
+
 QString TValler::IndPres(int P)
 {
     QString D[7] = {"", "vais", "vas", "va", "allons", "allez", "vont"};
@@ -774,7 +850,11 @@ QString TVcueillir::RadFut()
     return R;
 }
 
-QString TVcueillir::PP() { return otedernieres(inf, 2) + "i"; }
+QString TVcueillir::PP()
+{
+    return otedernieres(inf, 2) + "i";
+}
+
 QString TVsst::RadPres(int P)
 {
     if (P < 1 || P > 6) return "numéro de personne invalide ";
@@ -823,24 +903,48 @@ QString TVaitre::RadPres(int P)
     return npremieres(inf, pcirc) + "iss";
 }
 
-QString TVaitre::RadPs() { return otedernieres(inf, 5); }
-QString TVaitre::IndPs(int P) { return RD(RadPs(), GetDesPsU(P)); }
+QString TVaitre::RadPs()
+{
+    return otedernieres(inf, 5);
+}
+
+QString TVaitre::IndPs(int P)
+{
+    return RD(RadPs(), GetDesPsU(P));
+}
+
 QString TVaitre::PP()
 {
     // QString result = RadPs() + "u";
     return RadPs() + "u";
 }
 
-QString TVnaitre::RadPs() { return npremieres(inf, pcirc) + "qu"; }
-QString TVnaitre::PP() { return npremieres(inf, pcirc - 1) + "é"; }
-QString TVnaitre::IndPs(int P) { return RadPs() + GetDesPsI(P); }
+QString TVnaitre::RadPs()
+{
+    return npremieres(inf, pcirc) + "qu";
+}
+
+QString TVnaitre::PP()
+{
+    return npremieres(inf, pcirc - 1) + "é";
+}
+
+QString TVnaitre::IndPs(int P)
+{
+    return RadPs() + GetDesPsI(P);
+}
+
 QString TVpaitre::IndPs(int P)
 {
     if (inf == "paître") return "";
     return RadPs() + GetDesPsU(P);
 }
 
-QString TVpaitre::RadPs() { return otedernieres(inf, 5); }
+QString TVpaitre::RadPs()
+{
+    return otedernieres(inf, 5);
+}
+
 QString TVpaitre::PP()
 {
     if (inf == "paître") return "";
@@ -854,15 +958,27 @@ QString TVboire::RadPres(int P)
     return otedernieres(inf, 2) + "v";
 }
 
-QString TVboire::RadPs() { return otedernieres(inf, 4); }
-QString TVboire::IndPs(int P) { return RD(RadPs(), GetDesPsU(P)); }
+QString TVboire::RadPs()
+{
+    return otedernieres(inf, 4);
+}
+
+QString TVboire::IndPs(int P)
+{
+    return RD(RadPs(), GetDesPsU(P));
+}
+
 QString TVboire::SubjPres(int P)
 {
     if (P == 4 || P == 5) return RadPres(4) + GetDesSubjPres(P);
     return TVsst::SubjPres(P);
 }
 
-QString TVboire::PP() { return RadPs() + "u"; }
+QString TVboire::PP()
+{
+    return RadPs() + "u";
+}
+
 QString TVbouillir::RadPres(int P)
 {
     if (P > 3) return otedernieres(inf, 2);
@@ -876,17 +992,37 @@ QString TVcevoir::RadPres(int P)
     return otedernieres(inf, 6) + "çoiv";
 }
 
-QString TVcevoir::RadFut() { return otedernieres(inf, 3) + "r"; }
-QString TVcevoir::RadPs() { return otedernieres(inf, 6) + "c"; }
-QString TVcevoir::IndPs(int P) { return RD(RadPs(), GetDesPsU(P)); }
-QString TVcevoir::PP() { return RD(RadPs(), "u"); }
+QString TVcevoir::RadFut()
+{
+    return otedernieres(inf, 3) + "r";
+}
+
+QString TVcevoir::RadPs()
+{
+    return otedernieres(inf, 6) + "c";
+}
+
+QString TVcevoir::IndPs(int P)
+{
+    return RD(RadPs(), GetDesPsU(P));
+}
+
+QString TVcevoir::PP()
+{
+    return RD(RadPs(), "u");
+}
+
 QString TVchoir::RadPres(int P)
 {
     if (P < 1 || P > 6) return "numéro de personne invalide ";
     return otedernieres(inf, 1);
 }
 
-QString TVchoir::RadPs() { return otedernieres(inf, 3); }
+QString TVchoir::RadPs()
+{
+    return otedernieres(inf, 3);
+}
+
 QString TVchoir::IndPres(int P)
 {
     if (inf == "déchoir")
@@ -898,14 +1034,22 @@ QString TVchoir::IndPres(int P)
     return TVsst::IndPres(P);
 }
 
-QString TVchoir::IndPs(int P) { return RD(RadPs(), GetDesPsU(P)); }
+QString TVchoir::IndPs(int P)
+{
+    return RD(RadPs(), GetDesPsU(P));
+}
+
 QString TVchoir::SubjPres(int P)
 {
     if (inf == "échoir") return TVsst::SubjPres(P);
     return "";
 }
 
-QString TVchoir::PP() { return RadPs() + "u"; }
+QString TVchoir::PP()
+{
+    return RadPs() + "u";
+}
+
 QString TVclore::RadPres(int P)
 {
     if (P < 3) return otedernieres(inf, 2);
@@ -930,10 +1074,26 @@ QString TVclore::IndPs(int P)
     return "";
 }
 
-QString TVclore::PP() { return otedernieres(inf, 2) + "s"; }
-QString TVclure::RadPs() { return otedernieres(inf, 3); }
-QString TVclure::IndPs(int P) { return RD(RadPs(), GetDesPsU(P)); }
-QString TVclure::PP() { return RadPs() + "u"; }
+QString TVclore::PP()
+{
+    return otedernieres(inf, 2) + "s";
+}
+
+QString TVclure::RadPs()
+{
+    return otedernieres(inf, 3);
+}
+
+QString TVclure::IndPs(int P)
+{
+    return RD(RadPs(), GetDesPsU(P));
+}
+
+QString TVclure::PP()
+{
+    return RadPs() + "u";
+}
+
 QString TVconfire::RadPres(int P)
 {
     if (P < 4) return otedernieres(inf, 2);
@@ -941,11 +1101,31 @@ QString TVconfire::RadPres(int P)
     return "";
 }
 
-QString TVconfire::RadPs() { return otedernieres(inf, 3); }
-QString TVconfire::PP() { return RadPs() + "it"; }
-QString TVcourir::RadFut() { return otedernieres(inf, 2) + "r"; }
-QString TVcourir::IndPs(int P) { return RD(RadPs(), GetDesPsU(P)); }
-QString TVcourir::PP() { return RadPs() + "u"; }
+QString TVconfire::RadPs()
+{
+    return otedernieres(inf, 3);
+}
+
+QString TVconfire::PP()
+{
+    return RadPs() + "it";
+}
+
+QString TVcourir::RadFut()
+{
+    return otedernieres(inf, 2) + "r";
+}
+
+QString TVcourir::IndPs(int P)
+{
+    return RD(RadPs(), GetDesPsU(P));
+}
+
+QString TVcourir::PP()
+{
+    return RadPs() + "u";
+}
+
 QString TVcroire::RadPres(int P)
 {
     if (P == 4 || P == 5) return otedernieres(inf, 3) + "y";
@@ -958,22 +1138,38 @@ QString TVcroire::RadPs()
     return "cr";
 }
 
-QString TVcroire::IndPs(int P) { return RD(RadPs(), GetDesPsU(P)); }
-QString TVcroire::PP() { return RadPs() + "u"; }
+QString TVcroire::IndPs(int P)
+{
+    return RD(RadPs(), GetDesPsU(P));
+}
+
+QString TVcroire::PP()
+{
+    return RadPs() + "u";
+}
+
 QString TVcroitre::RadPres(int P)
 {
     if (P < 4) return otedernieres(inf, 3);
     return otedernieres(inf, 4) + "iss";
 }
 
-QString TVcroitre::RadPs() { return otedernieres(inf, 5) + "û"; }
+QString TVcroitre::RadPs()
+{
+    return otedernieres(inf, 5) + "û";
+}
+
 QString TVcroitre::IndPs(int P)
 {
     QString D[7] = {"", "s", "s", "t", "mes", "tes", "rent"};
     return RD(RadPs(), D[P]);
 }
 
-QString TVcroitre::PP() { return otedernieres(inf, 4) + "û"; }
+QString TVcroitre::PP()
+{
+    return otedernieres(inf, 4) + "û";
+}
+
 QString TVdevoir::RadPres(int P)
 {
     if (P < 4) return otedernieres(inf, 5) + "oi";
@@ -981,24 +1177,48 @@ QString TVdevoir::RadPres(int P)
     return otedernieres(inf, 5) + "oiv";
 }
 
-QString TVdevoir::RadFut() { return otedernieres(inf, 3) + "r"; }
-QString TVdevoir::RadPs() { return otedernieres(inf, 5); }
-QString TVdevoir::IndPs(int P) { return RD(RadPs(), GetDesPsU(P)); }
-QString TVdevoir::PP() { return RadPs() + "û"; }
+QString TVdevoir::RadFut()
+{
+    return otedernieres(inf, 3) + "r";
+}
+
+QString TVdevoir::RadPs()
+{
+    return otedernieres(inf, 5);
+}
+
+QString TVdevoir::IndPs(int P)
+{
+    return RD(RadPs(), GetDesPsU(P));
+}
+
+QString TVdevoir::PP()
+{
+    return RadPs() + "û";
+}
+
 QString TVdire::RadPres(int P)
 {
     if (P > 0 and P < 4) return otedernieres(inf, 2);
     return otedernieres(inf, 2) + "s";
 }
 
-QString TVdire::RadPs() { return otedernieres(inf, 3); }
+QString TVdire::RadPs()
+{
+    return otedernieres(inf, 3);
+}
+
 QString TVdire::IndPres(int P)
 {
     if (inf == "dire" && P == 5) return "dites";
     return TVsst::IndPres(P);
 }
 
-QString TVdire::PP() { return otedernieres(inf, 2) + "t"; }
+QString TVdire::PP()
+{
+    return otedernieres(inf, 2) + "t";
+}
+
 QString TVdormir::RadPres(int P)
 {
     if (P > 3) return otedernieres(inf, 2);
@@ -1011,8 +1231,16 @@ QString TVecrire::RadPres(int P)
     return otedernieres(inf, 2);
 }
 
-QString TVecrire::RadPs() { return RadPres(4); }
-QString TVecrire::PP() { return otedernieres(inf, 2) + "t"; }
+QString TVecrire::RadPs()
+{
+    return RadPres(4);
+}
+
+QString TVecrire::PP()
+{
+    return otedernieres(inf, 2) + "t";
+}
+
 QString TVfaillir::IndPres(int P)
 {
     QString D[7] = {"",         "faux",    "faux",    "faut",
@@ -1026,8 +1254,16 @@ QString TVfaire::RadPres(int P)
     return TVsst::RadPres(P);
 }
 
-QString TVfaire::RadFut() { return otedernieres(inf, 4) + "er"; }
-QString TVfaire::RadPs() { return otedernieres(inf, 4); }
+QString TVfaire::RadFut()
+{
+    return otedernieres(inf, 4) + "er";
+}
+
+QString TVfaire::RadPs()
+{
+    return otedernieres(inf, 4);
+}
+
 QString TVfaire::IndPres(int P)
 {
     if (P == 5) return otedernieres(inf, 2) + "tes";
@@ -1040,7 +1276,11 @@ QString TVfaire::SubjPres(int P)
     return otedernieres(inf, 3) + "ss" + GetDesSubjPres(P);
 }
 
-QString TVfaire::PP() { return IndPres(3); }
+QString TVfaire::PP()
+{
+    return IndPres(3);
+}
+
 QString TVfuir::RadPres(int P)
 {
     if (P == 4 || P == 5) return otedernieres(inf, 2) + "y";
@@ -1066,7 +1306,11 @@ QString TVgesir::IndPs(int P)
     return "";
 }
 
-QString TVgesir::PP() { return ""; }
+QString TVgesir::PP()
+{
+    return "";
+}
+
 QString TVindre::RadPres(int P)
 {
     if (P < 4)
@@ -1075,8 +1319,16 @@ QString TVindre::RadPres(int P)
         return otedernieres(inf, 4) + "gn";
 }
 
-QString TVindre::RadPs() { return RadPres(4); }
-QString TVindre::PP() { return IndPres(3); }
+QString TVindre::RadPs()
+{
+    return RadPres(4);
+}
+
+QString TVindre::PP()
+{
+    return IndPres(3);
+}
+
 QString TVir::RadPres(int P)
 {
     QString result = otedernieres(inf, 1);
@@ -1084,19 +1336,46 @@ QString TVir::RadPres(int P)
     return result;
 }
 
-QString TVir::IndPs(int P) { return RD(RadPs(), GetDesPsI(P)); }
-QString TVir::PP() { return otedernieres(inf, 2) + "i"; }
+QString TVir::IndPs(int P)
+{
+    return RD(RadPs(), GetDesPsI(P));
+}
+
+QString TVir::PP()
+{
+    return otedernieres(inf, 2) + "i";
+}
+
 QString TVlire::RadPres(int P)
 {
     if (P > 3) return otedernieres(inf, 2) + "s";
     return otedernieres(inf, 2);
 }
 
-QString TVlire::RadPs() { return otedernieres(inf, 3); }
-QString TVlire::IndPs(int P) { return RD(RadPs(), GetDesPsU(P)); }
-QString TVlire::PP() { return RadPs() + "u"; }
-QString TVtaire::RadPs() { return otedernieres(inf, 4); }
-QString TVtaire::IndPs(int P) { return RadPs() + GetDesPsU(P); }
+QString TVlire::RadPs()
+{
+    return otedernieres(inf, 3);
+}
+
+QString TVlire::IndPs(int P)
+{
+    return RD(RadPs(), GetDesPsU(P));
+}
+
+QString TVlire::PP()
+{
+    return RadPs() + "u";
+}
+
+QString TVtaire::RadPs()
+{
+    return otedernieres(inf, 4);
+}
+QString TVtaire::IndPs(int P)
+{
+    return RadPs() + GetDesPsU(P);
+}
+
 QString TVmettre::RadPres(int P)
 {
     if (P == 1 || P == 2) return otedernieres(inf, 3);
@@ -1104,17 +1383,37 @@ QString TVmettre::RadPres(int P)
     return otedernieres(inf, 2);
 }
 
-QString TVmettre::RadPs() { return otedernieres(inf, 5); }
-QString TVmettre::PP() { return RadPs() + "is"; }
+QString TVmettre::RadPs()
+{
+    return otedernieres(inf, 5);
+}
+
+QString TVmettre::PP()
+{
+    return RadPs() + "is";
+}
+
 QString TVmourir::RadPres(int P)
 {
     if (P == 4 || P == 5) return "mour";
     return "meur";
 }
 
-QString TVmourir::RadFut() { return otedernieres(inf, 2) + "r"; }
-QString TVmourir::IndPs(int P) { return RD(RadPs(), GetDesPsU(P)); }
-QString TVmourir::PP() { return "mort"; }
+QString TVmourir::RadFut()
+{
+    return otedernieres(inf, 2) + "r";
+}
+
+QString TVmourir::IndPs(int P)
+{
+    return RD(RadPs(), GetDesPsU(P));
+}
+
+QString TVmourir::PP()
+{
+    return "mort";
+}
+
 QString TVmouvoir::RadPres(int P)
 {
     if (P < 4) return otedernieres(inf, 6) + "eu";
@@ -1122,9 +1421,21 @@ QString TVmouvoir::RadPres(int P)
     return otedernieres(inf, 6) + "euv";
 }
 
-QString TVmouvoir::RadFut() { return otedernieres(inf, 3) + "r"; }
-QString TVmouvoir::RadPs() { return otedernieres(inf, 6); }
-QString TVmouvoir::IndPs(int P) { return RD(RadPs(), GetDesPsU(P)); }
+QString TVmouvoir::RadFut()
+{
+    return otedernieres(inf, 3) + "r";
+}
+
+QString TVmouvoir::RadPs()
+{
+    return otedernieres(inf, 6);
+}
+
+QString TVmouvoir::IndPs(int P)
+{
+    return RD(RadPs(), GetDesPsU(P));
+}
+
 QString TVmouvoir::PP()
 {
     if (inf == "mouvoir") return "mû";
@@ -1143,7 +1454,11 @@ QString TVouir::IndPs(int P)
     return D[P];
 }
 
-QString TVouir::PP() { return "ouï"; }
+QString TVouir::PP()
+{
+    return "ouï";
+}
+
 QString TVplaire::RadPres(int P)
 {
     if (P < 3) return otedernieres(inf, 2);
@@ -1151,9 +1466,21 @@ QString TVplaire::RadPres(int P)
     return otedernieres(inf, 2) + "s";
 }
 
-QString TVplaire::RadPs() { return otedernieres(inf, 4); }
-QString TVplaire::IndPs(int P) { return RD(RadPs(), GetDesPsU(P)); }
-QString TVplaire::PP() { return RadPs() + "u"; }
+QString TVplaire::RadPs()
+{
+    return otedernieres(inf, 4);
+}
+
+QString TVplaire::IndPs(int P)
+{
+    return RD(RadPs(), GetDesPsU(P));
+}
+
+QString TVplaire::PP()
+{
+    return RadPs() + "u";
+}
+
 QString TVpleuvoir::IndPres(int P)
 {
     if (P == 3) return otedernieres(inf, 4) + "t";
@@ -1161,8 +1488,16 @@ QString TVpleuvoir::IndPres(int P)
     return "";
 }
 
-QString TVpleuvoir::RadFut() { return otedernieres(inf, 3) + "r"; }
-QString TVpleuvoir::RadPs() { return otedernieres(inf, 6); }
+QString TVpleuvoir::RadFut()
+{
+    return otedernieres(inf, 3) + "r";
+}
+
+QString TVpleuvoir::RadPs()
+{
+    return otedernieres(inf, 6);
+}
+
 QString TVpleuvoir::IndPs(int P)
 {
     // if P == 3 || P == 6: return RD(RadPs(), GetDesPsU(P))
@@ -1181,33 +1516,69 @@ QString TVpleuvoir::SubjPres(int P)
     return "";
 }
 
-QString TVpleuvoir::PP() { return RadPs() + "u"; }
+QString TVpleuvoir::PP()
+{
+    return RadPs() + "u";
+}
+
 QString TVpleuvoir::conjugue(int P, int T, int M, int V, bool Pr)
 {
     if (P == 3 || P == 6) return Verbe::conjugue(P, T, M, V, P, Pr);
     return "";
 }
 
-QString TVpouvoir::RadFut() { return otedernieres(inf, 4) + "rr"; }
-QString TVpouvoir::RadPs() { return "p"; }
+QString TVpouvoir::RadFut()
+{
+    return otedernieres(inf, 4) + "rr";
+}
+
+QString TVpouvoir::RadPs()
+{
+    return "p";
+}
+
 QString TVpouvoir::IndPres(int P)
 {
     QString D[7] = {"", "peux", "peux", "peut", "pouvons", "pouvez", "peuvent"};
     return D[P];
 }
 
-QString TVpouvoir::IndPs(int P) { return RD(RadPs(), GetDesPsU(P)); }
-QString TVpouvoir::SubjPres(int P) { return "puiss" + GetDesSubjPres(P); }
-QString TVpouvoir::PP() { return "pu"; }
+QString TVpouvoir::IndPs(int P)
+{
+    return RD(RadPs(), GetDesPsU(P));
+}
+
+QString TVpouvoir::SubjPres(int P)
+{
+    return "puiss" + GetDesSubjPres(P);
+}
+
+QString TVpouvoir::PP()
+{
+    return "pu";
+}
+
 QString TVpourvoir::RadPres(int P)
 {
     if (P == 4 || P == 5) return otedernieres(inf, 2) + "y";
     return otedernieres(inf, 1);
 }
 
-QString TVpourvoir::RadPs() { return otedernieres(inf, 3); }
-QString TVpourvoir::IndPs(int P) { return RD(RadPs(), GetDesPsU(P)); }
-QString TVpourvoir::PP() { return RadPs() + "u"; }
+QString TVpourvoir::RadPs()
+{
+    return otedernieres(inf, 3);
+}
+
+QString TVpourvoir::IndPs(int P)
+{
+    return RD(RadPs(), GetDesPsU(P));
+}
+
+QString TVpourvoir::PP()
+{
+    return RadPs() + "u";
+}
+
 QString TVvoir::RadPres(int P)
 {
     if (P == 4 || P == 5) return otedernieres(inf, 2) + "y";
@@ -1223,19 +1594,47 @@ QString TVvoir::RadPres(int P)
    }
    */
 
-QString TVvoir::RadFut() { return otedernieres(inf, 3) + "err"; }
-QString TVvoir::RadPs() { return otedernieres(inf, 3); }
-QString TVvoir::PP() { return otedernieres(inf, 3) + "u"; }
-QString TVrire::RadPs() { return otedernieres(inf, 3); }
+QString TVvoir::RadFut()
+{
+    return otedernieres(inf, 3) + "err";
+}
+
+QString TVvoir::RadPs()
+{
+    return otedernieres(inf, 3);
+}
+
+QString TVvoir::PP()
+{
+    return otedernieres(inf, 3) + "u";
+}
+
+QString TVrire::RadPs()
+{
+    return otedernieres(inf, 3);
+}
+
 QString TVsavoir::RadPres(int P)
 {
     if (P < 4) return otedernieres(inf, 4) + "i";
     return otedernieres(inf, 3);
 }
 
-QString TVsavoir::RadFut() { return otedernieres(inf, 4) + "ur"; }
-QString TVsavoir::RadPs() { return otedernieres(inf, 5); }
-QString TVsavoir::IndPs(int P) { return RD(RadPs(), GetDesPsU(P)); }
+QString TVsavoir::RadFut()
+{
+    return otedernieres(inf, 4) + "ur";
+}
+
+QString TVsavoir::RadPs()
+{
+    return otedernieres(inf, 5);
+}
+
+QString TVsavoir::IndPs(int P)
+{
+    return RD(RadPs(), GetDesPsU(P));
+}
+
 QString TVsavoir::SubjPres(int P)
 {
     return otedernieres(inf, 4) + "ch" + GetDesSubjPres(P);
@@ -1248,8 +1647,16 @@ QString TVsavoir::ImperPres(int P)
     return "";
 }
 
-QString TVsavoir::PartPres() { return otedernieres(inf, 4) + "chant"; }
-QString TVsavoir::PP() { return RadPs() + "u"; }
+QString TVsavoir::PartPres()
+{
+    return otedernieres(inf, 4) + "chant";
+}
+
+QString TVsavoir::PP()
+{
+    return RadPs() + "u";
+}
+
 QString TVservir::RadPres(int P)
 {
     if (P < 4) return otedernieres(inf, 3);
@@ -1263,27 +1670,63 @@ QString TVquerir::RadPres(int P)
     return otedernieres(inf, 2);
 }
 
-QString TVquerir::PP() { return otedernieres(inf, 4) + "is"; }
-QString TVquerir::RadPs() { return otedernieres(inf, 4); }
-QString TVquerir::IndPs(int P) { return RD(RadPs(), GetDesPsI(P)); }
+QString TVquerir::PP()
+{
+    return otedernieres(inf, 4) + "is";
+}
+
+QString TVquerir::RadPs()
+{
+    return otedernieres(inf, 4);
+}
+
+QString TVquerir::IndPs(int P)
+{
+    return RD(RadPs(), GetDesPsI(P));
+}
+
 QString TVsoudre::RadPres(int P)
 {
     if (P < 4) return otedernieres(inf, 3);
     return otedernieres(inf, 4) + "lv";
 }
 
-QString TVsoudre::RadPs() { return otedernieres(inf, 4) + ""; }
-QString TVsoudre::IndPs(int P) { return RD(RadPs(), GetDesPsU(P)); }
-QString TVsoudre::PP() { return RadPs() + "u"; }
+QString TVsoudre::RadPs()
+{
+    return otedernieres(inf, 4) + "";
+}
+
+QString TVsoudre::IndPs(int P)
+{
+    return RD(RadPs(), GetDesPsU(P));
+}
+
+QString TVsoudre::PP()
+{
+    return RadPs() + "u";
+}
+
 QString TVsuivre::RadPres(int P)
 {
     if (P < 4) return otedernieres(inf, 3);
     return otedernieres(inf, 2);
 }
 
-QString TVvivre::RadPs() { return otedernieres(inf, 4) + "éc"; }
-QString TVvivre::IndPs(int P) { return RadPs() + GetDesPsU(P); }
-QString TVvivre::PP() { return RadPs() + "u"; }
+QString TVvivre::RadPs()
+{
+    return otedernieres(inf, 4) + "éc";
+}
+
+QString TVvivre::IndPs(int P)
+{
+    return RadPs() + GetDesPsU(P);
+}
+
+QString TVvivre::PP()
+{
+    return RadPs() + "u";
+}
+
 QString TVsurseoir::RadPres(int P)
 {
     QString F = "surso";
@@ -1291,16 +1734,32 @@ QString TVsurseoir::RadPres(int P)
     return F + "i";
 }
 
-QString TVsurseoir::RadPs() { return otedernieres(inf, 4); }
+QString TVsurseoir::RadPs()
+{
+    return otedernieres(inf, 4);
+}
+
 QString TVsurseoir::IndPs(int P)
 {
     if (inf == "seoir") return "";
     return TVsst::IndPs(P);
 }
 
-QString TVsurseoir::PP() { return IndPs(1); }
-QString TVvenir::RadFut() { return otedernieres(inf, 4) + "iendr"; }
-QString TVvenir::circonflexe() { return otedernieres(inf, 4) + "în"; }
+QString TVsurseoir::PP()
+{
+    return IndPs(1);
+}
+
+QString TVvenir::RadFut()
+{
+    return otedernieres(inf, 4) + "iendr";
+}
+
+QString TVvenir::circonflexe()
+{
+    return otedernieres(inf, 4) + "în";
+}
+
 QString TVvenir::RadPres(int P)
 {
     if (P < 4) return otedernieres(inf, 4) + "ien";
@@ -1314,7 +1773,10 @@ QString TVvenir::IndPs(int P)
     return otedernieres(inf, 4) + D[P];
 }
 
-QString TVvenir::PP() { return otedernieres(inf, 2) + "u"; }
+QString TVvenir::PP()
+{
+    return otedernieres(inf, 2) + "u";
+}
 // ne pas permuter les 2 suivants
 
 QString TVvetir::RadPres(int P)
@@ -1323,14 +1785,21 @@ QString TVvetir::RadPres(int P)
     return TVsst::RadPres(P);
 }
 
-QString TVvetir::PP() { return RadPs() + "u"; }
+QString TVvetir::PP()
+{
+    return RadPs() + "u";
+}
+
 QString TVtir::RadPres(int P)
 {
     if (P < 4) return otedernieres(inf, 3);
     return TVsst::RadPres(P);
 }
 
-QString TVtir::IndPs(int P) { return RD(RadPs(), GetDesPsI(P)); }
+QString TVtir::IndPs(int P)
+{
+    return RD(RadPs(), GetDesPsI(P));
+}
 // ne pas permuter les 2 précédents
 
 QString TVuire::RadPres(int P)
@@ -1339,7 +1808,11 @@ QString TVuire::RadPres(int P)
     return TVsst::RadPres(P);
 }
 
-QString TVuire::RadPs() { return RadPres(4); }
+QString TVuire::RadPs()
+{
+    return RadPres(4);
+}
+
 QString TVuire::PP()
 {
     if (inf == "luire" || inf == "nuire") return otedernieres(inf, 2);
@@ -1352,8 +1825,16 @@ QString TVtraire::RadPres(int P)
     return otedernieres(inf, 2);
 }
 
-QString TVtraire::RadPs() { return ""; }
-QString TVtraire::PP() { return IndPres(3); }
+QString TVtraire::RadPs()
+{
+    return "";
+}
+
+QString TVtraire::PP()
+{
+    return IndPres(3);
+}
+
 QString TVvaincre::RadPres(int P)
 {
     if (P < 4) return otedernieres(inf, 2);
@@ -1366,19 +1847,33 @@ QString TVvaincre::IndPres(int P)
     return TVsst::IndPres(P);
 }
 
-QString TVvaincre::RadPs() { return RadPres(4); }
-QString TVvaincre::PP() { return otedernieres(inf, 3) + "cu"; }
+QString TVvaincre::RadPs()
+{
+    return RadPres(4);
+}
+
+QString TVvaincre::PP()
+{
+    return otedernieres(inf, 3) + "cu";
+}
 // fin des héritiers de TVsst
 
 // TVxxt, classe abstraite
-QString TVxxt::RadPs() { return otedernieres(inf, 3); }
+QString TVxxt::RadPs()
+{
+    return otedernieres(inf, 3);
+}
+
 QString TVxxt::IndPres(int P)
 {
     if (P < 3) return RadPres(P) + "x";
     return TVsst::IndPres(P);
 }
 
-QString TVxxt::IndPs(int P) { return RD(RadPs(), GetDesPsU(P)); }
+QString TVxxt::IndPs(int P)
+{
+    return RD(RadPs(), GetDesPsU(P));
+}
 //  héritiers de TVxxt
 
 QString TVvaloir::RadPres(int P)
@@ -1387,14 +1882,22 @@ QString TVvaloir::RadPres(int P)
     return otedernieres(inf, 3);
 }
 
-QString TVvaloir::RadFut() { return otedernieres(inf, 4) + "udr"; }
+QString TVvaloir::RadFut()
+{
+    return otedernieres(inf, 4) + "udr";
+}
+
 QString TVvaloir::SubjPres(int P)
 {
     if (P == 4 || P == 5) return otedernieres(inf, 3) + GetDesSubjPres(P);
     return RD(otedernieres(inf, 4) + "ill", GetDesSubjPres(P));
 }
 
-QString TVvaloir::PP() { return RadPs() + "u"; }
+QString TVvaloir::PP()
+{
+    return RadPs() + "u";
+}
+
 QString TVfalloir::IndPres(int P)
 {
     if (P == 3) return "faut";
@@ -1432,7 +1935,11 @@ QString TVvouloir::RadPres(int P)
     return otedernieres(inf, 6) + "eul";
 }
 
-QString TVvouloir::RadFut() { return otedernieres(inf, 4) + "dr"; }
+QString TVvouloir::RadFut()
+{
+    return otedernieres(inf, 4) + "dr";
+}
+
 QString TVvouloir::SubjPres(int P)
 {
     QString D = GetDesSubjPres(P);
@@ -1444,7 +1951,11 @@ QString TVvouloir::SubjPres(int P)
     return R + D;
 }
 
-QString TVvouloir::PP() { return RadPs() + "u"; }
+QString TVvouloir::PP()
+{
+    return RadPs() + "u";
+}
+
 QString TVdre::IndPres(int P)
 {
     QString D;
@@ -1457,8 +1968,16 @@ QString TVdre::IndPres(int P)
     return RD(RadPres(P), D);
 }
 
-QString TVdre::IndPs(int P) { return RD(RadPs(), GetDesPsI(P)); }
-QString TVdre::PP() { return RadPs() + "u"; }
+QString TVdre::IndPs(int P)
+{
+    return RD(RadPs(), GetDesPsI(P));
+}
+
+QString TVdre::PP()
+{
+    return RadPs() + "u";
+}
+
 QString TVasseoir::RadPres(int P)
 {
     if (P < 4) return otedernieres(inf, 4) + "ie";
@@ -1470,7 +1989,11 @@ QString TVasseoir::IndImpf(int P)
     return RD(otedernieres(inf, 3) + "y", GetDesImpf(P));
 }
 
-QString TVasseoir::RadPs() { return otedernieres(inf, 4); }
+QString TVasseoir::RadPs()
+{
+    return otedernieres(inf, 4);
+}
+
 QString TVasseoir::IndPres(int P)
 {
     QString D;
@@ -1483,22 +2006,38 @@ QString TVasseoir::IndPres(int P)
     return RD(RadPres(P), D);
 }
 
-QString TVasseoir::PP() { return RadPs() + "is"; }
+QString TVasseoir::PP()
+{
+    return RadPs() + "is";
+}
+
 QString TVcoudre::RadPres(int P)
 {
     if (P < 4) return TVdre::RadPres(P);
     return otedernieres(inf, 3) + "s";
 }
 
-QString TVcoudre::RadPs() { return RadPres(4); }
+QString TVcoudre::RadPs()
+{
+    return RadPres(4);
+}
+
 QString TVmoudre::RadPres(int P)
 {
     if (P < 4) return TVdre::RadPres(P);
     return otedernieres(inf, 3) + "";
 }
 
-QString TVmoudre::RadPs() { return RadPres(4); }
-QString TVmoudre::IndPs(int P) { return RD(RadPs(), GetDesPsU(P)); }
+QString TVmoudre::RadPs()
+{
+    return RadPres(4);
+}
+
+QString TVmoudre::IndPs(int P)
+{
+    return RD(RadPs(), GetDesPsU(P));
+}
+
 QString TVprendre::RadPres(int P)
 {
     if (P < 4) return otedernieres(inf, 2);
@@ -1506,7 +2045,11 @@ QString TVprendre::RadPres(int P)
     return otedernieres(inf, 3) + "n";
 }
 
-QString TVprendre::RadPs() { return otedernieres(inf, 5); }
+QString TVprendre::RadPs()
+{
+    return otedernieres(inf, 5);
+}
+
 QString TVprendre::SubjPres(int P)
 {
     QString D = GetDesSubjPres(P);
@@ -1515,22 +2058,38 @@ QString TVprendre::SubjPres(int P)
     return R + D;
 }
 
-QString TVprendre::PP() { return IndPs(1); }
-QString TVouvrir::IndPs(int P) { return RD(RadPs(), GetDesPsI(P)); }
+QString TVprendre::PP()
+{
+    return IndPs(1);
+}
+
+QString TVouvrir::IndPs(int P)
+{
+    return RD(RadPs(), GetDesPsI(P));
+}
+
 QString TVouvrir::ImperPres(int P)
 {
     if (P == 2) return otedernieres(inf, 2) + "e";
     return Verbe::ImperPres(P);
 }
 
-QString TVouvrir::PP() { return otedernieres(inf, 3) + "ert"; }
+QString TVouvrir::PP()
+{
+    return otedernieres(inf, 3) + "ert";
+}
+
 QString TVbattre::RadPres(int P)
 {
     if (P == 3) return otedernieres(inf, 4);
     return TVtir::RadPres(P);
 }
 
-QString TVbattre::PP() { return RadPs() + "u"; }
+QString TVbattre::PP()
+{
+    return RadPs() + "u";
+}
+
 QString Verbe::compose(QString A, int P, int T, int M, int V)
 {
     QString partp = PP();
@@ -1859,17 +2418,24 @@ Nom::Nom(QString s)
     modele = "Nom";
 }
 
-Nom::~Nom() {}
-QString Nom::getModele() { return modele; }
+Nom::~Nom()
+{}
+
+QString Nom::getModele()
+{
+    return modele;
+}
+
 QString Nom::pluriel()
 {
-    const QStringList als = QStringList() << "bal"
-                                          << "cal"
-                                          << "carnaval"
-                                          << "chacal"
-                                          << "festival"
-                                          << "récital"
-                                          << "régal";
+    const QStringList als = QStringList()
+        << "bal"
+        << "cal"
+        << "carnaval"
+        << "chacal"
+        << "festival"
+        << "récital"
+        << "régal";
 
     if (sing == "oeil" || sing == "œil")
         return "yeux";
@@ -1878,10 +2444,26 @@ QString Nom::pluriel()
     return sing + "s";
 }
 
-QString NomSXZ::pluriel() { return sing; }
-QString NomAL::pluriel() { return otedernieres(sing, 2) + "aux"; }
-QString NomAIL::pluriel() { return otedernieres(sing, 3) + "aux"; }
-QString NomAUEU::pluriel() { return sing + "x"; }
+QString NomSXZ::pluriel()
+{
+    return sing;
+}
+
+QString NomAL::pluriel()
+{
+    return otedernieres(sing, 2) + "aux";
+}
+
+QString NomAIL::pluriel()
+{
+    return otedernieres(sing, 3) + "aux";
+}
+
+QString NomAUEU::pluriel()
+{
+    return sing + "x";
+}
+
 Nom *nom_m(QString n)
 {
     QString als[11] = {"bal",      "cal", "carnaval", "cérémonial", "chacal",
@@ -1925,8 +2507,14 @@ Adjectif::Adjectif(QString a)
     modele = "Adjectif";
 }
 
-Adjectif::~Adjectif() {}
-QString Adjectif::getModele() { return modele; }
+Adjectif::~Adjectif()
+{}
+
+QString Adjectif::getModele()
+{
+    return modele;
+}
+
 QString Adjectif::feminin()
 {
     QString mascs[13] = {"bénin", "doux",   "faux", "favori", "fou",
@@ -1966,9 +2554,21 @@ QString Adjectif::accorde(int g, int n)
 // irrégularités :
 // gu - guë
 
-QString Gras::feminin() { return graphie + "se"; }
-QString Aigu::feminin() { return graphie + "ë"; }
-QString ElEil::feminin() { return graphie + "le"; }
+QString Gras::feminin()
+{
+    return graphie + "se";
+}
+
+QString Aigu::feminin()
+{
+    return graphie + "ë";
+}
+
+QString ElEil::feminin()
+{
+    return graphie + "le";
+}
+
 QString Al::pluriel(bool fem)
 {
     if (fem) return Adjectif::pluriel(1);
@@ -1994,9 +2594,21 @@ QString Eux::feminin()
     return otedernieres(graphie, 1) + "se";
 }
 
-QString El::feminin() { return otedernieres(graphie, 2) + "elle"; }
-QString Er::feminin() { return otedernieres(graphie, 2) + "ère"; }
-QString AdjF::feminin() { return otedernieres(graphie, 1) + "ve"; }
+QString El::feminin()
+{
+    return otedernieres(graphie, 2) + "elle";
+}
+
+QString Er::feminin()
+{
+    return otedernieres(graphie, 2) + "ère";
+}
+
+QString AdjF::feminin()
+{
+    return otedernieres(graphie, 1) + "ve";
+}
+
 QString AdjC::feminin()
 {
     QString mascs[4] = {"caduc", "grec", "public", "sec"};
@@ -2006,18 +2618,29 @@ QString AdjC::feminin()
     return graphie + "he";
 }
 
-QString Eau::feminin() { return otedernieres(graphie, 2) + "lle"; }
+QString Eau::feminin()
+{
+    return otedernieres(graphie, 2) + "lle";
+}
+
 QString Et::feminin()
 {
-    QString liste[10] = {"complet",   "concret",   "désuet",  "discret",
-                         "incomplet", "indiscret", "inquiet", "quiet",
-                         "replet",    "secret"};
+    QString liste[10] =
+    {
+        "complet",   "concret",   "désuet",  "discret",
+        "incomplet", "indiscret", "inquiet", "quiet",
+        "replet",    "secret"
+    };
     if (index_t(liste, graphie, 9) > -1)
         return otedernieres(graphie, 2) + "ète";
     return graphie + "te";
 }
 
-QString Mon::feminin() { return otedernieres(graphie, 2) + "a"; }
+QString Mon::feminin()
+{
+    return otedernieres(graphie, 2) + "a";
+}
+
 QString Mon::pluriel(bool fem)
 {
     if (fem)
@@ -2026,7 +2649,11 @@ QString Mon::pluriel(bool fem)
     return otedernieres(graphie, 2) + "es";
 }
 
-QString Bon::feminin() { return graphie + "ne"; }
+QString Bon::feminin()
+{
+    return graphie + "ne";
+}
+
 QString Tout::pluriel(bool fem)
 {
     if (fem) return "toutes";
@@ -2110,10 +2737,10 @@ QString accorde(QString adj, QString m)
         inst = new Et(adj);
     else if (adj == "las" || adj == "gras" || adj == "gros")
         inst = new Gras(adj);
-    else if ((QStringList() << "mon"
-                            << "ton"
-                            << "son")
-                 .contains(adj))
+    else if ((QStringList()
+              << "mon"
+              << "ton"
+              << "son").contains(adj))
         inst = new Mon(adj);
     else if (IsLast("ien", adj) || IsLast("on", adj) || IsLast("yen", adj))
         inst = new Bon(adj);
