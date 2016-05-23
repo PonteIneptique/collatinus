@@ -670,21 +670,22 @@ QString Syntaxe::analyse(QString t, int p)
 
 QString Syntaxe::liens(Mot *m)
 {
+    //bool debog = m->gr()=="quisque";
     QStringList lignes;
     // superordonné
     for (int i=0;i<_mots.count();++i)
     {
         if (i==m->rang()) continue;
         Mot *sup = _mots.at(i);
+        //if (debog) qDebug()<<"boucle i ds Syntaxe::liens"<<i<<sup->gr();
         foreach(Super *s, sup->super())
         {
-            //bool debog=s->mot()->gr()=="laudare" && s->regle()->id()=="sujet";
-            //if (debog) qDebug()<<s->fonction();
             if (!s->complet()) continue;
             QString ligne;
             QTextStream ts(&ligne);
             if (s->motSub() == m)
             {
+                //if (debog) qDebug()<<"super trouvé:"<<s->fonction();
                 ts << s->fonction()
                     << " <span style=\"color:blue;font-style:italic;\">" 
                     << tr(s->regle(), s->lemme(),
@@ -742,11 +743,12 @@ int Syntaxe::groupe(int r)
     while (r + x < _nbmots)
     {
         Mot *mTest = _mots.at(r + x);
-        //qDebug()<<"    mTest"<<mTest->gr();
+        //bool debog = cour->gr()=="quisque" && mTest->gr()=="laudare"; 
+        //if (debog) qDebug()<<cour->gr()<<mTest->gr();
         // si cour orphelin, tester mTest comme super de cour
         if (cour->orphelin() && (super(mTest, cour)))
         {
-            //qDebug()<<"        orphelin, super retour pour"<<_mots.at(r+x)->gr();
+            //if (debog) qDebug()<<"   OK";
             return r + x;
         }
         if (super(cour, mTest))
