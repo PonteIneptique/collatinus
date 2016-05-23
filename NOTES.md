@@ -33,7 +33,6 @@ Requis :
   ou après avoir installé un raccourci.
 
 ## BOGUES ET PROBLÈMES
-- Syntaxe : sujet, verbe : la virgule ne bloque pas le lien.
 - Flexion de multus et ses degrés allogènes (plus, plurimus)
 
 ## À FAIRE :
@@ -64,8 +63,11 @@ Requis :
   un hyperlien vers plus, pluris, et vers plurimus, a, um.
 
 ## Branche syntaxe
-   * mardi 17 mai 2016 -
-     vérifier Super::addSub : un return si le sub est occupé
+   * Données de lemmes.fr : Le module syntaxe a besoin
+        - d'identifier la traduction d'un lemme en fonction de
+            son pos.
+        - de pouvoir isoler les traductions (normalisation du séparateur)
+        - de distinguer traduction et commentaire.
    * 10 mai 2016 - Certains liens, surtout dans les
      expressions reprises de C10, ont plus de deux éléments :
      . incidit mentio de : 3
@@ -81,11 +83,6 @@ Requis :
      L'ablatif absolu en est un autre exemple :
      . super:verbe
      . sub:ablAbs
-
-   * 9 mai - Dans le texte d'exemple l'analyse
-     syntaxique de /inde/ provoque une erreur de
-     segmentation.
-     expressions de C10 dans la base syntaxique de C11.
    * But : ne donner que le(s) père(s) du mot cliqué, avec traduction.
    * Arbre en arcs :
      Forte potantibus his apud Sextum Tarquinium, ubi et Collatinus cenabat Tarquinius, Egeri filius, incidit de uxoribus mentio.  
