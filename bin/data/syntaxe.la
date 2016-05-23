@@ -117,13 +117,10 @@ tr:<sub> <super>
 accord:n
 
 id:sujetSubj
+pere:sujet
 doc:un nom ou un pronom au nominatif peut être sujet d'un verbe au subjonctif
-f:<sub> ѕujet du verbe <super>
 super::v:subj
 sub::n,p:nomin
-synt:cu
-tr:<sub> <super>
-accord:n
 
 id:sujetInfNarr
 pere:sujet
