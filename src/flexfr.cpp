@@ -2323,6 +2323,8 @@ QString conjugue(QString inf, int P, int T, int M, int V, bool Pr, int g, int n)
 
 QString conjnat(QString inf, QString morpho)
 {
+    inf = inf.simplified();
+    if (inf.isEmpty()) return "requête vide, conjugaison impossible";
     int p = 0;
     int nb = 0;
     int t = 0;
