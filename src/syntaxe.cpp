@@ -139,6 +139,7 @@ RegleS::RegleS(QStringList lignes, QObject *parent)
                         _accord = rp->accord();
                         _f      = rp->f();
                         _synt   = rp->synt();
+                        _tr     = rp->tr();
                         // sub et super non clonés !
                     }
                 }
@@ -670,14 +671,14 @@ QString Syntaxe::analyse(QString t, int p)
 
 QString Syntaxe::liens(Mot *m)
 {
-    //bool debog = m->gr()=="quisque";
+    // bool debog = m->gr()=="quisque";
     QStringList lignes;
     // superordonné
     for (int i=0;i<_mots.count();++i)
     {
         if (i==m->rang()) continue;
         Mot *sup = _mots.at(i);
-        //if (debog) qDebug()<<"boucle i ds Syntaxe::liens"<<i<<sup->gr();
+        // if (debog) qDebug()<<"boucle i ds Syntaxe::liens"<<i<<sup->gr();
         foreach(Super *s, sup->super())
         {
             if (!s->complet()) continue;
@@ -685,7 +686,7 @@ QString Syntaxe::liens(Mot *m)
             QTextStream ts(&ligne);
             if (s->motSub() == m)
             {
-                //if (debog) qDebug()<<"super trouvé:"<<s->fonction();
+                // if (debog) qDebug()<<"super trouvé:"<<s->fonction();
                 ts << s->fonction()
                     << " <span style=\"color:blue;font-style:italic;\">" 
                     << tr(s->regle(), s->lemme(),

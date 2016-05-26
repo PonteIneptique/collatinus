@@ -2325,14 +2325,34 @@ QString conjnat(QString inf, QString morpho)
 {
     inf = inf.simplified();
     if (inf.isEmpty()) return "requête vide, conjugaison impossible";
+    // la traduction d'un verbe est souvent un groupe de plusieurs mots
+    // Un verbe est souvent traduit par plusieurs mots.
+    // praesto:l'emporter sur, être garant, fournir (praestat : imp. : il vaut mieux)
+    // Il faut pouvoir trouver quel est le verbe, ne
+    // conjuguer que lui, et le remettre à sa place.
+    QStringList mots = inf.split(QRegExp("\\W"));
+    int im = 0;
+    QString verbe="";
+    for (int i = 0; i<mots.count();++i)
+    {
+        QString m = mots.at(i);
+        if (m.length() > 3 
+            && (m.endsWith("re") || m.endsWith("r")))
+        {
+            verbe = m;
+            im = i;
+        }
+    }
+    if (verbe.isEmpty())
+        return inf+" verbe non identifiable";
     int p = 0;
     int nb = 0;
     int t = 0;
     int m = 0;
     int v = 0;
     int g = 0;
-
     int n = 0;
+
     QStringList lm = morpho.split(' ');
     foreach (QString trait, lm)
     {
@@ -2374,7 +2394,8 @@ QString conjnat(QString inf, QString morpho)
         }
     }
     int pnb = p * nb;
-    return conjugue(inf, pnb, t, m, v, (p != 3), g, nb);
+    mots[im] = conjugue(verbe, pnb, t, m, v, (p != 3), g, nb); 
+    return mots.join(" ");
 }
 
 QString tableau(QString verbe, int voix)
