@@ -63,13 +63,17 @@ Requis :
   un hyperlien vers plus, pluris, et vers plurimus, a, um.
 
 ## Branche syntaxe
+   * vendredi 27 mai 2016 
+     Il devient nécessaire de donner un poids au règles : 
+     opus est -> l'expression annule tout autre lien syntaxique
+     entre les deux mots.
    * Données de lemmes.fr : Le module syntaxe a besoin
         - d'identifier la traduction d'un lemme en fonction de
             son pos.
         - de pouvoir isoler les traductions (normalisation du séparateur)
         - de distinguer traduction et commentaire.
    * 10 mai 2016 - Certains liens, surtout dans les
-     expressions reprises de C10, ont plus de deux éléments :
+     **expressions** reprises de C10, ont plus de deux éléments :
      . incidit mentio de : 3
      . non solum ... sed etiam : 4.
      il faudrait donc que le principe de lien
