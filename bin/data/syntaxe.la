@@ -128,14 +128,6 @@ doc:Le sujet de l'infinitif de narration, quelquefois exprimé, est au nominatif
 super::v:inf
 sub::n,p:nomin
 
-! expression
-id:inciditMentio
-pere:sujet
-doc:incidit mentio = la conversation vient
-super:incido:v:indic 3 sing actif
-sub:mentio:n:nomin
-tr:la conversation vient (vint)
-
 id:sujetInfNarr
 doc:un nom ou un pronom au nominatif peut être sujet d'un verbe à l'infinitif de narration
 f:<sub> ѕujet du verbe <super>
@@ -143,6 +135,21 @@ super::v:infin
 sub::n,p:nomin
 synt:cu
 tr:<sub> de <super>
+
+! expressions
+id:inciditMentio
+pere:sujet
+doc:incidit mentio = la conversation vient
+super:incido:v:indic 3 sing actif
+sub:mentio:n:nomin
+tr:la conversation vient (vint)
+
+id:opusEst
+pere:sujet
+doc:opus est + ablatif : il faut qqch, qqch est nécessaire
+super:sum:v:
+sub:opus:n:nomin
+tr:il faut (fallait, fallut)
 
 id:sujetSubj
 doc:un nom ou un pronom au nominatif peut être sujet d'un verbe au subjonctif
