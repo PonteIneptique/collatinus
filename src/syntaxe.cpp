@@ -320,16 +320,12 @@ Super* Super::copie()
  */
 bool Super::estSub(Lemme *l, QString morpho, bool ante)
 {
-    //bool debog=_mot->gr()=="laudare"; // && l->gr()=="quisque" && _regle->id()=="sujet";
-    //if (debog) qDebug()<<_mot->gr()<<"estsub"<<l->gr()<<"morpho"<<morpho<<"ante"<<ante;
     if (!_regle->estSub(l, morpho, ante))
     {
-        //if (debog) qDebug()<<"      !regle->estsu l"<<l->pos();
         return false;
     }
     if (_motSub != NULL && _regle->synt().contains('u'))
     {
-        //if (debog) qDebug()<<"      contains u";
         return false;
     }
     return true;
@@ -389,8 +385,10 @@ QString Super::traduction()
  * \fn Mot::Mot(QString g)
  * \brief Créateur de la classe Mot.
  */
-Mot::Mot(QString g)
+Mot::Mot(QString g, QObject *parent)
 {
+    if (parent != 0)
+        syntaxe = qobject_cast<Syntaxe*>(parent);
     _gr = g;
     _ponctD = '\0';
     _ponctG = '\0';
@@ -465,9 +463,16 @@ MapLem Mot::morphos()
 
 bool Mot::orphelin()
 {
+    /*
     foreach (Super *s, _super)
-        if (s->motSub() != NULL) return false;
+        if (s->motSub() != NULL) 
+        {
+            if (_gr=="uigor") qDebug()<<"père uigor"<<s->motSub()->gr();
+            return false;
+        }
     return true;
+    */
+    return syntaxe->orphelin(this);
 }
 
 QString Mot::ponctD()
@@ -671,14 +676,12 @@ QString Syntaxe::analyse(QString t, int p)
 
 QString Syntaxe::liens(Mot *m)
 {
-    // bool debog = m->gr()=="quisque";
     QStringList lignes;
     // superordonné
     for (int i=0;i<_mots.count();++i)
     {
         if (i==m->rang()) continue;
         Mot *sup = _mots.at(i);
-        // if (debog) qDebug()<<"boucle i ds Syntaxe::liens"<<i<<sup->gr();
         foreach(Super *s, sup->super())
         {
             if (!s->complet()) continue;
@@ -686,7 +689,6 @@ QString Syntaxe::liens(Mot *m)
             QTextStream ts(&ligne);
             if (s->motSub() == m)
             {
-                // if (debog) qDebug()<<"super trouvé:"<<s->fonction();
                 ts << s->fonction()
                     << " <span style=\"color:blue;font-style:italic;\">" 
                     << tr(s->regle(), s->lemme(),
@@ -731,42 +733,30 @@ int Syntaxe::groupe(int r)
     // Forte potantibus his apud Sextum ...
     // incidit de uxoribus mentio
     Mot *cour = _mots.at(r);
-    //qDebug()<<"groupe"<<cour->gr();
     // éviter les passages inutiles
-    //if (cour->vu()) return ++r;
     if (cour->vu()) 
     {
-        //qDebug()<<"      vu, retour pour"<<_mots.at(cour->grUlt()+1)->gr();
         return cour->grUlt()+1;
     }
-    //qDebug()<<"cour"<<cour->gr();
     int x = 1;
     while (r + x < _nbmots)
     {
         Mot *mTest = _mots.at(r + x);
-        //bool debog = cour->gr()=="quisque" && mTest->gr()=="laudare"; 
-        //if (debog) qDebug()<<cour->gr()<<mTest->gr();
-        // si cour orphelin, tester mTest comme super de cour
-        if (cour->orphelin() && (super(mTest, cour)))
+        if (orphelin(cour) && (super(mTest, cour)))
         {
-            //if (debog) qDebug()<<"   OK";
             return r + x;
         }
         if (super(cour, mTest))
         {
-            //qDebug()<<"              super cour mTest";
             x = groupe(r+x)-r;
             if ((r+x < _nbmots-1) && _mots.at(r+x)->clos()) ++x;
         }
         else
         {
-            //qDebug()<<"              échec, ++x"<<x+1;
             x = groupe(r+x);
-            //++x;            
         }
     }
     cour->setVu();
-    //qDebug()<<"              retour ++r"<<_mots.at(r+1)->gr();
     return ++r;
 }
 
@@ -817,8 +807,6 @@ void Syntaxe::setText(QString t)
 
 bool Syntaxe::super(Mot *sup, Mot *sub)
 {
-    //bool debog = sup->gr()=="laudare" && sub->gr()=="quisque";
-    //if (debog) qDebug()<<"     Syntaxe::super"<<sup->gr()<<sub->gr();
     if (sub->clos()) return false;
     bool retour = false;
     foreach (Super *s, sup->super())

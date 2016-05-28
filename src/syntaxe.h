@@ -182,10 +182,11 @@ class Mot : public QObject
     int             _rang;
     QList<RegleS *> _rSub;
     QList<Super *>  _super;
+    Syntaxe         *syntaxe;
     bool            _vu;
 
    public:
-    Mot(QString g);
+    Mot(QString g, QObject *parent=0);
     void           addRSub(RegleS *r);
     void           addSuper(RegleS *r, Lemme *l, QString m);
     void           addSuper(Super *s);
