@@ -6,6 +6,7 @@
 ! pere:id_de_la_règle_parente  // héritage, champ facultatif
 ! super:lemme1,lemme2,...,lemmeN:pos1 pos2 posn:trait_morpho trait morpho trait morpho
 ! sub:lemme1,lemme2,...,lemmeN:trait_morpho trait morpho trait morpho
+! sub:g:id : le sub doit être lui-même super d'un autre sub par la règle d'id id.
 ! accord:cgnp                  // une ou plusieurs des caractères c(as) g(enre) n(ombre) p(ersonne)
 ! sens:> ou <                  // la flèche est orientée du père au fils. > = père avant le fils
 ! synt:[chaine]                // une suite de caractères voir les codes synt
@@ -19,6 +20,21 @@
 ! Codes synt : b = bloquant : on ne sort pas du groupe tant que sub n'est pas trouvé à droite. 
 !              c = contigu : si <super> et <sub> se suivent immédiatement, ponctuation interdite
 !              u = unique : le super n'a qu'un sub utilisant cette règle
+!
+
+id:abl1
+doc:Un nom à l'ablatif, construit directement (sans préposition) exprime le moyen, la manière, le lieu ou le temps.
+f:<sub> compl. circ. de <super>
+super::v:
+sub::n:abl
+tr:<super> par/sur/dans/en/de <sub>
+
+id:abl2
+doc:Un ablatif absolu est le complément d'un verbe.
+f:<sub> ablatif absolu subordonné au v. <super>
+super::v:
+sub:g:ablAbs
+tr:<super> <sub>
 
 id:ablAbs
 doc:L'ablatif absolu est le groupe formé par un participe à l'ablatif accordé avec un nom ou un pronom, et les groupes subordonnés à ces deux éléments
@@ -30,7 +46,7 @@ tr:<sub> <super>
 
 id:adv
 doc:Un adverbe dépend le plus souvent d'un verbe
-f:<sub> compl. circ. de <super>
+f:<sub> adv. compl. circ. de <super>
 super::v:
 sub::d:
 tr:<super> <sub>

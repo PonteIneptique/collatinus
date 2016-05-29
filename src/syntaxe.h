@@ -78,15 +78,17 @@ class ElS : public QObject
 
    private:
     RegleS     *_regle;
+    QString     _idSub; // L'élément doit avoir un sub via une règle d'id _idSub.
     QStringList _lemmes;
     QStringList _pos;
     QStringList _morphos;
 
    public:
     ElS(QString lin, RegleS *parent);
-    bool okLem(QString l);
-    bool okPos(QString p);
-    bool okMorpho(QString m);
+    QString     idSub();
+    bool        okLem(QString l);
+    bool        okPos(QString p);
+    bool        okMorpho(QString m);
     QStringList pos();
 };
 
@@ -118,6 +120,7 @@ class RegleS : public QObject
     QString   doc();
     bool      estSub(Lemme *l, QString morpho, bool ante);
     bool      estSuper(Lemme *l, QString morpho);
+    QString   idSub();
     QString   f();
     QString   fonction(Mot *super = 0, Mot *sub = 0);
     QString   id();
@@ -198,6 +201,7 @@ class Mot : public QObject
     QString        humain();
     MapLem         morphos();
     bool           orphelin();
+    bool           perePar(QString idsub); // vrai si le mot posède un sub via une règle d'id idsub
     QString        ponctD();
     QString        ponctG();
     int            rang();

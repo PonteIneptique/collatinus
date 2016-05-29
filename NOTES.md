@@ -64,9 +64,13 @@ Requis :
 
 ## Branche syntaxe
    * vendredi 27 mai 2016 
-     Il devient nécessaire de donner un poids au règles : 
-     opus est -> l'expression annule tout autre lien syntaxique
-     entre les deux mots.
+     Il devient nécessaire
+     1. de donner un poids au règles. 
+        Ex. opus est -> l'expression annule tout autre
+        lien syntaxique entre les deux mots.
+     2. De rendre récursive la structure des règles. le champ super ou sub
+        d'une règle pouvant être un élément de règle. Par exemple, le sub
+        d'un verbe peut être un ablatif absolu.
    * Données de lemmes.fr : Le module syntaxe a besoin
         - d'identifier la traduction d'un lemme en fonction de
             son pos.

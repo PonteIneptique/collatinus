@@ -58,9 +58,20 @@ ElS::ElS(QString lin, RegleS *parent)
 {
     _regle = parent;
     QStringList ecl = lin.split(':', QString::KeepEmptyParts);
-    _lemmes = ecl.at(1).split(',', QString::SkipEmptyParts);
-    _pos = ecl.at(2).split(',', QString::SkipEmptyParts);
-    _morphos = ecl.at(3).split(' ', QString::SkipEmptyParts);
+    if (ecl.at(1) == "g")
+        _idSub = ecl.at(2);
+    else
+    {
+        _idSub.clear();
+        _lemmes = ecl.at(1).split(',', QString::SkipEmptyParts);
+        _pos = ecl.at(2).split(',', QString::SkipEmptyParts);
+        _morphos = ecl.at(3).split(' ', QString::SkipEmptyParts);
+    }
+}
+
+QString ElS::idSub()
+{
+    return _idSub;
 }
 
 bool ElS::okLem(QString lem)
@@ -144,25 +155,25 @@ RegleS::RegleS(QStringList lignes, QObject *parent)
                     }
                 }
                 break;
-            case 3:
+            case 3:  // super
                 _super = new ElS(lin, this);
                 break;
-            case 4:
+            case 4:  // sub
                 _sub = new ElS(lin, this);
                 break;
-            case 5:
+            case 5:  // sens
                 _sens = ecl.at(1);
                 break;
-            case 6:
+            case 6:  // accord
                 _accord = ecl.at(1);
                 break;
-            case 7:
+            case 7:  // traduction
                 _tr = ecl.at(1);
                 break;
-            case 8:
+            case 8:  // fonction
                 _f = ecl.at(1);
                 break;
-            case 9:
+            case 9:  // divers élément syntaxiques
                 _synt = ecl.at(1);
                 break;
             default:
@@ -189,6 +200,11 @@ QString RegleS::doc()
 QString RegleS::id()
 {
     return _id;
+}
+
+QString RegleS::idSub()
+{
+    return _sub->idSub();
 }
 
 bool RegleS::estSub(Lemme *l, QString morpho, bool ante)
@@ -463,16 +479,19 @@ MapLem Mot::morphos()
 
 bool Mot::orphelin()
 {
-    /*
-    foreach (Super *s, _super)
-        if (s->motSub() != NULL) 
-        {
-            if (_gr=="uigor") qDebug()<<"père uigor"<<s->motSub()->gr();
-            return false;
-        }
-    return true;
-    */
     return syntaxe->orphelin(this);
+}
+
+/**
+ * \fn bool Mot::perePar(QString idsub)
+ * \brief renvoie vrai si le mot possède un sub via la règle d'id idsub.
+ */
+bool Mot::perePar(QString idsub)
+{
+    foreach (Super *s, _super)
+        if (s->complet() && s->regle()->id() == idsub)
+            return true;
+    return false;
 }
 
 QString Mot::ponctD()
@@ -480,14 +499,14 @@ QString Mot::ponctD()
     return _ponctD;
 }
 
-int Mot::rang()
-{
-    return _rang;
-}
-
 QString Mot::ponctG()
 {
     return _ponctG;
+}
+
+int Mot::rang()
+{
+    return _rang;
 }
 
 void Mot::setClos()
@@ -811,6 +830,10 @@ bool Syntaxe::super(Mot *sup, Mot *sub)
     bool retour = false;
     foreach (Super *s, sup->super())
     {
+        // s'il y a une contrainte de liens, vérifier l'existence de ce lien
+        QString idsub = s->regle()->idSub();
+        if (!idsub.isEmpty() && !sub->perePar(idsub))
+            continue;
         // tester toutes les possibilités du mot sub :
         // pour chaque lemme du mot sub
         foreach (Lemme *l, sub->morphos().keys())
