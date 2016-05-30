@@ -38,6 +38,7 @@
 
 #include "syntaxe.h"
 #include <QFile>
+#include <QMap>
 #include <QRegExp>
 #include "flexion.h"
 
@@ -695,7 +696,7 @@ QString Syntaxe::analyse(QString t, int p)
 
 QString Syntaxe::liens(Mot *m)
 {
-    QStringList lignes;
+    QMap<QString,QString> mmf;
     // superordonné
     for (int i=0;i<_mots.count();++i)
     {
@@ -708,13 +709,12 @@ QString Syntaxe::liens(Mot *m)
             QTextStream ts(&ligne);
             if (s->motSub() == m)
             {
-                ts << s->fonction()
-                    << " <span style=\"color:blue;font-style:italic;\">" 
+                 ts << " <li style=\"color:blue;font-style:italic;\">" 
                     << tr(s->regle(), s->lemme(),
                           s->morpho(), s->lemmeSub(),
                           s->slemSub().morpho)
-                    << "</span>";
-                lignes.append(ligne);
+                    << "</li>";
+                mmf.insert(s->fonction(), ligne);
             }
         }
     }
@@ -724,16 +724,24 @@ QString Syntaxe::liens(Mot *m)
         if (!s->complet()) continue;
         QString ligne;
         QTextStream ts(&ligne);
-        ts << s->fonction()
-            << " <span style=\"color:blue;font-style:italic;\">" 
+        ts << " <li style=\"color:blue;font-style:italic;\">" 
             << tr(s->regle(), s->lemme(),
                   s->morpho(), s->lemmeSub(),
                   s->slemSub().morpho)
-            << "</span>";
-        lignes.append(ligne);
+            << "</li>";
+        mmf.insert(s->fonction(), ligne);
     }
-    lignes.removeDuplicates();
-    return lignes.join("<br/>");
+    QStringList ret;
+    foreach(QString f, mmf.keys())
+    {
+        ret.append(f);
+        ret.append("<ul>");
+        QStringList lt = mmf.values(f);
+        lt.removeDuplicates();
+        ret.append (lt.join(""));
+        ret.append("</ul>");
+    }
+    return ret.join("");
 }
 
 bool Syntaxe::estSuper(Mot *sup, Mot *sub)
