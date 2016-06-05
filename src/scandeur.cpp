@@ -167,11 +167,10 @@ QStringList Lemmat::formeq(QString forme, bool *nonTrouve, bool debPhr,
     {
         foreach (SLem s, mp.value(l))
         {
-            QString f = Ch::ajoutSuff(s.grq, s.sufq, "", accent);
+            // QString f = Ch::ajoutSuff(s.grq, s.sufq, "", accent);
             // Le 3e paramètre, actuellement "", est prévu pour accepter
             // l->getHyphen(). Donc
-            //            QString f =
-            //            Ch::ajoutSuff(s.grq,s.sufq,l->getHyphen(),accent);
+            QString f = Ch::ajoutSuff(s.grq,s.sufq,l->getHyphen(),accent);
             //			if (s.grq == "-") f = l->grq();
             //			else f = parPos(s.grq);
             if (maj) f[0] = f[0].toUpper();

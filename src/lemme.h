@@ -71,6 +71,8 @@ class Lemme : public QObject
     QString _renvoi;
     QMap<QString, QString> _traduction;
 
+    QString _hyphen; // Pour les césures étymologies
+
    public:
     Lemme(QString linea, QObject* parent);
     void ajIrreg(Irreg* irr);
@@ -93,6 +95,10 @@ class Lemme : public QObject
     bool renvoi();
     QString traduction(QString l);
     inline bool operator<(Lemme& l);
+
+    QString getHyphen (); // Accesseurs pour les césures étymologiques
+    void setHyphen (QString h);
+
 };
 
 #endif

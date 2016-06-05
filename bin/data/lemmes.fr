@@ -17,6 +17,8 @@
 !Foundation, Inc., 59 Temple Place, Suite 3inv, Boston, MA  02111-1307  USA
 ! (c) © Yves Ouvrard, 2011 - 2016
 !
+a:à partir de, après un verbe passif = par
+!ab:à partir de, après un verbe passif = par
 abacus:la table de jeu
 abalieno:1. éloigner 2. détourner, dégager de, priver de
 Abas:Abas, plusieurs personnages, dont un roi d'Argos
@@ -83,7 +85,6 @@ abunde:en abondance
 abundus:abondant
 abundo:être en grand nombre, être abondamment pourvu
 abutor:abuser de (abl.)
-ab:à partir de, après un verbe passif = par
 acanthus:acanthe ; f. mimosa
 Acastus:Acaste (roi de Thessalie)
 Acca:Acca
@@ -271,7 +272,6 @@ adorno:orner, embellir
 adoro:adorer, implorer
 adpendix:ce qui pend; l'addition, le supplément
 adpeto:marcher rapidement vers, chercher à saisir, désirer vivement, attaquer, envahir, approcher
-!adplico:appliquer, appuyer
 adprecor:prier, invoquer
 adprimo:presser, serrer contre
 adprono:se pencher, se baisser
@@ -534,7 +534,6 @@ alimonia:l'aliment, la nourriture
 alioquin:du reste
 alioqui:par ailleurs
 alipilus:l'épileur
-alipta:masseur, esthéticien
 aliptes:masseur, esthéticien
 aliquamdiu:assez longtemps
 aliquam:multum : une quantité passablement grande
@@ -957,6 +956,8 @@ asellus:l'âne
 Asianus:d'Asie
 Asiaticus:asiatique
 Asia:Asie
+asina:ânesse
+Asina2:Asina (cognomen)
 asinalis:d'âne
 asinarius:d'âne (asinarius, i, m. : l'ânier)
 asina:Asina
@@ -1130,7 +1131,6 @@ avus:l'ancêtre, l'aïeul, le grand-père
 axiculus:le petit axe
 axis:l'axe, l'essieu, le char
 Axona:l'Aisne (fleuve)
-a:à partir de, après un verbe passif = par
 babae:Oh ! Ah ! Bien ! Cool !
 Babylonius:Babylonien
 baca:petit fruit, olive
@@ -2407,7 +2407,7 @@ Cotta:Cotta
 cottidiano:quotidiennement
 cottidianus:quotidien
 cottidie:chaque jour, tous les jours
-coturnix:lacaille
+coturnix:caille
 Cotys:Cotys (roi de Thrace)
 Cous:Cos (île de la mer Egée)
 coxendix:hanche
@@ -2566,7 +2566,7 @@ cuticula:la peau
 cutis:peau
 Cybele:Cybèle
 Cyclades:les Cyclades
-Cyclops:le Cyclope
+Cyclops:Cyclope
 cycneus:du cygne
 cycnus:cygne
 cylindrus:cylindre
@@ -3313,7 +3313,7 @@ elefantus:l'éléphant
 elegans:élégant
 elegantia:le goût, la délicatesse, la distinction
 elegantius:distingué, délicat
-elegia:l'élégie
+elegia:élégie
 elegi:vers élégiaques
 elementum:l'élément ; pl.les lettres de l'alphabet, les principes
 elephans:éléphant
@@ -4507,7 +4507,7 @@ illabor:glisser, s'enfoncer, pénétrer
 illaesus:qui n'est pas blessé, pas endommagé
 illatenus:jusque là
 illecebra:l'attrait, le charme
-!illecebrosius:comparatif de illecebrose : d'une manière séduisante
+illecebrose:d'une manière séduisante
 ille:ce, cette, celui-ci, celle-ci, il, elle
 illicio:engager, entrainer à
 illico:aussitôt
@@ -4941,7 +4941,7 @@ inopinans:surpris
 inopinatus:inattendu, inopiné
 inopinus:inattendu, inopiné, à l'improviste
 inops:sans ressources, pauvre
-!inpeditius:comparatif neutre ou adverbial de impeditus, a, um : embarassé
+inpeditius:comparatif neutre ou adverbial de impeditus, a, um : embarassé
 inpeditus:chargé de bagages, embarrassé, difficilement praticable
 inperatus:non préparé, sans préparation
 inplacabilis:implacable
@@ -5026,7 +5026,6 @@ integritas:santé, honnêteté, impartialité
 intellectus:compréhension, intelligence
 intellego:comprendre
 intelligentia:l'action de discerner, la faculté de comprendre, l'intelligence
-intelligo:comprendre
 intemeratus:non gâté, pur, sans tache
 intemperans:intempérant, qui n'a pas de mesure
 intemperanter:sans retenue, sans mesure, excessivement
@@ -5166,7 +5165,7 @@ irate:avec colère
 iratus:en colère, irrité
 ira:colère
 Iris:Iris (déesse), arc-en-ciel
-Iris2:le hérisson
+Iris2:hérisson
 irreligiositas:l'irréligion
 irreparabilis:irréparable
 irreprehensus:irréprochable
@@ -5228,6 +5227,7 @@ Janus:Janus
 Javolenus:Javolenus
 jecur:foie
 jejunium:jeûne, faim
+Jesus:Jésus
 jocosus:plaisant
 joco:plaisanter
 jocus:plaisanterie
@@ -5264,7 +5264,7 @@ jure:à bon droit
 jurgiosus:querelleur
 jurgium:querelle, dispute, altercation
 jurisdictio:la juridiction
-jurisjurandum:serment
+jusjurandum:serment
 juro:jurer
 jusjurandum:serment
 jussio:l'ordre
@@ -5533,7 +5533,7 @@ licitumst:= licitum est, licuit
 lictor:le licteur
 ligneus:en bois, de bois
 lignum:le bois
-!Ligones:les Ligons
+Lingones:les Lingons
 ligo:lier
 ligurrio:lécher
 Lilybaeum:Lilybée (promontoire de Sicile)
@@ -5595,7 +5595,7 @@ loquax:bavard, verbeux
 loquor:parler
 lorica:la cuirasse; la haie, la clôture
 lorum:la courroie, la lanière, le fouet, le martinet
-lotus:lavé (participe de lavo)
+lotus:lotus (plante)
 lubens:qui accepte volontiers
 lubricus:glissant, incertain, dangereux, hasardeux
 lucar:l'impôt pour les bois sacrés; le salaire des acteurs
@@ -6050,7 +6050,8 @@ moles:la masse
 molimentum:l'effort pour réaliser qqch.
 molior:mettre en mouvement, bâtir, entreprendre
 molitio:le remue-ménage
-molitor:meunier ; celui qui trame, qui ourdit
+molitor:meunier
+molitor2:celui qui trame, qui ourdit
 mollio:rendre souple, adoucir, atténuer
 mollis:mou, fluide, souple, flexible
 molliter:mollement, avec douceur
@@ -6652,7 +6653,7 @@ optineo:occuper, tenir
 optingo:arriver, échoir
 optio:le choix
 opto:souhaiter
-optumus:superlatif de bonus, a, um : bon
+!optumus:superlatif de bonus, a, um : bon
 opulentia:la splendeur, la richesse
 opulentus:riche, opulent
 opust:= opus est, il faut
@@ -7360,6 +7361,7 @@ possessor:le possesseur, le propriétaire
 possideo:avoir en sa possession, posséder
 possum:pouvoir
 posteaquam:après que
+post:derrière; après
 postea:ensuite
 posterior:qui vient après, dernier
 posteritas:postérité, avenir
@@ -7383,8 +7385,6 @@ postulatio:la demande, la réclamation
 postulo:demander, réclamer
 Postumius:Postumius
 Postumus:Postumus
-post:prép. + Acc. : après
-post2:adv. en arrière, derrière; après, ensuite
 potatio:la beuverie, l'orgie
 potens:puissant
 potentia:1. la force 2. la puissance, le pouvoir, l'autorité, l'influence
@@ -7537,7 +7537,7 @@ praeterfluo:couler auprès, baigner (une ville, en parlant d'un cours d'eau).
 praeteritus:écoulé, passé
 praetermitto:omettre, laisser passer
 praeterquam:excepté, sauf
-praeter:sauf, si ce n'est prép. : devant, le long de, au-delà de, excepté
+praeter:sauf, si ce n'est ; prép. devant, le long de, au-delà de, excepté
 praetexo:border
 praetextatus:vêtu de la toge prétexte
 praetexta:la prétexte, la toge prétexte
@@ -7554,8 +7554,7 @@ praevenio:prendre les devants, devancer
 praeverto:faire passer avant, devancer, prévenir
 praevius:qui précède, guide
 praevorto:devancer
-prae:devant
-prae2:devant, à cause de
+prae:devant ; à cause de
 prandium:le dîner, le repas de midi
 prasinus:vert (couleur du poireau)
 pratum:pré
@@ -7845,7 +7844,6 @@ pugna:la bataille, le combat, le pugilat
 pugnax:belliqueux, acharné
 pugno:combattre
 pugnus:poing
-pulcer:beau
 pulcher:beau
 pulchre:joliment, bien
 pulchritudo:beauté
@@ -7943,7 +7941,6 @@ quamvis:bien que
 quam:1. accusatif féminin du pronom relatif = que 2. accusatif féminin sing de l'interrogatif = quel? qui? 3. après si, nisi, ne, num = aliquam 4. relatif de liaison = et eam 5. introduit le second terme de la comparaison = que 6. adv. = combien
 quandoquidem:puisque
 quando:quand; après si, nisi, ne, num = aliquando = parfois; conj. : quand, puisque
-quanquam:quoque, bien que
 quantitas:quantité
 quanto:combien ?, avec tanto = autant que
 quantulumcumque:si petit que
@@ -8041,6 +8038,7 @@ quomodo:de quelle manière, comme
 quondam:un jour, à un certain moment, autrefois
 quoniam:puisque
 quoque:aussi
+quoquo:en quelque lieu que
 quorsum:dans quelle direction, vers quoi, à quel résultat
 quotannis:chaque année
 quotidianus:quotidien, de tous les jours, journalier; familier, habituel
@@ -9230,7 +9228,7 @@ suppositio:action de placer dessous, substitution frauduleuse
 suppostus:soumis
 supprimo:contenir, arrêter, supprimer
 supra:au dessus ; prép. + acc. : au dessus de, au delà de
-!supremus:le plus haut, le dernier
+supremus:le plus haut, le dernier
 suptilitas:la finesse, la rénuité; la précision stricte, la simplicité de style
 surdus:sourd
 surgo:se lever
@@ -9900,7 +9898,8 @@ vectigalis:soumis à l'impôt, tributaire (uectigal, alis, n. : l'impôt)
 vectigal:l'impôt
 vecto:transporter
 vectura:la voiture
-Vedius:Vedius
+Vedius:Vedius (surnom de Pluton)
+Vedius2:Vedius (nom d'h.)
 vehemens:emporté, impétueux
 vehementer:violemment, passionnément, beaucoup
 vehiculum:véhicule
@@ -10127,6 +10126,7 @@ viritim:par homme, individuellement
 Viromandui:les Viromanduens (peuplade belge : Verdun)
 virtus:courage, honnêteté
 vir:homme ( par opp. à mulier, femme ), mari.
+virus:jus, poison, puanteur
 viscus:chair, entrailles
 visio:vision, image
 viso:voir, visiter

@@ -50,6 +50,7 @@ QStringList Ch::ajoute(QString mot, QStringList liste)
  */
 void Ch::allonge(QString *f)
 {
+    if (f->isEmpty()) return;
     int taille = f->size();
     // Je sais que le morceau à attacher commence par une consonne.
     if (consonnes.contains(f->at(taille - 1)) &&
@@ -139,7 +140,7 @@ void Ch::deQuant(QString *c)
  */
 QString Ch::deAccent(QString c)
 {
-    c.normalized(QString::NormalizationForm_D, QChar::currentUnicodeVersion());
+    c = c.normalized(QString::NormalizationForm_D, QChar::currentUnicodeVersion());
     c.remove("\u0301");
     c.remove("\u0306");
     c.remove("\u0304");
@@ -163,7 +164,7 @@ QString Ch::deramise(QString r)
     r.replace("œ", "oe");
     r.replace("Œ", "Oe");
     r.replace(0x1ee5, 'u');  // ụ le u muet de suavis, suadeo, etc...
-    // r.replace ('V', 'U');
+    r.replace ('V', 'U');
     return r;
 }
 
@@ -382,7 +383,7 @@ QString Ch::ajoutSuff(QString fq, QString suffixe, QString l_etym, int accent)
         int l = fq.count('+') + fq.count('-') +
                 fq.count('*');  // nombre de syllabes.
         int i = fq.size() - 1;
-        if (suffixe.isEmpty())
+        if (suffixe.isEmpty() || (suffixe == "st"))
         {
             // Sans suffixe, l'accent est sur l'avant-dernière voyelle si elle
             // n'est pas brève
@@ -409,6 +410,7 @@ QString Ch::ajoutSuff(QString fq, QString suffixe, QString l_etym, int accent)
                         fq = accentue(fq.mid(i - 1, 1)) + fq.mid(i);
                 }
             }
+            fq += suffixe;
         }
         else
         {
@@ -422,8 +424,9 @@ QString Ch::ajoutSuff(QString fq, QString suffixe, QString l_etym, int accent)
                 else
                     fq = accentue(fq.mid(i - 1, 1)) + fq.mid(i);
             }
-            fq = fq + suffixe + "-";
-            fq[fq.size() - 2] = 'e';  // ôte le e-bref.
+            fq = fq + suffixe;
+            fq.replace("ĕ","e-"); // pour modoquest
+//            fq[fq.size() - 2] = 'e';  // ôte le e-bref.
             l += 1;
         }
         // L'entier i pointe sur la longueur de la voyelle accentuée, sauf si
@@ -551,5 +554,13 @@ QString Ch::ajoutSuff(QString fq, QString suffixe, QString l_etym, int accent)
     // les suffixes possibles sont que, ne et ve :
     // tous commencent par une consonne
     allonge(&fq);
+    if (suffixe == "st")
+    {
+        // Si fq se termine par une voyelle, allonge ne fait rien.
+        fq += "s"; // J'ajoute donc le s et je recommence.
+        allonge(&fq);
+        return fq + "t";
+    }
+    suffixe.replace("ĕst","ēst"); // Pour des formes comme modoquest
     return fq + suffixe;
 }

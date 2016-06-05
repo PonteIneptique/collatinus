@@ -61,6 +61,11 @@ const QStringList Flexion::temps = QStringList() << "présent"
                                                  << "plus-que-parfait"
                                                  << "futur antérieur";
 
+QString Flexion::entreParenth(QString e)
+{
+    return QString("(%1)").arg(e);
+}
+
 /**
  * \fn QString Flexion::forme (int n, bool label)
  * \brief Renvoie entre virgules les formes dont
@@ -84,12 +89,16 @@ QString Flexion::forme(int n, bool label)
         foreach (Desinence *d, ld)
         {
             QString grqd = d->grq();
+            // désinence trop rare, non affichée :
+            if (d->rarete() <= omis) continue;
             int nr = d->numRad();
             QList<Radical *> lr = _lemme->radical(nr);
             foreach (Radical *r, lr)
             {
                 QString grqr = r->grq();
-                lres.append(grqr + grqd);
+                if (d->rarete() <= parenth)
+                    lres.append(entreParenth(grqr + grqd));
+                else lres.append(grqr + grqd);
             }
         }
     }
@@ -390,7 +399,7 @@ QString Flexion::tabV()
     fl << queue;
 
     fl << entete << lina << "g&eacute;rondif accusatif" << linb << forme(261)
-       << linc << lina << "g&eacute;rondif gé&eacute;nitif " << linb
+       << linc << lina << "g&eacute;rondif g&eacute;nitif " << linb
        << forme(262) << linc << lina << "g&eacute;rondif datif" << linb
        << forme(263) << linc << lina << "g&eacute;rondif ablatif" << linb
        << forme(264) << linc << lina << "supin en -um" << linb << forme(265)

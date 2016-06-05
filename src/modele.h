@@ -37,18 +37,20 @@ class Desinence : public QObject
    private:
     QString _gr;
     QString _grq;
-    int _morpho;
+    int     _morpho;
     Modele *_modele;
-    int _numR;
+    int     _numR;
+    int     _rarete;
 
    public:
     Desinence(QString d, int morph, int nr, Modele *parent = 0);
     QString gr();
     QString grq();
+    int     rarete();
     Modele *modele();
-    int morphoNum();
-    int numRad();
-    void setModele(Modele *m);
+    int     morphoNum();
+    int     numRad();
+    void    setModele(Modele *m);
 };
 
 class Modele : public QObject
@@ -66,20 +68,20 @@ class Modele : public QObject
 
    public:
     Modele(QStringList ll, Lemmat *parent = 0);
-    bool absent(int a);
-    QList<int> absents();
-    QList<int> clesR();
-    Desinence *clone(Desinence *d);
-    bool deja(int m);
+    bool               absent(int a);
+    QList<int>         absents();
+    QList<int>         clesR();
+    Desinence         *clone(Desinence *d);
+    bool               deja(int m);
     QList<Desinence *> desinences(int d);
     QList<Desinence *> desinences();
-    bool estUn(QString m);
-    QString genRadical(int r);
-    QString gr();
-    QString grq();
-    static QList<int> listeI(QString l);
-    QList<int> morphos();
-    QChar pos();
+    bool               estUn(QString m);
+    QString            genRadical(int r);
+    QString            gr();
+    QString            grq();
+    static QList<int>  listeI(QString l);
+    QList<int>         morphos();
+    QChar              pos();
 };
 
 #endif

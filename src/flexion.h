@@ -29,6 +29,9 @@
 #include "lemmatiseur.h"
 #include "lemme.h"
 
+#define OMIS 1
+#define PARENTH 3
+
 class Flexion : public QObject
 {
     Q_OBJECT
@@ -42,6 +45,9 @@ class Flexion : public QObject
     QString const static linb;
     QString const static linc;
     QString const static queue;
+    // constantes d'affichage désinence
+    int const static omis = OMIS;
+    int const static parenth = PARENTH;
     // menu
     QString menuLem;
     // construction des tableaux par pos
@@ -54,17 +60,18 @@ class Flexion : public QObject
    public:
     Flexion(QObject *parent = 0);
     QStringList const static cas;
+    QString           static entreParenth(QString e);
     QStringList const static genres;
     QStringList const static nombres;
     QStringList const static temps;
-    QString forme(int m, bool label = false);
-    QString static gras(QString g);
-    QStringList menu();
-    void setLemme(Lemme *l);
-    void setMenu(QStringList m);
-    QString tableau(Lemme *l);
-    QString tableaux(MapLem *ml);
-    QString tableaux(MapLem ml);
+    QString                  forme(int m, bool label = false);
+    QString           static gras(QString g);
+    QStringList              menu();
+    void                     setLemme(Lemme *l);
+    void                     setMenu(QStringList m);
+    QString                  tableau(Lemme *l);
+    QString                  tableaux(MapLem *ml);
+    QString                  tableaux(MapLem ml);
 };
 
 #endif

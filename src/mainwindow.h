@@ -28,6 +28,7 @@
 #include "lemmatiseur.h"
 #include "dicos.h"
 #include "syntaxe.h"
+#include "ch.h"
 
 QT_BEGIN_NAMESPACE
 class QAction;
@@ -144,6 +145,8 @@ class MainWindow : public QMainWindow
     void syncWD();
     // Slots d'accentuation
     void setAccent(bool b);
+    void lireFichierHyphen();
+    void oteDiacritiques();
 
    public slots:
     void afficheLemsDic(QStringList ll, int no = 0);
@@ -188,6 +191,9 @@ class MainWindow : public QMainWindow
     QAction *breveAct;
     QAction *ambigueAct;
     QAction *hyphenAct;
+    QAction *lireHyphenAct;
+    // Nom du répertoire du fichier hyphen.la
+    QString repHyphen;
 
     // actions et groupes d'actions
     QAction *aproposAct;
@@ -207,6 +213,7 @@ class MainWindow : public QMainWindow
     QAction *lancAct;
     QAction *majAct;
     QAction *nouvAct;
+    QAction *oteAAct;
     QAction *ouvrirAct;
     QAction *printAct;
     QAction *quitAct;
@@ -215,6 +222,7 @@ class MainWindow : public QMainWindow
     QAction *syncDWAct;
     QAction *syncWDAct;
     QAction *visibleWAct;
+    QAction *extensionWAct;
     QAction *zoomAct;
     // QAction *undoAct;
     // widgets, variables et fonctions du dock dictionnaires

@@ -34,8 +34,8 @@
 #include "lemmatiseur.h"
 
 #include <QDebug>
-//#include <QElapsedTimer>
-//#define DEBOG
+// #include <QElapsedTimer>
+// #define DEBOG
 
 /**
  * \fn Lemmat::Lemmat (QObject *parent)
@@ -73,7 +73,7 @@ Lemmat::Lemmat(QObject *parent) : QObject(parent)
 
     lisModeles();
     lisLexique();
-    lisTraductions();
+    lisTraductions(true, false);
     lisIrreguliers();
     lisParPos();
 }
@@ -239,7 +239,10 @@ QString Lemmat::decontracte(QString d)
         if (d.endsWith(cle))
         {
             d.chop(cle.length());
-            d.append(_contractions.value(cle));
+            if ((d.contains("v") || d.contains("V")))
+                d.append(_contractions.value(cle));
+            else
+                d.append(Ch::deramise(_contractions.value(cle)));
             return d;
         }
     }
@@ -299,8 +302,8 @@ MapLem Lemmat::lemmatise(QString f)
     MapLem result;
     if (f.isEmpty()) return result;
     QString f_lower = f.toLower();
-    // ne pas merger - commenté par commodité
-    // int cnt_v = f_lower.count("v");
+    int cnt_v = f_lower.count("v");
+    bool V_maj = f[0] == 'V';
     int cnt_ae = f_lower.count("æ");
     // ne pas merger - commenté par commodité
     //int cnt_oe = f_lower.count("œ");
@@ -322,27 +325,19 @@ MapLem Lemmat::lemmatise(QString f)
     {
         QString r = f.left(i);
         QString d = f.mid(i);
+        QList<Desinence *> ldes = _desinences.values(d);
+        if (ldes.empty()) continue;
+        // Je regarde d'abord si d est une désinence possible,
+        // car il y a moins de désinences que de radicaux.
+        // Je fais la recherche sur les radicaux seulement si la désinence existe.
         QList<Radical *> lrad = _radicaux.values(r);
-        if (lrad.empty()) continue;
         // ii noté ī
         // 1. Patauium, gén. Pataui : Patau.i -> Patau+i.i
         // 2. conubium, ablP conubis : conubi.s -> conubi.i+s
-        if ((d.isEmpty() && r.endsWith('i')) ||
-            (d.startsWith('i') && !d.startsWith("ii") && !r.endsWith('i')) ||
-            (r.endsWith('i') && !r.endsWith("ii") && !d.startsWith('i')))
-        {
-            QString nf = r + 'i' + d;
-            MapLem nm = lemmatise(nf);
-            foreach (Lemme *nl, nm.keys())
-            {
-                QList<SLem> lsl = nm.value(nl);
-                for (int i = 0; i < lsl.count(); ++i)
-                    lsl[i].grq.remove(r.length() - 1, 1);
-                result.insert(nl, lsl);
-            }
-        }
-        QList<Desinence *> ldes = _desinences.values(d);
-        if (ldes.empty()) continue;
+        if (d.startsWith('i') && !d.startsWith("ii") && !r.endsWith('i'))
+            lrad << _radicaux.values(r + "i");
+        if (lrad.empty()) continue;
+        // Il n'y a rien à faire si le radical n'existe pas.
         foreach (Radical *rad, lrad)
         {
             Lemme *l = rad->lemme();
@@ -350,18 +345,23 @@ MapLem Lemmat::lemmatise(QString f)
             {
                 if (des->modele() == l->modele() &&
                     des->numRad() == rad->numRad() &&
-                    !l->estIrregExcl(des->numRad()))
+                    !l->estIrregExcl(des->morphoNum()))
                 {
-                    if (des->morphoNum() < _morphos.count() - 1)
+                    bool c = ((cnt_v==0)
+                              ||(cnt_v == rad->grq().toLower().count("v")
+                                 +des->grq().count("v")));
+                    if (!c) c = (V_maj && (rad->gr()[0] == 'U')
+                            && (cnt_v - 1 == rad->grq().toLower().count("v")));
+                    c = c && ((cnt_oe==0)||(cnt_oe == rad->grq().toLower().count("ōe")));
+                    c = c && ((cnt_ae==0)||(cnt_ae == rad->grq().toLower().count("āe")));
+                    if (c)
                     {
-                        SLem sl = {rad->grq() + des->grq(),
+                        QString fq = rad->grq() + des->grq();
+                        if (!r.endsWith("i") && rad->gr().endsWith("i"))
+                            fq = rad->grq().left(rad->grq().size()-1) + "ī"
+                                    + des->grq().right(des->grq().size()-1);
+                        SLem sl = {fq,
                                    morpho(des->morphoNum()), ""};
-                        result[l].prepend(sl);
-                    }
-                    else
-                    {
-                        SLem sl = {l->grq(), "-", ""};
-                        //						SLem sl = {"-",""};
                         result[l].prepend(sl);
                     }
                 }
@@ -404,11 +404,19 @@ MapLem Lemmat::lemmatiseM(QString f, bool debPhr)
             // TODO : aequeque est la seule occurrence
             // de -queque dans le corpus classique
             mm = lemmatiseM(sf, debPhr);
+            bool sst = false;
+            if (mm.isEmpty() && (suf == "st"))
+            {
+                sf += "s";
+                mm = lemmatiseM(sf, debPhr);
+                sst = true;
+            }
             foreach (Lemme *l, mm.keys())
             {
                 QList<SLem> ls = mm.value(l);
                 for (int i = 0; i < ls.count(); ++i)
-                    mm[l][i].sufq = suffixes.value(suf);
+                    if (sst) mm[l][i].sufq = "t";
+                    else mm[l][i].sufq += suffixes.value(suf); // Pour modoquest
             }
         }
     if (debPhr && f.at(0).isUpper())
@@ -449,13 +457,36 @@ MapLem Lemmat::lemmatiseM(QString f, bool debPhr)
         }
     }
     // contractions
-    QString fd = decontracte(f);
-    if (fd != f)
-    {
-        MapLem nmm = lemmatise(fd);
-        foreach (Lemme *nl, nmm.keys())
-            mm.insert(nl, nmm.value(nl));
-    }
+    // QString fd = decontracte(f);
+    QString fd = f;
+    foreach (QString cle, _contractions.keys())
+        if (fd.endsWith(cle))
+        {
+            fd.chop(cle.length());
+            if ((fd.contains("v") || fd.contains("V")))
+                fd.append(_contractions.value(cle));
+            else
+                fd.append(Ch::deramise(_contractions.value(cle)));
+            MapLem nmm = lemmatise(fd);
+            foreach (Lemme *nl, nmm.keys())
+            {
+                int diff = _contractions.value(cle).size() - cle.size();
+                // nombre de lettres que je dois supprimer
+                for (int i = 0; i < nmm[nl].count(); ++i)
+                {
+                    int position = f.size() - cle.size() + 1;
+                    // position de la 1ère lettre à supprimer
+                    if (fd.size() != nmm[nl][i].grq.size())
+                    {
+                        // il y a une (ou des) voyelle(s) commune(s)
+                        QString debut = nmm[nl][i].grq.left(position + 2);
+                        position += debut.count("\u0306"); // Faut-il vérifier que je suis sur le "v".
+                    }
+                    nmm[nl][i].grq = nmm[nl][i].grq.remove(position, diff);
+                }
+                mm.insert(nl, nmm.value(nl));
+            }
+        }
     // majuscule initiale
     if (mm.empty())
     {
@@ -547,11 +578,11 @@ QString Lemmat::lemmatiseT(QString t, bool alpha, bool cumVocibus,
                             else
                                 lin.append("<li>" + m.grq + " + " + m.sufq +
                                            " " + m.morpho + "</li>");
-                        lin.append("</ul>");
+                        lin.append("</ul>\n");
                     }
                     lin.append("</li>");
                 }
-                lin.append("</ul>");
+                lin.append("</ul>\n");
             }
             else
             {
@@ -586,7 +617,7 @@ QString Lemmat::lemmatiseT(QString t, bool alpha, bool cumVocibus,
                         fl << "<ul>";
                         foreach (SLem m, map.value(l))
                             fl << "<li>" << m.grq << " " << m.morpho << "</li>";
-                        fl << "</ul>";
+                        fl << "</ul>\n";
                     }
                     else
                         foreach (SLem m, map.value(l))
@@ -612,7 +643,7 @@ QString Lemmat::lemmatiseT(QString t, bool alpha, bool cumVocibus,
         else
             lRet.append("* " + item + "\n");
     }
-    if (_html) lRet.append("</ul>");
+    if (_html) lRet.append("</ul>\n");
     // non-reconnus en fin de liste si l'option nreconnu
     // est armée
     if (nreconnu && !nonReconnus.empty())
@@ -630,6 +661,7 @@ QString Lemmat::lemmatiseT(QString t, bool alpha, bool cumVocibus,
         foreach (QString nr, nonReconnus)
             lRet.append(nr + nl);
     }
+//    qDebug() << lRet.join("");
     // fin de la mesure :
     // qDebug()<<"Eneide"<<timer.nsecsElapsed()<<"ns";
     return lRet.join("");
@@ -705,13 +737,13 @@ void Lemmat::lisIrreguliers()
 }
 
 /**
- * \fn void Lemmat::lisLexique()
+ * \fn void Lemmat::lisFichierLexique(filepath)
  * \brief Lecture des lemmes, synthèse et enregistrement
  *        de leurs radicaux
  */
-void Lemmat::lisLexique()
+void Lemmat::lisFichierLexique(QString filepath)
 {
-    QFile flem(qApp->applicationDirPath() + "/data/lemmes.la");
+    QFile flem(filepath);
     flem.open(QFile::ReadOnly);
     QTextStream fll(&flem);
     while (!fll.atEnd())
@@ -722,6 +754,24 @@ void Lemmat::lisLexique()
         _lemmes.insert(l->cle(), l);
     }
     flem.close();
+}
+
+/**
+ * \fn void Lemmat::lisLexique()
+ * \brief Lecture du fichier de lemmes de base
+ */
+void Lemmat::lisLexique()
+{
+    Lemmat::lisFichierLexique(qApp->applicationDirPath() + "/data/lemmes.la");
+}
+
+/**
+ * \fn void Lemmat::lisExtension()
+ * \brief Lecture du fichier d'extension
+ */
+void Lemmat::lisExtension()
+{
+    Lemmat::lisFichierLexique(qApp->applicationDirPath() + "/data/lem_ext.la");
 }
 
 /**
@@ -788,12 +838,25 @@ void Lemmat::lisParPos()
  *        un suffixe corresponant à la langue cible
  *        qu'ils fournissent.
  */
-void Lemmat::lisTraductions()
+void Lemmat::lisTraductions(bool base, bool extension)
 {
     QString nrep = qApp->applicationDirPath() + "/data/";
-    QDir rep = QDir(nrep, "lemmes.*");
+    QDir rep;
+    if (!base && !extension) return;
+    if (base && extension) {
+        rep = QDir(nrep, "lem*.*");
+    } else if (base) {
+        rep = QDir(nrep, "lemmes.*");
+    } else {
+        rep = QDir(nrep, "lem_ext.*");
+    }
     QStringList ltr = rep.entryList();
-    ltr.removeOne("lemmes.la");  // n'est pas un fichier de traductions
+    if (base) {
+        ltr.removeOne("lemmes.la");  // n'est pas un fichier de traductions
+    }
+    if (extension) {
+        ltr.removeOne("lem_ext.la");  // n'est pas un fichier de traductions
+    }
     foreach (QString nfl, ltr)
     {
         // suffixe
@@ -836,6 +899,7 @@ Modele *Lemmat::modele(QString m) { return _modeles[m]; }
 QString Lemmat::morpho(int m)
 {
     if (m < 0 || m >= _morphos.count()) return "morpho, erreur d'indice";
+    if (m == _morphos.count() - 1) return "-";
     return _morphos.at(m - 1);
 }
 
@@ -852,6 +916,7 @@ bool Lemmat::optAlpha() { return _alpha; }
  *        permet de renvoyer les résultats au format html.
  */
 bool Lemmat::optHtml() { return _html; }
+
 /**
  * \fn bool Lemmat::optFormeT()
  * \brief Accesseur de l'option formeT,
@@ -859,6 +924,7 @@ bool Lemmat::optHtml() { return _html; }
  *        la forme qui a été analysée.
  */
 bool Lemmat::optFormeT() { return _formeT; }
+
 /**
  * \fn bool Lemmat::optMajPert()
  * \brief Accesseur de l'option majPert,
@@ -866,13 +932,25 @@ bool Lemmat::optFormeT() { return _formeT; }
  *        dans la lemmatisation.
  */
 bool Lemmat::optMajPert() { return _majPert; }
+
+/**
+ * \fn bool Lemmat::optExtension()
+ * \brief Accesseur de l'option extension,
+ *        qui permet de charger l'extension.
+ */
+bool Lemmat::optExtension() { return _extension; }
 /**
  * \fn bool Lemmat::optMorpho()
  * \brief Accesseur de l'option morpho,
  *        qui donne l'analyse morphologique
  *        des formes lemmatisées.
  */
-bool Lemmat::optMorpho() { return _morpho; }
+
+bool Lemmat::optMorpho()
+{
+    return _morpho;
+}
+
 QString Lemmat::parPos(QString f)
 {
     bool maj = f.at(0).isUpper();
@@ -926,3 +1004,54 @@ void Lemmat::setNonRec(bool n) { _nonRec = n; }
  *        premier caractère $.
  */
 QString Lemmat::variable(QString v) { return _variables[v]; }
+
+void Lemmat::setExtension(bool e)
+{
+    if (_extension || !e) {
+        return;// can't unload lemmes!
+    }
+    _extension = true;
+    lisExtension();
+    lisTraductions(false,true);
+}
+
+/**
+ * @brief Lemmat::lireHyphen
+ * @param fichierHyphen : nom du fichier (avec le chemin absolu)
+ * \brief stocke pour tous les lemmes contenus dans le fichier
+ * l'information sur la césure étymologique (non-phonétique).
+ */
+void Lemmat::lireHyphen(QString fichierHyphen)
+{
+    foreach (Lemme *l, _lemmes.values()) l->setHyphen("");
+    if (!fichierHyphen.isEmpty())
+    {
+        QFile Capsa(fichierHyphen);
+        Capsa.open(QIODevice::ReadOnly|QIODevice::Text);
+
+        QTextStream flux(&Capsa);
+        flux.setCodec("UTF-8");
+        QString linea;
+        while (!flux.atEnd())
+        {
+            linea = flux.readLine ();
+            if (linea.isEmpty() || linea[0] == '!') continue;
+            QStringList ecl = linea.split('|');
+#ifdef DEBOG
+            if (ecl.count() != 2)
+            {
+                qDebug () << "ligne mal formée" << linea;
+                continue;
+            }
+#endif
+            Lemme *l = lemme(Ch::deramise(ecl[0]));
+            if (l!=NULL)
+                l->setHyphen(ecl[1]);
+#ifdef DEBOG
+            else qDebug () << linea << "erreur lireHyphen";
+#endif
+        }
+        Capsa.close();
+
+    }
+}

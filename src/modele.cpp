@@ -40,8 +40,19 @@
  */
 Desinence::Desinence(QString d, int morph, int nr, Modele *parent)
 {
+    // der, le dernier caractère de d, s'il est un nombre, donne le degré de
+    // rareté de la désinence, qui est 10 par défaut.
+    int der = -1;
+    if (!d.isEmpty())
+        der = d.at(d.length()-1).digitValue();
     // '-' est la désinence zéro
     if (d == "-") d = "";
+    else if (der > 0)
+    {
+        _rarete = der;
+        d.chop(1);
+    }
+    else _rarete = 10;
     _grq = d;
     _gr = Ch::atone(_grq);
     _morpho = morph;
@@ -54,31 +65,53 @@ Desinence::Desinence(QString d, int morph, int nr, Modele *parent)
  * \brief Graphie de la désinence, ramiste et sans quantités.
  */
 QString Desinence::gr() { return _gr; }
+
 /**
  * \fn QString Desinence::grq ()
  * \brief Graphie ramiste avec quantités.
  */
 QString Desinence::grq() { return _grq; }
+
+
 /**
  * \fn Modele* Desinence::modele ()
  * \brief Modèle de la désinence.
  */
 Modele *Desinence::modele() { return _modele; }
+
 /**
  * \fn int Desinence::morphoNum ()
  * \brief Numéro de morpho de la désinence.
  */
-int Desinence::morphoNum() { return _morpho; }
+int Desinence::morphoNum()
+{
+    return _morpho;
+}
+
 /**
  * \fn int Desinence::numRad ()
  * \brief Numéro de radical de la désinence.
  */
-int Desinence::numRad() { return _numR; }
+
+int Desinence::numRad()
+{
+    return _numR;
+}
+
+int Desinence::rarete()
+{
+    return _rarete;
+}
+
 /**
  * \fn void Desinence::setModele (Modele *m)
  * \brief Attribue un modèle à la désinence.
  */
-void Desinence::setModele(Modele *m) { _modele = m; }
+void Desinence::setModele(Modele *m)
+{
+    _modele = m;
+}
+
 ////////////
 // MODELE //
 ////////////
@@ -97,7 +130,7 @@ Modele::Modele(QStringList ll, Lemmat *parent)
     _lemmatiseur = qobject_cast<Lemmat *>(parent);
     _pere = 0;
     QMultiMap<QString, int> msuff;
-    QRegExp re("[:;](\\w*)\\+{0,1}(\\$\\w+)");
+    QRegExp re("[:;]([\\w]*)\\+{0,1}(\\$\\w+)");
     foreach (QString l, ll)
     {
         // remplacement des variables par leur valeur
@@ -109,10 +142,9 @@ Modele::Modele(QStringList ll, Lemmat *parent)
             if (!pre.isEmpty()) var.replace(";", ";" + pre);
             l.replace(v, var);
         }
-        l.remove('+');
         QStringList eclats = l.simplified().split(":");
-        // modele pere des des+ R   abs
-        //  0    1    2   3    4   5
+        // modele pere des desْ+ R   abs
+        //  0      1    2   3   4   5
         int p = cles.indexOf(eclats.first());
         switch (p)
         {
@@ -122,8 +154,8 @@ Modele::Modele(QStringList ll, Lemmat *parent)
             case 1:  // père
                 _pere = parent->modele(eclats.at(1));
                 break;
-            case 2:  // des: désinences écrasant celles du père
-            case 3:  // des+: désinences s'ajoutant à celles du père
+            case 2:  // des+: désinences s'ajoutant à celles du père
+            case 3:  // des: désinences écrasant celles du père
             {
                 QList<int> li = listeI(eclats.at(1));
                 int r = eclats.at(2).toInt();
@@ -187,8 +219,10 @@ Modele::Modele(QStringList ll, Lemmat *parent)
                         if (_absents.contains(d->morphoNum()))
                             // morpho absente chez le descendant
                             continue;
-                        Desinence *dsuf = new Desinence(
-                            d->grq() + suf, d->morphoNum(), d->numRad(), this);
+                        QString nd = d->grq();
+                        Ch::allonge (&nd);
+                        Desinence *dsuf = new Desinence
+                            (nd+suf, d->morphoNum(), d->numRad(), this);
                         _desinences.insert(dsuf->morphoNum(), dsuf);
                         _lemmatiseur->ajDesinence(dsuf);
                     }
@@ -263,17 +297,20 @@ Modele::Modele(QStringList ll, Lemmat *parent)
  *        certains verbes n'ont pas de passif.
  */
 bool Modele::absent(int a) { return _absents.contains(a); }
+
 /**
  * \fn QList<int> Modele::absents ()
  * \brief Retourne la liste des numéros des morphos absentes.
  */
 QList<int> Modele::absents() { return _absents; }
+
 /**
  * \fn QList<int> Modele::clesR ()
  * \brief Liste des numéros de radicaux utilisés, et
  *        rangés dans la map _genRadicaux.
  */
 QList<int> Modele::clesR() { return _genRadicaux.keys(); }
+
 /**
  * \fn Desinence* Modele::clone (Desinence *d)
  * \brief Crée une Désinence copiée sur la désinence d.
@@ -290,16 +327,19 @@ Desinence *Modele::clone(Desinence *d)
  *        de morpho m chez le modèle père.
  */
 bool Modele::deja(int m) { return _desinences.contains(m); }
+
 /**
  * \fn QList<Desinence*> Modele::desinences (int d)
  * \brief Renvoie la liste des désinence de morpho d du modèle.
  */
 QList<Desinence *> Modele::desinences(int d) { return _desinences.values(d); }
+
 /**
  * \fn QList<Desinence*> Modele::desinences ()
  * \brief Renvoie toutes les désinences du modèle.
  */
 QList<Desinence *> Modele::desinences() { return _desinences.values(); }
+
 /**
  * \fn bool Modele::estUn (QString m)
  * \brief Renvoie true si le modèle se nomme m, ou si
@@ -317,15 +357,14 @@ bool Modele::estUn(QString m)
  * \brief Nom du modèle.
  */
 QString Modele::gr() { return _gr; }
-QStringList const Modele::cles = QStringList() << "modele"
-                                               << "pere"
-                                               << "des"
-                                               << "des+"
-                                               << "R"
-                                               << "abs"
-                                               << "suf"
-                                               << "sufd";
-//    0           1        2         3       4       5        6        7
+QStringList const Modele::cles = QStringList() << "modele"  // 0
+                                               << "pere"    // 1
+                                               << "des"     // 2
+                                               << "des+"    // 3
+                                               << "R"       // 4
+                                               << "abs"     // 5
+                                               << "suf"     // 6
+                                               << "sufd";   // 7
 
 /**
  * \fn QString Modele::genRadical (int r)

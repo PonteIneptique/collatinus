@@ -93,11 +93,10 @@ void EditLatin::mouseReleaseEvent(QMouseEvent *e)
         {
             if (mainwindow->html())
             {
-                QString texte = mainwindow->textEditLem->toHtml();
-                int fin = texte.indexOf("</body>");
-                texte.insert(fin, mainwindow->lemmatiseur->lemmatiseT(st));
-                mainwindow->textEditLem->setHtml(texte);
-                qDebug()<<mainwindow->textEditLem->toHtml();
+                QString texteHtml = mainwindow->textEditLem->toHtml();
+                texteHtml.insert(texteHtml.indexOf("</body>"),mainwindow->lemmatiseur->lemmatiseT(st));
+                mainwindow->textEditLem->setText(texteHtml);
+                mainwindow->textEditLem->moveCursor(QTextCursor::End);
             }
             else
                 mainwindow->textEditLem->insertPlainText(
@@ -582,6 +581,7 @@ void MainWindow::closeEvent(QCloseEvent *event)
     settings.setValue("alpha", alphaOptAct->isChecked());
     settings.setValue("html", htmlAct->isChecked());
     settings.setValue("formetxt", formeTAct->isChecked());
+    settings.setValue("extensionlexique", extensionWAct->isChecked());
     settings.setValue("majpert", majPertAct->isChecked());
     settings.setValue("morpho", morphoAct->isChecked());
     settings.setValue("nonrec", nonRecAct->isChecked());
@@ -592,6 +592,7 @@ void MainWindow::closeEvent(QCloseEvent *event)
     settings.setValue("breve", breveAct->isChecked());
     settings.setValue("ambigue", ambigueAct->isChecked());
     settings.setValue("hyphenation", hyphenAct->isChecked());
+    settings.setValue("repHyphen", repHyphen);
     settings.endGroup();
     settings.beginGroup("dictionnaires");
     settings.setValue("courant", comboGlossaria->currentIndex());
@@ -656,6 +657,7 @@ void MainWindow::createActions()
     printAct = new QAction(QIcon(":res/print.svg"), tr("Im&primer"), this);
     quitAct = new QAction(QIcon(":/res/power.svg"), tr("&Quitter"), this);
     quitAct->setStatusTip(tr("Quitter l'application"));
+    oteAAct = new QAction(tr("Ôter les accents"), this);
     reFindAct = new QAction(tr("Chercher &encore"), this);
     statAct = new QAction(QIcon(":res/abacus.svg"), tr("S&tatistiques"), this);
     zoomAct = new QAction(QIcon(":res/zoom.svg"), tr("Plus gros"), this);
@@ -717,6 +719,7 @@ void MainWindow::createActions()
     optionsAccent->addAction(breveAct);
     optionsAccent->addAction(ambigueAct);
     optionsAccent->setEnabled(false);
+    lireHyphenAct = new QAction(tr("Lire les césures"),this);
     // actions pour les dictionnaires
     dicAct = new QAction(QIcon(":/res/dicolem.svg"),
                          tr("Lemmatiser et chercher"), this);
@@ -732,6 +735,8 @@ void MainWindow::createActions()
     syncWDAct = new QAction(tr("<-sync"), this);
     visibleWAct = new QAction(tr("Dictionnaire +"), this);
     visibleWAct->setCheckable(true);
+    extensionWAct = new QAction(tr("Extension du lexique"), this);
+    extensionWAct->setCheckable(true);
 }
 
 /**
@@ -793,16 +798,13 @@ void MainWindow::createConnections()
             SLOT(setMorpho(bool)));
     connect(nonRecAct, SIGNAL(toggled(bool)), lemmatiseur,
             SLOT(setNonRec(bool)));
+    connect(extensionWAct, SIGNAL(toggled(bool)), lemmatiseur, SLOT(setExtension(bool)));
 
     // actions et options de l'accentuation
     connect(accentAct, SIGNAL(toggled(bool)), this, SLOT(setAccent(bool)));
-    /*    connect(longueAct, SIGNAL(toggled(bool)), this,
-       SLOT(setLongue(bool)));
-        connect(breveAct, SIGNAL(toggled(bool)), this, SLOT(setBreve(bool)));
-        connect(ambigueAct, SIGNAL(toggled(bool)), this,
-       SLOT(setAmbigue(bool)));
-        connect(hyphenAct, SIGNAL(toggled(bool)), this, SLOT(setHyphen(bool)));
-    */
+    connect(lireHyphenAct, SIGNAL(triggered()), this, SLOT(lireFichierHyphen()));
+    connect(oteAAct, SIGNAL(triggered()), this, SLOT(oteDiacritiques()));
+
     // actions des dictionnaires
     connect(anteButton, SIGNAL(clicked()), this, SLOT(clicAnte()));
     connect(comboGlossaria, SIGNAL(currentIndexChanged(QString)), this,
@@ -892,6 +894,9 @@ void MainWindow::createMenus()
     fileMenu->addAction(exportAct);
     fileMenu->addAction(printAct);
     fileMenu->addSeparator();
+    fileMenu->addAction(oteAAct);
+    fileMenu->addAction(lireHyphenAct);
+    fileMenu->addSeparator();
     fileMenu->addAction(quitAct);
 
     editMenu = menuBar()->addMenu(tr("&Edition"));
@@ -919,6 +924,7 @@ void MainWindow::createMenus()
     lexMenu->addAction(lancAct);
     lexMenu->addAction(alphaAct);
     lexMenu->addAction(statAct);
+    lexMenu->addAction(extensionWAct);
 
     optMenu = menuBar()->addMenu(tr("&Options"));
     optMenu->addAction(alphaOptAct);
@@ -1393,7 +1399,12 @@ void MainWindow::lancer()
  */
 void MainWindow::lemmatiseLigne()
 {
-    textEditLem->append(lemmatiseur->lemmatiseT(lineEditLem->text()));
+    QString texteHtml = textEditLem->toHtml();
+    texteHtml.insert(texteHtml.indexOf("</body>"),
+                     lemmatiseur->lemmatiseT(lineEditLem->text()));
+    textEditLem->setText(texteHtml);
+    textEditLem->moveCursor(QTextCursor::End);
+//    textEditLem->append(lemmatiseur->lemmatiseT(lineEditLem->text()));
 }
 
 /**
@@ -1546,6 +1557,7 @@ void MainWindow::readSettings()
     // options de lemmatisation
     alphaOptAct->setChecked(settings.value("alpha").toBool());
     formeTAct->setChecked(settings.value("formetxt").toBool());
+    extensionWAct->setChecked(settings.value("extensionlexique").toBool());
     htmlAct->setChecked(settings.value("html").toBool());
     majPertAct->setChecked(settings.value("majpert").toBool());
     morphoAct->setChecked(settings.value("morpho").toBool());
@@ -1557,6 +1569,8 @@ void MainWindow::readSettings()
     breveAct->setChecked(settings.value("breve").toBool());
     ambigueAct->setChecked(settings.value("ambigue").toBool());
     hyphenAct->setChecked(settings.value("hyphenation").toBool());
+    repHyphen = settings.value("repHyphen").toString();
+    if (repHyphen.isEmpty()) repHyphen = qApp->applicationDirPath() + "/data";
 
     QString l = settings.value("cible").toString();
     lemmatiseur->setCible(l);
@@ -1567,6 +1581,7 @@ void MainWindow::readSettings()
     // options appliquées au lemmatiseur
     lemmatiseur->setAlpha(alphaOptAct->isChecked());
     lemmatiseur->setFormeT(formeTAct->isChecked());
+    lemmatiseur->setExtension(extensionWAct->isChecked());
     lemmatiseur->setHtml(htmlAct->isChecked());
     lemmatiseur->setMajPert(majPertAct->isChecked());
     lemmatiseur->setMorpho(morphoAct->isChecked());
@@ -1751,4 +1766,26 @@ int MainWindow::lireOptionsAccent()
         retour += 3;
     }
     return retour;
+}
+
+void MainWindow::lireFichierHyphen()
+{
+    QString ficIn = QFileDialog::getOpenFileName(this, "Capsam legere", repHyphen+"/hyphen.la");
+    if (!ficIn.isEmpty()) repHyphen = QFileInfo (ficIn).absolutePath ();
+    lemmatiseur->lireHyphen(ficIn);
+}
+
+void MainWindow::oteDiacritiques()
+{
+    QString texte = editLatin->toPlainText();
+    texte.replace("ç","s");
+    texte.replace("Ç","S");
+    texte = texte.normalized(QString::NormalizationForm_D, QChar::currentUnicodeVersion());
+    texte.remove("\u0300");
+    texte.remove("\u0301");
+    texte.remove("\u0302");
+    texte.remove("\u0304");
+    texte.remove("\u0306");
+    texte.remove("\u0308");
+    editLatin->setText(texte);
 }

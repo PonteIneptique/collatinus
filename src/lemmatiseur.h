@@ -55,10 +55,12 @@ class Lemmat : public QObject
     void ajAssims();
     void ajContractions();
     void lisIrreguliers();
+    void lisFichierLexique(QString filepath);
     void lisLexique();
+    void lisExtension();
     void lisModeles();
     void lisParPos();
-    void lisTraductions();
+    void lisTraductions(bool base, bool extension);
     // variables et utils
     QMap<QString, QString> assims;
     QMap<QString, QString> assimsq;
@@ -80,6 +82,7 @@ class Lemmat : public QObject
     QMap<QString, QString> _variables;
     // options
     bool _alpha;
+    bool _extension; // = false;
     bool _formeT;
     bool _html;
     bool _majPert;
@@ -119,6 +122,8 @@ class Lemmat : public QObject
     // QStringList           suffixes;
     QMap<QString, QString> suffixes;
     QString variable(QString v);
+    // Lire un fichier de césures étymologiques (non-phonétiques)
+    void lireHyphen (QString fichierHyphen);
 
     // accesseurs d'options
     bool optAlpha();
@@ -126,6 +131,7 @@ class Lemmat : public QObject
     bool optFormeT();
     bool optMajPert();
     bool optMorpho();
+    bool optExtension();
 
    public slots:
     // modificateur       s d'options
@@ -136,6 +142,7 @@ class Lemmat : public QObject
     void setMajPert(bool mp);
     void setMorpho(bool m);
     void setNonRec(bool n);
+    void setExtension(bool e);
 };
 
 #endif

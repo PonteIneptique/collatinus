@@ -19,6 +19,12 @@
  * © Yves Ouvrard, 2009 - 2016
  */
 
+// TODO
+// déclinaison interne : jusjurandum, respublica, unusquisque
+//    autre cas : paterfamilias
+// génération des irréguliers
+//
+
 #include "irregs.h"
 #include <QStringList>
 #include "ch.h"

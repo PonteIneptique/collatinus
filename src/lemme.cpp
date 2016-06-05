@@ -95,6 +95,7 @@ Lemme::Lemme(QString linea, QObject *parent)
     _gr = Ch::atone(_grq);
     _grModele = eclats.at(1);
     _modele = _lemmatiseur->modele(_grModele);
+    _hyphen = "";
     // lecture des radicaux, champs 2 et 3
     for (int i = 2; i < 4; ++i)
         if (!eclats.at(i).isEmpty())
@@ -206,8 +207,10 @@ QString Lemme::cle() { return _cle; }
 QList<int> Lemme::clesR() { return _radicaux.keys(); }
 /**
  * \fn bool Lemme::estIrregExcl (int nm)
- * \brief Renvoie vrai si le radical remplace
- *        la forme irrégulière, faux si la
+ * \param nm : numéro de morpho
+ * \brief Renvoie vrai si la forme irrégulière
+ *        avec le n° nm remplace celle construite
+ *        sur le radical , faux si la
  *        forme régulière existe aussi.
  */
 bool Lemme::estIrregExcl(int nm) { return _morphosIrrExcl.contains(nm); }
@@ -341,3 +344,22 @@ QString Lemme::traduction(QString l)
  *        l'ordre alphabétique.
  */
 bool Lemme::operator<(Lemme &l) { return _gr < l.gr(); }
+
+/**
+ * @brief Lemme::setHyphen
+ * @param h : indique où se fait la césure.
+ * \brief stocke l'information sur la césure étymologique du lemme
+ */
+void Lemme::setHyphen(QString h)
+{
+    _hyphen = h;
+}
+
+/**
+ * @brief Lemme::getHyphen
+ * @return la césure étymologique du lemme
+ */
+QString Lemme::getHyphen()
+{
+    return _hyphen;
+}

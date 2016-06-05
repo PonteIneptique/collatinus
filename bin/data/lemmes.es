@@ -5511,7 +5511,6 @@ loquax:locuaz; parlanchín
 loquor:hablar
 lorica:loriga, coraza, cota de malla; parapeto
 lorum:correa, atadura, cuerda; brida, riendas; látigo
-lotus:lavado (participio de lavo)
 lubricus:resbaladizo, inseguro, peligroso, engañoso
 lucar:impuestos sobre los bosques sagrados; salario de los actores
 luceo:lucir, brillar; ser evidente; amanecer
