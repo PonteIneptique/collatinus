@@ -79,7 +79,7 @@ int Radical::numRad() { return _numero; }
  * \brief Constructeur de la classe Lemme à partire de la
  *        ligne linea. *parent est le lemmatiseur (classe Lemmat).
  */
-Lemme::Lemme(QString linea, QObject *parent)
+Lemme::Lemme(QString linea, int origin, QObject *parent)
 {
     // cădo|lego|cĕcĭd|cās|is, ere, cecidi, casum
     //   0   1    2     3          4
@@ -89,20 +89,21 @@ Lemme::Lemme(QString linea, QObject *parent)
     _cle = Ch::atone(Ch::deramise(lg.at(0)));
     _grd = oteNh(lg.at(0), _nh);
     if (lg.count() == 1)
-        _grq = _grd;
+        _grq = Ch::communes(_grd);
     else
-        _grq = lg.at(1);
+        _grq = Ch::communes(lg.at(1));
     _gr = Ch::atone(_grq);
     _grModele = eclats.at(1);
     _modele = _lemmatiseur->modele(_grModele);
     _hyphen = "";
+    _origin = origin;
     // lecture des radicaux, champs 2 et 3
     for (int i = 2; i < 4; ++i)
         if (!eclats.at(i).isEmpty())
         {
             QStringList lrad = eclats.at(i).split(',');
             foreach (QString rad, lrad)
-                _radicaux.insert(i - 1, new Radical(rad, i - 1, this));
+                _radicaux.insert(i - 1, new Radical(Ch::communes(rad), i - 1, this));
         }
     _lemmatiseur->ajRadicaux(this);
 
@@ -362,4 +363,13 @@ void Lemme::setHyphen(QString h)
 QString Lemme::getHyphen()
 {
     return _hyphen;
+}
+
+/**
+ * @brief Lemme::getOrigin()
+ * @return l'origine du lemme (lexique de base ou extension)
+ */
+int Lemme::getOrigin()
+{
+    return _origin;
 }

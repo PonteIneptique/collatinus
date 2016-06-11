@@ -673,8 +673,8 @@ QString Lemmat::lemmatiseT(QString t, bool alpha, bool cumVocibus,
         if (alpha) qSort(nonReconnus.begin(), nonReconnus.end(), Ch::sort_i);
         QString titreNR;
         QTextStream(&titreNR) << "--- " << nonReconnus.count() << "/"
-                              << lm.count() << " ("
-                              << ((nonReconnus.count() * 100) / lm.count())
+                              << (lm.count() - 1) / 2 << " ("
+                              << ((nonReconnus.count() * 200) / (lm.count()-1))
                               << " %) FORMES NON RECONNUES ---" << nl << "\n";
         lRet.append(titreNR + nl);
         foreach (QString nr, nonReconnus)

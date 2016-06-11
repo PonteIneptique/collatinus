@@ -31,5 +31,6 @@ QChar const separSyll = 0x02CC;
 QString transforme(QString k);
 QString accentue(QString l);
 QString ajoutSuff(QString fq, QString suffixe, QString l_etym, int accent);
+QString communes(QString g);
 }
 #endif
