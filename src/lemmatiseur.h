@@ -90,6 +90,8 @@ class Lemmat : public QObject
     bool _nonRec;
 
     QString _resDir; // Le chemin du répertoire de ressources
+    bool _extLoaded; // = true après chargement de l'extension
+    // Lorsque j'ai chargé l'extension, je dois pouvoir ignorer les analyses qui en viennent.
 
    public:
     Lemmat(QObject *parent = 0, QString resDir="");

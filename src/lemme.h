@@ -72,9 +72,10 @@ class Lemme : public QObject
     QMap<QString, QString> _traduction;
 
     QString _hyphen; // Pour les césures étymologies
+    int _origin; // Pour savoir d'où vient le lemme (lexique de base ou extension)
 
    public:
-    Lemme(QString linea, QObject* parent);
+    Lemme(QString linea, int origin, QObject* parent);
     void ajIrreg(Irreg* irr);
     void ajRadical(int i, Radical* r);
     void ajTrad(QString t, QString l);
@@ -98,6 +99,7 @@ class Lemme : public QObject
 
     QString getHyphen (); // Accesseurs pour les césures étymologiques
     void setHyphen (QString h);
+    int getOrigin (); // Accesseur pour l'origine du lemme (lexique de base ou extension)
 
 };
 

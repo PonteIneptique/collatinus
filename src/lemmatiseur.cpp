@@ -58,6 +58,8 @@ Lemmat::Lemmat(QObject *parent, QString resDir) : QObject(parent)
     _html = false;
     _majPert = false;
     _morpho = false;
+    _extension = false;
+    _extLoaded = false;
     // suffixes
     suffixes.insert("ne", "nĕ");
     suffixes.insert("que", "quĕ");
@@ -311,7 +313,7 @@ MapLem Lemmat::lemmatise(QString f)
     int cnt_ae = f_lower.count("æ");
     // ne pas merger - commenté par commodité
     int cnt_oe = f_lower.count("œ");
-    if (f_lower.endsWith("æ")) cnt_ae -= 1;
+//    if (f_lower.endsWith("æ")) cnt_ae -= 1;
     f = Ch::deramise(f);
     // formes irrégulières
     QList<Irreg *> lirr = _irregs.values(f);
@@ -357,7 +359,8 @@ MapLem Lemmat::lemmatise(QString f)
                     if (!c) c = (V_maj && (rad->gr()[0] == 'U')
                             && (cnt_v - 1 == rad->grq().toLower().count("v")));
                     c = c && ((cnt_oe==0)||(cnt_oe == rad->grq().toLower().count("ōe")));
-                    c = c && ((cnt_ae==0)||(cnt_ae == rad->grq().toLower().count("āe")));
+                    c = c && ((cnt_ae==0)||(cnt_ae == rad->grq().toLower().count("āe")
+                                            +des->grq().count("āe")));
                     if (c)
                     {
                         QString fq = rad->grq() + des->grq();
@@ -371,6 +374,18 @@ MapLem Lemmat::lemmatise(QString f)
                 }
             }
         }
+    }
+    if (_extLoaded && !_extension && !result.isEmpty())
+    {
+        // L'extension est chargée mais je ne veux voir les solutions qui en viennent que si toutes en viennent.
+        MapLem res;
+        foreach (Lemme *l, result.keys())
+        {
+            if (l->getOrigin() == 0)
+                res[l] = result[l];
+        }
+
+        if (!res.isEmpty()) result = res;
     }
     return result;
 }
@@ -747,6 +762,8 @@ void Lemmat::lisIrreguliers()
  */
 void Lemmat::lisFichierLexique(QString filepath)
 {
+    int orig = 0;
+    if (filepath.endsWith("ext.la")) orig = 1;
     QFile flem(filepath);
     flem.open(QFile::ReadOnly);
     QTextStream fll(&flem);
@@ -754,7 +771,7 @@ void Lemmat::lisFichierLexique(QString filepath)
     {
         QString lin = fll.readLine().simplified();
         if (lin.isEmpty() || lin.startsWith("!")) continue;
-        Lemme *l = new Lemme(lin, this);
+        Lemme *l = new Lemme(lin, orig, this);
         _lemmes.insert(l->cle(), l);
     }
     flem.close();
@@ -1011,12 +1028,15 @@ QString Lemmat::variable(QString v) { return _variables[v]; }
 
 void Lemmat::setExtension(bool e)
 {
-    if (_extension || !e) {
-        return;// can't unload lemmes!
+//    if (_extension || !e) {
+//        return;// can't unload lemmes!
+//    }
+    _extension = e;
+    if (!_extLoaded && e) {
+        lisExtension();
+        lisTraductions(false,true);
+        _extLoaded = true;
     }
-    _extension = true;
-    lisExtension();
-    lisTraductions(false,true);
 }
 
 /**
