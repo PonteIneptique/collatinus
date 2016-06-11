@@ -636,31 +636,31 @@ void MainWindow::createActions()
     connect(undoAct, SIGNAL(triggered()), this, SLOT(undo()));
     // aussi SLOT(redo())
     */
-    alphaAct = new QAction(QIcon(":res/edit-alpha.svg"),
+    alphaAct = new QAction(QIcon(":/res/edit-alpha.svg"),
                            tr("Lancer et classer &alphabétiquement"), this);
     aproposAct =
         new QAction(QIcon(":/res/collatinus.svg"), tr("à &Propos"), this);
-    balaiAct = new QAction(QIcon(":res/edit-clear.svg"),
+    balaiAct = new QAction(QIcon(":/res/edit-clear.svg"),
                            tr("&Effacer les résultats"), this);
-    copieAct = new QAction(QIcon(":res/copie.svg"),
+    copieAct = new QAction(QIcon(":/res/copie.svg"),
                            tr("&Copier dans un traitement de textes"), this);
-    deZoomAct = new QAction(QIcon(":res/dezoom.svg"), tr("Plus petit"), this);
-    findAct = new QAction(QIcon(":res/edit-find.svg"), tr("&Chercher"), this);
+    deZoomAct = new QAction(QIcon(":/res/dezoom.svg"), tr("Plus petit"), this);
+    findAct = new QAction(QIcon(":/res/edit-find.svg"), tr("&Chercher"), this);
     fontAct = new QAction(tr("Police de caractères"), this);
-    lancAct = new QAction(QIcon(":res/gear.svg"), tr("&Lancer"), this);
+    lancAct = new QAction(QIcon(":/res/gear.svg"), tr("&Lancer"), this);
     majAct = new QAction(tr("Télécharger lexiques et dictionnaires"), this);
     nouvAct =
         new QAction(QIcon(":/res/document-new.svg"), tr("&Nouveau"), this);
     ouvrirAct =
         new QAction(QIcon(":/res/document-open.svg"), tr("&Ouvrir"), this);
-    exportAct = new QAction(QIcon(":res/pdf.svg"), tr("Exporter en pdf"), this);
-    printAct = new QAction(QIcon(":res/print.svg"), tr("Im&primer"), this);
+    exportAct = new QAction(QIcon(":/res/pdf.svg"), tr("Exporter en pdf"), this);
+    printAct = new QAction(QIcon(":/res/print.svg"), tr("Im&primer"), this);
     quitAct = new QAction(QIcon(":/res/power.svg"), tr("&Quitter"), this);
     quitAct->setStatusTip(tr("Quitter l'application"));
     oteAAct = new QAction(tr("Ôter les accents"), this);
     reFindAct = new QAction(tr("Chercher &encore"), this);
-    statAct = new QAction(QIcon(":res/abacus.svg"), tr("S&tatistiques"), this);
-    zoomAct = new QAction(QIcon(":res/zoom.svg"), tr("Plus gros"), this);
+    statAct = new QAction(QIcon(":/res/abacus.svg"), tr("S&tatistiques"), this);
+    zoomAct = new QAction(QIcon(":/res/zoom.svg"), tr("Plus gros"), this);
 
     // langues d'interface
     enAct = new QAction(tr("English Interface"), this);
@@ -924,7 +924,9 @@ void MainWindow::createMenus()
     lexMenu->addAction(lancAct);
     lexMenu->addAction(alphaAct);
     lexMenu->addAction(statAct);
+    lexMenu->addSeparator();
     lexMenu->addAction(extensionWAct);
+    lexMenu->addSeparator();
 
     optMenu = menuBar()->addMenu(tr("&Options"));
     optMenu->addAction(alphaOptAct);

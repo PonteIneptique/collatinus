@@ -89,8 +89,10 @@ class Lemmat : public QObject
     bool _morpho;
     bool _nonRec;
 
+    QString _resDir; // Le chemin du répertoire de ressources
+
    public:
-    Lemmat(QObject *parent = 0);
+    Lemmat(QObject *parent = 0, QString resDir="");
     void ajDesinence(Desinence *d);
     void ajModele(Modele *m);
     void ajRadicaux(Lemme *l);

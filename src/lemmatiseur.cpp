@@ -46,8 +46,12 @@
  * de lecture des données : modèles, lexique,
  * traductions et irréguliers.
  */
-Lemmat::Lemmat(QObject *parent) : QObject(parent)
+Lemmat::Lemmat(QObject *parent, QString resDir) : QObject(parent)
 {
+    if (resDir == "")
+        _resDir = qApp->applicationDirPath() + "/data/";
+    else if (resDir.endsWith("/")) _resDir = resDir;
+    else _resDir = resDir + "/";
     // options
     _alpha = false;
     _formeT = false;
@@ -65,7 +69,7 @@ Lemmat::Lemmat(QObject *parent) : QObject(parent)
     // contractions
     ajContractions();
     // lecture des morphos
-    QFile f(qApp->applicationDirPath() + "/data/morphos.la");
+    QFile f(_resDir + "morphos.la");
     f.open(QFile::ReadOnly);
     QTextStream fl(&f);
     while (!fl.atEnd()) _morphos.append(fl.readLine());
@@ -87,7 +91,7 @@ Lemmat::Lemmat(QObject *parent) : QObject(parent)
 void Lemmat::ajAssims()
 {
     // peupler la QMap assims
-    QFile fAssims(qApp->applicationDirPath() + "/data/assimilations.la");
+    QFile fAssims(_resDir + "assimilations.la");
     fAssims.open(QFile::ReadOnly);
     QTextStream fla(&fAssims);
     while (!fla.atEnd())
@@ -110,7 +114,7 @@ void Lemmat::ajAssims()
 void Lemmat::ajContractions()
 {
     // peupler la QMap _contractions
-    QFile fContractions(qApp->applicationDirPath() + "/data/contractions.la");
+    QFile fContractions(_resDir + "contractions.la");
     fContractions.open(QFile::ReadOnly);
     QTextStream flc(&fContractions);
     while (!flc.atEnd())
@@ -306,7 +310,7 @@ MapLem Lemmat::lemmatise(QString f)
     bool V_maj = f[0] == 'V';
     int cnt_ae = f_lower.count("æ");
     // ne pas merger - commenté par commodité
-    //int cnt_oe = f_lower.count("œ");
+    int cnt_oe = f_lower.count("œ");
     if (f_lower.endsWith("æ")) cnt_ae -= 1;
     f = Ch::deramise(f);
     // formes irrégulières
@@ -715,7 +719,7 @@ QStringList Lemmat::lemmes(MapLem lm)
  */
 void Lemmat::lisIrreguliers()
 {
-    QFile firr(qApp->applicationDirPath() + "/data/irregs.la");
+    QFile firr(_resDir + "irregs.la");
     firr.open(QFile::ReadOnly);
     QTextStream fli(&firr);
     while (!fli.atEnd())
@@ -762,7 +766,7 @@ void Lemmat::lisFichierLexique(QString filepath)
  */
 void Lemmat::lisLexique()
 {
-    Lemmat::lisFichierLexique(qApp->applicationDirPath() + "/data/lemmes.la");
+    Lemmat::lisFichierLexique(_resDir + "lemmes.la");
 }
 
 /**
@@ -771,7 +775,7 @@ void Lemmat::lisLexique()
  */
 void Lemmat::lisExtension()
 {
-    Lemmat::lisFichierLexique(qApp->applicationDirPath() + "/data/lem_ext.la");
+    Lemmat::lisFichierLexique(_resDir + "lem_ext.la");
 }
 
 /**
@@ -781,7 +785,7 @@ void Lemmat::lisExtension()
  */
 void Lemmat::lisModeles()
 {
-    QFile fm(qApp->applicationDirPath() + "/data/modeles.la");
+    QFile fm(_resDir + "modeles.la");
     fm.open(QFile::ReadOnly);
     QTextStream flm(&fm);
     QStringList sl;
@@ -813,7 +817,7 @@ void Lemmat::lisModeles()
  */
 void Lemmat::lisParPos()
 {
-    QFile fpp(qApp->applicationDirPath() + "/data/parpos.txt");
+    QFile fpp(_resDir + "parpos.txt");
     fpp.open(QFile::ReadOnly);
     QTextStream flp(&fpp);
     // fle.setCodec ("UTF-8");
@@ -840,15 +844,15 @@ void Lemmat::lisParPos()
  */
 void Lemmat::lisTraductions(bool base, bool extension)
 {
-    QString nrep = qApp->applicationDirPath() + "/data/";
+//    QString nrep = qApp->applicationDirPath() + "/data/";
     QDir rep;
     if (!base && !extension) return;
     if (base && extension) {
-        rep = QDir(nrep, "lem*.*");
+        rep = QDir(_resDir, "lem*.*");
     } else if (base) {
-        rep = QDir(nrep, "lemmes.*");
+        rep = QDir(_resDir, "lemmes.*");
     } else {
-        rep = QDir(nrep, "lem_ext.*");
+        rep = QDir(_resDir, "lem_ext.*");
     }
     QStringList ltr = rep.entryList();
     if (base) {
@@ -861,7 +865,7 @@ void Lemmat::lisTraductions(bool base, bool extension)
     {
         // suffixe
         QString suff = QFileInfo(nfl).suffix();
-        QFile fl(nrep + nfl);
+        QFile fl(_resDir + nfl);
         fl.open(QFile::ReadOnly);
         QTextStream flfl(&fl);
         // lire le nom de la langue
