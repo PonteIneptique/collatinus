@@ -1471,6 +1471,7 @@ void MainWindow::nouveau()
  * \fn void MainWindow::ouvrir()
  * \brief Affiche le dialogue d'ouverture de fichier.
  */
+
 void MainWindow::ouvrir()
 {
     if (precaution()) return;
@@ -1719,7 +1720,7 @@ void MainWindow::stat()
     }
     if (dockVisible(dockScand))
         textEditScand->setHtml(
-            lemmatiseur->scandeTxt(editLatin->toPlainText(), true));
+            lemmatiseur->scandeTxt(editLatin->toPlainText(), 0, true));
 }
 
 /**
