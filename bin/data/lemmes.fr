@@ -21,7 +21,7 @@ a:à partir de, après un verbe passif = par
 !ab:à partir de, après un verbe passif = par
 abacus:la table de jeu
 abalieno:1. éloigner 2. détourner, dégager de, priver de
-Abas:Abas, plusieurs personnages, dont un roi d'Argos
+!Abas:Abas, plusieurs personnages, dont un roi d'Argos
 abcido:couper, trancher
 abdico:nier, renier, renoncer à
 abdico2:refuser, repousser
