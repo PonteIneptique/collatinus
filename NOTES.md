@@ -68,9 +68,19 @@ Requis :
      1. de donner un poids au règles. 
         Ex. opus est -> l'expression annule tout autre
         lien syntaxique entre les deux mots.
-     2. De rendre récursive la structure des règles. le champ super ou sub
-        d'une règle pouvant être un élément de règle. Par exemple, le sub
-        d'un verbe peut être un ablatif absolu.
+        Ce poids doit être calculé :
+        - d'après la position du sub (< ou >).
+        - d'après le nombre de groupes qui séparent le sub
+          du super ;
+        - par une valeur absolue donnée à la règle : certaines
+          règles sont plus fréquentes que d'autres.
+        Ce poids complique l'algo d'analyse, qui est
+        obligé de se poursuivre même quand une règle a été 
+        validée.
+     2. Récursivité : un élément de règle (super ou sub) peut
+        être conditionné à ses propres sub : il n'est
+        admis comme sub ou super que s'il a lui-même un sub
+        via une règle dont l'id est défini.
    * Données de lemmes.fr : Le module syntaxe a besoin
         - d'identifier la traduction d'un lemme en fonction de
             son pos.
