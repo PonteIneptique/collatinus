@@ -79,7 +79,7 @@ int Radical::numRad() { return _numero; }
  * \brief Constructeur de la classe Lemme à partire de la
  *        ligne linea. *parent est le lemmatiseur (classe Lemmat).
  */
-Lemme::Lemme(QString linea, QObject *parent)
+Lemme::Lemme(QString linea, int origin, QObject *parent)
 {
     // cădo|lego|cĕcĭd|cās|is, ere, cecidi, casum
     //   0   1    2     3          4
@@ -96,6 +96,7 @@ Lemme::Lemme(QString linea, QObject *parent)
     _grModele = eclats.at(1);
     _modele = _lemmatiseur->modele(_grModele);
     _hyphen = "";
+    _origin = origin;
     // lecture des radicaux, champs 2 et 3
     for (int i = 2; i < 4; ++i)
         if (!eclats.at(i).isEmpty())
@@ -280,11 +281,21 @@ QString Lemme::irreg(int i, bool *excl)
  * \brief Renvoie l'objet modèle du lemme.
  */
 Modele *Lemme::modele() { return _modele; }
+
 /**
  * \fn int Lemme::nh()
  * \brief Renvoie le numéro d'homonymie du lemme.
  */
-int Lemme::nh() { return _nh; }
+int Lemme::nh()
+{
+    return _nh;
+}
+
+lint Lemme::origin()
+{
+    return _origin;
+}
+
 /**
  * \fn QString Lemme::oteNh (QString g, int &nh)
  * \brief Supprime le dernier caractère de g si c'est

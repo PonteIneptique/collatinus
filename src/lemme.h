@@ -55,50 +55,49 @@ class Lemme : public QObject
 {
     Q_OBJECT
    private:
-    QString _cle;
-    QString _gr;
-    QString _grd;
-    QString _grq;
-    QString _grModele;
-    QString _indMorph;
-    QList<Irreg*> _irregs;
-    Modele* _modele;
-    int _nh;
-    Lemmat* _lemmatiseur;
-    QList<int> _morphosIrrExcl;
-    QString _pos;
-    QMultiMap<int, Radical*> _radicaux;
-    QString _renvoi;
-    QMap<QString, QString> _traduction;
-
-    QString _hyphen; // Pour les césures étymologies
+    QString                 _cle;
+    QString                 _gr;
+    QString                 _grd;
+    QString                 _grq;
+    QString                 _grModele;
+    QString                 _hyphen; // Pour les césures étymologies
+    QString                 _indMorph;
+    QList<Irreg*>           _irregs;
+    Modele*                 _modele;
+    int                     _nh;
+    Lemmat*                 _lemmatiseur;
+    QList<int>              _morphosIrrExcl;
+    int                     _origin; // lemmes ou lem_ext
+    QString                 _pos;
+    QMultiMap<int,Radical*> _radicaux;
+    QString                 _renvoi;
+    QMap<QString,QString>   _traduction;
 
    public:
-    Lemme(QString linea, QObject* parent);
-    void ajIrreg(Irreg* irr);
-    void ajRadical(int i, Radical* r);
-    void ajTrad(QString t, QString l);
-    QString ambrogio();
-    QString cle();
-    QList<int> clesR();
-    bool estIrregExcl(int nm);
-    QString irreg(int i, bool* excl);
-    QString gr();
-    QString grq();
-    QString grModele();
-    QString humain(bool html = false, QString l = "fr");
-    Modele* modele();
-    int nh();
-    QString static oteNh(QString g, int& nh);
-    QString pos();
-    QList<Radical*> radical(int r);
-    bool renvoi();
-    QString traduction(QString l);
+    Lemme(QString linea, int origin, QObject* parent);
+    void                ajIrreg(Irreg* irr);
+    void                ajRadical(int i, Radical* r);
+    void                ajTrad(QString t, QString l);
+    QString             ambrogio();
+    QString             cle();
+    QList<int>          clesR();
+    bool                estIrregExcl(int nm);
+    QString             getHyphen (); // Accesseurs pour les césures étymologiques
+    QString             gr();
+    QString             grq();
+    QString             grModele();
+    QString             humain(bool html = false, QString l = "fr");
+    QString             irreg(int i, bool* excl);
+    Modele*             modele();
+    int                 nh();
+    int                 origin();
+    QString static      oteNh(QString g, int& nh);
+    QString             pos();
+    QList<Radical*>     radical(int r);
+    bool                renvoi();
+    void                setHyphen (QString h);
+    QString             traduction(QString l);
     inline bool operator<(Lemme& l);
-
-    QString getHyphen (); // Accesseurs pour les césures étymologiques
-    void setHyphen (QString h);
-
 };
 
 #endif

@@ -379,7 +379,7 @@ MapLem Lemmat::lemmatise(QString f)
         MapLem res;
         foreach (Lemme *l, result.keys())
         {
-            if (l->getOrigin() == 0)
+            if (l->origin() == 0)
                 res[l] = result[l];
         }
 
