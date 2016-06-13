@@ -960,7 +960,6 @@ asina:ânesse
 Asina2:Asina (cognomen)
 asinalis:d'âne
 asinarius:d'âne (asinarius, i, m. : l'ânier)
-asina:Asina
 asininus:d'âne
 Asinius:Asinius
 asinus:âne
