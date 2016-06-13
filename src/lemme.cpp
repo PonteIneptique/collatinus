@@ -291,7 +291,7 @@ int Lemme::nh()
     return _nh;
 }
 
-lint Lemme::origin()
+int Lemme::origin()
 {
     return _origin;
 }

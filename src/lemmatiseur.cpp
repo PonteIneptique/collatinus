@@ -1025,7 +1025,7 @@ QString Lemmat::variable(QString v) { return _variables[v]; }
 
 void Lemmat::setExtension(bool e)
 {
-    extension = e;
+    _extension = e;
     if (!_extLoaded && e) {
         lisExtension();
         lisTraductions(false,true);
