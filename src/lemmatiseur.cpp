@@ -305,8 +305,7 @@ MapLem Lemmat::lemmatise(QString f)
     int cnt_v = f_lower.count("v");
     bool V_maj = f[0] == 'V';
     int cnt_ae = f_lower.count("æ");
-    // ne pas merger - commenté par commodité
-    //int cnt_oe = f_lower.count("œ");
+    int cnt_oe = f_lower.count("œ");
     if (f_lower.endsWith("æ")) cnt_ae -= 1;
     f = Ch::deramise(f);
     // formes irrégulières
