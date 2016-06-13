@@ -62,27 +62,29 @@ class Lemmat : public QObject
     void lisParPos();
     void lisTraductions(bool base, bool extension);
     // variables et utils
-    QMap<QString, QString> assims;
-    QMap<QString, QString> assimsq;
-    QStringList cherchePieds(int nbr, QString ligne, int i, bool pentam);
-    QMap<QString, QString> _contractions;
+    QMap<QString, QString>           assims;
+    QMap<QString, QString>           assimsq;
+    QStringList                      cherchePieds(int nbr, QString ligne, int i, bool pentam);
+    QMap<QString, QString>          _contractions;
     QMultiMap<QString, Desinence *> _desinences;
-    QString decontracte(QString d);
-    QStringList formeq(QString forme, bool *nonTrouve, bool debPhr,
-                       int accent = 0);
-    bool inv(Lemme *l, const MapLem ml);
-    QMultiMap<QString, Irreg *> _irregs;
-    QString _cible;  // langue courante, 2 caractères
-    QMap<QString, QString> _cibles;
-    QMap<QString, Lemme *> _lemmes;
-    QMap<QString, Modele *> _modeles;
-    QStringList _morphos;
-    QMultiMap<QString, Radical *> _radicaux;
-    QList<Reglep> _reglesp;
-    QMap<QString, QString> _variables;
+    QString                          decontracte(QString d);
+    QStringList                      formeq(QString forme, bool *nonTrouve, bool debPhr,
+                                            int accent = 0);
+    bool                             inv(Lemme *l, const MapLem ml);
+    QMultiMap<QString, Irreg *>     _irregs;
+    QString                         _cible;  // langue courante, 2 caractères
+    QMap<QString, QString>          _cibles;
+    QMap<QString, Lemme *>          _lemmes;
+    QMap<QString, Modele *>         _modeles;
+    QStringList                     _morphos;
+    QMultiMap<QString, Radical *>   _radicaux;
+    QList<Reglep>                   _reglesp;
+    QString                         _resDir;
+    QMap<QString, QString>          _variables;
     // options
     bool _alpha;
     bool _extension; // = false;
+    bool _extLoaded;
     bool _formeT;
     bool _html;
     bool _majPert;
@@ -90,7 +92,7 @@ class Lemmat : public QObject
     bool _nonRec;
 
    public:
-    Lemmat(QObject *parent = 0);
+    Lemmat(QObject *parent = 0, QString resDir="");
     void ajDesinence(Desinence *d);
     void ajModele(Modele *m);
     void ajRadicaux(Lemme *l);
