@@ -93,6 +93,11 @@ modele:lupus
 R:1:2,0
 des:1-12:1:$lupus
 
+modele:samus
+pere:lupus
+des:413:1:ī
+abs:7-12
+
 modele:liberi
 pere:lupus
 R:1:1,0
@@ -122,6 +127,11 @@ pere:lupus
 R:1:2,0
 des:1-3:1:ŭm;ŭm;ŭm
 des:7-9:1:ă;ă;ă
+
+modele:arpinum
+pere:templum
+des:413:1:ī
+abs:7-12
 
 modele:castra
 pere:templum
