@@ -119,7 +119,7 @@ Lemme::Lemme(QString linea, int origin, QObject *parent)
         _pos.append('e');
     if (_indMorph.contains("interj"))
         _pos.append('i');
-    if (_indMorph.contains("num"))
+    if (_indMorph.contains("num."))
         _pos.append('m');
     if (_indMorph.contains("pron."))
         _pos.append('p');
@@ -127,7 +127,7 @@ Lemme::Lemme(QString linea, int origin, QObject *parent)
         _pos.append('r');
     if (_indMorph.contains("adv"))
         _pos.append('d');
-    if (_indMorph.contains("n. "))
+    if (_indMorph.contains("n.") || _indMorph.contains("npr."))
         _pos.append('n');
     if (_pos.isEmpty())
         _pos.append(_modele->pos());
@@ -321,7 +321,11 @@ QString Lemme::oteNh(QString g, int &nh)
  *        catégorie (part of speech, pars orationis)
  *        du lemme.
  */
-QString Lemme::pos() { return _pos; }
+QString Lemme::pos()
+{
+    return _pos;
+}
+
 /**
  * \fn QList<Radical*> Lemme::radical (int r)
  * \brief Renvoie le radical numéro r du lemme.
