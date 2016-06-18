@@ -46,13 +46,13 @@ Desinence::Desinence(QString d, int morph, int nr, Modele *parent)
     if (!d.isEmpty())
         der = d.at(d.length()-1).digitValue();
     // '-' est la désinence zéro
+    _rarete = 10;
     if (d == "-") d = "";
     else if (der > 0)
     {
         _rarete = der;
         d.chop(1);
     }
-    else _rarete = 10;
     _grq = d;
     _gr = Ch::atone(_grq);
     _morpho = morph;
