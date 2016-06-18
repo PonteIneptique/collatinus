@@ -122,7 +122,11 @@ QString Flexion::gras(QString g)
  *        Aucun tableau ne peut être calculé
  *        avant que cette fonction ait été appelée.
  */
-void Flexion::setLemme(Lemme *l) { _lemme = l; }
+void Flexion::setLemme(Lemme *l)
+{
+    _lemme = l;
+}
+
 /**
  * \fn QString Flexion::tableau (Lemme *l)
  * \brief Renvoie le tableau de flexion de l.
@@ -144,17 +148,6 @@ QString Flexion::tableau(Lemme *l)
     if (ret.empty()) return l->humain();
     ret.removeDuplicates();
     return ret.join("");
-    /*
-    switch (l->pos().unicode())
-    {
-        case 'n': return tabNom ();
-        case 'p': return tabPron();
-        case 'a': return tabAdj();
-        case 'd': return tabAdv();
-        case 'v': return tabV();
-        default: return l->humain();
-    }
-    */
 }
 
 /**
@@ -195,8 +188,8 @@ QString Flexion::tabNom()
     fl << entete;
     fl << lina << "cas" << linb << "singulier" << linb << "pluriel" << linc;
     for (int i = 1; i < 7; ++i)
-        fl << lina << cas[i - 1] << linb << forme(i) << linb << forme(i + 6)
-           << linc;
+        fl << lina << cas[i - 1] << linb << forme(i)
+            << linb << forme(i + 6) << linc;
     fl << queue;
     return ret;
 }

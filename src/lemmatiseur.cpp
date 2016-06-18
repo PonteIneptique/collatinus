@@ -678,7 +678,6 @@ QString Lemmat::lemmatiseT(QString t, bool alpha, bool cumVocibus,
         foreach (QString nr, nonReconnus)
             lRet.append(nr + nl);
     }
-//    qDebug() << lRet.join("");
     // fin de la mesure :
     // qDebug()<<"Eneide"<<timer.nsecsElapsed()<<"ns";
     return lRet.join("");
@@ -711,7 +710,11 @@ QString Lemmat::lemmatiseFichier(QString f, bool alpha, bool cumVocibus,
  * \brief cherche dans la liste des lemmes le lemme
  *        dont la clé est l, et retourne le résultat.
  */
-Lemme *Lemmat::lemme(QString l) { return _lemmes.value(l); }
+Lemme *Lemmat::lemme(QString l)
+{
+    return _lemmes.value(l);
+}
+
 /**
  * \fn QStringList Lemmat::lemmes (MapLem lm)
  * \brief renvoie la liste des graphies des lemmes
