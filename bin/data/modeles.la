@@ -54,6 +54,8 @@ $se=sē,sēsē;sŭī;sĭbī;sē,sēsē
 $tu=ū;ē;ŭī;ĭbĭ;ē
 $uita=ă;ă;ăm;āe;āe;ā;āe;āe;ās;ārŭm;īs;īs
 
+modele:inv
+
 modele:uita
 R:1:1,0
 des:1-12:1:$uita
