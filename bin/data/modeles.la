@@ -58,6 +58,10 @@ modele:inv
 R:0:0,0
 des:416:0:-
 
+modele:isaac
+R:0:K
+des:1-6:0:-
+
 modele:uita
 R:1:1,0
 des:1-12:1:$uita
@@ -1016,4 +1020,3 @@ des:411,412,414:0:ĭlĭŭs;īllĭmē;ĭlĭtĕr
 modele:facile
 R:0:3,0
 des:411,412,414:0:ĭlĭŭs;īllĭmē;ĭlĕ
-
