@@ -63,6 +63,10 @@ pere:uita
 R:1:2,0
 abs:1-6
 
+modele:leda
+pere:uita
+abs:7-12
+
 modele:roma
 pere:uita
 des:413:1:āe
@@ -88,6 +92,11 @@ des+:11,12:1:ăbŭs
 modele:lupus
 R:1:2,0
 des:1-12:1:$lupus
+
+modele:samus
+pere:lupus
+des:413:1:ī
+abs:7-12
 
 modele:liberi
 pere:lupus
@@ -118,6 +127,11 @@ pere:lupus
 R:1:2,0
 des:1-3:1:ŭm;ŭm;ŭm
 des:7-9:1:ă;ă;ă
+
+modele:arpinum
+pere:templum
+des:413:1:ī
+abs:7-12
 
 modele:castra
 pere:templum
@@ -737,6 +751,7 @@ pere:lego
 abs:122,125
 des:157-162:0:$im
 des:163-168:0:lĕm;lēs;lĕt;lēmŭs;lētĭs;lēnt
+des:181-186:0:ī;ītĕ;ītō;ītō;ītōtĕ;ūntō
 des:187:0:lĕ
 abs:225-260,265-374
 
@@ -966,6 +981,10 @@ des:261-264:5:ndŭm;ndī;ndō
 des:268,275:4:tŭr;bātŭr
 abs:267,269-274,276-410
 
+modele:inv
+R:0:K
+des:414:0:-
+
 modele:adv
 R:0:K
 des:414:0:-
@@ -980,7 +999,8 @@ des:411,412,414:0:ĭŭs;īssĭmē;ĕr
 
 modele:fortiter
 pere:advr
-R:0:3,0
+R:0:4,0
+des:414:0:ĭtĕr
 
 modele:acriter
 R:0:5,0
