@@ -190,6 +190,7 @@ class MainWindow : public QMainWindow
     QAction *longueAct;
     QAction *breveAct;
     QAction *ambigueAct;
+    QAction *illiusAct;
     QAction *hyphenAct;
     QAction *lireHyphenAct;
     // Nom du répertoire du fichier hyphen.la

@@ -390,8 +390,14 @@ QString Ch::accentue(QString l)
 
 QString Ch::ajoutSuff(QString fq, QString suffixe, QString l_etym, int accent)
 {
+    bool illius = false;
     bool cesure = false;
     bool sansAccent = false;
+    if (accent > 7)
+    {
+        illius = true;
+        accent -= 8;
+    }
     if (accent > 3)
     {
         cesure = true;
@@ -410,25 +416,35 @@ QString Ch::ajoutSuff(QString fq, QString suffixe, QString l_etym, int accent)
             // n'est pas brève
             if (l > 2)
             {
-                while (!signes.contains(fq[i])) i -= 1;
-                i -= 1;
-                while (!signes.contains(fq[i])) i -= 1;
-                sansAccent = (fq[i] == '*') && (accent == 3);
-                // La pénultième est commune et je la considère comme ambiguë =
-                // pas d'accent.
-                if ((fq[i] == '-') || ((fq[i] == '*') && (accent == 2)))
+                if (illius && fq.endsWith("i*u-s"))
                 {
-                    // Remonter à l'antépénultième
+                    qDebug() << fq;
+                    fq.chop(5);
+                    fq.append("í*u-s");
+                    qDebug() << fq;
+                }
+                else
+                {
+                    while (!signes.contains(fq[i])) i -= 1;
                     i -= 1;
                     while (!signes.contains(fq[i])) i -= 1;
-                }
-                if (!sansAccent)
-                {
-                    if (i > 1)
-                        fq = fq.mid(0, i - 1) + accentue(fq.mid(i - 1, 1)) +
-                             fq.mid(i);
-                    else
-                        fq = accentue(fq.mid(i - 1, 1)) + fq.mid(i);
+                    sansAccent = (fq[i] == '*') && (accent == 3);
+                    // La pénultième est commune et je la considère comme ambiguë =
+                    // pas d'accent.
+                    if ((fq[i] == '-') || ((fq[i] == '*') && (accent == 2)))
+                    {
+                        // Remonter à l'antépénultième
+                        i -= 1;
+                        while (!signes.contains(fq[i])) i -= 1;
+                    }
+                    if (!sansAccent)
+                    {
+                        if (i > 1)
+                            fq = fq.mid(0, i - 1) + accentue(fq.mid(i - 1, 1)) +
+                                    fq.mid(i);
+                        else
+                            fq = accentue(fq.mid(i - 1, 1)) + fq.mid(i);
+                    }
                 }
             }
             fq += suffixe;
