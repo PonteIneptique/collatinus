@@ -418,10 +418,8 @@ QString Ch::ajoutSuff(QString fq, QString suffixe, QString l_etym, int accent)
             {
                 if (illius && fq.endsWith("i*u-s"))
                 {
-                    qDebug() << fq;
                     fq.chop(5);
                     fq.append("í*u-s");
-                    qDebug() << fq;
                 }
                 else
                 {
