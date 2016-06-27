@@ -442,12 +442,16 @@ suf:16,21,23,24,28,33,35,36,40,47,48:cĕ
 suf:13,18,25,37,39,42,43,45:ĭnĕ
 suf:25,43,45:cĭnĕ
 
-modele:ille
+modele:ipse
 pere:unus
 R:0:1,0
+des:13,37,39:0:ĕ;ŭm
+abs:14,20,26,32,38,44
+
+modele:ille
+pere:ipse
 des:13,37,39:0:ĕ;ŭd
 des+:15,18,21,25,27,42:1:ūnc3;ōc3;ōscĭnĕ1;āec3;ānc3;ōc1
-abs:14,20,26,32,38,44
 
 modele:qui
 R:1:3,0
