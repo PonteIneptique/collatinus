@@ -127,7 +127,7 @@ Lemme::Lemme(QString linea, int origin, QObject *parent)
         _pos.append('r');
     if (_indMorph.contains("adv"))
         _pos.append('d');
-    if (_indMorph.contains("n.") || _indMorph.contains("npr."))
+    if (_indMorph.contains(" n.") || _indMorph.contains("npr."))
         _pos.append('n');
     if (_pos.isEmpty())
         _pos.append(_modele->pos());
