@@ -205,19 +205,27 @@ QString Flexion::tabPron()
     fl << "<hr/><a name=\"" << _lemme->cle() << "\"></a>";
     fl << "singulier<p>";
     fl << entete;
-    fl << lina << "cas" << linb << genres[0] << linb << genres[1] << linb
-       << genres[2] << linc;
+    fl << lina << "cas" << linb
+        << genres[0] << linb
+        << genres[1] << linb
+        << genres[2] << linc;
     for (int i = 13; i < 19; ++i)
-        fl << lina << cas[(i - 13) % 6] << linb << forme(i) << linb
-           << forme(i + 12) << linb << forme(i + 18) << linc;
+        fl << lina << cas[(i - 13) % 6] << linb
+            << forme(i) << linb
+            << forme(i + 12) << linb
+            << forme(i + 24) << linc;
     fl << queue;
     fl << "</p>pluriel<p>";
     fl << entete;
-    fl << lina << "cas" << linb << genres[0] << linb << genres[1] << linb
-       << genres[2] << linc;
+    fl << lina << "cas" << linb
+        << genres[0] << linb
+        << genres[1] << linb
+        << genres[2] << linc;
     for (int i = 19; i < 25; ++i)
-        fl << lina << cas[(i - 19) % 6] << linb << forme(i) << linb
-           << forme(i + 12) << linb << forme(i + 18) << linc;
+        fl << lina << cas[(i - 19) % 6] << linb
+            << forme(i) << linb
+            << forme(i + 12) << linb
+            << forme(i + 24) << linc;
     fl << queue << "</p>";
     return ret;
 }
