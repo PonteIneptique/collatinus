@@ -4,6 +4,16 @@ lundi 4 janvier 2016
 
 <!-- voir syntaxe Algo -->
 
+## Branche syntax_Ph
+
+Créée le 3 septembre 2016 par Philippe, mais appelée à évoluer.
+
+Le but de cette branche est de faire une analyse syntaxique assistée. L'idée de base, suggérée par Yves, est de faire une analyse syntaxique a minima, sans essayer de gérer toutes les règles et toutes les exceptions.
+Dans un premier temps, il s'agit de trouver tous les liens possibles entre deux mots ou, pour grands débutants, tous les liens implicant un mot.
+Par la suite, il faudrait pouvoir sélectionner ou éliminer certains liens (à la main, en semi-automatique ou en automatique) afin d'aboutir à l'analyse complète de la phrase.
+Il y a là tout un pan d'ergonomie de l'interface à étudier.
+J'aime bien l'affichage de l'arbre syntaxique, mais ce n'est pas apprécié de tous.
+
 ## COMPILATION
 Requis :
 - Un compilateur C++ ;
