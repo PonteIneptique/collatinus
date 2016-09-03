@@ -12,6 +12,7 @@ namespace Ch
 QStringList ajoute(QString mot, QStringList liste);
 void allonge(QString *f);
 QString atone(const QString a, bool bdc = false);
+QString communes(QString g);
 void deQuant(QString *c);
 QString const consonnes = "bcdfgjklmnpqrstvxz";
 void genStrNum(const QString s, QString *ch, int *n);
