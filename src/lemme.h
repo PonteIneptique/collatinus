@@ -56,6 +56,7 @@ class Lemme : public QObject
     Q_OBJECT
    private:
     QString                 _cle;
+    QString                 _genre;
     QString                 _gr;
     QString                 _grd;
     QString                 _grq;
@@ -82,6 +83,7 @@ class Lemme : public QObject
     QString             cle();
     QList<int>          clesR();
     bool                estIrregExcl(int nm);
+    QString             genre();
     QString             getHyphen (); // Accesseurs pour les césures étymologiques
     QString             gr();
     QString             grq();
