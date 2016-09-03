@@ -180,6 +180,11 @@ Super::Super(RegleS *r, Lemme *l, QString m, Mot *parent)
     _regle = r;
     _lemme = l;
     _morpho = m;
+    if (l->pos().contains('n'))
+    {
+        // Ajouter le genre à la morpho
+        _morpho.append(" " + l->genre());
+    }
     _mot = parent;
     _motSub = NULL;
     _traduction = "<em>non traduit</em>";
@@ -342,7 +347,7 @@ Syntaxe::Syntaxe(QString t, Lemmat *parent)
     while (!fls.atEnd())
     {
         QString l = fls.readLine().simplified();
-        if ((l.isEmpty() && !fls.atEnd()) || l.startsWith("!")) continue;
+//        if ((l.isEmpty() && !fls.atEnd()) || l.startsWith("!")) continue;
         /*
         // variable
         if (l.startsWith ('$'))
@@ -357,7 +362,8 @@ Syntaxe::Syntaxe(QString t, Lemmat *parent)
             _regles.append(new RegleS(slr));
             slr.clear();
         }
-        slr.append(l);
+        if (!l.isEmpty() && !l.startsWith("!"))
+            slr.append(l);
     }
     fs.close();
     _pronom = new Pronom();
@@ -374,14 +380,14 @@ bool Syntaxe::accord(QString ma, QString mb, QString cgn)
     if (cgn.contains('g'))
     {
         // si ma ou mb n'a pas de genre, renvoyer true
-        bool nonG = true;
+        bool aUnGenre = false;
         foreach (QString g, Flexion::genres)
-            nonG = nonG || ma.contains(g);
-        if (nonG) return true;
-        nonG = true;
+            aUnGenre = aUnGenre || ma.contains(g);
+        if (!aUnGenre) return true;
+        aUnGenre = false;
         foreach (QString g, Flexion::genres)
-            nonG = nonG || mb.contains(g);
-        if (nonG) return true;
+            aUnGenre = aUnGenre || mb.contains(g);
+        if (!aUnGenre) return true;
         // sinon, vérifier l'accord
         foreach (QString g, Flexion::genres)
             if (ma.contains(g) && !mb.contains(g)) return false;
@@ -401,68 +407,87 @@ bool Syntaxe::accord(QString ma, QString mb, QString cgn)
  */
 QString Syntaxe::analyse(QString t, int p)
 {
-    // effacer l'analyse précédentre
-    _mots.clear();
-    if (t.length() == 0) return "";
-    // initialisations
-    const QList<QChar> chl;
-    const int tl = t.length() - 1;
-    const QString pp = ".;!?";
-    // supprimer les non-alpha de tête
-    // régression au début de la phrase
-    int dph = p;
-    while (dph > 0 && t.count() > dph && !pp.contains(t.at(dph))) --dph;
-    // calcul de la position du mot courant
-    QString ante = t.mid(dph, p - dph);
-    while (ante.count() > 0 && !ante.at(0).isLetter()) ante.remove(0, 1);
-    QStringList lante = ante.split(QRegExp("\\W+"));
-    int pmc = lante.count() - 1;  // pmc = position du mot courant.
-    // progression jusqu'en fin de phrase
-    int fph = p;
-    while (fph < tl && !pp.contains(t.at(fph))) ++fph;
-    // construction des mots
-    QString phr = t.mid(dph, fph - dph);
-    QStringList lm = phr.split(QRegExp("\\b"));
-    for (int i = 1; i < lm.count() - 1; i += 2)
+    if (t.length() < 2) return "";
+    // Sans texte, je ne fais rien.
+    int tl = t.length() - 1;
+    if (p > tl) p = tl;
+    if (p < 0) p = 0;
+    if ((t != _texte) || (p < _dPh) || (p > _fPh))
     {
-        QString m = lm.at(i);
-        Mot *nm = new Mot(m);
-        nm->setMorphos(_lemmatiseur->lemmatiseM(m, true));
-        QString pprec = lm.at(i - 1);
-        pprec.remove(QRegExp("\\s"));
-        nm->setPonctG(pprec);
-        QString psuiv = lm.at(i + 1);
-        psuiv.remove(QRegExp("\\s"));
-        nm->setPonctD(psuiv);
-        // Peuplement de la liste _super
-        // pour chaque règle syntaxique
-        foreach (RegleS *r, _regles)
+        // effacer l'analyse précédentre
+        _mots.clear();
+        // initialisations
+        _texte = t;
+        //    const QList<QChar> chl;
+        const QString pp = ".;!?";
+        // régression au début de la phrase
+        int dph = p;
+        while (dph > 0 && !pp.contains(t.at(dph))) --dph;
+        if (dph == 0) _dPh = dph; // Le début de la phrase est le début du texte.
+        else _dPh = dph + 1; // J'élimine la ponctuation de la phrase précédente.
+        // progression jusqu'en fin de phrase
+        int fph = p;
+        while (fph < tl && !pp.contains(t.at(fph))) ++fph;
+        _fPh = fph; // Je garde la ponctuation finale (?).
+        // construction des mots
+        _phr = t.mid(_dPh, _fPh - _dPh).trimmed();
+        QStringList lm = _phr.split(QRegExp("\\b"));
+        for (int i = 1; i < lm.count() - 1; i += 2)
         {
-            // pour chaque lemme de motCour
-            foreach (Lemme *l, nm->morphos().keys())
+            QString m = lm.at(i);
+            Mot *nm = new Mot(m);
+            nm->setMorphos(_lemmatiseur->lemmatiseM(m, i == 1)); // Le premier mot peut avoir une majuscule
+            QString pprec = lm.at(i - 1);
+            pprec.remove(QRegExp("\\s"));
+            nm->setPonctG(pprec);
+            QString psuiv = lm.at(i + 1);
+            psuiv.remove(QRegExp("\\s"));
+            nm->setPonctD(psuiv);
+            // Peuplement de la liste _super
+            // pour chaque règle syntaxique
+            foreach (RegleS *r, _regles)
             {
-                // pour chaque morpho du lemme
-                QList<SLem> lsl = nm->morphos().value(l);
-                foreach (SLem sl, lsl)
+                // pour chaque lemme de motCour
+                foreach (Lemme *l, nm->morphos().keys())
                 {
-                    QString msup = sl.morpho;
-                    if (r->estSuper(l, msup))
+                    // pour chaque morpho du lemme
+                    QList<SLem> lsl = nm->morphos().value(l);
+                    foreach (SLem sl, lsl)
                     {
-                        nm->addSuper(r, l, msup);
+                        QString msup = sl.morpho;
+                        if (r->estSuper(l, msup))
+                        {
+                            nm->addSuper(r, l, msup);
+                        }
                     }
                 }
             }
+            _mots.append(nm);
+            nm->setRang(_mots.count());
         }
-        _mots.append(nm);
-        nm->setRang(_mots.count());
-    }
-    int nbmots = _mots.count();
-    r = 0;
+        int nbMots = _mots.count();
+        // Double boucle pour compléter les liens "super" de chaque mot.
+        for (int i=0; i < nbMots ; i++)
+            for (int j=1; j < nbMots ; j++)
+            {
+                if (i + j < nbMots) super(_mots.at(i), _mots.at(i + j));
+                if (i - j >= 0) super(_mots.at(i), _mots.at(i - j));
+            }
+/*    r = 0;
     while (r < nbmots && r > -1)
-        r = groupe(r);
-    if (_mots.count() > pmc)
-        return _mots.at(pmc)->liens();
-    else return "";
+        r = groupe(r); */
+    }
+    // calcul de la position du mot courant
+    QString ante = t.mid(_dPh, p - _dPh);
+    while (ante.count() > 0 && !ante.at(0).isLetter()) ante.remove(0, 1);
+    QStringList lante = ante.split(QRegExp("\\W+"));
+    _pmc = lante.count() - 1;  // _pmc = position du mot courant.
+    QString phr = _phr;
+    phr.replace("\n","<br/>");
+
+    if (_mots.count() > _pmc)
+        return phr + "<br/><br/>" + _mots.at(_pmc)->liens();
+    else return "Erreur";
 }
 
 /*
@@ -775,19 +800,21 @@ bool Syntaxe::super(Mot *sup, Mot *sub)
                     (accord(s->morpho(), sl.morpho, s->regle()->accord())) &&
                     (!(s->regle()->synt().contains('c') && virgule(sup, sub))))
                 {
-                    s->addSub(sub);
+//                    s->addSub(sub); // Je ne sais pas à quoi ça sert.
                     // ajouter les chaînes d'affichage (règle, lien, traduction)
                     QString lien = s->regle()->fonction(sup, sub);
                     QString trad =
                         tr(s->regle(), s->lemme(), s->morpho(), l, sl.morpho);
                     QTextStream ts(&lien);
+                    ts << " (" << s->lemme()->gr() << " " << s->morpho();
+                    ts << " / " << l->gr() << " " << sl.morpho << ")<br/>";
                     ts << " tr. <em>" << trad << "</em>";
                     sup->addLien(lien);
                     sub->addLien(lien);
                 }
             }
         }
-        if (s->motSub() == sub) return true;
+//        if (s->motSub() == sub) return true;
     }
     return false;
 }

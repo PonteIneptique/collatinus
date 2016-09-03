@@ -214,8 +214,13 @@ class Syntaxe : public QObject
     QList<RegleS *> _regles;
     Mot *superDe(Mot *m);
     QString _texte;
+    // pour se souvenir des limites de la phrase.
+    int _dPh;
+    int _fPh;
+    QString _phr;
     // variables motCour
     Mot *_motCour;  // mot courant
+    int _pmc; // position dans la phrase du mot courant.
     QList<Mot *> _mots;
     QList<Mot *> _motsP;  // mots précédents
     QList<Mot *> _motsS;  // mots suivants
