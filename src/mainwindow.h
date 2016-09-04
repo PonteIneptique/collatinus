@@ -100,6 +100,9 @@ class MainWindow : public QMainWindow
     // gr() de la dernière lemmatisation
     QStringList lemsDic;
     int lireOptionsAccent();
+    bool syntaxePere();
+    bool gdDeb();
+    void changePere();
 
    private slots:
     void afficheLemsDic(bool litt = false,
@@ -147,6 +150,8 @@ class MainWindow : public QMainWindow
     void setAccent(bool b);
     void lireFichierHyphen();
     void oteDiacritiques();
+    // Slot grand débutant, pour la syntaxe
+    void setGdDeb(bool b);
 
    public slots:
     void afficheLemsDic(QStringList ll, int no = 0);
@@ -195,6 +200,8 @@ class MainWindow : public QMainWindow
     QAction *lireHyphenAct;
     // Nom du répertoire du fichier hyphen.la
     QString repHyphen;
+
+    QAction *gdDebAct;
 
     // actions et groupes d'actions
     QAction *aproposAct;
@@ -256,6 +263,8 @@ class MainWindow : public QMainWindow
     // traductions
     QString langueI;
     QTranslator *translator;
+
+    bool _syntaxePere;
 };
 
 #endif

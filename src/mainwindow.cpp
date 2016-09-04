@@ -133,8 +133,16 @@ void EditLatin::mouseReleaseEvent(QMouseEvent *e)
         if (!mainwindow->dockSynt->visibleRegion().isEmpty())
         {
             // passer le texte au module syntaxe pour calcul
-            mainwindow->textBrowserSynt->setText(mainwindow->syntaxe->analyse(
-                toPlainText(), textCursor().position()));
+            QString reponse = mainwindow->syntaxe->analyse(
+                        toPlainText(), textCursor().position(),mainwindow->gdDeb()||mainwindow->syntaxePere());
+            if (mainwindow->gdDeb())
+                mainwindow->textBrowserSynt->setText(reponse);
+            else
+            {
+                if (mainwindow->syntaxePere()) mainwindow->textBrowserSynt->setText("Choisir le fils !");
+                else mainwindow->textBrowserSynt->setText(reponse);
+                mainwindow->changePere();
+            }
             // appondre le résultat
             // = liens du mot cliqué.
             mainwindow->textBrowserSynt->moveCursor(QTextCursor::Start);
@@ -701,6 +709,9 @@ void MainWindow::createActions()
     nonRecAct = new QAction(tr("grouper échecs"), this);
     nonRecAct->setCheckable(true);
 
+    gdDebAct = new QAction(tr("Grand débutant"), this);
+    gdDebAct->setCheckable(true);
+    gdDebAct->setChecked(false);
     // actions pour les accents
     accentAct = new QAction(tr("accentuer"), this);
     accentAct->setCheckable(true);
@@ -804,6 +815,7 @@ void MainWindow::createConnections()
             SLOT(setNonRec(bool)));
     connect(extensionWAct, SIGNAL(toggled(bool)), lemmatiseur, SLOT(setExtension(bool)));
 
+    connect(gdDebAct, SIGNAL(toggled(bool)), this, SLOT(setGdDeb(bool)));
     // actions et options de l'accentuation
     connect(accentAct, SIGNAL(toggled(bool)), this, SLOT(setAccent(bool)));
     connect(lireHyphenAct, SIGNAL(triggered()), this, SLOT(lireFichierHyphen()));
@@ -948,6 +960,8 @@ void MainWindow::createMenus()
     optMenu->addSeparator();
     optMenu->addAction(fontAct);
     optMenu->addAction(majAct);
+    optMenu->addSeparator();
+    optMenu->addAction(gdDebAct);
 
     helpMenu = menuBar()->addMenu(tr("&Aide"));
     helpMenu->addAction(aproposAct);
@@ -1799,4 +1813,24 @@ void MainWindow::oteDiacritiques()
     texte.remove("\u0306");
     texte.remove("\u0308");
     editLatin->setText(texte);
+}
+
+void MainWindow::setGdDeb(bool b)
+{
+    _syntaxePere = true;
+}
+
+bool MainWindow::gdDeb()
+{
+    return gdDebAct->isChecked();
+}
+
+bool MainWindow::syntaxePere()
+{
+    return _syntaxePere;
+}
+
+void MainWindow::changePere()
+{
+    _syntaxePere = !_syntaxePere;
 }

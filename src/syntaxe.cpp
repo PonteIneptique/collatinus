@@ -226,6 +226,7 @@ Lien::Lien(Mot *f, Lemme *lf, QString mf, Super *parent)
     _morphoFils = mf;
     _paternel = parent;
     _traduction = "";
+    _validation = 0; // Ni-ni a priori. Validé si >0. Rejeté si <0.
 }
 
 Lemme *Lien::lemmeFils()
@@ -263,7 +264,15 @@ QString Lien::traduction()
     return _traduction;
 }
 
+void Lien::setValidation(int v)
+{
+    _validation = v;
+}
 
+int Lien::validation()
+{
+    return _validation;
+}
 
 /**
  * \fn Mot::Mot(QString g)
@@ -530,8 +539,8 @@ QString Syntaxe::analyse(QString t, int p, bool pere)
                     }
                 }
             }
-            _mots.append(nm);
             nm->setRang(_mots.count());
+            _mots.append(nm);
         }
         int nbMots = _mots.count();
         // Double boucle pour compléter les liens "super" de chaque mot.
