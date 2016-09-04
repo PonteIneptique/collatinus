@@ -219,6 +219,52 @@ void Super::setTraduction(QString t) { _traduction = t; }
 
 QString Super::traduction() { return _traduction; }
 
+Lien::Lien(Mot *f, Lemme *lf, QString mf, Super *parent)
+{
+    _fils = f;
+    _lemmeFils = lf;
+    _morphoFils = mf;
+    _paternel = parent;
+    _traduction = "";
+}
+
+Lemme *Lien::lemmeFils()
+{
+    return _lemmeFils;
+}
+
+QString Lien::morphoFils()
+{
+    return _morphoFils;
+}
+
+Super *Lien::super()
+{
+    return _paternel;
+}
+
+Mot *Lien::motFils()
+{
+    return _fils;
+}
+
+RegleS *Lien::regle()
+{
+    return _paternel->regle();
+}
+
+void Lien::setTraduction(QString t)
+{
+    _traduction = t;
+}
+
+QString Lien::traduction()
+{
+    return _traduction;
+}
+
+
+
 /**
  * \fn Mot::Mot(QString g)
  * \brief Créateur de la classe Mot.
@@ -235,6 +281,16 @@ Mot::Mot(QString g)
 void Mot::addLien(QString l)
 {
     if (!_affLiens.contains(l)) _affLiens.append(l);
+}
+
+void Mot::addLienFils(Lien *l)
+{
+    _liensFils.append(l);
+}
+
+void Mot::addLienPere(Lien *l)
+{
+    _liensPere.append(l);
 }
 
 void Mot::addRSub(RegleS *r) { _rSub.append(r); }
@@ -282,6 +338,16 @@ QString Mot::humain()
 }
 
 QString Mot::liens() { return _affLiens.join("<br/>"); }
+
+QList<Lien*>   Mot::liensFils()
+{
+    return _liensFils;
+}
+
+QList<Lien*>   Mot::liensPere()
+{
+    return _liensPere;
+}
 
 MapLem Mot::morphos() { return _morphos; }
 
@@ -405,7 +471,7 @@ bool Syntaxe::accord(QString ma, QString mb, QString cgn)
  * \brief Analyse de la phrase courante à la position p
  *        du texte t.
  */
-QString Syntaxe::analyse(QString t, int p)
+QString Syntaxe::analyse(QString t, int p, bool pere)
 {
     if (t.length() < 2) return "";
     // Sans texte, je ne fais rien.
@@ -414,6 +480,8 @@ QString Syntaxe::analyse(QString t, int p)
     if (p < 0) p = 0;
     if ((t != _texte) || (p < _dPh) || (p > _fPh))
     {
+        if (pere)
+        {
         // effacer l'analyse précédentre
         _mots.clear();
         // initialisations
@@ -476,18 +544,58 @@ QString Syntaxe::analyse(QString t, int p)
 /*    r = 0;
     while (r < nbmots && r > -1)
         r = groupe(r); */
+        }
+        else return "Le deuxième mot doit être dans la même phrase que le premier !";
     }
     // calcul de la position du mot courant
     QString ante = t.mid(_dPh, p - _dPh);
     while (ante.count() > 0 && !ante.at(0).isLetter()) ante.remove(0, 1);
     QStringList lante = ante.split(QRegExp("\\W+"));
     _pmc = lante.count() - 1;  // _pmc = position du mot courant.
-    QString phr = _phr;
-    phr.replace("\n","<br/>");
+    if (_mots.count() <= _pmc)  return "Erreur";
+    QString ret = _phr.simplified() + "<br/><br/>";
 
-    if (_mots.count() > _pmc)
-        return phr + "<br/><br/>" + _mots.at(_pmc)->liens();
-    else return "Erreur";
+    if (pere)
+    {
+        _pereEnCours = _pmc;
+        int nb = _mots[_pmc]->liensFils().count();
+        if (nb == 0) ret.append("<font color='#A00000'>Aucun lien n'arrive sur " + _mots[_pmc]->gr() + "</font><br/>");
+        else
+        {
+            if (nb == 1)
+                ret.append("<font color='#00A000'>Lien aboutissant sur " + _mots[_pmc]->gr() + " :</font><br/>");
+            else
+                ret.append("Liens aboutissant sur " + _mots[_pmc]->gr() + " :<br/>");
+            foreach (Lien *l, _mots[_pmc]->liensFils())
+                ret.append(l->traduction() + "<br/>");
+        }
+        nb = _mots[_pmc]->liensPere().count();
+        if (nb == 0) ret.append("<font color='#A00000'>Aucun lien ne part de " + _mots[_pmc]->gr() + "</font><br/>");
+        else
+        {
+            if (nb == 1)
+                ret.append("<font color='#00A000'>Lien partant de " + _mots[_pmc]->gr() + " :</font><br/>");
+            else
+                ret.append("Liens partant de " + _mots[_pmc]->gr() + " :<br/>");
+            foreach (Lien *l, _mots[_pmc]->liensPere())
+                ret.append(l->traduction() + "<br/>");
+        }
+        return ret;
+    }
+    else // que les liens entre _pereEnCours et _pmc !
+    {
+        int nb = _mots[_pmc]->liensFils().count();
+        if (nb == 0) ret.append("<font color='#A00000'>Aucun lien n'arrive sur " + _mots[_pmc]->gr() + "</font><br/>");
+        else
+        {
+            ret.append("Lien(s) partant de " + _mots[_pereEnCours]->gr());
+            ret.append(" et aboutissant sur " + _mots[_pmc]->gr() + " :<br/>");
+            foreach (Lien *l, _mots[_pmc]->liensFils())
+                if (_pereEnCours == l->super()->mot()->rang())
+                    ret.append(l->traduction() + "<br/>");
+        }
+        return ret;
+    }
 }
 
 /*
@@ -801,16 +909,19 @@ bool Syntaxe::super(Mot *sup, Mot *sub)
                     (!(s->regle()->synt().contains('c') && virgule(sup, sub))))
                 {
 //                    s->addSub(sub); // Je ne sais pas à quoi ça sert.
+                    // Le super a trouvé un fils potentiel.
+                    Lien *lien = new Lien(sub, l, sl.morpho, s);
                     // ajouter les chaînes d'affichage (règle, lien, traduction)
-                    QString lien = s->regle()->fonction(sup, sub);
+                    QString fn = s->regle()->fonction(sup, sub);
                     QString trad =
                         tr(s->regle(), s->lemme(), s->morpho(), l, sl.morpho);
-                    QTextStream ts(&lien);
+                    QTextStream ts(&fn);
                     ts << " (" << s->lemme()->gr() << " " << s->morpho();
                     ts << " / " << l->gr() << " " << sl.morpho << ")<br/>";
                     ts << " tr. <em>" << trad << "</em>";
-                    sup->addLien(lien);
-                    sub->addLien(lien);
+                    lien->setTraduction(fn);
+                    sup->addLienPere(lien);
+                    sub->addLienFils(lien);
                 }
             }
         }

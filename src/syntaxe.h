@@ -154,6 +154,30 @@ class Super : public QObject
     QString traduction();
 };
 
+class Lien : public QObject
+{
+    Q_OBJECT
+
+private:
+    Super *_paternel;
+    Lemme *_lemmeFils;
+    Mot *_fils;
+    QString _morphoFils;
+    QString _traduction;
+    // Un lien est défini par l'association d'un fils (Mot + Lemme + Morpho)
+    // au demi lien paternel donné par Super.
+
+public:
+    Lien(Mot *f, Lemme *lf, QString mf, Super *parent);
+    Lemme *lemmeFils();
+    QString morphoFils();
+    Super *super();
+    Mot *motFils();
+    RegleS *regle();
+    void setTraduction(QString t);
+    QString traduction();
+};
+
 class Mot : public QObject
 {
     // TODO : il manque un vrai champ Mot *_super, ou une liste de Mots.
@@ -173,10 +197,14 @@ class Mot : public QObject
     QList<RegleS *> _rSub;
     QList<Super *>  _super;
     bool            _vu;
+    QList<Lien*>    _liensFils; // Les liens qui aboutissent à ce mot
+    QList<Lien*>    _liensPere; // Les liens qui partent de ce mot
 
    public:
     Mot(QString g);
     void           addLien(QString l);
+    void           addLienFils(Lien *l);
+    void           addLienPere(Lien *l);
     void           addRSub(RegleS *r);
     void           addSuper(RegleS *r, Lemme *l, QString m);
     QString        gr();
@@ -185,6 +213,8 @@ class Mot : public QObject
     int            grUlt();  //  "      dernier  "
     QString        humain();
     QString        liens();  // renvoie _affliens
+    QList<Lien*>   liensFils(); // Les liens qui aboutissent à ce mot
+    QList<Lien*>   liensPere(); // Les liens qui partent de ce mot
     MapLem         morphos();
     bool           orphelin();
     QString        ponctD();
@@ -221,6 +251,7 @@ class Syntaxe : public QObject
     // variables motCour
     Mot *_motCour;  // mot courant
     int _pmc; // position dans la phrase du mot courant.
+    int _pereEnCours; // position du père déjà sélectionné.
     QList<Mot *> _mots;
     QList<Mot *> _motsP;  // mots précédents
     QList<Mot *> _motsS;  // mots suivants
@@ -230,7 +261,7 @@ class Syntaxe : public QObject
 
    public:
     Syntaxe(QString t, Lemmat *parent);
-    QString analyse(QString t, int p);
+    QString analyse(QString t, int p, bool pere=true);
     //QString analyseM(QString t, int p);
     bool estSuper(Mot *sup, Mot *sub);
     QString motSous(int p);
