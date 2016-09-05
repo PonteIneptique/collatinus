@@ -104,6 +104,8 @@ class MainWindow : public QMainWindow
     bool gdDeb();
     void changePere();
 
+    void analyseStx(QString t, int p); // Je voudrais créer dans MainWindow l'interface de l'analyse syntaxique.
+
    private slots:
     void afficheLemsDic(bool litt = false,
                         bool prim = true);  // ligne de saisie

@@ -132,6 +132,9 @@ void EditLatin::mouseReleaseEvent(QMouseEvent *e)
         // 5. dock Syntaxe
         if (!mainwindow->dockSynt->visibleRegion().isEmpty())
         {
+            mainwindow->analyseStx(toPlainText(),textCursor().position());
+            /* Je passe dans MainWindow pour faire tout le traitement et l'affichage.
+             *
             // passer le texte au module syntaxe pour calcul
             QString reponse = mainwindow->syntaxe->analyse(
                         toPlainText(), textCursor().position(),mainwindow->gdDeb()||mainwindow->syntaxePere());
@@ -146,6 +149,7 @@ void EditLatin::mouseReleaseEvent(QMouseEvent *e)
             // appondre le résultat
             // = liens du mot cliqué.
             mainwindow->textBrowserSynt->moveCursor(QTextCursor::Start);
+            */
         }
     }
     QTextEdit::mouseReleaseEvent(e);
@@ -1833,4 +1837,23 @@ bool MainWindow::syntaxePere()
 void MainWindow::changePere()
 {
     _syntaxePere = !_syntaxePere;
+}
+
+void MainWindow::analyseStx(QString t, int p)
+{
+    // passer le texte au module syntaxe pour calcul
+    if (gdDeb())
+        textBrowserSynt->setText(syntaxe->analyse(t, p, true));
+    else
+    {
+        // Ici, il faudrait passer par des fenêtres de dialogue
+        QString reponse = syntaxe->analyse(t, p, _syntaxePere);
+        if (_syntaxePere) textBrowserSynt->setText("Choisir le fils !");
+        else textBrowserSynt->setText(reponse);
+        _syntaxePere = !_syntaxePere;
+    }
+    // appondre le résultat
+    // = liens du mot cliqué.
+    textBrowserSynt->moveCursor(QTextCursor::Start);
+
 }
