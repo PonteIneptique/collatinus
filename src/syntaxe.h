@@ -166,6 +166,7 @@ private:
     QString _traduction;
     // Un lien est défini par l'association d'un fils (Mot + Lemme + Morpho)
     // au demi lien paternel donné par Super.
+    int _validation;
 
 public:
     Lien(Mot *f, Lemme *lf, QString mf, Super *parent);
@@ -176,6 +177,8 @@ public:
     RegleS *regle();
     void setTraduction(QString t);
     QString traduction();
+    void setValidation(int v);
+    int validation();
 };
 
 class Mot : public QObject
