@@ -267,6 +267,8 @@ class MainWindow : public QMainWindow
     QTranslator *translator;
 
     bool _syntaxePere;
+    bool _sansAlerte;
+    void dialogue1(QString t);
 };
 
 #endif

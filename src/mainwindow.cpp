@@ -196,6 +196,8 @@ MainWindow::MainWindow()
     // setTabPosition(Qt::BottomDockWidgetArea, QTabWidget::North );
 
     readSettings();
+    _sansAlerte = false;
+    _syntaxePere = true;
 }
 
 /**
@@ -1821,7 +1823,9 @@ void MainWindow::oteDiacritiques()
 
 void MainWindow::setGdDeb(bool b)
 {
+    // Je profite de la bascule "grand débutant" pour ré-initialiser les variables de syntaxe.
     _syntaxePere = true;
+    _sansAlerte = false;
 }
 
 bool MainWindow::gdDeb()
@@ -1848,7 +1852,8 @@ void MainWindow::analyseStx(QString t, int p)
     {
         // Ici, il faudrait passer par des fenêtres de dialogue
         QString reponse = syntaxe->analyse(t, p, _syntaxePere);
-        if (_syntaxePere) textBrowserSynt->setText("Choisir le fils !");
+        if (_syntaxePere) //textBrowserSynt->setText("Choisir le fils !");
+            dialogue1(reponse);
         else textBrowserSynt->setText(reponse);
         _syntaxePere = !_syntaxePere;
     }
@@ -1857,3 +1862,50 @@ void MainWindow::analyseStx(QString t, int p)
     textBrowserSynt->moveCursor(QTextCursor::Start);
 
 }
+
+void MainWindow::dialogue1(QString t)
+{
+    if (_sansAlerte) return;
+    QString phrase = t.left(t.indexOf("<br/>"));
+    QStringList eclats = t.split("<br/>");
+    int i = 0;
+    while ((i < eclats.size()) && !eclats[i].contains("Liens partant de")) {
+        i++;
+    }
+    QLabel *icon = new QLabel;
+    icon->setPixmap(QPixmap(":/res/collatinus.ico"));
+    QLabel *text = new QLabel;
+    text->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    text->setWordWrap(true);
+    text->setText("<p>" + phrase +
+        "</p><p>" + eclats[i] + " choisir le fils</p>");
+
+    QPushButton *OKButton = new QPushButton(tr("OK"));
+    QCheckBox *cbNePlusAfficher = new QCheckBox(tr("Ne plus afficher"));
+    cbNePlusAfficher->setCheckable(true);
+    cbNePlusAfficher->setChecked(false);
+
+    QVBoxLayout *topLayout = new QVBoxLayout;
+    topLayout->addWidget(icon);
+    topLayout->addWidget(text);
+
+    QHBoxLayout *bottomLayout = new QHBoxLayout;
+    bottomLayout->addStretch();
+    bottomLayout->addWidget(cbNePlusAfficher);
+    bottomLayout->addWidget(OKButton);
+    bottomLayout->addStretch();
+
+    QVBoxLayout *mainLayout = new QVBoxLayout;
+    mainLayout->addLayout(topLayout);
+    mainLayout->addLayout(bottomLayout);
+
+    QDialog dFils(this);
+    dFils.setModal(true);
+    dFils.setWindowTitle(tr("Choix du fils"));
+    dFils.setLayout(mainLayout);
+
+    connect(OKButton, SIGNAL(clicked()), &dFils, SLOT(close()));
+    dFils.exec();
+    _sansAlerte = cbNePlusAfficher->isChecked();
+}
+
