@@ -85,6 +85,9 @@ class MainWindow : public QMainWindow
     QLineEdit *lineEditDicW;
     QLineEdit *lineEditFlex;
     QLineEdit *lineEditScand;
+    // boutons pour le doc Syntaxe
+    QRadioButton *bPere;
+    QRadioButton *bFils;
     // cases à cocher pour la copie
     QCheckBox *cbTexteLatin;
     QCheckBox *cbLemmatisation;

@@ -982,6 +982,7 @@ void MainWindow::createToolBars()
  *
  */
 void MainWindow::createStatusBar() {}
+
 /**
  * \fn void MainWindow::createDockWindows()
  * \brief Initialisation des différents docks.
@@ -1061,7 +1062,6 @@ void MainWindow::createDockWindows()
     labelLewis = new QLabel(this);
     postButton = new QPushButton(this);
     QSpacerItem *hSpacerDic = new QSpacerItem(40, 20);
-    //, QSizePolicy::Expanding, QSizePolicy::Minimum);
     hLayoutDic->addWidget(lineEditDic);
     hLayoutDic->addWidget(tbDic);
     hLayoutDic->addWidget(tbDicLitt);
@@ -1145,6 +1145,21 @@ void MainWindow::createDockWindows()
     dockWidgetSynt = new QWidget(dockSynt);
     QVBoxLayout *vLayoutSynt = new QVBoxLayout(dockWidgetSynt);
     QHBoxLayout *hLayoutSynt = new QHBoxLayout();
+    // lundi 05 septembre 2016 
+    QLabel *lPere = new QLabel("Choisir le mot (clic ^)", dockWidgetSynt);
+    bPere = new QRadioButton(dockWidgetSynt); 
+    QLabel *lFils = new QLabel("Choisir un subordonné (clic ^)", dockWidgetSynt);
+    bFils = new QRadioButton(dockWidgetSynt); 
+    hLayoutSynt->addWidget(lPere);
+    hLayoutSynt->addWidget(bPere);
+    hLayoutSynt->addWidget(lFils);
+    hLayoutSynt->addWidget(bFils);
+    QSpacerItem *hSpacerSynt =
+        new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+    hLayoutSynt->addItem(hSpacerSynt);
+
+    // lundi 05 septembre 2016 fin
+
     textBrowserSynt = new QTextBrowser(dockWidgetSynt);
     textBrowserSynt->setSizePolicy(QSizePolicy::Expanding,
                                    QSizePolicy::Expanding);
