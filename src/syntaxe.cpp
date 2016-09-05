@@ -36,6 +36,9 @@
 // et adjectif et qu'elles sont soumises à la recherche
 // de liens.
 
+// XXX ajouter le genre des noms dans leur analyse morpho
+//     Si le nom a deux genres, deux analyses par cas+nombre
+
 #include "syntaxe.h"
 #include <QFile>
 #include <QMap>
