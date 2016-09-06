@@ -232,29 +232,31 @@ class Syntaxe : public QObject
     Mot*                    superDe(Mot *m);
     QString                _texte;
     // variables
+    Mot                   *_fils;
     Mot                   *_motCour; // mot courant
     QList<Mot *>           _mots;
     QList<Mot *>           _motsP;   // mots précédents
     QList<Mot *>           _motsS;   // mots suivants
+    Mot                   *_pere;
     Pronom                *_pronom;
     int                    r; //, x;
     QString                _rapport;
 
    public:
     Syntaxe(QString t, Lemmat *parent);
-    QString analyse(QString t, int p);
-    bool    estSuper(Mot *sup, Mot *sub);
-    QString liens(Mot *m);
-    QString motSous(int p);
-    bool    orphelin(Mot *m);
-    RegleS* regle(QString id);
-    void    selectionne(Mot *m, Super *s); // élimine tous les autres liens que s faisant de m leur sub
-    void    setText(QString t);
-    bool    super(Mot *sup, Mot *sub);  // construit le lien
-    QString tr(RegleS *r, Lemme *sup, QString msup, Lemme *sub, QString msub);
-    QString trLemme(Lemme *l, QString m);
-    bool    virgule(Mot *ma,
-                    Mot *mb);  // vrai si une virgule sépare 2 mots successifs
+    QString     analyse(QString t, int p);
+    bool        estSuper(Mot *sup, Mot *sub);
+    QString     liens(Mot *m);
+    QStringList liensPF(int p, int f);
+    QString     motSous(int p);
+    bool        orphelin(Mot *m);
+    RegleS*     regle(QString id);
+    void        selectionne(Mot *m, Super *s); // élimine tous les autres liens que s faisant de m leur sub
+    void        setText(QString t);
+    bool        super(Mot *sup, Mot *sub);  // construit le lien
+    QString     tr(RegleS *r, Lemme *sup, QString msup, Lemme *sub, QString msub);
+    QString     trLemme(Lemme *l, QString m);
+    bool        virgule(Mot *ma, Mot *mb);  // vrai si une virgule sépare 2 mots successifs
 };
 
 #endif

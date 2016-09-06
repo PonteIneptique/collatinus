@@ -43,6 +43,7 @@
 #include <QFile>
 #include <QMap>
 #include <QRegExp>
+#include <QStringList>
 #include "flexion.h"
 
 //////////////////////////////
@@ -745,6 +746,34 @@ QString Syntaxe::liens(Mot *m)
         ret.append("</ul>");
     }
     return ret.join("");
+}
+
+QStringList Syntaxe::liensPF(int p, int f)
+{
+    /*
+    QStringList ret;
+    QString l;
+    QTextStream(&l) << "liens pour "<<f<<" subordonné à "<<p;
+    ret.append (l);
+    return ret;
+    */
+     foreach (RegleS *r, _regles)
+        {
+            // pour chaque lemme de motCour
+            foreach (Lemme *l, nm->morphos().keys())
+            {
+                // pour chaque morpho du lemme
+                QList<SLem> lsl = nm->morphos().value(l);
+                foreach (SLem sl, lsl)
+                {
+                    QString msup = sl.morpho;
+                    if (r->estSuper(l, msup))
+                    {
+                        nm->addSuper(r, l, msup);
+                    }
+                }
+            }
+        }
 }
 
 bool Syntaxe::estSuper(Mot *sup, Mot *sub)

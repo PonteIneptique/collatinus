@@ -63,6 +63,18 @@ Requis :
   un hyperlien vers plus, pluris, et vers plurimus, a, um.
 
 ## Branche syntaxe
+   * mardi 06 septembre 2016
+     Après deux mois d'interruption, remise en question :
+     - Le module se simplifie : abandon de l'analyse auto de
+       toute la phrase.
+     - L'interface permet de demander si le mot A peut
+       être père du mot B, et par quel(s) lien(s) syntaxique(s)
+     - On pourra accepter un lien, et le module gardera la liste
+       de ces liens.
+     - Chaque nouvelle requête de lien sera évaluée à l'aide de
+       la liste, et l'utilisateur pourra ou non tenir compte de
+       cette évaluation.
+
    * vendredi 27 mai 2016 
      Il devient nécessaire
      1. de donner un poids au règles. 
