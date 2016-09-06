@@ -1872,6 +1872,7 @@ void MainWindow::dialogue1(QString t)
     while ((i < eclats.size()) && !eclats[i].contains("Liens partant de")) {
         i++;
     }
+    if (i == eclats.size()) i--;
     QLabel *icon = new QLabel;
     icon->setPixmap(QPixmap(":/res/collatinus.ico"));
     QLabel *text = new QLabel;

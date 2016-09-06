@@ -180,11 +180,6 @@ Super::Super(RegleS *r, Lemme *l, QString m, Mot *parent)
     _regle = r;
     _lemme = l;
     _morpho = m;
-    if (l->pos().contains('n'))
-    {
-        // Ajouter le genre à la morpho
-        _morpho.append(" " + l->genre());
-    }
     _mot = parent;
     _motSub = NULL;
     _traduction = "<em>non traduit</em>";
@@ -373,7 +368,26 @@ int Mot::rang() { return _rang; }
 
 QString Mot::ponctG() { return _ponctG; }
 
-void Mot::setMorphos(MapLem m) { _morphos = m; }
+void Mot::setMorphos(MapLem m)
+{
+    foreach (Lemme *l, m.keys())
+    {
+        if (l->pos().contains('n'))
+        {
+            // pour chaque morpho d'un nom, j'ajoute le genre.
+            QList<SLem> lsl = m.value(l);
+            QList<SLem> nlsl;
+            foreach (SLem sl, lsl)
+            {
+                sl.morpho.prepend(l->genre()+" ");
+                nlsl.append(sl);
+            }
+            _morphos[l] = nlsl;
+        }
+        else _morphos[l] = m.value(l);
+    }
+//    _morphos = m;
+}
 
 void Mot::setPonctD(QString p) { _ponctD = p; }
 
