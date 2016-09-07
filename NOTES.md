@@ -63,6 +63,38 @@ Requis :
   un hyperlien vers plus, pluris, et vers plurimus, a, um.
 
 ## Branche syntaxe
+   * mercredi 07 septembre 2016 
+     - Réflexion sur les sessions :
+       Les fichiers syntaxe.* font partie du moteur,
+       càd qu'un serveur hébergeant le module de
+       syntaxe doit pouvoir traiter en une seule
+       requête
+        1 père, 
+        2 fils,
+        3 phrase
+        4 liste des liens déjà validés par l'utilisateur.
+       L'API de Collatinus, s'il intègre Syntaxe, doit donc
+       proposer une fonction qui prend en entrée ces quatre
+       paramètres, Les deux premiers peuvent être des entiers ;
+       le 3ème est une chaîne, le 4ème (liste des liens validés)
+       est composé : 
+       lien_1=fils:id_du_lien:père:traduction;lien_2=fils:id_du_lien:père:traduction;lien_3...;lien_n...
+     - Si Collatinus était écrit en PHP, nous pourrions
+       nous servir du dispositif de session du langage.
+       Mais nous sommes en C++.
+
+     - Place des variables père et fils :
+       dans mainwindow ! une seule fonction pour père,
+       fils, et mots numérotés entre père et fils. La fonction 
+       liens (texte, père, fils)
+       détectera les séparateurs de phrase entre père et fils.
+     - Par la suite, il faudra résoudre le problème de
+       la place des liens déjà adoptés.
+       . solution 1 : un dispositif de sélection de phrase préalable
+         aux recherches de lien ;
+       . solution 2 : le texte entier est passé, au
+         besoin avec une longueur limitée à l'équivalent d'une page
+         papier, et les mots sont numérotés dans le texte.
    * mardi 06 septembre 2016
      Après deux mois d'interruption, remise en question :
      - Le module se simplifie : abandon de l'analyse auto de
