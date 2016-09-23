@@ -1,8 +1,7 @@
 # Collatinus-11, notes
+<!-- voir syntaxe Algo -->
 
 lundi 4 janvier 2016 
-
-<!-- voir syntaxe Algo -->
 
 ## COMPILATION
 Requis :
@@ -63,6 +62,23 @@ Requis :
   un hyperlien vers plus, pluris, et vers plurimus, a, um.
 
 ## Branche syntaxe
+   * jeudi 08 septembre 2016 
+     Ce qui est nécessaire :
+     - Un objet ElS :
+       . int pos // position dans le texte; 
+       . Lemme lemme ;
+       . int morpho.
+     - Un objet Lien
+       . règle : id
+       . super : int pos, Lemme lemme, int morpho
+       . sub   : int pos, Lemme lemme, int morpho
+       . traduction : QString
+       . valide : bool
+     - Une fonction de recherche de liens entre un mot père et un mot fils.
+     - Un objet liste de liens validés
+     - Une fonction d'évaluation d'un lien en cohérence avec une liste de liens.
+   * e.d. : Je reporte sur Praelector le développement du module de syntaxe
+       
    * mercredi 07 septembre 2016 
      - Réflexion sur les sessions :
        Les fichiers syntaxe.* font partie du moteur,
