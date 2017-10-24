@@ -20,6 +20,9 @@
 ! Une morpho par ligne
 ! Toute ligne commençant par '!' est un commentaire
 !
+! Ajoutés les cas, genres etc… après un séparateur "! --- "
+! Ph. 27 octobre 2016
+!
 1:nominatif singulier
 2:vocatif singulier
 3:accusatif singulier
@@ -435,5 +438,43 @@
 413:locatif
 414:positif 
 415:infinitif futur actif
-416:
+416:inv.
 ! Cette dernière ligne est à conserver pour les invariables.
+! --- Cas
+nominatif
+vocatif
+accusatif
+génitif
+datif
+ablatif
+! --- Genres
+masculin
+féminin
+neutre
+! --- Nombres
+singulier
+pluriel
+! --- Temps
+présent
+imparfait
+futur
+parfait
+plus-que-parfait
+futur antérieur
+! --- Modes
+Indicatif
+Subjonctif
+Impératif
+Infinitif
+Participe
+Adjectif verbal
+! --- Voix
+ACTIF
+PASSIF
+! --- Mots clefs
+cas
+personne
+2ème pr.
+2ème fut.
+3ème fut.
+

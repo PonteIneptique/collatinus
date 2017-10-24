@@ -58,7 +58,7 @@ class Dictionnaire : public QObject
                    // QString     readLineBack (QFile *f, int fois=1);
     QString repertoire;
     QString suiv;
-    qint64 tailleprec;
+//    qint64 tailleprec;
     QString url;
     bool xml;
     bool xsl;

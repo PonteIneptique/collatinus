@@ -56,13 +56,18 @@ bool EditLatin::event(QEvent *event)
             QTextCursor tc = cursorForPosition(P);
             tc.select(QTextCursor::WordUnderCursor);
             QString mot = tc.selectedText();
+            if (mot.isEmpty ())
+                return QWidget::event (event);
             QString txtBulle = mainwindow->lemmatiseur->lemmatiseT(
                 mot, true, true, true, false);
+            if (txtBulle.isEmpty()) return true;
+            // S'il n'y a qu'une ponctuation sous le curseur la lemmatisation donne un string vide.
             txtBulle.prepend("<p style='white-space:pre'>");
             txtBulle.append("</p>");
+            QRect rect(P.x()-20,P.y()-10,40,40); // Je définis un rectangle autour de la position actuelle.
             QToolTip::setFont(font());
             QToolTip::showText(helpEvent->globalPos(), txtBulle.trimmed(),
-                               this);
+                               this, rect); // La bulle disparaît si le curseur sort du rectangle.
             return true;
         }
         default:
@@ -130,14 +135,9 @@ void EditLatin::mouseReleaseEvent(QMouseEvent *e)
         if (mainwindow->wDic->isVisible() && mainwindow->syncAct->isChecked())
             mainwindow->afficheLemsDicW(lemmes);
         // 5. dock Syntaxe
-        if (!mainwindow->dockSynt->visibleRegion().isEmpty())
+        if (!mainwindow->dockTag->visibleRegion().isEmpty())
         {
-            // passer le texte au module syntaxe pour calcul
-            mainwindow->textBrowserSynt->setText(mainwindow->syntaxe->analyse(
-                toPlainText(), textCursor().position()));
-            // appondre le résultat
-            // = liens du mot cliqué.
-            mainwindow->textBrowserSynt->moveCursor(QTextCursor::Start);
+            mainwindow->tagger(toPlainText(),textCursor().position());
         }
     }
     QTextEdit::mouseReleaseEvent(e);
@@ -161,7 +161,6 @@ MainWindow::MainWindow()
 
     lemmatiseur = new Lemmat(this);
     flechisseur = new Flexion(lemmatiseur);
-    syntaxe = new Syntaxe(editLatin->toPlainText(), lemmatiseur);
 
     setLangue();
 
@@ -211,9 +210,25 @@ void MainWindow::afficheLemsDic(bool litt, bool prim)
         MapLem lm = lemmatiseur->lemmatiseM(lineEdit->text(), true);
         requete = lemmatiseur->lemmes(lm);
     }
+    else
+    {
+        QString t = lineEdit->text();
+        t.replace("æ","ae");
+        t.replace("Æ","Ae");
+        t.replace("œ","oe");
+        t.replace("Œ","Oe");
+        requete << t;
+    }
     if (requete.empty()) requete << lineEdit->text();
     requete.removeDuplicates();
-    if (prim)
+    if (syncAct->isChecked())
+    {
+        if (!dockDic->visibleRegion().isEmpty())
+            afficheLemsDic(requete, 0);
+        if (wDic->isVisible())
+            afficheLemsDicW(requete, 0);
+    }
+    else if (prim)
         afficheLemsDic(requete, 0);
     else
         afficheLemsDicW(requete, 0);
@@ -227,7 +242,11 @@ void MainWindow::afficheLemsDic(bool litt, bool prim)
  *        la connexion entre une action et la fonction
  *        afficheLemsDic().
  */
-void MainWindow::afficheLemsDicLitt() { afficheLemsDic(true); }
+void MainWindow::afficheLemsDicLitt()
+{
+    afficheLemsDic(true);
+}
+
 /**
  * \fn void MainWindow::afficheLemsDicW () * \brief Fonction de relais
  * permettant d'utiliser
@@ -235,7 +254,11 @@ void MainWindow::afficheLemsDicLitt() { afficheLemsDic(true); }
  *        afficheLemsDicW().
  *
  */
-void MainWindow::afficheLemsDicW() { afficheLemsDic(false, false); }
+void MainWindow::afficheLemsDicW()
+{
+    afficheLemsDic(false, false);
+}
+
 /**
  * \fn afficheLemsDic(true,false);
  * \brief
@@ -243,7 +266,11 @@ void MainWindow::afficheLemsDicW() { afficheLemsDic(false, false); }
  *        la connexion entre une action et la fonction
  *        afficheLemsDicW(), sans lemmatisation.
  */
-void MainWindow::afficheLemsDicLittW() { afficheLemsDic(true, false); }
+void MainWindow::afficheLemsDicLittW()
+{
+    afficheLemsDic(true, false);
+}
+
 /**
  * \fn void MainWindow::afficheLemsDic(QStringList ll, int no)
  * \brief Affiche la page ou les entrées de
@@ -360,18 +387,20 @@ void MainWindow::apropos()
 {
     QMessageBox::about(
         this, tr("Collatinus 11"),
-        tr("COLLATINVS\nLinguae latinae lemmatizatio \n"
-           "Licentia GPL, © Yves Ouvrard, 2009 - 2016 \n"
-           "Nonnullas partes operis scripsit Philippe Verkerk\n"
-           "Versio " VERSION "\n"
-           "Gratias illis habeo :\n"
-           "William Whitaker †\n"
-           "Jose Luis Redrejo,\n"
-           "Georges Khaznadar,\n"
-           "Matthias Bussonier,\n"
-           "Gérard Jeanneau,\n"
-           "Jean-Paul Woitrain,\n"
-           "Perseus Digital Library <http://www.perseus.tufts.edu>"));
+        tr("<b>COLLATINVS</b><br/>\n"
+           "<i>Linguae latinae lemmatizatio </i><br/>\n"
+           "Licentia GPL, © Yves Ouvrard, 2009 - 2016 <br/>\n"
+           "Nonnullas partes operis scripsit Philippe Verkerk<br/>\n"
+           "Versio " VERSION "<br/><br/>\n"
+           "Gratias illis habeo :<br/><ul>\n"
+           "<li>William Whitaker †</li>\n"
+           "<li>Jose Luis Redrejo</li>\n"
+           "<li>Georges Khaznadar</li>\n"
+           "<li>Matthias Bussonier</li>\n"
+           "<li>Gérard Jeanneau</li>\n"
+           "<li>Jean-Paul Woitrain</li>\n"
+           "<li><a href='http://www.perseus.tufts.edu'>Perseus Digital Library </a></li>\n"
+           "<li>Dominique Longrée et le <a href='http://web.philo.ulg.ac.be/lasla/'>LASLA</a>\n</li></ul>"));
 }
 
 /**
@@ -466,6 +495,7 @@ void MainWindow::charger(QString f)
         return;
     }
     QTextStream in(&file);
+    in.setCodec("UTF-8"); // Pour windôze !
     QApplication::setOverrideCursor(Qt::WaitCursor);
     QString contenu = in.readAll();
     file.close();
@@ -483,7 +513,11 @@ void MainWindow::clicAnte()
     listeD.courant()->vide_ligneLiens();
     if (listeD.courant()->estXml())
     {
-        afficheLemsDic(QStringList() << anteButton->text());
+        QStringList lBouton;
+        lBouton << anteButton->text();
+        afficheLemsDic(lBouton);
+        if (syncAct->isChecked() && wDic->isVisible())
+            afficheLemsDicW(lBouton);
     }
     else
     {
@@ -504,7 +538,11 @@ void MainWindow::clicAnteW()
     listeD.courant2()->vide_ligneLiens();
     if (listeD.courant2()->estXml())
     {
-        afficheLemsDicW(QStringList() << anteButton->text());
+        QStringList lBouton;
+        lBouton << anteButtonW->text();
+        afficheLemsDicW(lBouton);
+        if (syncAct->isChecked() && !dockDic->visibleRegion().isEmpty())
+            afficheLemsDic(lBouton);
     }
     else
     {
@@ -524,7 +562,11 @@ void MainWindow::clicPost()
     listeD.courant()->vide_ligneLiens();
     if (listeD.courant()->estXml())
     {
-        afficheLemsDic(QStringList() << postButton->text());
+        QStringList lBouton;
+        lBouton << postButton->text();
+        afficheLemsDic(lBouton);
+        if (syncAct->isChecked() && wDic->isVisible())
+            afficheLemsDicW(lBouton);
     }
     else
     {
@@ -546,7 +588,11 @@ void MainWindow::clicPostW()
     listeD.courant2()->vide_ligneLiens();
     if (listeD.courant2()->estXml())
     {
-        afficheLemsDicW(QStringList() << postButtonW->text());
+        QStringList lBouton;
+        lBouton << postButtonW->text();
+        afficheLemsDicW(lBouton);
+        if (syncAct->isChecked() && !dockDic->visibleRegion().isEmpty())
+            afficheLemsDic(lBouton);
     }
     else
     {
@@ -594,6 +640,9 @@ void MainWindow::closeEvent(QCloseEvent *event)
     settings.setValue("illius", illiusAct->isChecked());
     settings.setValue("hyphenation", hyphenAct->isChecked());
     settings.setValue("repHyphen", repHyphen);
+    settings.setValue("ficHyphen", ficHyphen);
+    settings.setValue("tagAffTout", affToutAct->isChecked());
+    settings.setValue ("repVerba", repVerba);
     settings.endGroup();
     settings.beginGroup("dictionnaires");
     settings.setValue("courant", comboGlossaria->currentIndex());
@@ -602,6 +651,7 @@ void MainWindow::closeEvent(QCloseEvent *event)
     settings.setValue("posw", wDic->pos());
     settings.setValue("sizew", wDic->size());
     settings.setValue("sync", syncAct->isChecked());
+    settings.setValue("secondDic",visibleWAct->isChecked());
     settings.endGroup();
     delete wDic;
     QMainWindow::closeEvent(event);
@@ -641,6 +691,8 @@ void MainWindow::createActions()
                            tr("Lancer et classer &alphabétiquement"), this);
     aproposAct =
         new QAction(QIcon(":/res/collatinus.svg"), tr("à &Propos"), this);
+    auxAct =
+        new QAction(QIcon(":res/help-browser.svg"), tr("aide"), this);
     balaiAct = new QAction(QIcon(":res/edit-clear.svg"),
                            tr("&Effacer les résultats"), this);
     copieAct = new QAction(QIcon(":res/copie.svg"),
@@ -649,7 +701,8 @@ void MainWindow::createActions()
     findAct = new QAction(QIcon(":res/edit-find.svg"), tr("&Chercher"), this);
     fontAct = new QAction(tr("Police de caractères"), this);
     lancAct = new QAction(QIcon(":res/gear.svg"), tr("&Lancer"), this);
-    majAct = new QAction(tr("Télécharger lexiques et dictionnaires"), this);
+    majDicAct = new QAction(tr("Installer les dictionnaires téléchargés"), this);
+    majLexAct = new QAction(tr("Installer les lexiques téléchargés"), this);
     nouvAct =
         new QAction(QIcon(":/res/document-new.svg"), tr("&Nouveau"), this);
     ouvrirAct =
@@ -674,9 +727,11 @@ void MainWindow::createActions()
     nouvAct->setShortcuts(QKeySequence::New);
     ouvrirAct->setShortcuts(QKeySequence::Open);
     printAct->setShortcuts(QKeySequence::Print);
-    reFindAct->setShortcut(QKeySequence(tr("Ctrl+J")));
+    reFindAct->setShortcut(QKeySequence::FindNext);
+//    reFindAct->setShortcut(QKeySequence(tr("Ctrl+J")));
     quitAct->setShortcut(
         QKeySequence(tr("Ctrl+Q")));  // QKeySequence::Quit inopérant
+    lancAct->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_L)); // Raccourci pour lancer la lemmatisation ou la scansion du texte.
 
     // lemmatisation et options
     // ordre alpha
@@ -724,6 +779,24 @@ void MainWindow::createActions()
     optionsAccent->addAction(ambigueAct);
     optionsAccent->setEnabled(false);
     lireHyphenAct = new QAction(tr("Lire les césures"),this);
+    actionVerba_cognita = new QAction(tr("Lire une liste de mots connus"),this);
+    actionVerba_cognita->setCheckable(true);
+    actionVerba_cognita->setChecked(false);
+    verba_cognita_out = new QAction(tr("Écrire l'emploi des mots connus"),this);
+
+    // actions pour le serveur
+    serverAct = new QAction(tr("Serveur"), this);
+    serverAct->setCheckable(true);
+    serverAct->setChecked(false);
+
+    // actions pour le tagger
+    affToutAct = new QAction(tr("tout afficher"),this);
+    affToutAct->setCheckable(true);
+    affToutAct->setChecked(true);
+
+    // Restauration des docks
+    dockRestoreAct = new QAction(tr("Restaurer les docks"),this);
+
     // actions pour les dictionnaires
     dicAct = new QAction(QIcon(":/res/dicolem.svg"),
                          tr("Lemmatiser et chercher"), this);
@@ -773,7 +846,6 @@ void MainWindow::createConnections()
     connect(zoomAct, SIGNAL(triggered()), textBrowserDic, SLOT(zoomIn()));
     connect(zoomAct, SIGNAL(triggered()), textBrowserW, SLOT(zoomIn()));
     connect(zoomAct, SIGNAL(triggered()), textBrowserFlex, SLOT(zoomIn()));
-    connect(zoomAct, SIGNAL(triggered()), textBrowserSynt, SLOT(zoomIn()));
     connect(zoomAct, SIGNAL(triggered()), textEditLem, SLOT(zoomIn()));
     connect(zoomAct, SIGNAL(triggered()), textEditScand, SLOT(zoomIn()));
 
@@ -781,7 +853,6 @@ void MainWindow::createConnections()
     connect(deZoomAct, SIGNAL(triggered()), textBrowserDic, SLOT(zoomOut()));
     connect(deZoomAct, SIGNAL(triggered()), textBrowserW, SLOT(zoomOut()));
     connect(deZoomAct, SIGNAL(triggered()), textBrowserFlex, SLOT(zoomOut()));
-    connect(deZoomAct, SIGNAL(triggered()), textBrowserSynt, SLOT(zoomOut()));
     connect(deZoomAct, SIGNAL(triggered()), textEditLem, SLOT(zoomOut()));
     connect(deZoomAct, SIGNAL(triggered()), textEditScand, SLOT(zoomOut()));
 
@@ -795,7 +866,7 @@ void MainWindow::createConnections()
             SLOT(setAlpha(bool)));
     connect(formeTAct, SIGNAL(toggled(bool)), lemmatiseur,
             SLOT(setFormeT(bool)));
-    connect(htmlAct, SIGNAL(toggled(bool)), lemmatiseur, SLOT(setHtml(bool)));
+    connect(htmlAct, SIGNAL(toggled(bool)), this, SLOT(setHtml(bool)));
     connect(majPertAct, SIGNAL(toggled(bool)), lemmatiseur,
             SLOT(setMajPert(bool)));
     connect(morphoAct, SIGNAL(toggled(bool)), lemmatiseur,
@@ -809,13 +880,18 @@ void MainWindow::createConnections()
     connect(lireHyphenAct, SIGNAL(triggered()), this, SLOT(lireFichierHyphen()));
     connect(oteAAct, SIGNAL(triggered()), this, SLOT(oteDiacritiques()));
 
+    // lancer ou arrêter le serveur
+    connect(serverAct, SIGNAL(toggled(bool)), this, SLOT(lancerServeur(bool)));
+    // restaurer les docks
+    connect(dockRestoreAct, SIGNAL(triggered()), this, SLOT(dockRestore()));
+
     // actions des dictionnaires
     connect(anteButton, SIGNAL(clicked()), this, SLOT(clicAnte()));
     connect(comboGlossaria, SIGNAL(currentIndexChanged(QString)), this,
             SLOT(changeGlossarium(QString)));
     connect(dicAct, SIGNAL(triggered()), this, SLOT(afficheLemsDic()));
     connect(dicLittAct, SIGNAL(triggered()), this, SLOT(afficheLemsDicLitt()));
-    connect(lineEditDic, SIGNAL(returnPressed()), this, SLOT(afficheLemsDic()));
+    connect(lineEditDic, SIGNAL(returnPressed()), this, SLOT(afficheLemsDicLitt()));
     connect(postButton, SIGNAL(clicked()), this, SLOT(clicPost()));
     connect(syncDWAct, SIGNAL(triggered()), this, SLOT(syncDW()));
     connect(textBrowserDic, SIGNAL(anchorClicked(QUrl)), this,
@@ -828,8 +904,9 @@ void MainWindow::createConnections()
     connect(dicLittActW, SIGNAL(triggered()), this,
             SLOT(afficheLemsDicLittW()));
     connect(lineEditDicW, SIGNAL(returnPressed()), this,
-            SLOT(afficheLemsDicW()));
-    connect(majAct, SIGNAL(triggered()), this, SLOT(maj()));
+            SLOT(afficheLemsDicLittW()));
+    connect(majDicAct, SIGNAL(triggered()), this, SLOT(majDic()));
+    connect(majLexAct, SIGNAL(triggered()), this, SLOT(majLex()));
     connect(postButtonW, SIGNAL(clicked()), this, SLOT(clicPostW()));
     connect(syncWDAct, SIGNAL(triggered()), this, SLOT(syncWD()));
     connect(textBrowserW, SIGNAL(anchorClicked(QUrl)), this,
@@ -843,6 +920,7 @@ void MainWindow::createConnections()
     // autres actions
     connect(alphaAct, SIGNAL(triggered()), this, SLOT(alpha()));
     connect(aproposAct, SIGNAL(triggered()), this, SLOT(apropos()));
+    connect(auxAct, SIGNAL(triggered()), this, SLOT(auxilium()));
     connect(balaiAct, SIGNAL(triggered()), this, SLOT(effaceRes()));
     connect(copieAct, SIGNAL(triggered()), this, SLOT(dialogueCopie()));
     connect(exportAct, SIGNAL(triggered()), this, SLOT(exportPdf()));
@@ -855,6 +933,8 @@ void MainWindow::createConnections()
     connect(quitAct, SIGNAL(triggered()), this, SLOT(close()));
     connect(reFindAct, SIGNAL(triggered()), this, SLOT(rechercheBis()));
     connect(statAct, SIGNAL(triggered()), this, SLOT(stat()));
+    connect(actionVerba_cognita, SIGNAL(toggled(bool)), this, SLOT(verbaCognita(bool)));
+    connect(verba_cognita_out, SIGNAL(triggered()), this, SLOT(verbaOut()));
 }
 
 /**
@@ -900,6 +980,8 @@ void MainWindow::createMenus()
     fileMenu->addSeparator();
     fileMenu->addAction(oteAAct);
     fileMenu->addAction(lireHyphenAct);
+    fileMenu->addAction(actionVerba_cognita);
+    fileMenu->addAction(verba_cognita_out);
     fileMenu->addSeparator();
     fileMenu->addAction(quitAct);
 
@@ -912,7 +994,10 @@ void MainWindow::createMenus()
     viewMenu->addAction(balaiAct);
     viewMenu->addAction(zoomAct);
     viewMenu->addAction(deZoomAct);
+    viewMenu->addAction(fontAct);
+    viewMenu->addSeparator();
     viewMenu->addAction(visibleWAct);
+    viewMenu->addAction(dockRestoreAct);
     viewMenu->addSeparator();
     QActionGroup *frEngAg = new QActionGroup(this);
     frAct->setActionGroup(frEngAg);
@@ -928,7 +1013,9 @@ void MainWindow::createMenus()
     lexMenu->addAction(lancAct);
     lexMenu->addAction(alphaAct);
     lexMenu->addAction(statAct);
+    lexMenu->addSeparator();
     lexMenu->addAction(extensionWAct);
+    lexMenu->addSeparator();
 
     optMenu = menuBar()->addMenu(tr("&Options"));
     optMenu->addAction(alphaOptAct);
@@ -946,10 +1033,17 @@ void MainWindow::createMenus()
     optMenu->addAction(illiusAct);
     optMenu->addAction(hyphenAct);
     optMenu->addSeparator();
-    optMenu->addAction(fontAct);
-    optMenu->addAction(majAct);
+    optMenu->addAction(affToutAct);
+//    optMenu->addAction(fontAct);
+//    optMenu->addAction(majAct);
+
+    extraMenu = menuBar()->addMenu(tr("Extra"));
+    extraMenu->addAction(serverAct);
+    extraMenu->addAction(majDicAct);
+    extraMenu->addAction(majLexAct);
 
     helpMenu = menuBar()->addMenu(tr("&Aide"));
+    helpMenu->addAction(auxAct);
     helpMenu->addAction(aproposAct);
 }
 
@@ -1036,6 +1130,7 @@ void MainWindow::createDockWindows()
     vLayoutLem->addLayout(hLayoutLem);
     vLayoutLem->addWidget(textEditLem);
     dockLem->setWidget(dockWidgetLem);
+//    qDebug() << dockLem->testAttribute(Qt::WA_DeleteOnClose) << dockWidgetLem->testAttribute(Qt::WA_DeleteOnClose);
 
     dockDic = new QDockWidget(tr("Dictionnaires"), this);
     dockDic->setObjectName("dockdic");
@@ -1047,6 +1142,8 @@ void MainWindow::createDockWindows()
     QVBoxLayout *vLayoutDic = new QVBoxLayout(dockWidgetDic);
     QHBoxLayout *hLayoutDic = new QHBoxLayout();
     lineEditDic = new QLineEdit(dockWidgetDic);
+    lineEditDic->setSizePolicy(QSizePolicy::MinimumExpanding,QSizePolicy::Fixed);
+    lineEditDic->setMinimumWidth(40);
     // Lemmatisation + recherche
     QToolButton *tbDic = new QToolButton(this);
     tbDic->setDefaultAction(dicAct);
@@ -1056,16 +1153,25 @@ void MainWindow::createDockWindows()
     // dictionnaire
     QToolButton *tbSync = new QToolButton(this);
     tbSync->setDefaultAction(syncAct);
+    tbSync->setSizePolicy(QSizePolicy::Minimum,QSizePolicy::Fixed);
+    tbSync->setMinimumWidth(40);
+    tbSync->setMaximumSize(60, 24);
     QToolButton *tbDicW = new QToolButton(this);
     tbDicW->setDefaultAction(visibleWAct);
+    tbDicW->setSizePolicy(QSizePolicy::MinimumExpanding,QSizePolicy::Fixed);
+    tbDicW->setMinimumWidth(40);
+    tbDicW->setMaximumSize(90, 24);
     QToolButton *tbSyncDW = new QToolButton(this);
     tbSyncDW->setDefaultAction(syncDWAct);
+    tbSyncDW->setSizePolicy(QSizePolicy::Minimum,QSizePolicy::Fixed);
+    tbSyncDW->setMinimumWidth(40);
+    tbSyncDW->setMaximumSize(60, 24);
     // choix des dictionnaires
     comboGlossaria = new QComboBox(this);
     anteButton = new QPushButton(this);
     labelLewis = new QLabel(this);
     postButton = new QPushButton(this);
-    QSpacerItem *hSpacerDic = new QSpacerItem(40, 20);
+//    QSpacerItem *hSpacerDic = new QSpacerItem(40, 20);
     //, QSizePolicy::Expanding, QSizePolicy::Minimum);
     hLayoutDic->addWidget(lineEditDic);
     hLayoutDic->addWidget(tbDic);
@@ -1074,7 +1180,8 @@ void MainWindow::createDockWindows()
     hLayoutDic->addWidget(anteButton);
     hLayoutDic->addWidget(labelLewis);
     hLayoutDic->addWidget(postButton);
-    hLayoutDic->addItem(hSpacerDic);
+//    hLayoutDic->addItem(hSpacerDic);
+    hLayoutDic->addStretch();
     hLayoutDic->addWidget(tbSync);
     hLayoutDic->addWidget(tbDicW);
     hLayoutDic->addWidget(tbSyncDW);
@@ -1144,32 +1251,42 @@ void MainWindow::createDockWindows()
     vLayoutFlex->addWidget(textBrowserFlex);
     dockFlex->setWidget(dockWidgetFlex);
 
-    dockSynt = new QDockWidget(tr("Syntaxe"), this);
-    dockSynt->setObjectName("docksynt");
-    dockSynt->setFloating(false);
-    dockSynt->setFeatures(QDockWidget::DockWidgetFloatable |
+    dockTag = new QDockWidget(tr("Tagger"), this);
+    dockTag->setObjectName("dockTag");
+    dockTag->setFloating(false);
+    dockTag->setFeatures(QDockWidget::DockWidgetFloatable |
                           QDockWidget::DockWidgetMovable);
-    dockSynt->setAllowedAreas(Qt::BottomDockWidgetArea);
-    dockWidgetSynt = new QWidget(dockSynt);
-    QVBoxLayout *vLayoutSynt = new QVBoxLayout(dockWidgetSynt);
-    QHBoxLayout *hLayoutSynt = new QHBoxLayout();
-    textBrowserSynt = new QTextBrowser(dockWidgetSynt);
-    textBrowserSynt->setSizePolicy(QSizePolicy::Expanding,
+    dockTag->setAllowedAreas(Qt::BottomDockWidgetArea);
+    dockWidgetTag = new QWidget(dockTag);
+    QVBoxLayout *vLayoutTag = new QVBoxLayout(dockWidgetTag);
+    QHBoxLayout *hLayoutTag = new QHBoxLayout();
+    textBrowserTag = new QTextBrowser(dockWidgetTag);
+    textBrowserTag->setSizePolicy(QSizePolicy::Expanding,
                                    QSizePolicy::Expanding);
-    vLayoutSynt->addLayout(hLayoutSynt);
-    vLayoutSynt->addWidget(textBrowserSynt);
-    dockSynt->setWidget(dockWidgetSynt);
+    QLabel *lasla = new QLabel(tr("Tagger probabiliste dérivé des <a href='http://web.philo.ulg.ac.be/lasla/textes-latins-traites/'>textes du LASLA</a>"),this);
+    lasla->setOpenExternalLinks(true);
+    QToolButton *tbMajPertTag = new QToolButton(this);
+    tbMajPertTag->setDefaultAction(majPertAct);
+    QToolButton *tbAffTout = new QToolButton(this);
+    tbAffTout->setDefaultAction(affToutAct);
+    hLayoutTag->addWidget(lasla);
+    hLayoutTag->addStretch();
+    hLayoutTag->addWidget(tbMajPertTag);
+    hLayoutTag->addWidget(tbAffTout);
+    vLayoutTag->addLayout(hLayoutTag);
+    vLayoutTag->addWidget(textBrowserTag);
+    dockTag->setWidget(dockWidgetTag);
 
     addDockWidget(Qt::BottomDockWidgetArea, dockLem);
     addDockWidget(Qt::BottomDockWidgetArea, dockDic);
     addDockWidget(Qt::BottomDockWidgetArea, dockScand);
     addDockWidget(Qt::BottomDockWidgetArea, dockFlex);
-    addDockWidget(Qt::BottomDockWidgetArea, dockSynt);
+    addDockWidget(Qt::BottomDockWidgetArea, dockTag);
 
     tabifyDockWidget(dockLem, dockDic);
     tabifyDockWidget(dockDic, dockScand);
     tabifyDockWidget(dockScand, dockFlex);
-    tabifyDockWidget(dockFlex, dockSynt);
+    tabifyDockWidget(dockScand, dockTag);
 
     setTabPosition(Qt::BottomDockWidgetArea, QTabWidget::North);
     dockLem->raise();
@@ -1187,9 +1304,11 @@ void MainWindow::createDicWindow()
     QVBoxLayout *vLayout = new QVBoxLayout(wDic);
     QHBoxLayout *hLayout = new QHBoxLayout();
     lineEditDicW = new QLineEdit(wDic);
+    lineEditDicW->setSizePolicy(QSizePolicy::MinimumExpanding,QSizePolicy::Fixed);
+    lineEditDicW->setMinimumWidth(40);
     // Lemmatisation + recherche
-    QToolButton *tbDic = new QToolButton(this);
-    tbDic->setDefaultAction(dicActW);
+    QToolButton *tbDicW = new QToolButton(this);
+    tbDicW->setDefaultAction(dicActW);
     // recherche sans lemmatisation
     QToolButton *tbDicLittW = new QToolButton(this);
     tbDicLittW->setDefaultAction(dicLittActW);
@@ -1197,18 +1316,22 @@ void MainWindow::createDicWindow()
     anteButtonW = new QPushButton(this);
     labelLewisW = new QLabel(this);
     postButtonW = new QPushButton(this);
-    QSpacerItem *hSpacerDic = new QSpacerItem(40, 20);
+//    QSpacerItem *hSpacerDic = new QSpacerItem(40, 20);
     //, QSizePolicy::Expanding, QSizePolicy::Minimum);
     QToolButton *tbSyncWD = new QToolButton(this);
     tbSyncWD->setDefaultAction(syncWDAct);
+    tbSyncWD->setSizePolicy(QSizePolicy::Minimum,QSizePolicy::Fixed);
+    tbSyncWD->setMinimumWidth(40);
+    tbSyncWD->setMaximumSize(60, 24);
     hLayout->addWidget(lineEditDicW);
-    hLayout->addWidget(tbDic);
+    hLayout->addWidget(tbDicW);
     hLayout->addWidget(tbDicLittW);
     hLayout->addWidget(comboGlossariaW);
     hLayout->addWidget(anteButtonW);
     hLayout->addWidget(labelLewisW);
     hLayout->addWidget(postButtonW);
-    hLayout->addItem(hSpacerDic);
+//    hLayout->addItem(hSpacerDic);
+    hLayout->addStretch();
     hLayout->addWidget(tbSyncWD);
     textBrowserW = new QTextBrowser(wDic);
     textBrowserW->setOpenExternalLinks(true);
@@ -1290,7 +1413,7 @@ void MainWindow::effaceRes()
     if (dockVisible(dockLem)) textEditLem->clear();
     if (dockVisible(dockFlex)) textBrowserFlex->clear();
     if (dockVisible(dockScand)) textEditScand->clear();
-    if (dockVisible(dockSynt)) textBrowserSynt->clear();
+    if (dockVisible(dockTag)) textBrowserTag->clear();
 }
 
 /**
@@ -1397,6 +1520,7 @@ void MainWindow::lancer()
 {
     if (dockVisible(dockLem)) lemmatiseTxt();
     if (dockVisible(dockScand)) scandeTxt();
+    if (dockVisible(dockTag)) tagger(editLatin->toPlainText(),-1);
 }
 
 /**
@@ -1407,12 +1531,16 @@ void MainWindow::lancer()
  */
 void MainWindow::lemmatiseLigne()
 {
+    QString txt = lineEditLem->text();
+    if (html())
+    {
     QString texteHtml = textEditLem->toHtml();
     texteHtml.insert(texteHtml.indexOf("</body>"),
-                     lemmatiseur->lemmatiseT(lineEditLem->text()));
+                     lemmatiseur->lemmatiseT(txt));
     textEditLem->setText(texteHtml);
+    }
+    else textEditLem->insertPlainText(lemmatiseur->lemmatiseT(txt));
     textEditLem->moveCursor(QTextCursor::End);
-//    textEditLem->append(lemmatiseur->lemmatiseT(lineEditLem->text()));
 }
 
 /**
@@ -1425,23 +1553,42 @@ void MainWindow::lemmatiseTxt()
 {
     // si la tâche dure trop longtemps :
     // setUpdatesEnabled(false);
+    QString txt = editLatin->toPlainText();
+    QString res = lemmatiseur->lemmatiseT(txt);
     if (html())
-        textEditLem->setHtml(lemmatiseur->lemmatiseT(editLatin->toPlainText()));
+        textEditLem->setHtml(res);
     else
-        textEditLem->setPlainText(
-            lemmatiseur->lemmatiseT(editLatin->toPlainText()));
+        textEditLem->setPlainText(res);
     // setUpdatesEnabled(true);
+    if (txt.contains("<span"))
+        editLatin->setHtml(txt);
+    // Le texte a été modifié, donc colorisé.
 }
 
 /**
- * \fn void MainWindow::maj()
+ * \fn void MainWindow::majDic()
  * \brief Lance le dialogue de mise à jour des
  *        lexiques et dictionnaires.
  */
 
-void MainWindow::maj()
+void MainWindow::majDic()
 {
-    Maj *majDial = new Maj();
+    Maj *majDial = new Maj(true);
+    majDial->setFont(editLatin->font());
+    majDial->exec();
+    createDicos();
+    createDicos(false);
+}
+
+/**
+ * \fn void MainWindow::majLex()
+ * \brief Lance le dialogue de mise à jour des
+ *        lexiques et dictionnaires.
+ */
+
+void MainWindow::majLex()
+{
+    Maj *majDial = new Maj(false);
     majDial->setFont(editLatin->font());
     majDial->exec();
 }
@@ -1501,7 +1648,6 @@ void MainWindow::police()
         textBrowserW->setFont(font);
         textEditScand->setFont(font);
         textBrowserFlex->setFont(font);
-        textBrowserSynt->setFont(font);
     }
 }
 
@@ -1561,7 +1707,6 @@ void MainWindow::readSettings()
     textBrowserW->setFont(font);
     textEditScand->setFont(font);
     textBrowserFlex->setFont(font);
-    textBrowserSynt->setFont(font);
     // options de lemmatisation
     alphaOptAct->setChecked(settings.value("alpha").toBool());
     formeTAct->setChecked(settings.value("formetxt").toBool());
@@ -1579,18 +1724,26 @@ void MainWindow::readSettings()
     illiusAct->setChecked(settings.value("illius").toBool());
     hyphenAct->setChecked(settings.value("hyphenation").toBool());
     repHyphen = settings.value("repHyphen").toString();
-    if (repHyphen.isEmpty()) repHyphen = qApp->applicationDirPath() + "/data";
+    ficHyphen = settings.value("ficHyphen").toString();
+    affToutAct->setChecked(settings.value("tagAffTout").toBool());
+    repVerba = settings.value("repVerba").toString();
+    if (repVerba.isEmpty()) repVerba = "~";
+    if (repHyphen.isEmpty() || ficHyphen.isEmpty())
+        repHyphen = qApp->applicationDirPath() + "/data";
 
     QString l = settings.value("cible").toString();
+    if (l.size() < 2) l = "fr";
     lemmatiseur->setCible(l);
     foreach (QAction *action, grCibles->actions())
-        if (action->text() == lemmatiseur->cibles()[l])
+        if (action->text() == lemmatiseur->cibles()[l.mid(0,2)])
             action->setChecked(true);
     settings.endGroup();
     // options appliquées au lemmatiseur
     lemmatiseur->setAlpha(alphaOptAct->isChecked());
     lemmatiseur->setFormeT(formeTAct->isChecked());
     lemmatiseur->setExtension(extensionWAct->isChecked());
+    if (!ficHyphen.isEmpty()) lemmatiseur->lireHyphen(ficHyphen);
+    // Le fichier hyphen.la doit être lu après l'extension.
     lemmatiseur->setHtml(htmlAct->isChecked());
     lemmatiseur->setMajPert(majPertAct->isChecked());
     lemmatiseur->setMorpho(morphoAct->isChecked());
@@ -1601,6 +1754,7 @@ void MainWindow::readSettings()
     wDic->setVisible(settings.value("wdic").toBool());
     comboGlossariaW->setCurrentIndex(settings.value("courantW").toInt());
     syncAct->setChecked(settings.value("sync").toBool());
+    visibleWAct->setChecked(settings.value("secondDic").toBool());
     settings.endGroup();
 }
 
@@ -1685,7 +1839,26 @@ void MainWindow::setCible()
     {
         if (lemmatiseur->cibles()[cle] == action->text())
         {
-            lemmatiseur->setCible(cle);
+            if (cle == "fr")
+                lemmatiseur->setCible(cle + ".en.de");
+            else if (cle == "en")
+                lemmatiseur->setCible(cle + ".fr.de");
+            else
+            {
+                // Les deux langues principales sont le français et l'anglais.
+                // Pour les autres langues, je donne le choix de la 2e langue.
+                QMessageBox msg;
+                msg.setIcon(QMessageBox::Question);
+                msg.setText("Choisir une 2nde langue  \nChoose a 2nd language");
+                QAbstractButton *frButton = msg.addButton("Français",QMessageBox::AcceptRole);
+                QAbstractButton *enButton = msg.addButton("English",QMessageBox::AcceptRole);
+                msg.exec();
+                if (msg.clickedButton() == frButton)
+                    lemmatiseur->setCible(cle + ".fr.en");
+                else if (msg.clickedButton() == enButton)
+                    lemmatiseur->setCible(cle + ".en.fr");
+                else lemmatiseur->setCible(cle + ".en.fr");
+            }
             break;
         }
     }
@@ -1781,9 +1954,10 @@ int MainWindow::lireOptionsAccent()
 
 void MainWindow::lireFichierHyphen()
 {
-    QString ficIn = QFileDialog::getOpenFileName(this, "Capsam legere", repHyphen+"/hyphen.la");
-    if (!ficIn.isEmpty()) repHyphen = QFileInfo (ficIn).absolutePath ();
-    lemmatiseur->lireHyphen(ficIn);
+    ficHyphen = QFileDialog::getOpenFileName(this, "Capsam legere", repHyphen+"/hyphen.la");
+    if (!ficHyphen.isEmpty()) repHyphen = QFileInfo (ficHyphen).absolutePath ();
+    lemmatiseur->lireHyphen(ficHyphen);
+    // Si le nom de fichier est vide, ça efface les données précédentes.
 }
 
 void MainWindow::oteDiacritiques()
@@ -1799,4 +1973,327 @@ void MainWindow::oteDiacritiques()
     texte.remove("\u0306");
     texte.remove("\u0308");
     editLatin->setText(texte);
+}
+
+void MainWindow::lancerServeur(bool run)
+{
+    if (run)
+    {
+        QMessageBox::about(this,
+             tr("Serveur de Collatinus"), startServer());
+
+    }
+    else
+    {
+        QMessageBox::about(this,
+             tr("Serveur de Collatinus"), stopServer());
+
+    }
+}
+
+void MainWindow::connexion ()
+{
+    soquette = serveur->nextPendingConnection ();
+    connect (soquette, SIGNAL (readyRead ()), this, SLOT (exec ()));
+}
+
+void MainWindow::exec ()
+{
+    QByteArray octets = soquette->readAll ();
+    QString requete = QString (octets).trimmed();
+    if (requete.isEmpty()) requete = "-?";
+    QString texte = "";
+    QString rep = "";
+    bool nonHTML = true;
+    QString fichierSortie = "";
+    if (requete.contains("-o "))
+    {
+        // La requête contient un nom de fichier de sortie
+        QString nom = requete.section("-o ",1,1).trimmed();
+        requete = requete.section("-o ",0,0).trimmed();
+        // En principe, le -o vient à la fin. Mais...
+        if (nom.contains(" "))
+        {
+            fichierSortie = nom.section(" ",0,0);
+            // Le nom de fichier ne peut pas contenir d'espace !
+            if (requete.isEmpty()) requete = nom.section(" ",1);
+            else requete.append(" " + nom.section(" ",1));
+        }
+        else fichierSortie = nom;
+    }
+    if (requete.contains("-f "))
+    {
+        // La requête contient un nom de fichier
+        QString nom = requete.section("-f ",1,1).trimmed();
+        requete = requete.section("-f ",0,0).trimmed();
+        QFile fichier(nom);
+        if (fichier.open(QFile::ReadOnly))
+        {
+            texte = fichier.readAll();
+            fichier.close();
+        }
+        else rep = "fichier non trouvé !\n";
+    }
+    if (rep == "")
+    {
+    if ((requete[0] == '-') && (requete.size() > 1))
+    {
+        char a = requete[1].toLatin1();
+        QString options = requete.mid(0,requete.indexOf(" "));
+        QString lang = lemmatiseur->cible(); // La langue actuelle;
+        bool html = lemmatiseur->optHtml(); // L'option HTML actuelle
+        bool MP = lemmatiseur->optMajPert();
+        lemmatiseur->setHtml(false); // Sans HTML, a priori
+        int optAcc = 0;
+        if (texte == "")
+            texte = requete.mid(requete.indexOf(" ")+1);
+        lemmatiseur->setMajPert(requete[1].isUpper());
+        switch (a)
+        {
+        case 'S':
+        case 's':
+            if ((options.size() > 2) && (options[2].isDigit()))
+                optAcc = options[2].digitValue() & 7;
+            rep = lemmatiseur->scandeTxt(texte,0,optAcc==1);
+            if (optAcc==1) nonHTML = false;
+            break;
+        case 'A':
+        case 'a':
+            optAcc = 3; // Par défaut : un mot dont la pénultième est commune n'est pas accentué.
+            if ((options.size() > 2) && (options[2].isDigit()))
+            {
+                optAcc = options[2].digitValue();
+                if ((options.size() > 3) && (options[3].isDigit()))
+                    optAcc = 10 * optAcc + options[3].digitValue();
+            }
+            rep = lemmatiseur->scandeTxt(texte,optAcc,false);
+            break;
+        case 'H':
+        case 'h':
+            lemmatiseur->setHtml(true);
+            nonHTML = false;
+        case 'L':
+        case 'l':
+            if ((options.size() > 2) && (options[2].isDigit()))
+            {
+                optAcc = options[2].digitValue();
+                options = options.mid(3);
+                if ((options.size() > 0) && (options[0].isDigit()))
+                {
+                    optAcc = 10*optAcc+options[0].digitValue();
+                    options = options.mid(1);
+                }
+            }
+            else options = options.mid(2); // Je coupe le "-l".
+            if ((options.size() == 2) && lemmatiseur->cibles().keys().contains(options))
+                lemmatiseur->setCible(options);
+            else if (((options.size() == 5) || (options.size() == 8)) && lemmatiseur->cibles().keys().contains(options.mid(0,2)))
+                lemmatiseur->setCible(options);
+            if (optAcc > 15) rep = lemmatiseur->frequences(texte).join("");
+            else rep = lemmatiseur->lemmatiseT(texte,optAcc&1,optAcc&2,optAcc&4,optAcc&8);
+            lemmatiseur->setCible(lang); // Je rétablis les langue et option HTML.
+            break;
+        case 'X':
+        case 'x':
+//            rep = lemmatiseur->txt2XML(requete);
+            rep = "Pas encore disponible";
+            break;
+        case 'K':
+        case 'k':
+            rep = lemmatiseur->k9(texte);
+            break;
+        case 'c':
+            if (options.size() > 2)
+                lemmatiseur->setMajPert(options[2] == '1');
+            break;
+        case 't':
+            options = options.mid(2); // Je coupe le "-t".
+            if (((options.size() == 2) || (options.size() == 5) || (options.size() == 8)) &&
+                    lemmatiseur->cibles().keys().contains(options.mid(0,2)))
+            {
+                lemmatiseur->setCible(options);
+            }
+            else
+            {
+                QStringList clefs = lemmatiseur->cibles().keys();
+                rep = "Les langues connues sont : " + clefs.join(" ") + "\n";
+            }
+            break;
+//        case '?':
+        default: // Tout caractère non-affecté affiche l'aide.
+            rep = "La syntaxe est '[commande] [texte]' ou '[commande] -f nom_de_fichier'.\n";
+            rep += "Éventuellement complétée par '-o nom_de_fichier_de_sortie'.\n";
+            rep += "Par défaut (sans commande), on obtient la scansion du texte.\n";
+            rep += "Les commandes possibles sont : \n";
+            rep += "\t-s : Scansion du texte (-s1 : avec recherche des mètres).\n";
+            rep += "\t-a : Accentuation du texte (avec options -a1..-a15).\n";
+            rep += "\t-l : Lemmatisation du texte (avec options -l0..-l15, -l16 pour les fréquences).\n";
+            rep += "\t-h : Lemmatisation du texte en HTML (mêmes options que -l).\n";
+            rep += "\t-S, -A, -L, -H : Les mêmes avec Majuscules pertinentes.\n";
+            rep += "\t-t : Langue cible pour les traductions (par exemple -tfr, -ten).\n";
+            rep += "\t-C : Majuscules pertinentes.\n";
+            rep += "\t-c : Majuscules non-pertinentes.\n";
+            rep += "\t-? : Affichage de l'aide.\n";
+ //           rep += "\t-x : Mise en XML du texte.\n";
+            break;
+        }
+        lemmatiseur->setHtml(html);
+        if ((a != 'C') && (a != 'c'))
+            lemmatiseur->setMajPert(MP);
+    }
+    else if (texte != "") rep= lemmatiseur->scandeTxt(texte);
+    else rep= lemmatiseur->scandeTxt(requete);
+    }
+    if (nonHTML)
+    {
+        rep.remove("<br />"); // Avec -H/h, j'ai la lemmatisation en HTML
+        rep.remove("<br/>"); // Avec -H/h, j'ai la lemmatisation en HTML
+    }
+//    rep.replace("<br />","\n");
+    if (fichierSortie == "")
+    {
+        QClipboard *clipboard = QApplication::clipboard();
+        clipboard->setText(rep);
+    }
+    else
+    {
+        QFile ficOut(fichierSortie);
+        if (ficOut.open(QFile::WriteOnly))
+        {
+            ficOut.write(rep.toUtf8());
+            ficOut.close();
+            rep = "Done !\n";
+        }
+        else rep = "Unable to write !\n";
+    }
+    QByteArray ba = rep.toUtf8();
+    soquette->write(ba);
+}
+
+QString MainWindow::startServer()
+{
+    serveur = new QTcpServer (this);
+    connect (serveur, SIGNAL(newConnection()), this, SLOT (connexion ()));
+    if (!serveur->listen (QHostAddress::LocalHost, 5555))
+    {
+        return "Ne peux écouter.";
+    }
+    return "Le serveur est lancé.";
+}
+
+QString MainWindow::stopServer()
+{
+    serveur->close();
+    delete serveur;
+    return "Le serveur est éteint.";
+}
+
+void MainWindow::dockRestore()
+{
+    dockLem->setFloating(false);
+    dockLem->show();
+    dockScand->setFloating(false);
+    dockScand->show();
+    dockDic->setFloating(false);
+    dockDic->show();
+    dockFlex->setFloating(false);
+    dockFlex->show();
+    dockTag->setFloating(false);
+    dockTag->show();
+}
+
+void MainWindow::tagger(QString t, int p)
+{
+    if (t.length() > 2)
+    {
+        // Sans texte, je ne fais rien.
+        int tl = t.length() - 1;
+        if (p > tl) p = tl;
+        textBrowserTag->setHtml(lemmatiseur->tagTexte(t, p, affToutAct->isChecked()));
+    }
+}
+
+void MainWindow::verbaCognita(bool vb)
+{
+    QString fichier;
+    if (vb) fichier = QFileDialog::getOpenFileName(this, "Verba cognita", repVerba);
+    if (!fichier.isEmpty()) repVerba = QFileInfo (fichier).absolutePath ();
+    lemmatiseur->verbaCognita(fichier,vb);
+}
+
+void MainWindow::setHtml(bool h)
+{
+    // Passer en html ne pose pas de problème
+    if (h || textEditLem->toPlainText().isEmpty()) lemmatiseur->setHtml(h);
+    else if (alerte())
+    {
+        // L'inverse (html --> non-html) mettrait les nouveaux résultats en items du dernier lemme.
+        QString blabla = textEditLem->toHtml();
+//        qDebug() << blabla;
+        textEditLem->clear();
+        int pCourante = 0;
+        while (blabla.indexOf("<li ", pCourante) != -1)
+        {
+            pCourante = blabla.indexOf("<li ", pCourante) + 4;
+            pCourante = blabla.indexOf(">",pCourante) + 1;
+            int toto = blabla.mid(0,pCourante).lastIndexOf("-qt-list-indent: ");
+            int niveau = blabla.mid(toto + 17,1).toInt();
+//            int niveau = blabla.mid(0,pCourante).count("<ul ") - blabla.mid(0,pCourante).count("</ul>");
+            switch (niveau)
+            {
+            case 1:
+                blabla.insert(pCourante,"* ");
+                break;
+            case 2:
+                blabla.insert(pCourante," - ");
+                break;
+            case 3:
+                blabla.insert(pCourante,"   . ");
+                break;
+            default:
+                break;
+            }
+        }
+        textEditLem->setHtml(blabla);
+        blabla = textEditLem->toPlainText();
+        blabla.append("\n\n");
+        textEditLem->clear();
+        // J'efface les résultats précédents
+        textEditLem->setText(blabla);
+        textEditLem->moveCursor(QTextCursor::End);
+        lemmatiseur->setHtml(h);
+    }
+    else htmlAct->setChecked(true);
+}
+
+bool MainWindow::alerte()
+{
+    QMessageBox attention(QMessageBox::Warning,tr("Alerte !"),
+                          tr("Quitter le mode HTML perd la mise en forme des résultats précédents !"));
+    QPushButton *annulerButton =
+          attention.addButton(tr("Annuler"), QMessageBox::ActionRole);
+    QPushButton *ecraserButton =
+          attention.addButton(tr("Continuer"), QMessageBox::ActionRole);
+    attention.setDefaultButton(ecraserButton);
+    attention.exec();
+    if (attention.clickedButton() == annulerButton) return false;
+    return true;
+}
+
+
+void MainWindow::auxilium()
+{
+    QDesktopServices::openUrl(QUrl("file:" + qApp->applicationDirPath() + "/doc/index.html"));
+}
+
+void MainWindow::verbaOut()
+{
+    // Pour sauver un fichier avec l'utilisation des mots connus.
+    QString fichier;
+    fichier = QFileDialog::getSaveFileName(this, "Verba cognita", repVerba);
+    if (!fichier.isEmpty())
+    {
+        repVerba = QFileInfo (fichier).absolutePath ();
+        lemmatiseur->verbaOut(fichier);
+    }
 }

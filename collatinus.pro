@@ -8,10 +8,11 @@ DEPENDPATH += .
 
 qtHaveModule(printsupport): QT += printsupport
 QT += widgets
-#QT += network
+QT += network
+QT += svg
 
-QMAKE_CXXFLAGS += -Wall -Wextra -pedantic -fstack-protector-strong
-QMAKE_CPPFLAGS += -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2
+#QMAKE_CXXFLAGS += -Wall -Wextra -pedantic -fstack-protector-strong
+#QMAKE_CPPFLAGS += -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2
 
 CONFIG += release_binary debug
 
@@ -30,11 +31,11 @@ HEADERS += src/ch.h \
            src/lemmatiseur.h \
            src/lemme.h \
            src/dicos.h \
-		       src/modele.h \
+		   src/modele.h \
            src/flexfr.h \
            src/mainwindow.h \
-		       src/maj.h \
-           src/syntaxe.h
+		   src/maj.h \
+    src/mot.h
 
 SOURCES += src/ch.cpp \
            src/flexion.cpp \
@@ -49,12 +50,13 @@ SOURCES += src/ch.cpp \
            src/mainwindow.cpp \
            src/modele.cpp \
            src/scandeur.cpp \
-           src/syntaxe.cpp
+    src/mot.cpp
 
 RESOURCES += collatinus.qrc
+RC_ICONS = res/collatinus.ico
 
 macx:{
-    TARGET = Collatinus_11
+    TARGET = Collatinus_$${VERSION}
     #note mac os x, fair un $ qmake -spec macx-g++
     #CONFIG += x86 ppc
     QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.8
@@ -65,14 +67,14 @@ macx:{
 
     # install into app bundle
     # à changer en ressources
-    data.path = Collatinus_11.app/Contents/MacOS/data
+    data.path = $${TARGET}.app/Contents/MacOS/data
     data.files =  bin/data/*
 #    deploy.depends = install_documentation
     deploy.depends += install
 #    documentation.path = Collatinus_11.app/Contents/MacOS/doc/
 #    documentation.files = doc/*.html doc/*.css
     # ajouter un cible qui fait macdeploy Collatinus.app
-    deploy.commands = macdeployqt Collatinus_11.app
+    deploy.commands = macdeployqt $${TARGET}.app
 #    dmg.depends = deploy
 #	dmg.commands = ./MacOS/Collatinus.sh
 #    INSTALLS += documentation

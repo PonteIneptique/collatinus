@@ -152,7 +152,7 @@ QStringList Lemmat::formeq(QString forme, bool *nonTrouve, bool debPhr,
 {
     *nonTrouve = true;
     if (forme.isEmpty()) return QStringList();
-    MapLem mp = lemmatiseM(forme, debPhr);
+    MapLem mp = lemmatiseM(forme, !_majPert || debPhr);
     if (mp.empty())
     {
         if (accent == 0)
@@ -162,6 +162,7 @@ QStringList Lemmat::formeq(QString forme, bool *nonTrouve, bool debPhr,
     }
     *nonTrouve = false;
     QStringList lforme;
+    QMap<QString,int> mFormes;
     bool maj = forme.at(0).isUpper();
     foreach (Lemme *l, mp.keys())
     {
@@ -174,10 +175,27 @@ QStringList Lemmat::formeq(QString forme, bool *nonTrouve, bool debPhr,
             //			if (s.grq == "-") f = l->grq();
             //			else f = parPos(s.grq);
             if (maj) f[0] = f[0].toUpper();
-            lforme.append(f);
+            mFormes[f] += fraction(tag(l,s.morpho)) * l->nbOcc(); // Je compte le nombre d'occurrences de chaque forme.
+//            lforme.append(f);
         }
     }
-    lforme.removeDuplicates();
+    //    lforme.removeDuplicates();
+    foreach (QString f, mFormes.keys())
+    {
+        int nb = mFormes[f];
+        int i = 0;
+        while (i< lforme.size())
+        {
+            if (mFormes[lforme[i]] > nb) i += 1;
+            else
+            {
+                // Le nombres d'occurrences de la forme courante est supérieur à la forme actuellement en position i.
+                lforme.insert(i,f); // J'insère la forme courante en i.
+                i = lforme.size() + 1; // Je sors !
+            }
+        }
+        if (i == lforme.size()) lforme.append(f); // Je suis arrivé à la fin de la liste sans insérer la forme courante.
+    }
     return lforme;
 }
 

@@ -23,11 +23,11 @@
 #define MAINWINDOW_H
 #include <QMainWindow>
 #include <QtWidgets>
+#include <QtNetwork>
 
 #include "flexion.h"
 #include "lemmatiseur.h"
 #include "dicos.h"
-#include "syntaxe.h"
 #include "ch.h"
 
 QT_BEGIN_NAMESPACE
@@ -65,13 +65,12 @@ class MainWindow : public QMainWindow
     QDockWidget *dockDic;
     QDockWidget *dockScand;
     QDockWidget *dockFlex;
-    QDockWidget *dockSynt;
+    QDockWidget *dockTag;
     // et second dictionnaire
     QWidget *wDic;
     // cœur
     Lemmat *lemmatiseur;
     Flexion *flechisseur;
-    Syntaxe *syntaxe;
     // widgets d'édition et d'affichage
     EditLatin *editLatin;
     QTextEdit *textEditLem;
@@ -79,7 +78,7 @@ class MainWindow : public QMainWindow
     QTextBrowser *textBrowserDic;
     QTextBrowser *textBrowserW;
     QTextBrowser *textBrowserFlex;
-    QTextBrowser *textBrowserSynt;
+    QTextBrowser *textBrowserTag;
     QLineEdit *lineEditLem;
     QLineEdit *lineEditDic;
     QLineEdit *lineEditDicW;
@@ -100,6 +99,12 @@ class MainWindow : public QMainWindow
     // gr() de la dernière lemmatisation
     QStringList lemsDic;
     int lireOptionsAccent();
+    // Pour le serveur
+    QString startServer ();
+    QString stopServer ();
+
+    void tagger(QString t, int p); // Je voudrais créer dans MainWindow l'interface du tagger.
+
 
    private slots:
     void afficheLemsDic(bool litt = false,
@@ -111,6 +116,7 @@ class MainWindow : public QMainWindow
     void afficheLienW(QUrl url);
     void alpha();
     void apropos();
+    void auxilium();
     void changeGlossarium(QString nomDic);
     void changeGlossariumW(QString nomDic);
     void changePageDjvu(int p, bool prim = true);
@@ -129,7 +135,8 @@ class MainWindow : public QMainWindow
     void lancer();
     void lemmatiseLigne();
     void lemmatiseTxt();
-    void maj();
+    void majDic();
+    void majLex();
     void montreWDic(bool visible);
     void nouveau();
     void ouvrir();
@@ -140,6 +147,7 @@ class MainWindow : public QMainWindow
     void scandeLigne();
     void scandeTxt();
     void setCible();
+    void setHtml(bool h);
     void stat();
     void syncDW();
     void syncWD();
@@ -147,6 +155,14 @@ class MainWindow : public QMainWindow
     void setAccent(bool b);
     void lireFichierHyphen();
     void oteDiacritiques();
+    // Slots du serveur
+    void lancerServeur(bool run=false);
+    void connexion ();
+    void exec ();
+    // Restauration des docks
+    void dockRestore ();
+    void verbaCognita(bool vb=false);
+    void verbaOut();
 
    public slots:
     void afficheLemsDic(QStringList ll, int no = 0);
@@ -171,6 +187,7 @@ class MainWindow : public QMainWindow
     QMenu *lFrEngMenu;
     QMenu *lexMenu;
     QMenu *optMenu;
+    QMenu *extraMenu;
     QMenu *helpMenu;
 
     QToolBar *toolBar;
@@ -193,11 +210,27 @@ class MainWindow : public QMainWindow
     QAction *illiusAct;
     QAction *hyphenAct;
     QAction *lireHyphenAct;
+    QAction *actionVerba_cognita;
+    QAction *verba_cognita_out;
     // Nom du répertoire du fichier hyphen.la
     QString repHyphen;
+    QString ficHyphen;
+    QString repVerba;
+    // Bascule du serveur
+    QAction *serverAct;
+    // Restauration des docks
+    QAction *dockRestoreAct;
+
+    // bascules du tagger
+    QAction *affToutAct;
+
+    // Pour le serveur
+    QTcpServer * serveur;
+    QTcpSocket * soquette;
 
     // actions et groupes d'actions
     QAction *aproposAct;
+    QAction *auxAct;
     QAction *balaiAct;
     QAction *copieAct;
     QAction *deZoomAct;
@@ -212,7 +245,8 @@ class MainWindow : public QMainWindow
     QAction *frAct;
     QActionGroup *grCibles;
     QAction *lancAct;
-    QAction *majAct;
+    QAction *majDicAct;
+    QAction *majLexAct;
     QAction *nouvAct;
     QAction *oteAAct;
     QAction *ouvrirAct;
@@ -243,7 +277,7 @@ class MainWindow : public QMainWindow
     QWidget *dockWidgetDic;
     QWidget *dockWidgetScand;
     QWidget *dockWidgetFlex;
-    QWidget *dockWidgetSynt;
+    QWidget *dockWidgetTag;
     bool dockVisible(QDockWidget *d);
     // fonctions et variables diverses
     void charger(QString f);
@@ -256,6 +290,7 @@ class MainWindow : public QMainWindow
     // traductions
     QString langueI;
     QTranslator *translator;
+    bool alerte();
 };
 
 #endif

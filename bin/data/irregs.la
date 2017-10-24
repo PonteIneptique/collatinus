@@ -20,7 +20,7 @@
 !  Les irréguliers exclusifs sont marqués d'un *
 !
 !Aenĕădūm:Aeneades:10
-ălĭud*:alius:37-39
+ălĭŭd*:alius:37-39
 āccēstĭs:accedo:143
 āmbō̆*:ambo:19,20,43-45
 āmbŏbŭs*:ambo:17,18,29,30,47,48
@@ -29,8 +29,10 @@ būbŭs*:bos:11,12
 bŏŭm:bos:10
 cāelōs:caelum:9
 cĕlĕrī:celer:18,30,42
+cōrdĭŭm:cor:10
 Dănăŭm:Danai:10
 dĕŭm:deus:10
+dīspĕrĭĕt:dispereo:135
 dĭūtīssĭmē:diu:412
 dĭūtĭŭs:diu:411
 dīvŏm:deus:10
@@ -38,7 +40,11 @@ dīvŭm:deus:10
 dūc*:duco:181
 ēssĕ*:edo:187
 ēxēssĕ*:exedo:187
-făc*:facio:181
+ēxĭēs:exeo:134
+ēxĭĕt:exeo:135
+!făc*:facio:181
+fērrĭs:fero:268
+! Pourquoi fero, qui a un modèle, a-t-il un irrégulier ?
 fŏrĕm:sum:163
 fŏrĕs:sum:164
 fŏrĕt:sum:165
@@ -51,15 +57,34 @@ nōrās:nosco:146
 nōrī̆s:nosco:152,170
 nōstī:nosco:140
 nōstĭs:nosco:143
+ōssĭŭm:os:10
 Phrўgās:Phryx:9
 plūrĭŭm*:plus:22,34,46
 plūs*:multus:49,50,61,62,73,74,75
+prāetĕrĭĕt:praetereo:135
 prōbĕăt:prohibeo:159
 quāesĭmūs:quaeso:123
 quāesŭmūs:quaeso:123
 quīcquăm:quisquam:13
 rēquĭĕm:requies:3
+rūrī:rus:413
 sīquī:siqui:13
 tīgrĭm:tigris:3
-vōlgūm:uolgus:10
+trānsĭēs:transeo:134
+trānsĭĕt:transeo:135
+vōlgūm:uulgus:10
 vŏlūcrŭm:uolucris:10
+! respublica
+rēmpūblĭcăm*:respublica:3
+rĕīpūblĭcāe*:respublica:4,5
+rēpūblĭcā*:respublica:6
+rērūmpūblĭcārŭm*:respublica:10
+rēbūspūblĭcīs*:respublica:11,12
+! jusjurandum
+jūrīsjūrāndī*:iusiurandum:4
+jūrījūrāndō*:iusiurandum:5
+jūrējūrāndō*:iusiurandum:6
+jūrājūrāndă*:iusiurandum:7-9
+jūrūmjūrāndōrŭm*:iusiurandum:10
+jūrĭbūsjūrāndīs*:iusiurandum:11,12
+

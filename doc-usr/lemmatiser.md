@@ -24,6 +24,16 @@ la langue.
 
 Collatinus essaie donc de lemmatiser les mots d'un
 texte, et aussi de donner leur analyse morphologique.
+En cliquant sur un mot du texte (fenêtre supérieure),
+on obtient sa lemmatisation dans la fenêtre du bas.
+Pour lemmatiser l'ensemble du texte, on peut cliquer
+sur l'icone représentant des engrenages, ou sur celle
+portant un &alpha; (pour forcer l'ordre alphabétique, 
+sans tenir compte de l'option sélectionnée, cf. ci-dessous).
+Le raccourci **Ctrl-L** conduit au même résultat que
+les engrenages.
+La lemmatisation d'un texte permet aussi de le
+[coloriser](coloriser.html).
 
 L'onglet de lemmatisation de l'application fournit de
 nombreuses options, données par cette image. Une option
@@ -36,10 +46,10 @@ De gauche à droite :
 
 1. **Une ligne de saisie**, qui permet de lemmatiser tout ce qu'elle
    contient sans modifier le texte latin chargé dans la partie supérieure.
-   On y place du texte, et touche **Entrée**.
+   On y place du texte, et on appuie sur la touche **Entrée**.
 2. **Calepino** : Si l'option est activée, les lemmes sont traduits dans
    toutes les langues cibles disponibles.
-3. **Morpho** : permet d'ajouter toutes les analyses
+3. **Morpho** : permet d'afficher toutes les analyses
    morphologiques possibles de la forme.
 4. **ordre alpha** : range les lemmes par ordre alphabétique si elle est
    activée, sinon dans l'ordre d'apparition dans le texte.
@@ -51,8 +61,8 @@ De gauche à droite :
 	faire la distinction entre noms propres et communs ou adjectifs.
 	L'ambiguïté demeure lorsque la forme est en début de phrase.
 8. **grouper échecs** : Si l'option est activée, tous les mots dont 
-    la lemmatisation a échoué sont rassemblé à la fin
+    la lemmatisation a échoué sont rassemblés à la fin
 	des résultats. Sinon, ils sont à leur place dans le
-	texte, avec une mention d'échec.
+	texte (ou dans l'ordre alphabétique), avec une mention d'échec.
 
 [index](index.html) précédent : [Pour débuter](debuter.html) suivant : [Dictionnaires](dictionnaires.html) 

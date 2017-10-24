@@ -59,7 +59,7 @@ class Flexion : public QObject
 
    public:
     Flexion(QObject *parent = 0);
-    QStringList const static cas;
+//    QStringList const static cas;
     QString           static entreParenth(QString e);
     QStringList const static genres;
     QStringList const static nombres;

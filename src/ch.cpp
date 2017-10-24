@@ -111,6 +111,8 @@ QString Ch::atone(QString a, bool bdc)
         a.replace(0x0232, 'Y');
         a.replace(0x040e, 'Y');  // Ȳ Ў
     }
+    a.replace(0x0131, 'i');
+    a.replace(0x1ee5, 'u');
     // combining breve
     a.remove(0x0306);  //ō̆ etc.
     return a;
@@ -127,14 +129,14 @@ QString Ch::communes(QString g)
     if (g.contains("a") || g.contains("e") || g.contains("i") || g.contains("o") || g.contains("u") || g.contains("y"))
     {
         g.replace("a","ā̆");
-        g.replace(QRegExp("[^āăō]e"),"ē̆");
+        g.replace(QRegExp("([^āăō])e"),"\\1ē̆");
         g.replace(QRegExp("^e"),"ē̆");
         g.replace("i","ī̆");
         g.replace("o","ō̆");
-        g.replace(QRegExp("[^āēq]u"),"ū̆");
+        g.replace(QRegExp("([^āēq])u"),"\\1ū̆");
         g.replace(QRegExp("^u"),"ū̆");
         g.replace(QRegExp("^y"),"ȳ̆");
-        g.replace(QRegExp("[^ā]y"),"ȳ̆");
+        g.replace(QRegExp("([^ā])y"),"\\1ȳ̆");
     }
     if (maj) g[0] = g[0].toUpper();
     return g;
@@ -199,26 +201,26 @@ QString Ch::deramise(QString r)
 void Ch::elide(QString *mp)
 {
     //"Tāntāene"
-    bool debog = (*mp == "Tāntāene");
-    if (debog) qDebug() << "tantaene" << *mp;
+    //bool debog = (*mp == "Tāntāene");
+    //if (debog) qDebug() << "tantaene" << *mp;
     int taille = mp->size();
     if ((taille > 1) && ((mp->endsWith('m') || mp->endsWith("\u0101e")) ||
                          mp->endsWith("\u0306")) &&
         voyelles.contains(mp->at(taille - 2)))
     {
-        if (debog) qDebug() << "cond1";
+        //if (debog) qDebug() << "cond1";
         deQuant(mp);
         mp->insert(taille - 2, '[');
         mp->append(']');
     }
     else if (voyelles.contains(mp->at(taille - 1)) && *mp != "\u014d")
     {
-        if (debog) qDebug() << "cond2";
+        //if (debog) qDebug() << "cond2";
         deQuant(mp);
         mp->insert(taille - 1, '[');
         mp->append(']');
     }
-    if (debog) qDebug() << *mp;
+    //if (debog) qDebug() << *mp;
 }
 
 void Ch::genStrNum(const QString s, QString *ch, int *n)
@@ -237,11 +239,23 @@ void Ch::genStrNum(const QString s, QString *ch, int *n)
 
 /**
  * \fn Ch::sort_i(const QString &a, const QString &b)
- * \brief compare a et b sans tenire compte des diacritiques ni de la casse.
+ * \brief compare a et b sans tenir compte des diacritiques ni de la casse.
+ * \return true si a < b.
  */
 bool Ch::sort_i(const QString &a, const QString &b)
 {
     return QString::compare(atone(a), atone(b), Qt::CaseInsensitive) < 0;
+}
+
+/**
+ * \fn Ch::inv_sort_i(const QString &a, const QString &b)
+ * \brief compare a et b sans tenir compte des diacritiques ni de la casse.
+ * \return true si a > b.
+ * Utilisée pour ranger les mots en fontions des fréquences descendantes
+ */
+bool Ch::inv_sort_i(const QString &a, const QString &b)
+{
+    return QString::compare(atone(a), atone(b), Qt::CaseInsensitive) > 0;
 }
 
 /**
@@ -504,9 +518,9 @@ QString Ch::ajoutSuff(QString fq, QString suffixe, QString l_etym, int accent)
                             // c'est plus compliqué car j'ai au moins deux
                             // consonnes...
                             bool remonte =
-                                ((fq[k] == 'l') && (fq[k - 1] != 'l'));
+                                ((fq[k] == 'l') && (fq[k - 1] != 'l') && (fq[k - 1] != 'r'));
                             remonte = remonte ||
-                                      ((fq[k] == 'r') && (fq[k - 1] != 'r'));
+                                      ((fq[k] == 'r') && (fq[k - 1] != 'r') && (fq[k - 1] != 'l'));
                             remonte = remonte || (fq[k] == 'h');
                             if (remonte) k -= 1;
                             remonte =
@@ -543,8 +557,8 @@ QString Ch::ajoutSuff(QString fq, QString suffixe, QString l_etym, int accent)
                     while ((i < etym.size()) && (j < fq.size()) && OK)
                     {
                         if ((etym[i] == fq[j]) ||
-                            (fq.mid(j, 1) == accentue(etym.mid(i, 1))) ||
-                            ((etym[i] == '-') && (fq[j] == separSyll)))
+                            (fq.mid(j, 1) == accentue(etym.mid(i, 1))))
+//                            ((etym[i] == '-') && (fq[j] == separSyll)))
                         {
                             // Les lettres ou les césures correspondent
                             i += 1;
@@ -552,14 +566,14 @@ QString Ch::ajoutSuff(QString fq, QString suffixe, QString l_etym, int accent)
                         }
                         else if (signes.contains(fq[j]) || (fq[j] == 0x0301))
                             j += 1;  // C'est une quantité
-                        else if ((etym[i] != '-') && (fq[j] != separSyll))
+                        else if ((etym[i] != separSyll) && (fq[j] != separSyll))
                             OK = false;  // Les lettres ne correspondent pas.
                         else
                         {
                             // la césure est mal placée.
-                            if (etym[i] == '-')
+                            if (etym[i] == separSyll)
                             {
-                                fq.insert(j, "ˌ");
+                                fq.insert(j, separSyll);
                                 changement += 1;
                                 j += 1;
                                 i += 1;

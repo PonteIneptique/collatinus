@@ -39,7 +39,7 @@ Dictionnaire::Dictionnaire(QString cfg, QObject *parent) : QObject(parent)
     QFileInfo fi(cfg);
     repertoire = qApp->applicationDirPath() + "/data/dicos/";
     // éviter de redéfinir partout le répertoire de travail.
-    n = fi.baseName().section('.', 0);
+    n = fi.baseName();
     // lire le fichier de ressource cfg
     QSettings settings(repertoire + cfg, QSettings::IniFormat);
     settings.setIniCodec("utf-8");
@@ -71,7 +71,12 @@ Dictionnaire::Dictionnaire(QString cfg, QObject *parent) : QObject(parent)
  * \fn Dictionnaire::nom
  * \return le nom du dictionnaire
  */
-QString Dictionnaire::nom() { return n; }
+QString Dictionnaire::nom()
+{
+    QString nomCourt = n.section("-",0,0);
+    nomCourt.replace("_"," ");
+    return nomCourt;
+}
 /**
  * \fn chopNum (const QString c)
  * \brief Renvoie une copie de c tronquée de tous les caractères
@@ -262,6 +267,9 @@ QString Dictionnaire::pageXml(QStringList lReq)
     }
     ligneLiens.clear();
     prec.clear();
+    QStringList ici;
+    QStringList avant;
+    QStringList apres;
 
     foreach (QString req, lReq)
     {
@@ -328,16 +336,22 @@ QString Dictionnaire::pageXml(QStringList lReq)
             {
                 dpos.article = ecl.at(5).trimmed();
                 dpos.taille = ecl.at(2).toLongLong();
-                prec = ecl.at(3);
-                suiv = ecl.at(4);
-                tailleprec = ecl.at(3).toLongLong();
+                ici.append(ecl[0]);
+                avant.append(ecl[3]);
+                apres.append(ecl[4]);
+//                prec = ecl.at(3);
+//                suiv = ecl.at(4);
+//                tailleprec = ecl.at(3).toLongLong();
             }
             else
             {
                 dpos.article = ecl.at(0).trimmed();
                 dpos.taille = ecl.at(2).toLongLong();
-                prec = ecl.at(3);
-                suiv = ecl.at(4);
+                ici.append(ecl[0]);
+                avant.append(ecl[3]);
+                apres.append(ecl[4]);
+//                prec = ecl.at(3);
+//                suiv = ecl.at(4);
             }
             listeE.append(dpos);
             // Ne pas lire au-delà de la fin du fichier
@@ -381,6 +395,32 @@ QString Dictionnaire::pageXml(QStringList lReq)
                    ".css\" type=\"text/css\" />\n");
     }
     pg.prepend(auteur + " <a href=\"http://" + url + "\">" + url + "</a> ");
+
+    //qDebug() << ici << avant << apres;
+    for (int j = 0; j < ici.size(); j++)
+    {
+        for (int i = avant.size() - 1; i > -1; i--)
+            if (QString::compare(ici[j], avant[i], Qt::CaseInsensitive) <= 0)
+                avant.removeAt(i);
+        for (int i = apres.size() - 1; i > -1; i--)
+            if (QString::compare(ici[j], apres[i], Qt::CaseInsensitive) >= 0)
+                apres.removeAt(i);
+        // J'élimine les mots qui ne sont pas avant ou après les mots affichés.
+    }
+    //qDebug() << avant << apres;
+    if (avant.size() > 0) prec = avant[0];
+    else if (ici.size() > 0) prec = ici[0];
+    else prec = "error";
+    if (avant.size() > 1) for (int i=1; i<avant.size();i++)
+        if (QString::compare(prec, avant[i], Qt::CaseInsensitive) < 0) prec = avant[i];
+
+    if (apres.size() > 0) suiv = apres[0];
+    else if (ici.size() > 0) suiv = ici.last();
+    else suiv = "error"; // Je n'ai ni ici, ni après : improbable.
+    if (apres.size() > 1) for (int i=1; i<apres.size();i++)
+        if (QString::compare(suiv, apres[i], Qt::CaseInsensitive) > 0) suiv = apres[i];
+    //qDebug() << prec << suiv;
+
     return pg;
 }
 

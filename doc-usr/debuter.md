@@ -8,11 +8,12 @@ Pour débuter
 1. **Lancer Collatinus** -- En cliquant sur une icone,
   par le menu principal...
 1. **Charger un texte latin** Trois méthodes :
-   a. Soit en choisissant, dans le menu _Fichier_
+    a. Soit en choisissant, dans le menu _Fichier_
      l'option _Ouvrir_, et en sélectionnant un fichier;
-   b. Soit avec le raccourci **Ctrl+O** (pour Mac ??),
+    b. Soit avec le raccourci **Ctrl+O** (pour Mac, 
+   on remplacera **Ctrl** par **Cmd**),
      qui ouvre le même dialogue ;
-   c. soit en collant dans la partie supérieure de
+    c. soit en collant dans la partie supérieure de
      l'application le contenu du presse papier rempli
      avec la partie sélectionnée d'un texte latin. La
      manière de faire un copier-coller dépend du
@@ -27,10 +28,15 @@ Pour débuter
   représentant un balai (image).
 1. **Pour lemmatiser ou scander la totalité du texte**, on
   clique sur l'icone (image) représentant des
-  engrenages.
+  engrenages. 
+  Le raccourci **Ctrl+L** conduit au même résultat.
 1. **Pour éditer les résultats dans un traitement de
   textes**, on choisit l'option Fichier / Copier dans
   un traitement de textes ; 
+  on peut également utiliser le copier-coller habituel
+  pour récupérer le contenu d'une fenêtre
+  (sous Windows ou Mac, **Ctrl-A**, pour tout sélectionner
+  puis **Ctrl-C** ... **Ctrl-V**).
 1. **Pour enregistrer les résultats au format pdf**, on
   choisit l'option Fichier / exporter en pdf ;
 1. **Pour imprimer** les résultats, on choisit l'option

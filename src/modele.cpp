@@ -197,7 +197,10 @@ Modele::Modele(QStringList ll, Lemmat *parent)
                 _genRadicaux[nr] = eclats.at(2);
                 break;
             }
-            case 5:
+            case 8: // abs+
+                _absents.append(listeI(eclats.at(1)));
+                break;
+            case 5: // abs
                 _absents = listeI(eclats.at(1));
                 break;
             case 6:  // suffixes suf:<intervalle>:valeur
@@ -267,7 +270,9 @@ Modele::Modele(QStringList ll, Lemmat *parent)
     }
     // génération des désinences suffixées
     QList<Desinence *> ldsuf;
-    foreach (QString suff, msuff.keys())
+    QStringList clefsSuff = msuff.keys();
+    clefsSuff.removeDuplicates();
+    foreach (QString suff, clefsSuff)
     {
         foreach (Desinence *d, _desinences)
         {
@@ -357,6 +362,7 @@ bool Modele::estUn(QString m)
  * \brief Nom du modèle.
  */
 QString Modele::gr() { return _gr; }
+
 QStringList const Modele::cles = QStringList() << "modele"  // 0
                                                << "pere"    // 1
                                                << "des"     // 2
@@ -364,7 +370,8 @@ QStringList const Modele::cles = QStringList() << "modele"  // 0
                                                << "R"       // 4
                                                << "abs"     // 5
                                                << "suf"     // 6
-                                               << "sufd";   // 7
+                                               << "sufd"    // 7
+                                               << "abs+";   // 8
 
 /**
  * \fn QString Modele::genRadical (int r)
@@ -373,6 +380,7 @@ QStringList const Modele::cles = QStringList() << "modele"  // 0
  *        du radical.
  */
 QString Modele::genRadical(int r) { return _genRadicaux[r]; }
+
 /**
  * \fn QList<int> Modele::listeI (QString l)
  * \brief Fonction importante permettant de renvoyer
@@ -410,6 +418,7 @@ QList<int> Modele::listeI(QString l)
  * \brief Liste des numéros des désinences définies par le modèle.
  */
 QList<int> Modele::morphos() { return _desinences.keys(); }
+
 /**
  * \fn QChar Modele::pos()
  * \brief Retourne la catégorie du modèle, en utilisant

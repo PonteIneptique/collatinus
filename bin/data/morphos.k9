@@ -1,0 +1,485 @@
+! morphos.k9
+!
+!This file is part of COLLATINUS.
+!COLLATINUS is free software; you can redistribute it and/or modify
+!it under the terms of the GNU General Public License as published by
+!the Free Software Foundation; either version 2 of the License, or
+!(at your option) any later version.
+!
+!COLLATINUS is distributed in the hope that it will be useful,
+!but WITHOUT ANY WARRANTY; without even the implied warranty of
+!MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+!GNU General Public License for more details.
+!
+!You should have received a copy of the GNU General Public License
+!along with COLLATINUS; if not, write to the Free Software
+!Foundation, Inc., 59 Temple Place, Suite 3inv, Boston, MA  02111-1307  USA
+! (c) © Yves Ouvrard, 2011 - 2016
+! ==========================================================================
+! format : numéro_de_morpho:morpho
+! Une morpho par ligne
+! Toute ligne commençant par '!' est un commentaire
+!
+! Ajoutés les cas, genres etc… après un séparateur "! --- "
+!
+! Ce fichier contient les codes en 9 du LASLA associés au numéro
+! de morpho de Collatinus. Cela permet au tagger "purement LASLA"
+! d'appeler Collatinus pour analyser une forme qui n'a pas
+! encore été rencontrée.
+!
+! Ph. 29 décembre 2016
+!
+1:k911     :nominatif singulier
+2:k921     :vocatif singulier
+3:k931     :accusatif singulier
+4:k941     :génitif singulier
+5:k951     :datif singulier
+6:k961     :ablatif singulier
+7:k912     :nominatif pluriel
+8:k922     :vocatif pluriel
+9:k932     :accusatif pluriel
+10:k942     :génitif pluriel
+11:k952     :datif pluriel
+12:k962     :ablatif pluriel
+13:k9111    :nominatif masculin singulier
+14:k9211    :vocatif masculin singulier
+15:k9311    :accusatif masculin singulier
+16:k9411    :génitif masculin singulier
+17:k9511    :datif masculin singulier
+18:k9611    :ablatif masculin singulier
+19:k9121    :nominatif masculin pluriel
+20:k9221    :vocatif masculin pluriel
+21:k9321    :accusatif masculin pluriel
+22:k9421    :génitif masculin pluriel
+23:k9521    :datif masculin pluriel
+24:k9621    :ablatif masculin pluriel
+25:k9111    :nominatif féminin singulier
+26:k9211    :vocatif féminin singulier
+27:k9311    :accusatif féminin singulier
+28:k9411    :génitif féminin singulier
+29:k9511    :datif féminin singulier
+30:k9611    :ablatif féminin singulier
+31:k9121    :nominatif féminin pluriel
+32:k9221    :vocatif féminin pluriel
+33:k9321    :accusatif féminin pluriel
+34:k9421    :génitif féminin pluriel
+35:k9521    :datif féminin pluriel
+36:k9621    :ablatif féminin pluriel
+37:k9111    :nominatif neutre singulier
+38:k9211    :vocatif neutre singulier
+39:k9311    :accusatif neutre singulier
+40:k9411    :génitif neutre singulier
+41:k9511    :datif neutre singulier
+42:k9611    :ablatif neutre singulier
+43:k9121    :nominatif neutre pluriel
+44:k9221    :vocatif neutre pluriel
+45:k9321    :accusatif neutre pluriel
+46:k9421    :génitif neutre pluriel
+47:k9521    :datif neutre pluriel
+48:k9621    :ablatif neutre pluriel
+49:k9112    :nominatif masculin singulier comparatif
+50:k9212    :vocatif masculin singulier comparatif
+51:k9312    :accusatif masculin singulier comparatif
+52:k9412    :génitif masculin singulier comparatif
+53:k9512    :datif masculin singulier comparatif
+54:k9612    :ablatif masculin singulier comparatif
+55:k9122    :nominatif masculin pluriel comparatif
+56:k9222    :vocatif masculin pluriel comparatif
+57:k9322    :accusatif masculin pluriel comparatif
+58:k9422    :génitif masculin pluriel comparatif
+59:k9522    :datif masculin pluriel comparatif
+60:k9622    :ablatif masculin pluriel comparatif
+61:k9112    :nominatif féminin singulier comparatif
+62:k9212    :vocatif féminin singulier comparatif
+63:k9312    :accusatif féminin singulier comparatif
+64:k9412    :génitif féminin singulier comparatif
+65:k9512    :datif féminin singulier comparatif
+66:k9612    :ablatif féminin singulier comparatif
+67:k9122    :nominatif féminin pluriel comparatif
+68:k9222    :vocatif féminin pluriel comparatif
+69:k9322    :accusatif féminin pluriel comparatif
+70:k9422    :génitif féminin pluriel comparatif
+71:k9522    :datif féminin pluriel comparatif
+72:k9622    :ablatif féminin pluriel comparatif
+73:k9112    :nominatif neutre singulier comparatif
+74:k9212    :vocatif neutre singulier comparatif
+75:k9312    :accusatif neutre singulier comparatif
+76:k9412    :génitif neutre singulier comparatif
+77:k9512    :datif neutre singulier comparatif
+78:k9612    :ablatif neutre singulier comparatif
+79:k9122    :nominatif neutre pluriel comparatif
+80:k9222    :vocatif neutre pluriel comparatif
+81:k9322    :accusatif neutre pluriel comparatif
+82:k9422    :génitif neutre pluriel comparatif
+83:k9522    :datif neutre pluriel comparatif
+84:k9622    :ablatif neutre pluriel comparatif
+85:k9113    :nominatif masculin singulier superlatif
+86:k9213    :vocatif masculin singulier superlatif
+87:k9313    :accusatif masculin singulier superlatif
+88:k9413    :génitif masculin singulier superlatif
+89:k9513    :datif masculin singulier superlatif
+90:k9613    :ablatif masculin singulier superlatif
+91:k9123    :nominatif masculin pluriel superlatif
+92:k9223    :vocatif masculin pluriel superlatif
+93:k9323    :accusatif masculin pluriel superlatif
+94:k9423    :génitif masculin pluriel superlatif
+95:k9523    :datif masculin pluriel superlatif
+96:k9623    :ablatif masculin pluriel superlatif
+97:k9113    :nominatif féminin singulier superlatif
+98:k9213    :vocatif féminin singulier superlatif
+99:k9313    :accusatif féminin singulier superlatif
+100:k9413    :génitif féminin singulier superlatif
+101:k9513    :datif féminin singulier superlatif
+102:k9613    :ablatif féminin singulier superlatif
+103:k9123    :nominatif féminin pluriel superlatif
+104:k9223    :vocatif féminin pluriel superlatif
+105:k9323    :accusatif féminin pluriel superlatif
+106:k9423    :génitif féminin pluriel superlatif
+107:k9523    :datif féminin pluriel superlatif
+108:k9623    :ablatif féminin pluriel superlatif
+109:k9113    :nominatif neutre singulier superlatif
+110:k9213    :vocatif neutre singulier superlatif
+111:k9313    :accusatif neutre singulier superlatif
+112:k9413    :génitif neutre singulier superlatif
+113:k9513    :datif neutre singulier superlatif
+114:k9613    :ablatif neutre singulier superlatif
+115:k9123    :nominatif neutre pluriel superlatif
+116:k9223    :vocatif neutre pluriel superlatif
+117:k9323    :accusatif neutre pluriel superlatif
+118:k9423    :génitif neutre pluriel superlatif
+119:k9523    :datif neutre pluriel superlatif
+120:k9623    :ablatif neutre pluriel superlatif
+121:k9 1 1111:1ère singulier indicatif présent actif
+122:k9 1 1112:2ème singulier indicatif présent actif
+123:k9 1 1113:3ème singulier indicatif présent actif
+124:k9 2 1111:1ère pluriel indicatif présent actif
+125:k9 2 1112:2ème pluriel indicatif présent actif
+126:k9 2 1113:3ème pluriel indicatif présent actif
+127:k9 1 1211:1ère singulier indicatif imparfait actif
+128:k9 1 1212:2ème singulier indicatif imparfait actif
+129:k9 1 1213:3ème singulier indicatif imparfait actif
+130:k9 2 1211:1ère pluriel indicatif imparfait actif
+131:k9 2 1212:2ème pluriel indicatif imparfait actif
+132:k9 2 1213:3ème pluriel indicatif imparfait actif
+133:k9 1 1311:1ère singulier indicatif futur actif
+134:k9 1 1312:2ème singulier indicatif futur actif
+135:k9 1 1313:3ème singulier indicatif futur actif
+136:k9 2 1311:1ère pluriel indicatif futur actif
+137:k9 2 1312:2ème pluriel indicatif futur actif
+138:k9 2 1313:3ème pluriel indicatif futur actif
+139:k9 1 1411:1ère singulier indicatif parfait actif
+140:k9 1 1412:2ème singulier indicatif parfait actif
+141:k9 1 1413:3ème singulier indicatif parfait actif
+142:k9 2 1411:1ère pluriel indicatif parfait actif
+143:k9 2 1412:2ème pluriel indicatif parfait actif
+144:k9 2 1413:3ème pluriel indicatif parfait actif
+145:k9 1 1511:1ère singulier indicatif PQP actif
+146:k9 1 1512:2ème singulier indicatif PQP actif
+147:k9 1 1513:3ème singulier indicatif PQP actif
+148:k9 2 1511:1ère pluriel indicatif PQP actif
+149:k9 2 1512:2ème pluriel indicatif PQP actif
+150:k9 2 1513:3ème pluriel indicatif PQP actif
+151:k9 1 1611:1ère singulier indicatif futur antérieur actif
+152:k9 1 1612:2ème singulier indicatif futur antérieur actif
+153:k9 1 1613:3ème singulier indicatif futur antérieur actif
+154:k9 2 1611:1ère pluriel indicatif futur antérieur actif
+155:k9 2 1612:2ème pluriel indicatif futur antérieur actif
+156:k9 2 1613:3ème pluriel indicatif futur antérieur actif
+157:k9 1 3111:1ère singulier subjonctif présent actif
+158:k9 1 3112:2ème singulier subjonctif présent actif
+159:k9 1 3113:3ème singulier subjonctif présent actif
+160:k9 2 3111:1ère pluriel subjonctif présent actif
+161:k9 2 3112:2ème pluriel subjonctif présent actif
+162:k9 2 3113:3ème pluriel subjonctif présent actif
+163:k9 1 3211:1ère singulier subjonctif imparfait actif
+164:k9 1 3212:2ème singulier subjonctif imparfait actif
+165:k9 1 3213:3ème singulier subjonctif imparfait actif
+166:k9 2 3211:1ère pluriel subjonctif imparfait actif
+167:k9 2 3212:2ème pluriel subjonctif imparfait actif
+168:k9 2 3213:3ème pluriel subjonctif imparfait actif
+169:k9 1 3411:1ère singulier subjonctif parfait actif
+170:k9 1 3412:2ème singulier subjonctif parfait actif
+171:k9 1 3413:3ème singulier subjonctif parfait actif
+172:k9 2 3411:1ère pluriel subjonctif parfait actif
+173:k9 2 3412:2ème pluriel subjonctif parfait actif
+174:k9 2 3413:3ème pluriel subjonctif parfait actif
+175:k9 1 3511:1ère singulier subjonctif PQP actif
+176:k9 1 3512:2ème singulier subjonctif PQP actif
+177:k9 1 3513:3ème singulier subjonctif PQP actif
+178:k9 2 3511:1ère pluriel subjonctif PQP actif
+179:k9 2 3512:2ème pluriel subjonctif PQP actif
+180:k9 2 3513:3ème pluriel subjonctif PQP actif
+181:k9 1 2112:2ème singulier impératif présent actif
+182:k9 2 2112:2ème pluriel impératif présent actif
+183:k9 1 2312:2ème singulier impératif futur actif
+184:k9 1 2313:3ème singulier impératif futur actif
+185:k9 2 2312:2ème pluriel impératif futur actif
+186:k9 2 2313:3ème pluriel impératif futur actif
+187:k9   711 :infinitif présent actif
+188:k9   741 :infinitif parfait actif
+189:k911 411 :nominatif masculin singulier participe présent actif
+190:k921 411 :vocatif masculin singulier participe présent actif
+191:k931 411 :accusatif masculin singulier participe présent actif
+192:k941 411 :génitif masculin singulier participe présent actif
+193:k951 411 :datif masculin singulier participe présent actif
+194:k961 411 :ablatif masculin singulier participe présent actif
+195:k912 411 :nominatif masculin pluriel participe présent actif
+196:k922 411 :vocatif masculin pluriel participe présent actif
+197:k932 411 :accusatif masculin pluriel participe présent actif
+198:k942 411 :génitif masculin pluriel participe présent actif
+199:k952 411 :datif masculin pluriel participe présent actif
+200:k962 411 :ablatif masculin pluriel participe présent actif
+201:k911 411 :nominatif féminin singulier participe présent actif
+202:k921 411 :vocatif féminin singulier participe présent actif
+203:k931 411 :accusatif féminin singulier participe présent actif
+204:k941 411 :génitif féminin singulier participe présent actif
+205:k951 411 :datif féminin singulier participe présent actif
+206:k961 411 :ablatif féminin singulier participe présent actif
+207:k912 411 :nominatif féminin pluriel participe présent actif
+208:k922 411 :vocatif féminin pluriel participe présent actif
+209:k932 411 :accusatif féminin pluriel participe présent actif
+210:k942 411 :génitif féminin pluriel participe présent actif
+211:k952 411 :datif féminin pluriel participe présent actif
+212:k962 411 :ablatif féminin pluriel participe présent actif
+213:k911 411 :nominatif neutre singulier participe présent actif
+214:k921 411 :vocatif neutre singulier participe présent actif
+215:k931 411 :accusatif neutre singulier participe présent actif
+216:k941 411 :génitif neutre singulier participe présent actif
+217:k951 411 :datif neutre singulier participe présent actif
+218:k961 411 :ablatif neutre singulier participe présent actif
+219:k912 411 :nominatif neutre pluriel participe présent actif
+220:k922 411 :vocatif neutre pluriel participe présent actif
+221:k932 411 :accusatif neutre pluriel participe présent actif
+222:k942 411 :génitif neutre pluriel participe présent actif
+223:k952 411 :datif neutre pluriel participe présent actif
+224:k962 411 :ablatif neutre pluriel participe présent actif
+225:k911 431 :nominatif masculin singulier participe futur actif
+226:k921 431 :vocatif masculin singulier participe futur actif
+227:k931 431 :accusatif masculin singulier participe futur actif
+228:k941 431 :génitif masculin singulier participe futur actif
+229:k951 431 :datif masculin singulier participe futur actif
+230:k961 431 :ablatif masculin singulier participe futur actif
+231:k912 431 :nominatif masculin pluriel participe futur actif
+232:k922 431 :vocatif masculin pluriel participe futur actif
+233:k932 431 :accusatif masculin pluriel participe futur actif
+234:k942 431 :génitif masculin pluriel participe futur actif
+235:k952 431 :datif masculin pluriel participe futur actif
+236:k962 431 :ablatif masculin pluriel participe futur actif
+237:k911 431 :nominatif féminin singulier participe futur actif
+238:k921 431 :vocatif féminin singulier participe futur actif
+239:k931 431 :accusatif féminin singulier participe futur actif
+240:k941 431 :génitif féminin singulier participe futur actif
+241:k951 431 :datif féminin singulier participe futur actif
+242:k961 431 :ablatif féminin singulier participe futur actif
+243:k912 431 :nominatif féminin pluriel participe futur actif
+244:k922 431 :vocatif féminin pluriel participe futur actif
+245:k932 431 :accusatif féminin pluriel participe futur actif
+246:k942 431 :génitif féminin pluriel participe futur actif
+247:k952 431 :datif féminin pluriel participe futur actif
+248:k962 431 :ablatif féminin pluriel participe futur actif
+249:k911 431 :nominatif neutre singulier participe futur actif
+250:k921 431 :vocatif neutre singulier participe futur actif
+251:k931 431 :accusatif neutre singulier participe futur actif
+252:k941 431 :génitif neutre singulier participe futur actif
+253:k951 431 :datif neutre singulier participe futur actif
+254:k961 431 :ablatif neutre singulier participe futur actif
+255:k912 431 :nominatif neutre pluriel participe futur actif
+256:k922 431 :vocatif neutre pluriel participe futur actif
+257:k932 431 :accusatif neutre pluriel participe futur actif
+258:k942 431 :génitif neutre pluriel participe futur actif
+259:k952 431 :datif neutre pluriel participe futur actif
+260:k962 431 :ablatif neutre pluriel participe futur actif
+261:k931 601 :gérondif accusatif
+262:k941 601 :gérondif génitif
+263:k951 601 :gérondif datif
+264:k961 601 :gérondif ablatif
+265:k9   801 :supin en -um
+266:k9   901 :supin en -u
+267:k9 1 1121:1ère singulier indicatif présent passif
+268:k9 1 1122:2ème singulier indicatif présent passif
+269:k9 1 1123:3ème singulier indicatif présent passif
+270:k9 2 1121:1ère pluriel indicatif présent passif
+271:k9 2 1122:2ème pluriel indicatif présent passif
+272:k9 2 1123:3ème pluriel indicatif présent passif
+273:k9 1 1221:1ère singulier indicatif imparfait passif
+274:k9 1 1222:2ème singulier indicatif imparfait passif
+275:k9 1 1223:3ème singulier indicatif imparfait passif
+276:k9 2 1221:1ère pluriel indicatif imparfait passif
+277:k9 2 1222:2ème pluriel indicatif imparfait passif
+278:k9 2 1223:3ème pluriel indicatif imparfait passif
+279:k9 1 1321:1ère singulier indicatif futur passif
+280:k9 1 1322:2ème singulier indicatif futur passif
+281:k9 1 1323:3ème singulier indicatif futur passif
+282:k9 2 1321:1ère pluriel indicatif futur passif
+283:k9 2 1322:2ème pluriel indicatif futur passif
+284:k9 2 1323:3ème pluriel indicatif futur passif
+285:k9 1 3121:1ère singulier subjonctif présent passif
+286:k9 1 3122:2ème singulier subjonctif présent passif
+287:k9 1 3123:3ème singulier subjonctif présent passif
+288:k9 2 3121:1ère pluriel subjonctif présent passif
+289:k9 2 3122:2ème pluriel subjonctif présent passif
+290:k9 2 3123:3ème pluriel subjonctif présent passif
+291:k9 1 3221:1ère singulier subjonctif imparfait passif
+292:k9 1 3222:2ème singulier subjonctif imparfait passif
+293:k9 1 3223:3ème singulier subjonctif imparfait passif
+294:k9 2 3221:1ère pluriel subjonctif imparfait passif
+295:k9 2 3222:2ème pluriel subjonctif imparfait passif
+296:k9 2 3223:3ème pluriel subjonctif imparfait passif
+297:k9 1 2122:2ème singulier impératif présent passif
+298:k9 2 2122:2ème pluriel impératif présent passif
+299:k9 1 2322:2ème singulier impératif futur passif
+300:k9 1 2323:3ème singulier impératif futur passif
+301:k9 2 2323:3ème pluriel impératif futur passif
+302:k9   712 :infinitif présent passif
+303:k911 442 :nominatif masculin singulier participe parfait passif
+304:k921 442 :vocatif masculin singulier participe parfait passif
+305:k931 442 :accusatif masculin singulier participe parfait passif
+306:k941 442 :génitif masculin singulier participe parfait passif
+307:k951 442 :datif masculin singulier participe parfait passif
+308:k961 442 :ablatif masculin singulier participe parfait passif
+309:k912 442 :nominatif masculin pluriel participe parfait passif
+310:k922 442 :vocatif masculin pluriel participe parfait passif
+311:k932 442 :accusatif masculin pluriel participe parfait passif
+312:k942 442 :génitif masculin pluriel participe parfait passif
+313:k952 442 :datif masculin pluriel participe parfait passif
+314:k962 442 :ablatif masculin pluriel participe parfait passif
+315:k911 442 :nominatif féminin singulier participe parfait passif
+316:k921 442 :vocatif féminin singulier participe parfait passif
+317:k931 442 :accusatif féminin singulier participe parfait passif
+318:k941 442 :génitif féminin singulier participe parfait passif
+319:k951 442 :datif féminin singulier participe parfait passif
+320:k961 442 :ablatif féminin singulier participe parfait passif
+321:k912 442 :nominatif féminin pluriel participe parfait passif
+322:k922 442 :vocatif féminin pluriel participe parfait passif
+323:k932 442 :accusatif féminin pluriel participe parfait passif
+324:k942 442 :génitif féminin pluriel participe parfait passif
+325:k952 442 :datif féminin pluriel participe parfait passif
+326:k962 442 :ablatif féminin pluriel participe parfait passif
+327:k911 442 :nominatif neutre singulier participe parfait passif
+328:k921 442 :vocatif neutre singulier participe parfait passif
+329:k931 442 :accusatif neutre singulier participe parfait passif
+330:k941 442 :génitif neutre singulier participe parfait passif
+331:k951 442 :datif neutre singulier participe parfait passif
+332:k961 442 :ablatif neutre singulier participe parfait passif
+333:k912 442 :nominatif neutre pluriel participe parfait passif
+334:k922 442 :vocatif neutre pluriel participe parfait passif
+335:k932 442 :accusatif neutre pluriel participe parfait passif
+336:k942 442 :génitif neutre pluriel participe parfait passif
+337:k952 442 :datif neutre pluriel participe parfait passif
+338:k962 442 :ablatif neutre pluriel participe parfait passif
+339:k911 5   :nominatif masculin singulier adjectif verbal
+340:k921 5   :vocatif masculin singulier adjectif verbal
+341:k931 5   :accusatif masculin singulier adjectif verbal
+342:k941 5   :génitif masculin singulier adjectif verbal
+343:k951 5   :datif masculin singulier adjectif verbal
+344:k961 5   :ablatif masculin singulier adjectif verbal
+345:k912 5   :nominatif masculin pluriel adjectif verbal
+346:k922 5   :vocatif masculin pluriel adjectif verbal
+347:k932 5   :accusatif masculin pluriel adjectif verbal
+348:k942 5   :génitif masculin pluriel adjectif verbal
+349:k952 5   :datif masculin pluriel adjectif verbal
+350:k962 5   :ablatif masculin pluriel adjectif verbal
+351:k911 5   :nominatif féminin singulier adjectif verbal
+352:k921 5   :vocatif féminin singulier adjectif verbal
+353:k931 5   :accusatif féminin singulier adjectif verbal
+354:k941 5   :génitif féminin singulier adjectif verbal
+355:k951 5   :datif féminin singulier adjectif verbal
+356:k961 5   :ablatif féminin singulier adjectif verbal
+357:k912 5   :nominatif féminin pluriel adjectif verbal
+358:k922 5   :vocatif féminin pluriel adjectif verbal
+359:k932 5   :accusatif féminin pluriel adjectif verbal
+360:k942 5   :génitif féminin pluriel adjectif verbal
+361:k952 5   :datif féminin pluriel adjectif verbal
+362:k962 5   :ablatif féminin pluriel adjectif verbal
+363:k911 5   :nominatif neutre singulier adjectif verbal
+364:k921 5   :vocatif neutre singulier adjectif verbal
+365:k931 5   :accusatif neutre singulier adjectif verbal
+366:k941 5   :génitif neutre singulier adjectif verbal
+367:k951 5   :datif neutre singulier adjectif verbal
+368:k961 5   :ablatif neutre singulier adjectif verbal
+369:k912 5   :nominatif neutre pluriel adjectif verbal
+370:k922 5   :vocatif neutre pluriel adjectif verbal
+371:k932 5   :accusatif neutre pluriel adjectif verbal
+372:k942 5   :génitif neutre pluriel adjectif verbal
+373:k952 5   :datif neutre pluriel adjectif verbal
+374:k962 5   :ablatif neutre pluriel adjectif verbal
+375:k911 443 :nominatif masculin singulier participe parfait actif
+376:k921 443 :vocatif masculin singulier participe parfait actif
+377:k931 443 :accusatif masculin singulier participe parfait actif
+378:k941 443 :génitif masculin singulier participe parfait actif
+379:k951 443 :datif masculin singulier participe parfait actif
+380:k961 443 :ablatif masculin singulier participe parfait actif
+381:k912 443 :nominatif masculin pluriel participe parfait actif
+382:k922 443 :vocatif masculin pluriel participe parfait actif
+383:k932 443 :accusatif masculin pluriel participe parfait actif
+384:k942 443 :génitif masculin pluriel participe parfait actif
+385:k952 443 :datif masculin pluriel participe parfait actif
+386:k962 443 :ablatif masculin pluriel participe parfait actif
+387:k911 443 :nominatif féminin singulier participe parfait actif
+388:k921 443 :vocatif féminin singulier participe parfait actif
+389:k931 443 :accusatif féminin singulier participe parfait actif
+390:k941 443 :génitif féminin singulier participe parfait actif
+391:k951 443 :datif féminin singulier participe parfait actif
+392:k961 443 :ablatif féminin singulier participe parfait actif
+393:k912 443 :nominatif féminin pluriel participe parfait actif
+394:k922 443 :vocatif féminin pluriel participe parfait actif
+395:k932 443 :accusatif féminin pluriel participe parfait actif
+396:k942 443 :génitif féminin pluriel participe parfait actif
+397:k952 443 :datif féminin pluriel participe parfait actif
+398:k962 443 :ablatif féminin pluriel participe parfait actif
+399:k911 443 :nominatif neutre singulier participe parfait actif
+400:k921 443 :vocatif neutre singulier participe parfait actif
+401:k931 443 :accusatif neutre singulier participe parfait actif
+402:k941 443 :génitif neutre singulier participe parfait actif
+403:k951 443 :datif neutre singulier participe parfait actif
+404:k961 443 :ablatif neutre singulier participe parfait actif
+405:k912 443 :nominatif neutre pluriel participe parfait actif
+406:k922 443 :vocatif neutre pluriel participe parfait actif
+407:k932 443 :accusatif neutre pluriel participe parfait actif
+408:k942 443 :génitif neutre pluriel participe parfait actif
+409:k952 443 :datif neutre pluriel participe parfait actif
+410:k962 443 :ablatif neutre pluriel participe parfait actif
+411:k9  2    :comparatif
+412:k9  3    :superlatif
+413:k971     :locatif
+414:k9  1    :positif 
+415:k9   732 :infinitif futur actif
+416:k9       :inv.
+! Cette dernière ligne est à conserver pour les invariables.
+! --- Cas
+nominatif
+vocatif
+accusatif
+génitif
+datif
+ablatif
+! --- Genres
+masculin
+féminin
+neutre
+! --- Nombres
+singulier
+pluriel
+! --- Temps
+présent
+imparfait
+futur
+parfait
+plus-que-parfait
+futur antérieur
+! --- Modes
+Indicatif
+Subjonctif
+Impératif
+Infinitif
+Participe
+Adjectif verbal
+! --- Voix
+ACTIF
+PASSIF
+! --- Mots clefs
+cas
+personne
+2ème pr.
+2ème fut.
+3ème fut.

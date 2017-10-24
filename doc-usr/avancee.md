@@ -1,20 +1,20 @@
 *Collatinus 11 -- guide*
 
-[index](index.html) précédent : [Fléchir](flechir.html) suivant : [Pour les programmeurs](programmeurs.html) 
+[index](index.html) précédent : [Serveur](server.html) suivant : [Pour les programmeurs](programmeurs.html) 
 
 Utilisation avancée
 ===================
 
 	Pour faire son travail, Collatinus s'appuie sur une
-collection de fichiers qui contiennent toutes les
-connaissances nécessaires. À l'initialisation du
-programme, ils sont tous lus, et leur données mises
-en listes et placées en mémoire vive.
+    collection de fichiers qui contiennent toutes les
+    connaissances nécessaires. À l'initialisation du
+    programme, ils sont tous lus, et les données mises
+    en listes et placées en mémoire vive.
 
-Si on remarque une erreur ou une lacune dans ses
+Si on remarque une erreur ou une lacune dans les
 résultats, et qu'on a des connaissances suffisantes en
 gestion et édition de fichiers, on peut commencer à les
-modifier. Il faut bien sûr prendre des précaution,
+modifier. Il faut bien sûr prendre des précautions,
 notamment **en prenant soin de faire une copie de
 sauvegarde avant toute intervention** : on crée un
 répertoire dont on note bien le chemin, et on y copie
@@ -171,4 +171,4 @@ fichiers qui permettent de déclarer
   règle de contraction permet de remplacer _-assem_ par
   _-auissem_, ce qui donne _amauissem_, qui est reconnu.
 
-[index](index.html) précédent : [Fléchir](flechir.html) suivant : [Pour les programmeurs](programmeurs.html) 
+[index](index.html) précédent : [Serveur](server.html) suivant : [Pour les programmeurs](programmeurs.html) 

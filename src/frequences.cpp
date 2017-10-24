@@ -37,7 +37,7 @@ QStringList Lemmat::lemmatiseF(QString f, bool deb)
     QStringList res;
     MapLem ml = lemmatiseM(f, deb);
     foreach (Lemme *l, ml.keys())
-        res.append(l->humain());
+        res.append(l->humain(_html,_cible));
     // if (res.empty()) res.append(f);
     return res;
 }
@@ -143,14 +143,29 @@ QStringList Lemmat::frequences(QString txt)
         numero.setNum(n);
         numero = numero.mid(1);
         n = xAmb + 0.5;  // pour faire un arrondi et pas une troncature
-        sortie << QString("%1 (%2, %3, %5)\t%4<br/>\n")
+        if (_hLem.isEmpty())
+            sortie << QString("%1 (%2, %3, %5)\t%4<br/>\n")
                       .arg(numero)
                       .arg(nUnic)
                       .arg(nAmb)
                       .arg(lemme)
                       .arg(n);
+        else
+        {
+            // J'ai une liste de lemmes connus : je mets des couleurs !
+            QString lem = Ch::atone(lemme.left(lemme.indexOf(",")));
+            lem.replace("j","i");
+            lem.replace("J","I");
+            lem.remove("<strong>");
+            lem.remove("</strong>");
+            QString format = "%1 (%2, %3, %5)\t<span style=\"color:";
+            if (_hLem.contains(lem)) format += _couleurs[0];
+            else format += _couleurs[1];
+            format += "\">%4</span><br/>\n";
+            sortie << format.arg (numero).arg(nUnic).arg(nAmb).arg (lemme).arg(n);
+        }
     }
-    qSort(sortie.begin(), sortie.end(), Ch::sort_i);
+    qSort(sortie.begin(), sortie.end(), Ch::inv_sort_i);
     // déformatage des nombres
     int cs = sortie.count();
     for (int i = 0; i < cs; ++i)

@@ -7,7 +7,7 @@ Remerciements
 
 Ce logiciel est développé depuis le début de ce siècle
 par [Yves Ouvrard](mailto:yves.ouvrard@collatinus.org). Depuis
-2014, il a été rejoint par [Philippe Verkerk](mailto:Philippe.Verkerk@univ-lille1.fr),
+2013, il a été rejoint par [Philippe Verkerk](mailto:Philippe.Verkerk@univ-lille1.fr),
 qui s'occupe des lexiques et de la scansion.
 
 Nous avons reçu l'aide de nombreux amis et
@@ -16,16 +16,18 @@ alphabétique, une liste partielle :
 
 - **L'équipe de Biblissima**, qui héberge les sources et les paquets d'installation de Collatinus ;
 - **Matthias Bussonnier**, qui a adapté Collatinus pour Mac ;
-- **Gérard Gréco**, ...
+- **L'École nationnale des chartes** pour le dictionnaire _Du Cange_ ;
+- **Gérard Gréco**, qui nous a confié son _Gaffiot 2016_ avant parution ;
 - **Peter J. Heslin**, dont le _Diogenes_ nous a été très utile.
 - **Gérard Jeanneau**, qui nous a donné l'autorisation de consulter son dictionnaire via Collatinus ;
 - **Georges Khaznadar**, empaqueteur de Collatinus pour la distribution Debian ;
-- **Pede Certo** ...
+- le **LASLA** de l'université de Liège, et tout particulièrement Dominique Longrée et Gérald Purnelle, qui nous a confié ses textes lemmatisés avec lesquels nous avons pu déterminer la fréquence des divers lemmes ainsi que les données nécessaires pour construire un tagueur probabiliste ;
+- **Pede Certo**, et tout particulièrement Emanuela Colombi et Luigi Tessarolo, qui a permis de trouver de nombreuses coquilles ;
 - **l'équipe de la Perseus Digital Library**, qui a libéré toutes ses données ;
 - **Jose Luis Redrejo**, qui a coordonné les traductions en espagnol, catalan et galicien ;
 - **Philipp Roelli**, qui a permis d'ajouter le dictionnaire latin-allemand ; 
 - **Jean-Paul Woitrain**, qui a permis la correction de nombreuses erreurs ;
-- **William Whitaker**, dont le lemmatiseur, placées dans le domaine public, a été utilisé ;
+- **William Whitaker †**, dont le lemmatiseur, placé dans le domaine public, a été utilisé.
 
 Licence
 =======

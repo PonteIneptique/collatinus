@@ -1,5 +1,6 @@
 !   lemmes.it
-!Italiano
+Italiano
+! Version 1 : 2017/04/04
 !
 !This file is part of COLLATINUS.
 !COLLATINUS is free software; you can redistribute it and/or modify
@@ -17,6 +18,7 @@
 !Foundation, Inc., 59 Temple Place, Suite 3inv, Boston, MA  02111-1307  USA
 ! (c) © Yves Ouvrard, 2011 - 2016
 !
+a:a partire da, dopo un verbo passivo = per
 abacus:il tavolo di gioco
 abalieno:1. allontanare2. deviare, liberare di, privare di
 abcido:tagliare, troncare,
@@ -55,12 +57,12 @@ abscindo:dividere lacerando, strappare, lacerare,
 abscondo:nascondere lontano, rubare alla vista, dissimulare,
 absens:assente
 absentia:assenza
-absidatus:arcuato, arcuato
 absida:1 - l'arco, volta. - 2 - la corsa di un pianeta. - 3 - il coro, di una chiesa, l'abside.
+absidatus:arcuato, arcuato
 absilio:fuggire saltando, fuggire. - tr. - lasciare saltando.
 absimilis:differente
-absisto:allontanarsi, rinunciare,
 absis:1 - la volta, l'arco. - 2 - l'abside. - 3 - un piatto cavo. - 4 - l'orbita, strada descrive da un pianeta,
+absisto:allontanarsi, rinunciare,
 absolutio:1. l'assoluzione2. il completamento, la perfezione,3. l'esattezza
 absolvo:lasciare libero, assolvere,
 absonus:falso, discordante, sconveniente,
@@ -69,18 +71,16 @@ absterreo:deviare, cacciare,
 abstineo:1. tenere lontano di2. astenersi, tenersi lontano da
 abstraho:tirare, trascinare lontano da, dividere di; strappare
 abstrudo:nascondere, nascondere,
-absumo:prendere interamente, consumare, spendere, distruggere,
 absum:essere assente
+absumo:prendere interamente, consumare, spendere, distruggere,
 absurde:assurdamente, in modo spostata
 absurdus:1 - discordante, falso, sgradevole, sconveniente. - 2 - privo di senso, stupido, assurdo. - 3 - intempestivo, fuori proposito, straniero a. - 4 - incapace, proprio a niente.
-abs:per, di
 abundans:abbondando
 abundanter:abbondantemente
 abundantia:abbondanza, ricchezza, sovrabbondanza,
 abunde:in abbondanza
 abundo:essere in grande numero, essere dotato abbondantemente,
 abutor:abusare di, abl.)
-ab:a partire da, dopo un verbo passivo = per
 Acastus:Acaste (re di Thessalie)
 Acca:Acca
 accedo:1. andare verso, avvicinarsi di, camminare su2. venire ad aggiungersi, aggiungersi,
@@ -99,28 +99,28 @@ acclamatio:le grida, all'indirizzo di qqn, l'acclamazione,
 acclamo:acclamare, dare il suo accordo,
 acclinis:appoggiato a
 acclino:appoggiare
+Acco:Acco
 accola:il vicino
 accolo:bordare
 accommodo:regolare su, adattare a3. aplliquer il suo spirito4. , diritto, attribuire, accordare,
 accommodus:adeguato a, adatto
-Acco:Acco
 accubo:essere steso vicino a + dat, essere a tavolo,
 accumbo:coricarsi, distendersi,
 accurate:con cura, con sollecitudine,
-!accuratius:comparativo di accurate: con cura, accuratamente
 accuratus:fa con cura, curato, lavorato
 accurro:correre verso, accorrere
 accursus:la corsa
 accusatio:l'accusa portata per, portata contro + gén
 accusator:1 - l'accusatore. - 2 - il delatore, il delatore.
 accuso:accusare
+ac:e, ed anche
+acer:1 - acuto, tagliente, acuto, vivo, acre, penetrante, acuto, duro, violento. 2 - penetrante, sottile, fine, vivo. 3 - attivo, sfida, valoroso, energico, ardente. 4 - irritabile, irascibile, focosi, severo, crudele, terribile.
 acerbitas:l'amarezza, la durezza, l'asprezza,
 acerbus:faticoso, sgradevole
 acernus:di acero
 Acerronia:Acerronia
 acervatim:per mucchio, in pezzi,; accumulando, in grosso,
 acervus:il mucchio, il mucchio, l'ammasso,
-acer:1 - acuto, tagliente, acuto, vivo, acre, penetrante, acuto, duro, violento. 2 - penetrante, sottile, fine, vivo. 3 - attivo, sfida, valoroso, energico, ardente. 4 - irritabile, irascibile, focosi, severo, crudele, terribile.
 Acestes:Aceste
 acetum:l'aceto
 Achaia:l'Achaïe
@@ -148,10 +148,9 @@ aculeus:il pungiglione, la punta, il mordente,
 acumen:la punta, il tagliente,
 acus:ago
 acutus:acuto, vivo, pungendo
-ac:e, ed anche
 adaequo:uguagliare
-adamo:mettersi ad amare
 Adam:Adamo
+adamo:mettersi ad amare
 adapto:adattare, adattare,
 adcelero:(si, affrettare, accelerare,
 adclivis:chi va salendo
@@ -184,8 +183,8 @@ adflicto:colpire, spingere, maltrattare,
 adfligo:colpire contro, gettare a terra, abbattere (adflictus, ha, um: gettato a terra, abbattuto, abbattuta)
 adflo:soffiare, soffiare su
 adfluo:arrivare in folla, affluire,
-adfor:parlare
 adformido:temere
+adfor:parlare
 adfrico:strofinare contro
 adfundo:versare su
 Adgandestrius:Adgandestrius (capo delle Gatte)
@@ -214,9 +213,9 @@ adjumentum:l'aiuto, il soccorso, l'assistenza,
 adjunctio:l'azione di unire, l'inclinazione dell'anima, la simpatia, l'aggiunta,
 adjungo:1. unire a, aggiungere si2. applicare, appoggiare, associare,3. aggiungere
 adjuro:giurare inoltre, giura a qqn.
+adjuto:aiutare
 adjutorium:soccorso
 adjutor:l'aiuto, l'assistente, il collaboratore,
-adjuto:aiutare
 adjutrix:aiuto
 adjuvo:aiutare, assecondare,
 adlabor:infilarsi verso
@@ -247,8 +246,8 @@ admoveo:1 - avvicinare una cosa di un altro, muovere verso, applicare a; adopera
 admurmuratio:mormorio
 adnecto:legare, annettere a
 adnitor:sforzarsi di, lavorare a
-adnoto:annotare, notare, mettere una nota a
 adno:nuotare, arrivare, per acqua,
+adnoto:annotare, notare, mettere una nota a
 adnuntio:annunciare
 adnuo:fare segno, sì, della testa, consentire, acconsentire,
 adnuto:fare un segno di consenso
@@ -266,7 +265,6 @@ adorno:ornare, abbellire,
 adoro:adorare, implorare,
 adpendix:ciò che appende; l'addizione, il supplemento,
 adpeto:camminare velocemente verso, cercare di afferrare, desiderare vivamente, attaccare, invadere, avvicinare,
-!adplico:applicare, appoggiare,
 adprecor:pregare, invocare,
 adprimo:premere, stringere contro
 adprono:chinarsi, abbassarsi,
@@ -286,8 +284,8 @@ adsectator:quello che accompagna, il sostenitore, il sectateur, il discepolo, il
 adsector:. - seguire dovunque, seguire continuamente, fare corteo, a qqn, aliquem).
 adsensio:ammirazione, consenso,
 adsensus:l'accordo, l'assenso, l'adesione, l'approvazione,
-adsentior:essere di accordo
 adsentio:essere di accordo
+adsentior:essere di accordo
 adsentor:essere sempre del parere, approvare continuamente, adulare, compiacere.
 adsequor:1. raggiungere, acchiappare,2. giungere a, ottenere
 adservo:custodire, sorvegliare,
@@ -299,7 +297,6 @@ adsiduitas:1 - l'assiduità, la presenza costante, le visite continue, la persis
 adsiduo:continuamente
 adsiduus:assiduo
 adsigno:assegnare, attribuire, imputare, rimettere, confidare,
-adsimulo:riprodurre, simulare,
 adsisto:mettersi vicino, restare immobile, tenersi, aiutare,
 adsoleo:avere costume, ut adsolet,: secondo l'uso,
 adsono:rispondere cantando
@@ -311,8 +308,8 @@ adsuesco:abituarsi, essere abituato,
 adsuetudo:l'abitudine
 adsulto:saltare contro, sciogliere su, assalire
 adsultus:il salto, il viva attacco
-adsumo:prendere per si, adeguarsi, unire,
 adsum:essere presente, assistere, aiutare,
+adsumo:prendere per si, adeguarsi, unire,
 adsurgo:alzarsi, drizzarsi, alzarsi per fare onore a qualcuno,
 adtendo:tendere, fare attenzione,
 adtexo:unire tessendo, legare intimamente a
@@ -327,11 +324,11 @@ adulator:lusinghiero, adulatore
 adulescens:giovane uomo
 adulescentia:l'adolescenza
 adulescentulus:molto giovane uomo
-adulor:accarezzare, adulare,
 adulo:adulare, adulare, accarezzare,
+adulor:accarezzare, adulare,
+adulter:adulterio
 adulterinus:1. chi proviene dall'adulterio, adultérin,2. avvilito, degenerato (animale)3. alterato, falso, falsificato.
 adulterium:adulterio
-adulter:adulterio
 adultus:adulto
 adumbro:oscurare
 aduncus:adunco, ricurvo
@@ -342,10 +339,11 @@ adveho:trasportare
 advena:straniero
 advenio:arrivare
 adventicius:straniero
-adventor:il cliente
 advento:avvicinare, arrivare,
+adventor:il cliente
 adventus:l'arrivo, la venuta,
 adversarius:avversario
+ad:verso, a, vicino a
 adversor:opporre, essere contrario, fare opposizione,
 adversus2:contro
 adversus:contrario; aduersae re: avversità
@@ -358,7 +356,6 @@ advolo:arrivare rubando, precipitarsi,
 advolvo:(fare, circolare, si aduoluere o aduoluii: gettarsi ai piedi di qqn
 advorsus:contrario (+ acc. : contro,
 adytum:il santuario, partita più segreta da un edificio sacro,
-ad:verso, a, vicino a
 Aebutia:Ebutia (nome di donna)
 Aebutius:Ebutius (nome di uomo)
 aedes:la casa, il tempio,
@@ -380,8 +377,8 @@ Aegyptius:egiziano
 Aegyptus:Egitto
 Aelia:Aelia
 Aelius:Aelius
-Aemilianus:Emilien
 Aemilia:Aemilia
+Aemilianus:Emilien
 Aemilius:Aemilius, Emilio,
 aemulatio:il desiderio di rivaleggiare, la rivalità, la gelosia,
 aemulor:imitare, seguire,
@@ -404,17 +401,18 @@ aequoreus:marino
 aequor:la pianura, il mare,
 aequo:uguagliare, appianare, uguagliare,
 aequus:uguale, equo, aequum è: conviene, (ex aequo: ad uguaglianza,
+aer:aria
 aerarium:il tesoro pubblico
 aeratus:coperto di airin
 aereus:di bronzo
 aerius:aereo
 aerumna:la prova, le pene, le tribolazioni,
 aerumnosus:prostrato di miseria, tormentato,
-aer:aria
 Aesapus:l'Esape (fiume)
 Aesculapius:Esculape (dio della medicina) figlio di Apollo,
 Aesernia:Esernie (città del Samnium)
 Aeserninus:Aeserninus
+aes:il bronzo; moneta di rame = hai; il denaro. , aes alienum: il debito,
 Aesonius:di Eson
 Aesopus:Esopo
 aestas:stato
@@ -425,16 +423,15 @@ aestiva:pl. il campo di estate
 aestivus:di estate
 aestuarium:estuario, laguna, palude,
 aestumo:intendere, stimare,
-aestuosus:bruciando
 aestuo:essere agitato
+aestuosus:bruciando
 aestus:caldo, ribollio, onde, marea,
-aes:il bronzo; moneta di rame = hai; il denaro. , aes alienum: il debito,
 aetas:1. il tempo della vita, la vita,2. l'età3. la gioventù4. tu tempo, l'epoca, in aetatem,: per molto tempo,
 aetatula:l'età tenera, la gioventù,
 aeternitas:l'eternità
 aeternus:eterno
-aetherius:celeste
 aether:il cielo
+aetherius:celeste
 Aethiopia:l'Etiopia
 Aethiops:l'etiope
 aethra:regione dell'etere dove si trovano gli astri
@@ -446,16 +443,16 @@ affinis:1. limitrofo, vicino2. mischiato a qqch. 3. alleato, genitore
 afflictus:gettato a terra, abbattuto, abbattuta
 Afrania:Afrania (nome di donna)
 Afranius:Afranius
-Africanus:africano
 Africa:Africa
+Africanus:africano
 africum:vento dell'Africa
 Africus:africano; nome nt. : vento dell'Africa
 Agamemnon:Agamennone
 agaso:il palafreniere, il valletto di esercito
+age:andiamo!
 agedum:andiamo, vediamo, eh bene dunque
 Agerinus:Agerinus
 ager:terra, territorio, campo,
-age:andiamo!
 aggero2:ammucchiare, accumulare,; sviluppare, ingrossare,
 agger:terrazzo, argine,
 agilis:che si conduce facilmente chi si muove comodamente, agile, lesto, attivo, agendo
@@ -470,8 +467,8 @@ agninus:di agnello
 agnitio:conoscenza, riconoscenza,
 agnosco:percepire, riconoscere,
 agnus:agnello
-agon:lotta, concorso. acc. s. agona
 ago:1 - cacciare davanti a si, fare camminare, condurre, spingere, portare, parlando o degli esseri animati personificati,2. fare, trattare, agire,
+agon:lotta, concorso. acc. s. agona
 agrarius:agrario
 agrestis:relativo ai campi, agreste, rustico, poco evoluto, grossolano,
 agricola:agricoltore
@@ -481,15 +478,14 @@ aha:ah!
 aheneus:di airin
 ahenus:di rame
 aio:affermare; abbia: dice, dice
-ais:tu dis, tu demandes
 akoinoetoi:senza senso comune
+ala:ala, ascella,
 alacer:allerta, vivo,
 alacritas:la vivacità, l'ardore, il brio,
 alapa:dare un giffle.
 alarius:chi fa parte degli ali di un esercito, ausiliare,
-ala:ala, ascella,
-Albanus:Albain, di Albe,
 Alba:Albe
+Albanus:Albain, di Albe,
 albeo:essere bianco
 albico:imbiancare
 Albinus:Albinus
@@ -498,12 +494,12 @@ albor:bianco, di uovo,
 albulus:bianco
 Albunea:Albunea (sorgente vicino a Tibur)
 albus:bianco
-Alcestis:Alceste, donna di Admète; accettò di scendere agli Inferni al posto da suo marito,
 alces:slancio
+Alcestis:Alceste, donna di Admète; accettò di scendere agli Inferni al posto da suo marito,
 Alcibiades:Alcibiade
-aleatorius:chi riguarda il gioco
-aleator:il giocatore di dadi
 alea:il gioco di fin da, il gioco di caso, il caso,
+aleator:il giocatore di dadi
+aleatorius:chi riguarda il gioco
 aleo:il giocatore
 ales:adj. : alato; subst. : l'uccello, il presagio,; , poetico, l'uccello
 Alexander:Alexandre
@@ -527,7 +523,6 @@ alimonia:l'alimento, il cibo,
 alioquin:del resto
 alioqui:peraltro
 alipilus:l'épileur
-alipta:massaggiatore, estetista,
 aliptes:massaggiatore, estetista,
 aliquamdiu:parecchio tempo
 aliquam:multum: una quantità passabilmente grande
@@ -536,11 +531,11 @@ aliquantisper:durante qualche tempo
 aliquanto:parecchio tempo, troppo molto tempo
 aliquantum:un poco, un po', ad un'abbastanza grande distanza,
 aliquantus:abbastanza grande
-aliquis:1. pron. qualcuno, qualche cosa,2. adj. circa, tale o tale
 aliqui:qualche
-aliquotiens:talvolta
-aliquot:alcuni, parecchi,
+aliquis:1. pron. qualcuno, qualche cosa,2. adj. circa, tale o tale
 aliquo:da qualche parte, con movimento,
+aliquot:alcuni, parecchi,
+aliquotiens:talvolta
 Aliso:Aliso (fortezza sul Lippe)
 aliter:diversamente
 alius:altro, un altro
@@ -556,13 +551,13 @@ alo:1. nutrire, alimentare,2. sviluppare3. nutrirsi
 Alpes:le Alpi
 Alpinus:delle Alpi
 altare:altare
+alte:in altezza, di altezza,
 altercatio:alterco, disputa,
 altercor:1. disputare2. scambiare dei propositi, al tribunale,3. lottare con (+ dat.)
+alter:l'altro, di due,
 alterno:fare uno dopo l'altro, alternare,
 alternus:chi alterna chi risponde, di altrui
 alteruter:uno dei due, uno o l'altro
-alter:l'altro, di due,
-alte:in altezza, di altezza,
 altitudo:altitudine, altezza,
 altrinsecus:dall'altro lato, dei due lati, doppiamente
 altrix:chi nutre, nutrice
@@ -574,7 +569,6 @@ alumnus:poppante
 alveus:tinozza, letto di fiume,
 alvus:il ventre, gli intestini,
 amabilis:degno di amore
-amabo:te ne prego
 amans:l'amante
 amanter:in amico, di un modo affettuoso,
 Amanus:l'Amanus, monte localizzato introduce la Siria ed il Cilicie,
@@ -590,11 +584,11 @@ ambedo:mangiare
 ambigo:chiedersi
 ambigue:di un modo incerto
 ambiguus:tra due, variabile, dubbi, ambiguo,
-Ambiorix:Ambiorix
 ambio:andare all'entour, cingere, sollecitare,
+Ambiorix:Ambiorix
+ambitio:1. i giri elettorali2. l'ambizione3. la pompa, il fasto,
 ambitiose:con desiderio di piacere, per ambizione,
 ambitiosus:chi avvolge, ambiziosi, desiderosi di piacere (ambitiosus, i, m. : quello che insegue gli onori,
-ambitio:1. i giri elettorali2. l'ambizione3. la pompa, il fasto,
 ambitus:bramala (ricerca delle magistrature per i mezzi irregolari), il movimento circolare, il giro, la circonferenza,
 Ambrones:gli Ambrons (popolo di origine gallica)
 ambrosia:l'ambrosia (cibo dei dei)
@@ -616,6 +610,7 @@ amita:la sorella del padre, la zia del lato paterno
 amitto:perdere
 amnicus:di fiume
 amnis:fiume, fiume,
+amo:amare, essere innamorati,
 amoenitas:il fascino, la bellezza, il consenso,
 amoenus:piacevole, affascinante
 amolior:scostare, allontanare,
@@ -623,15 +618,14 @@ amolitus:scostato, lontano
 amomum:cardamome
 amor:amore
 amoveo:allontanare, scostare,
-amo:amare, essere innamorati,
 Amphion:Amphion
 amphistomus:a due entrate
 amphitheatrum:l'anfiteatro
 amphora:anfora
-amplector:1. baciare, cingere,2. chiudere3. coccolare4. attaccarsi a qqn. 5. accogliere qqn. con sollecitudine
-amplecto:baciare
-amplexus:l'azione di baciare, di cingere, la stretta, la carezza,
 ample:ampiamente, largamente.
+amplecto:baciare
+amplector:1. baciare, cingere,2. chiudere3. coccolare4. attaccarsi a qqn. 5. accogliere qqn. con sollecitudine
+amplexus:l'azione di baciare, di cingere, la stretta, la carezza,
 amplifico:allargare, aumentare, aumentare,
 amplio:aumentare, allargare,
 ampliter:largamente
@@ -658,6 +652,7 @@ Androclus:Androclus
 Androgeus:Androgée (figlio di Minos) tanto Androgeos, oh
 androgynes:l'androgino
 Andromeda:Andromède
+an:è ciò che, o è ciò che; anno... anno..., se... o se
 angelus:angelo
 angiportus:la viuzza
 angor:l'oppressione, l'angoscia, il tormento,
@@ -672,20 +667,20 @@ anhelo:respirare difficilmente
 anhelus:ansimando, essouflé,
 Anicetus:Anicetus
 anicula:piccola vecchia
+anima:cuore, anima,
 animadversio:applicazione, attenzione, osservazione,
 animadverto:1. fare attenzione, notare,2. riconoscere, constatare, vedere,3. biasimare, criticare, censurare, rimproverare, riprendere, punire,
-animalis:relativo alla vita
 animal:essere vivente, animale,
+animalis:relativo alla vita
 animator:chi dà la vita
-anima:cuore, anima,
-animosus:coraggiosi, ardito, fidarsi
 animo:animare, dare la vita,
+animosus:coraggiosi, ardito, fidarsi
 animus:il cuore, la simpatia, il coraggio, lo spirito,
 Anio:l'Anio (affluente del Tevere)
 aniticula:la piccola anatra
+Anna:Anne
 Annaeus:Annaeus
 annales:pl. gli annali
-Anna:Anne
 Annia:Annia
 Annibal:Hannibal
 annitor:1. appoggiarsi su2. sforzarsi di, lavorare a
@@ -703,6 +698,7 @@ antarcticus:antartico
 anteambulo:chi funziona davanti al suo padrone
 antea:prima
 antecedo:precedere, superare,
+ante:davanti a, prima; adv. prima
 anteeo:1 - andare davanti a, camminare davanti a, precedere. - 2 - superare, superare, il prevalere su. - 3 - precedere, avvertire. - 4 - indovinare, presentire. - 5 - resistere, opporre a.
 antefero:portare davanti a, porre davanti a, preferire
 antefixus:fissato
@@ -716,7 +712,6 @@ antependulus:chi appende per davanti a
 antepono:porre davanti a, preferire a (+ dat.)
 antequam:prima che, prima di
 antevenio:venire prima di, prendere i davanti
-ante:davanti a, prima; adv. prima
 Antias:di Antium
 antideo:+ Dat. : superare
 antidotum:l'antidoto
@@ -724,7 +719,6 @@ Antiochenses:gli abitanti di Antiochia
 Antiochenus:di Antiochus
 Antiochia:Antiochia
 Antiochus:Antiochus
-Antiopa:Antiope
 Antiope:Antiope
 antiquitas:il tempo di una volta, l'antichità; l'anzianità
 antiquitus:dall'antichità, nei tempi vecchi
@@ -739,20 +733,20 @@ Antyllius:Antyllius
 anulus:l'anello, il riccio di capelli
 anus:vecchia donna
 anxius:1.anxieux, inquieto, tormentato,2. vigile3. faticoso
-an:è ciò che, o è ciò che; anno... anno..., se... o se
 Aonius:di Aonie (nome mitico del Béotie)
 aorgesias:parola greca: la pazienza
+Ap:abbreviazione di Appius
 apage:togli, allontana: + Acc.; assoluto: parte posteriore, apage si addetto,: andare-t'en, di grazia
 Apenninus:l'Apennin
+aper:cinghiale
 aperio:aprire, mettere alla luce del giorno (apertus, ha, um: 1 - scoperto, aperto,; liberato, libero. - 2 - che si fa apertamente, manifesto, evidente; chi si esporsi. - 3 - chiaro, intelligibile. - 4 - franco, aperto, sincero, candido; sfrontato.)
 aperte:apertamente
-aper:cinghiale
 apex:la cima
 Apion:Apion
 apis:ape
 apoculo:sparire, eclissarsi,
-Apollonidenses:gli abitanti di Apollonie
 Apollo:Apollo
+Apollonidenses:gli abitanti di Apollonie
 Aponius:Aponius (nome di uomo)
 apparatus:i preparativi, il lusso, la ricerca, il materiale, gli strumenti, l'apparecchio,
 appareo:1. essere visibile, chiaro, apparet = è chiaro,2. essere al servizio di
@@ -774,18 +768,17 @@ approbo:approvare
 appropinquo:avvicinare
 Appuleia:Appuleia
 Appuleius:Appuleius
+Apr:= Aprilis
 apricus:soleggiato, esposizione al sole
 Apronius:Apronius
-Apr:= Aprilis
 apto:adattare, legare - preparare, disporre,
 aptus:legato a, atto
 apud:vicino a, da
 Apuleius:Apuleius
 Apulia:l'Apulie
 Apulus:di Apulie (Apuli, orum, m. : gli Apuliens,
-Ap:abbreviazione di Appius
-aquaeductus:l'acquedotto
 aqua:acqua
+aquaeductus:l'acquedotto
 aquila:aquila
 Aquileia:Aquilée (città di istrie)
 aquilifer:il porta-alfiere
@@ -796,13 +789,13 @@ Aquinum:Aquinum, i Cicérons avevano una villa,
 Aquitania:l'Aquitania
 Aquitanus:l'Aquitain
 aquosus:acquosi, umido
+ara:altare
 aranea:ragnatela
 araneus:il ragno
 Arar:la Saona (fiume)
 arator:aratore, fattore,
 aratrum:aratro
 Arausio:Arancioni (città del Narbonnaise)
-ara:altare
 arbiter:il testimone oculare, l'arbitro,
 arbitrarius:voluto, volontario
 arbitratus:la sentenza, il potere, il gradimento,
@@ -812,11 +805,11 @@ arboreus:di albero; simile ad un albero
 arbor:l'albero
 arbustus:piantato di alberi
 arbuteus:di corbezzolo
+arca:bagagliaio
 Arcadia:Arcadie
 arcanum:segreto
 arcanus:segreto
 Arcas:l'Arcadien (Arcadie, regione della Grecia,
-arca:bagagliaio
 arceo:contenere, trattenere, impedire,
 arcesso:1. fare venire, chiamare (arcessitus, ha, um: cercato, poco naturale,2. citare in giustizia, accusare,
 Archelaus:Archelaus
@@ -830,8 +823,8 @@ arctus:l'Orsa, al plurale la grande e la piccola Orsa,
 arcula:piccolo cofanetto, cofanetto, scatola, per cure di bellezza,
 arcus:l'arco
 ardalio:ardalion, uomo che fa il premuroso,
-Ardeates:gli abitanti di Ardée
 Ardea:Ardée (città dei Rutules)
+Ardeates:gli abitanti di Ardée
 ardeo:bruciare (ardens, entis,: bruciando, scintillante, ardente)
 ardesco:infiammarsi, prendere fuoco,
 ardor:il fuoco, l'avvampare, l'ardore, la passione,
@@ -867,8 +860,8 @@ arieto:urtare, urtare,
 Ariobarzanes:Ariobarzane (re di Cappadoce)
 Arion:Arion
 Ariovistus:Arioviste (capo germanico)
-Aristarchus:Aristarque
 arista:la barba, la punta di spiga, la spiga,
+Aristarchus:Aristarque
 Aristippus:Aristippe
 Aristodemus:Aristodème
 Aristomache:Aristomaque, donna di Denys il Tiranno,
@@ -877,12 +870,12 @@ Aristonicus:Aristonicus, re di Pergame
 Aristophanes:Aristofane
 Aristoteles:Aristotele
 Aristoxenus:Aristoxène
+arma:le armi
 armamentarium:l'arsenale
 armamentum:attrezzatura, attrezzi,
 armarium:l'armadio, il caveau,
 armatura:le truppe (- leuis = la fanteria leggera,
 armatus:in armi, armato,
-arma:le armi
 Armenia:l'Armenia
 Armenius:Armeno
 armentum:il gregge di grosso bestiame
@@ -892,8 +885,8 @@ armillum:il vaso a mettere del vino, ad armillum ridire: ritornare alle sue abit
 Arminius:Arminius
 armo:armare, munire,
 Arnus:l'Arno (fiume che passa a Firenze)
-aroma:l'aroma
 aro:arare, coltivare,
+aroma:l'aroma
 Arpinas:la villa di Arpinum, i Cicérons ne erano originari,
 Arpineius:Arpineius
 Arpinum:Arpinum (città dei Volsques)
@@ -904,13 +897,12 @@ Arrionilla:Arrionilla
 Arrius:Arrius
 Arruns:Arruns, figlio di Tarquin lo Splendido,
 Arruntius:Arruntius
-Arsacidae:gli Arsacides (discendenti di Arsacès) re di li Parta,
 ars:1. il talento, l'abilità,2. il mestiere, la professione,3. la conoscenza tecnica, l'arte,
+Arsacidae:gli Arsacides (discendenti di Arsacès) re di li Parta,
 Artabanus:Artabanus (re dei Parthes)
 Artavasdes:Artavasdès (re dell'Armenia)
 Artaxata:Artaxata (capitale dell'Armenia)
 Artaxias:Artaxias (re dell'Armenia)
-Artaxia:Artaxias (re dell'Armenia)
 arte:strettamente
 articularis:articolare (- morbus: la goccia,
 articulus:giuntura, articolazione, divisione,
@@ -940,10 +932,11 @@ Asculum:Asculum (città del Picénum)
 Asdrubal:Asdrubal
 asella:la piccola asina
 asellus:l'asino
+as:hai (moneta)
 Asia:Asia
+asina:Asina
 asinalis:di asino
 asinarius:di asino (asinarius, i, m. : l'asinaio,
-asina:Asina
 asininus:di asino
 Asinius:Asinius
 asinus:asino
@@ -953,32 +946,31 @@ aspectus:1. lo sguardo2. la facoltà di vedere3. la vista, l'aspetto, l'apparenz
 aspere:in modo rustico, con asprezza, severità, aspramente
 aspergo:spruzzare, inzaccherare,
 asperitas:l'asprezza
-aspernor:respingere, rigettare, provare del disprezzo,
 asperno:respingere
+aspernor:respingere, rigettare, provare del disprezzo,
 aspero:rendere aspro, rugosi; affilare, affilare,
-aspersio:l'azione di spargere su, l'aspersione
 asper:severo, rude
+aspersio:l'azione di spargere su, l'aspersione
 aspicio:guardare, esaminare, considerare, vedere,
 aspiro:soffiare verso, su - fig + Dativo: ispirare, penetrare di un soffio,
 Asprenas:Asprenas (nome di uomo)
+asser:la trave
 assero:sostenere, affermare,
 asservate:con passione
-asser:la trave
 assilio:saltare contro, assalire
 asso:fare arrostire
 assuefacio:abituare
 assula:lo scoppio, il truciolo, di bosco,
 assum:l'arrosto
 assus:arrostito, tostato; secco, senza accompagnamenti,
+ast:altra parte, allora, ma
 Astraea:Astrée (divinità della giustizia)
 astrologus:astronomo, astrologo,
 astrum:l'astro, la stella,
 astruo:costruire accanto; aggiungere; provare, garantire,
 astus:l'astuzia, il raggiro,
 astutia:l'astuzia, la macchinazione,
-ast:altra parte, allora, ma
 asylum:il rifugio
-as:hai (moneta)
 Ateius:Ateius (nome di uomo)
 ater:nero. uinum atrum, vino rosso,
 Athenae:Atene
@@ -990,9 +982,10 @@ athleta:atleta
 athleticus:di atleta
 Atilius:Atilius
 Atinius:di Atinius, lex Atinia,
+at:ma
 atque:e, ed anche
-atquin:eh bene, e tuttavia, in queste condizioni
 atqui:e tuttavia, eh bene
+atquin:eh bene, e tuttavia, in queste condizioni
 atramentum:inchiostro
 Atrebates:gli Atrébates (peuplade belga)
 Atrida:il figlio di Atrée, Agamennone o Menelao,
@@ -1014,13 +1007,12 @@ attineo:tenere, finire, distendersi; attinet: importa
 Attius:Attius
 attonitus:colpito dal tuono; paralizzato
 Attus:Attius
-at:ma
 auceps:l'oiseleur
-auctionarius:relativo alle offerte (- tabulò: elenco di beni a vendere alle offerte,
 auctio:asta pubblica
+auctionarius:relativo alle offerte (- tabulò: elenco di beni a vendere alle offerte,
+auctor:1. il garante2. la sorgente3. il modello4. l'autore, l'istigatore,
 auctoritas:il parere, il prestigio, l'autorità, la volontà, del Senato, la decisione,
 auctoro:impegnare
-auctor:1. il garante2. la sorgente3. il modello4. l'autore, l'istigatore,
 auctus:l'incremento, l'aumento,
 aucupium:la caccia agli uccelli, la caccia, l'inseguimento,
 aucupor:cacciare gli uccelli, spiare, spiare,
@@ -1041,19 +1033,19 @@ augeo:aumentare, aumentare, arricchire,
 augesco:cominciare a crescere, crescere,
 augurale:l'augural, parte diritta della tenda di un generale dove prende gli auspici,
 auguratus:la dignità, la funzione di augurio
+augur:augurio
 augurium:augurio, predizione,
 auguror:predire, annunciare, presagire,
-augur:augurio
-Augustalis:di Auguste
 Augusta:Augusta
+Augustalis:di Auguste
 augustus:consacrato, maestosi
-aulaeum:la tenda di teatro
 aula:1. la corte di una casa, la corte di un principe, il potere di un principe2. la marmitta3. il flauto, la giocatrice di flauto
+aulaeum:la tenda di teatro
 Aulis:Aulis, piccolo porto di Béotie,
 aulula:la piccola marmitta
 Aulus:Aulus
-auratus:di oro, dorato,
 aura:il soffio, la brezza, il vento, l'aria,
+auratus:di oro, dorato,
 Aurelius:Aurelius
 aureolus:dorato, preziosi
 aureus:di oro
@@ -1076,16 +1068,17 @@ auster:il sud, il mezzogiorno,; Auster, scelta,: il vento del sud, l'Auster,
 ausum:l'impresa ardita, il crimine, il misfatto,
 autem:ora, tuttavia, in quanto a -
 automatum:l'automa, la macchina, il movimento automatico,
+aut:o, o
 autumno:caratterizzare l'autunno, annunciare l'autunno,
 autumnus:autunno
 autumo:dire, affermare,
-aut:o, o
 auxiliaris:chi soccorre, ausiliare (auxiliaris, is,: il soldato delle truppe ausiliari,
 auxiliarius:di soccorso, venendo al soccorso,
 auxilior:aiutare, portare soccorso,; alleggerire, guarire,
 auxilium:l'aiuto, il soccorso (auxilia, orum,: le truppe di soccorso,
 avaritia:la cupidigia, l'avarizia,
 avarus:avaro
+ave:ciao!
 aveho:portare, deviare, al passivo,: andare ne si, ritirarsi,
 avello:strappare
 avena:avena, cannuccia,
@@ -1095,7 +1088,6 @@ Avernus:dell'Averne, degli Inferni,
 aversor:avere dell'avversione
 aversus:deviato, ostile
 averto:1 - deviare, dare un'altra direzione,; qqf. allontanarsi. - 2 - respingere, scostare, allontanare, staccare, alienare,. - 3 - deviare al suo profitto, rubare, sottrarre, portare.
-ave:ciao!
 avia:l'ava
 aviditas:il desiderio ardente, l'avidità,
 avidus:desiderosi, avido
@@ -1111,14 +1103,13 @@ avus:l'antenato, l'avo, il nonno,
 axiculus:il piccolo asse
 axis:l'asse, l'asse, il carro,
 Axona:l'Aisne (fiume)
-a:a partire da, dopo un verbo passivo = per
 babae:Oh! Ah! Bene! Cool!
 Babylonius:Babilonese
 baca:piccolo frutto, oliva,
 bacca:la baia, il frutto,
 bacchabundus:chi si dedica a tutti gli eccessi della dissolutezza
-Bacchanalia:i Baccanali (feste di Bacco)
 Baccha:il Baffo
+Bacchanalia:i Baccanali (feste di Bacco)
 Bacchis:Bacchis (nome di donna)
 bacchor:avere il delirio ispirato da Bacco, participio ora = i Baffi,
 Bacchus:Bacco
@@ -1141,11 +1132,11 @@ balneae:bagni, terme,
 balneum:bagni (sing). privati; plurali pubblici,
 balsamum:il baumier (arboscello), il balsamo,
 balteus:cintura
+barba:barba
 barbaricus:barbaro
 barbarismus:barbarismo, parola straniera ad una lingua
 barbarus:barbaro
 barbatus:barbuto
-barba:barba
 barbitium:la barba
 bardus:il bardo, il cantante e poeta dai Gallici
 Bargates:Bargatès
@@ -1171,33 +1162,32 @@ bellator:il guerriero, l'uomo di guerra, il combattente,
 belle:graziosamente
 bellicosus:guerriero, bellicosi,
 bellicus:della guerra
-belligero:fare la guerra
 belliger:guerriero
-Bellovaci:i Bellovaques
+belligero:fare la guerra
 bello:fare la guerra, lottare, combattere,
+Bellovaci:i Bellovaques
 bellua:la bestia
 bellule:graziosamente
 bellum:guerra
 bellus:bello, carino
 belua:il grosso animale
+bene:bene
 benedice:con le domestiche parole
 benedico:dire del bene di, celebrare
 beneficium:1. il servizio, il beneficio, il favore,2. la distinzione, i favori,
 benevolens:benevolo, devoto
 benevolentia:la devozione
 benevolus:benevolo, devoto, addetto, a qqn.
-bene:bene
 benigne:fare del bene a qqn, bene trattare qqn.
 benignitas:1 - la bontà, la benevolenza, la dolcezza, l'indulgenza. - 2 - la beneficenza, la generosità, la liberalità.
 benignus:benevolo, benefico, generosi
-benivolentia:la benevolenza, la devozione,
 benivole:con benevolenza
-benivolus:benevolo, devoto, addetto, a qqn.
+benivolentia:la benevolenza, la devozione,
 beo:rendere felici, rallegrare, gratificare di, arricchire
-bestiarius:il bestiaire
-bestia:bestia
-bestiola:piccolo animale, insetto,
 bes:i 2/3 di un tutto di 12 parti
+bestia:bestia
+bestiarius:il bestiaire
+bestiola:piccolo animale, insetto,
 biberarius:il commerciante di bevande
 bibo:bere
 bibulus:chi beve volentieri chi si impregna, la carta assorbente.
@@ -1235,8 +1225,8 @@ bobilis:di bue
 Bocchus:Bocchus (re della Mauritania)
 Boeotia:Béotie
 Boiorix:Boiorix
-Bolanus:l'abitante di Bola, vecchia città del Latium,
 Bola:Bola, vecchia città del Latium,
+Bolanus:l'abitante di Bola, vecchia città del Latium,
 boletus:il bolet (fungo)
 bolus:colpo di dadi, colpo di rete, multa,
 bombus:il ronzio delle api, il rumore altisonante,
@@ -1244,9 +1234,8 @@ bonitas:buona qualità, bontà,
 bonus:buono (bonus, i,: l'uomo di bene - bona, orum,: i beni,
 boo:muggire, echeggiare, gridare,
 Boreas:Borée (tramontana), l'aquilon, al nominativo Boreas,
-Bosphoranus:del Bosforo
-Bosphorus:il Bosforo
 bos:bue
+Bosphorus:il Bosforo
 botularius:il commerciante di salsicce
 bovile:stalla
 Bovillae:Bovilla, vecchia città del Latium,
@@ -1290,6 +1279,7 @@ Byrsa:Byrsa (cittadella di Cartagine)
 Byzantium:Byzance
 Byzantius:Bizantino
 caballus:il cavallo castrone, castrato,
+C:abbreviazione di Caius
 cachinnus:ridere, scoppio di ridere
 cacumen:estrema punta
 cadaver:cadavere
@@ -1307,8 +1297,8 @@ caecus:cieco
 caedes:omicidio, massacro,
 caedo:abbattere, uccidere,
 caelamen:la cesellatura, il lavoro cesellato,
-caelestis:celeste, del cielo
 caeles:celeste (caelites, um, m. : gli abitanti del cielo, i dei,
+caelestis:celeste, del cielo
 Caelianus:di Caelius
 caelibatus:il celibato
 caelicola:l'abitante del cielo
@@ -1323,8 +1313,8 @@ Caepio:Cépion
 caerimonia:la venerazione, il culto,
 caeruleus:blu, blu scuro
 caerulus:blu, blu scuro
-caesaries:la capigliatura
 Caesar:Cesare, imperatore,
+caesaries:la capigliatura
 Caesia:Caesia (nome di una foresta della Germania)
 caesim:troncando
 caesius:tirando sul verde, glauco
@@ -1362,8 +1352,8 @@ callidus:giocato d'astuzia
 Callinicus:Callinicus
 Callistratus:Callistratus
 callum:il callo, la pelle spessa,
-calor:il caldo; l'ardore, l'irruenza,
 calo:il valletto
+calor:il caldo; l'ardore, l'irruenza,
 Calpurnius:Calpurnius
 calumnia:l'inganno, l'accusa falsa, la calunnia - il briga in giustizia
 calumnior:accusare a torto
@@ -1399,9 +1389,9 @@ caninus:di cane
 canis:cane
 canities:il biancore, dei capelli, della barba, la vecchiaia,
 Cannae:Cannes (città di Apulie)
+cano:1. cantare, risuonare, echeggiare,2. predire, profetizzare,3. giocare di un strumento di musica
 Canopus:Canope (città del Basso-Egitto)
 canorus:sonoro, melodiosi
-cano:1. cantare, risuonare, echeggiare,2. predire, profetizzare,3. giocare di un strumento di musica
 cantabundus:canticchiando
 cantamen:l'incantesimo, il fascino,
 cantatio:la canzoncina
@@ -1422,12 +1412,12 @@ capesso:cercare di prendere, si -: rendersi vivamente da qualche parte,
 capillatus:capelluto, ai capelli lunghi
 capillus:capello
 capio:prendere
-capitalis:capitale che trascina la morte
 capital:il crimine capitale
+capitalis:capitale che trascina la morte
 capitatus:chi ha una, grossa, testa
+Capito:Capito
 Capitolinus:Capitolin, del Campidoglio,
 Capitolium:il Campidoglio
-Capito:Capito
 Cappadocia:il Cappadoce
 Cappadox:Cappadocien
 capra:capra
@@ -1495,21 +1485,21 @@ castor:il castoro
 castra:campo militare
 castrensis:relativo al campo o all'esercito
 castus:1. puro, integra, virtuosi2. casto3. devoti, religiosi, santo (Castus, i, m. : Castus,
-casus:il caso, la disgrazia, la caduta,
 casu:per caso
+casus:il caso, la disgrazia, la caduta,
 Catacecaumene:terra bruciata
 Catamitus:Catamitus
 cataplasma:il cataplasma
 catasta:pedana, per l'esposizione degli schiavi a vendere,
 catellus:piccolo cane
+catena:la catena
 catenarius:tenuto da una catena
 catenatus:incatenato
-catena:la catena
 caterva:massa, truppa, folla,
 cathedralitius:abituato alle poltrone; effeminato
 Catilina:Catilina
-Catoninus:sostenitore o ammiratore di Catone
 Cato:Catone
+Catoninus:sostenitore o ammiratore di Catone
 Catualda:Catualda (germanico)
 Catullus:Catullo
 catulus:il piccolo di un cane, o di un animale qualsiasi (Catulus, i, m. : Catulus,
@@ -1518,15 +1508,15 @@ Caucasus:il Caucaso
 cauda:coda
 Caudinus:di Caudium, i Forche Caudines,
 Caunus:Caunus (città di Carie)
-caupona:il cabaretière
 caupo:locandiere, restauratore,
-causarius:malato, invalido, invalido
+caupona:il cabaretière
 causa:la causa, il motivo,; l'affare giudiziale, il processo,; + Gén. : per
+causarius:malato, invalido, invalido
 causidicus:avvocato (peggiorativo)
 causor:prétexter
+caute:con precauzione, prudentemente
 cautela:la precauzione, la diffidenza,
 cautes:la roccia lo scoglio
-caute:con precauzione, prudentemente
 cautio:precauzione, garanzia,
 Cavarinus:Cavarinus
 cavea:la gabbia
@@ -1559,17 +1549,17 @@ Celta:il celtico
 Celtiberi:i Celtibériens (popolo della Spagna)
 Cenabensis:di Cenabum (Orléann)
 Cenabum:Orléans
+cena:cène, cena,
 cenaculum:la sala da pranzo, il piano superiore, dove si trovava la sala da pranzo,
 cenaticus:relativo alla cena
 cenatio:sala da pranzo
 cenatorius:relativo al pasto, al tavolo (cenatorium, i, n. : la sala da pranzo - cenatoria, orum, n. : gli abiti di tavolo,
-cena:cène, cena,
 cenito:cenare spesso o abitualmente
 ceno:cenare
 censeo:stimare, essere di parere, decidere, fare il censimento,
+censor:censore
 Censorinus:Censorinus
 censorius:censore, relativo al censore,
-censor:censore
 censura:censura
 census:il cens, il censimento,
 Centaurus:il Centauro
@@ -1577,12 +1567,12 @@ centenus:quasi tj al plurale: ogni volta cento, cento,
 centesima:il centesimo (tassa)
 centiens:cento volte
 centipes:chi ha cento piedi; millepiedi
+centum:cento
 Centumgeminus:centuplo
 centumvir:qualcuno che fa parte di un'assemblea di 100 uomini, il magistrato,
-centum:cento
 centuria:centurie
-centurionatus:il grado di centurione, - agere = passare la rivista dei centurioni
 centurio:il centurione
+centurionatus:il grado di centurione, - agere = passare la rivista dei centurioni
 cenula:il piccolo pasto, il bar,
 Cephisos:il Céphise (fl). di Béotie,
 Cephisus:il Céphise (fl). di Béotie,
@@ -1629,7 +1619,6 @@ Charybdis:Charybde
 Chatti:le Gatte (peuplade germanico)
 Chaucus:il Chauque (peuplade della Germania)
 Chaus:il caos
-Cherusci:i Cherusci
 Chimaera:la Chimera
 chirographum:la scrittura
 chirurgus:chirurgo
@@ -1649,8 +1638,8 @@ cibatus:il cibo
 cibus:cibo, pasto, linfa,
 cicada:cicala
 cicatrix:la cicatrice
-Cicero:Cicerone
 cicer:il cece
+Cicero:Cicerone
 Cicones:i Ciconiens (popolo della Tracia)
 ciconia:cicogna
 cieo:mettere in movimento, provocare, produrre,
@@ -1671,17 +1660,18 @@ cingo:cingere, cingere,
 cingulum:cintura, imbragatura,
 cinis:cenere
 Cinithii:i Cinithiens (popolo dell'Africa)
-cinnameus:di cannella che odora di cannella
 Cinna:Cinna
-circamoerium:il pomerium
+cinnameus:di cannella che odora di cannella
 circa:intorno a
-Circenses:pl. i giochi del circo
+circamoerium:il pomerium
 Circe:Circé (maga che metamorfosò i compagni di Ulisse, esperta in pozioni magiche,)
+Circenses:pl. i giochi del circo
 circiter:circa
 circueo:cingere, fare il giro di
 circuitus:circuito, torre,
 circulus:il cerchio, l'anello,
 circumago:al passivo: correre in tutti i sensi
+circum:all'entour; prép. acc. : intorno a
 circumaro:cingere arando
 circumcingo:cingere
 circumdo:cingere
@@ -1711,23 +1701,22 @@ circumvenio:accerchiare
 circumverto:fare girare
 circumvolutor:girare intorno, avvolgere si intorno
 circumvolvo:circolare intorno, avvolgere
-circum:all'entour; prép. acc. : intorno a
 circus:circo
 Cirrhaeus:di Cirrha (città di Phocide)
 Cirta:Cirta (città dell'Africa)
+cis:al di qua
 Cisrhenanus:localizzato di questo lato del Reno
 cista:il cesto, per certi sacrifici, l'urna elettorale,
 cisterna:cisterna
 cistula:piccolo cesto
-cis:al di qua
 citerior:citérieur, Gallia - = il Gallia vicino,
 Cithaeron:il Cithéron (monte di Béotie)
 cithara:cetra
 cito2:chiamare, convocare,
 cito:rapidamente, velocemente
+citra:al di qua; prép. + acc. al di qua di, contrariamente a
 citrarius:il commerciante di cédrats
 citratus:posto al di qua
-citra:al di qua; prép. + acc. al di qua di, contrariamente a
 citreago:l'erba di cédrat, il mélisse,
 citrea:il cedro (albero portante degli agrumi che somigliano al limone)
 citretum:il luogo plandé di dédratier
@@ -1735,8 +1724,8 @@ citreum:il cédrat (tipo di limone)
 citreus:di cedro
 citrium:il cetriolo
 citrius:il cedro
-citrosus:chi odora di thuia
 citro:al di qua; prép. + acc. al di qua di
+citrosus:chi odora di thuia
 citrum:il bosco di tuia
 citrus:il cedro
 citus:pronto, veloce
@@ -1746,14 +1735,14 @@ civis:cittadino
 civitas:citato, stato
 clades:ferita, perdita, danno, disastro militare, grave disfatta
 clamito:gridare forte
+clamo:gridare
 clamor:clamore, grido,
 clamosus:chiassoso
-clamo:gridare
 clanculum:di nascosto
 clandestinus:chi si fa di nascosto
 Clanis:il Clain (fiume)
-claresco:diventare chiaro, brillare, diventare distinto,
 clare:clairement, nettement
+claresco:diventare chiaro, brillare, diventare distinto,
 claritas:la chiarezza, lo scoppio,
 claritudo:la chiarezza, lo scoppio,
 Clarius:di Claros (città di Ionie famoso per il suo tempio di Apollo)
@@ -1785,8 +1774,8 @@ Clipea:Clipea (città dell'Africa)
 clipeus:lo scudo
 clitellae:basto
 clivus:pendenza, salita,
-cloacalis:della fogna
 cloaca:la fogna
+cloacalis:della fogna
 Cloacina:Cloacine (divinità protettiva delle fogne)
 Clodius:Clodius
 Cloelia:Clélie
@@ -1796,9 +1785,9 @@ Cluilius:di Cluilius (capo degli Albains)
 Cluvius:Cluvius
 Clymene:Clymène
 clyster:il clistere
+Cn:abbreviazione di Cnaeus
 Cnaeus:Cnéus
 Cnidus:Cnide, città di Carie dove Venus aveva un tempio,
-Cn:abbreviazione di Cnaeus
 coaequalis:della stessa età
 coaequo:rendere uguale, uguagliare,
 coaetaneus:contemporaneo, della stessa età
@@ -1831,8 +1820,8 @@ cogito:intendere, riflettere,
 cognatio:il legame di sangue, la parentela,
 cognatus:legato, per il sangue, (cognatus, i, m. : il genitore,
 cognitio:l'azione di apprendere, lo studio, la conoscenza,; l'inchiesta
-cognomentum:cognomen, soprannome,
 cognomen:soprannome, cognomen, partito dal nome che segue il gentilice,
+cognomentum:cognomen, soprannome,
 cognomino:soprannominare
 cognosco:1. imparare a conoscere, studiare,; pf. : sapere2. riconoscere3. istruire, un affare,
 cogo:1. raccogliere, riunire, riunire,2. concentrare, condensare,3. spingere con la forza, costringere,
@@ -1870,10 +1859,10 @@ collum:collo
 colluvies:le acque sporche, i rifiuti,; la mescolanza impura, il caos,
 colonia:fattoria, colonia,
 colonus:contadino, agricoltore, fattore, abitando di una colonia,
-Colophon:Colofonia (città di Ionie)
-coloro:colorare
-color:colore, colorito del viso, scoppio, dello stile,
 colo:onorare, coltivare, abitare,
+Colophon:Colofonia (città di Ionie)
+color:colore, colorito del viso, scoppio, dello stile,
+coloro:colorare
 coluber:la biscia, il serpente,
 columba:colomba
 columbula:la piccola colomba
@@ -1881,24 +1870,24 @@ columbus:il piccione
 columella:piccola colonna
 columna:colonna
 colus:conocchia
+coma:capigliatura, capelli,
 comans:fornito, parlando di capelli o di una criniera,
 comatus:capelluto
-coma:capigliatura, capelli,
 comburo:bruciare interamente
 comedo:mangiare
 comes:compagno
 cometes:stella crinita
 comicus:di commedia, comico,
+comis:dolci, carino
 comissatio:il festino, l'orgia,
 comissor:fare bombance
-comis:dolci, carino
 comitas:la dolcezza, l'affabilità, la bontà, la generosità,
 comitatus:la scorta, l'accompagnamento, il corteo, il seguito,
 comiter:gentilmente, con benevolenza, con gioia, con brio,
 comitialis:dei comices; - morbus: l'epilessia
 comitium:il comitium (luogo di riunione del popolo); comitia, orum,: i comices, l'assemblea generale del popolo
-comitor:accompagnare
 comito:accompagnare
+comitor:accompagnare
 commaculo:sporcare, macchiare,
 Commagenus:del Commagène (Commageni, orum,: gli abitanti di Commagène,
 commasculo:rendere virile
@@ -1946,13 +1935,13 @@ communio:fortificare, costruire, un forte, rinforzare,
 communis:1. comune2. accessibile a tutti, affabile,
 commutatio:il cambiamento completo
 commuto:cambiare, trasformare,
-comoedia:la commedia
 como:aggiustare, pettinare,
+comoedia:la commedia
 compages:l'accostamento, la giuntura, l'ossatura, il cumulo,
+compar:assortito, uguale, simile
 comparatio:il paragone
 compareo:1. apparire, manifestarsi,2. essere presente3. effettuarsi, realizzarsi,
 comparo:1. accoppiare, appaiare, paragonare,2. procurare, reclutare, disporre, regolare,
-compar:assortito, uguale, simile
 compavesco:prendere paura
 compecto:di -: di concerto, dopo intesa,
 compedio:legare insieme, impacciare, impedire,
@@ -1978,8 +1967,8 @@ comploro:piangere, lamentarsi,
 complures:pl. un buon numero di, parecchi.
 compono:mettere insieme, disporre, seppellire (compositus, ha, um: disposto, preparato; in buono ordine,
 comporto:trasportare in un stesso luogo, riunire,
-composito:secondo ciò che è stato convenuto
 compos:chi ha ottenuto chi realizzo
+composito:secondo ciò che è stato convenuto
 comprecatio:la preghiera collettiva ad una divinità
 comprehendo:afferrare, prendere, comprendere,
 compressio:compressione, stretta, repressione,
@@ -2051,13 +2040,13 @@ condico:fissare un accordo, convenire, notificare,
 condimentum:il condimento
 condio:condire
 condiscipulus:il compagno
-conditorium:la bara, il sarcofago,
 conditor:il fondatore
+conditorium:la bara, il sarcofago,
 conditura:modo di accomoder, ricetta,
 conditust:contr. = conditus est
 condolesco:provare un malessere, una sofferenza,
-condono:fare un regalo, dare,
 condo:nascondere, chiudere, seppellire, condere urbem,: fondare una città,
+condono:fare un regalo, dare,
 conducibilis:utile (conducibile, is, n. : l'interesse generale,
 conduco:condurre insieme, riunire,; affittare, fare un mercato con qqn.; essere utile, vantaggiosi
 conecto:legare, legare,
@@ -2083,8 +2072,8 @@ confirmatio:l'azione di incoraggiare, l'affermazione, la conferma,
 confirmo:irrobustire, confermare, assicurare,
 confiteor:confessare
 conflagro:consumarsi, per il fuoco,
-conflictor:lottare contro
 conflicto:prostrare
+conflictor:lottare contro
 conflictus:lo shock, l'urto, la lotta,
 confligo:consegnare battaglia, combattere,
 conflo:1 - suggerire, infiammare, al pr. ed al fig.). - 2 - fare sciogliere, un metallo, sciogliere, una statua...), forgiare; qqf. distruggere. - 3 - accendere, eccitare. - 4 - formare, riunire, comporre. - 5 - produrre, fare, causare, suscitare.
@@ -2114,8 +2103,8 @@ conjecto:congetturare
 conjectura:congettura, su qqch, alicujus rei, facoltà di congetturare, supposizione, previsione, giudizio, predizione,
 conjectus:l'azione di gettare insieme, di lanciare, di gettare gli sguardi su
 conjicio:gettare, fare entrare in
-conjugalis:del matrimonio
 conjuga:la sposa
+conjugalis:del matrimonio
 conjugium:unione, coppia, sposo o sposa
 conjugo:unire, sposare,
 conjunctio:l'unione, il collegamento, i legami del matrimonio
@@ -2204,12 +2193,12 @@ consuesco:abituarsi
 consuetudo:1 - l'abitudine, il costume, l'uso. - 2 - l'uso di una lingua, la lingua, il linguaggio. - 3 - il collegamento,
 consularis:consolare
 consulatus:consolato
+consul:console
 consulo:1. deliberare, prendere delle misure, avere cura di, vegliare a2. consultare
 consultatio:l'esame, la consultazione,
-consultor:il consigliere, quello che chiede consiglio,
 consulto:deliberare a lungo, consultare, interrogare,
+consultor:il consigliere, quello che chiede consiglio,
 consultum:il decreto; senatus -: sénatus-consultalo
-consul:console
 consummatio:1. l'insieme, l'accumulo,2. il compimento, il completamento,
 consummo:1. addizionare2. compiere, finire,
 consumo:1. adoperare, spendere,2. consumare, esaurire,3. venire ad estremità, distruggere,
@@ -2224,8 +2213,8 @@ contego:coprire, nascondere, dissimulare,
 contemno:tr. - disprezzare, non fare caso di, non tenere conto di, tenere per trascurabile, non preoccuparsi, disdegnare,; sfidare, non temere.
 contemplatio:l'azione di guardare attentamente, la contemplazione,
 contemplator:il contemplatore, l'osservatore,
-contemplor:guardare attentamente, contemplare,
 contemplo:contemplare
+contemplor:guardare attentamente, contemplare,
 contemptio:il disprezzo
 contemptor:quello che disprezza, lo spregiatore,
 contemptus:sbagliato
@@ -2249,16 +2238,16 @@ continuatus:prolungato
 continuo2:seduta stante, all'istante
 continuo:fare seguire immediatamente, fare succedere senza interruzione,
 continuus:continuo, nello spazio e nel tempo,;; fig. : chi non si interrompe
+contio:la tribuna, l'assemblea del popolo convocato da un magistrato, si non vota, il discorso davanti ad un'assemblea, soprattutto politico,
 contionabundus:chi arringa, velut.. come se era alla tribuna,
 contionor:essere raccolto, arringare,
-contio:la tribuna, l'assemblea del popolo convocato da un magistrato, si non vota, il discorso davanti ad un'assemblea, soprattutto politico,
 contono:contonat = tuona forf
 contorqueo:girare, lanciare con forza,
+contra:al contrario, in faccia; prép+acc: contro
 contractus:ripiegato, chiuso, stretto, magro
 contraho:tirare insieme, riunire, restringere, impegnare un affare,
 contrarie:in modo contrario
 contrarius:contrario, oppositore
-contra:al contrario, in faccia; prép+acc: contro
 contremesco:cominciare a tremare
 controversia:la controversia, la discussione,; il punto litigioso, il litigio,
 contubernalis:il compagno, il compagno,
@@ -2292,8 +2281,8 @@ convicium:lo scoppio di voce, il clamore, il baccano, i piagnistei - in partic. 
 convictor:il commensale
 convictus:vita in società; banchetto
 convinco:convincere [di un errore], confondere
-convivalis:di pasto, di tavolo,
 conviva:invité(e, commensale
+convivalis:di pasto, di tavolo,
 convivium:pasto in comune, banchetto
 convoco:convocare
 convolo:rubare in ogni senso
@@ -2316,6 +2305,7 @@ coram:davanti a, pubblicamente
 corbis:il cesto
 corcodillus:coccodrillo
 corcodilus:coccodrillo
+cor:cuore
 cordatus:saggio, prudente, avveduto, sagace,
 cordolium:il dispiacere
 Corduba:Cordova
@@ -2333,12 +2323,12 @@ cornicen:il campanaro di corno
 Corniculanus:di Curniculum (città del Latium)
 corniger:cornuto
 cornix:cornacchia
-cornum:il cornouille (frutto del cornouiller)
 cornu:corno, ala di una linea di battaglia.
-corollarium:la gratifica
+cornum:il cornouille (frutto del cornouiller)
 corolla:la corona
-coronarius:chi riguarda le corone
+corollarium:la gratifica
 corona:la corona, i curiosi,
+coronarius:chi riguarda le corone
 corono:incoronare
 corporalis:relativo al corpo, del corpo, corporale,
 corpus:corpo
@@ -2357,16 +2347,15 @@ cortex:la conchiglia, il sughero, la scorza,
 corusco:agitarsi, scuotere,; agitare, brandire,
 coruscus:brillando, scintillante,
 corvus:corvo
-cor:cuore
 Cosa:Cosa (città di Etrurie)
+cos:pietra a lucidare, ad affilare,
+coss:abbreviazione di consules, o consulibus,
 Cossunatius:Cossunatius
 Cossus:Facoltosi
-coss:abbreviazione di consules, o consulibus,
 costa:il fianco, la costa, il lato,
-cos:pietra a lucidare, ad affilare,
 cotidie:(e quo -) ogni giorno
-cottana:fico nano
 Cotta:Cotta
+cottana:fico nano
 cottidiano:quotidianamente
 cottidianus:quotidiano
 cottidie:ogni giorno, tutti i giorni
@@ -2376,17 +2365,17 @@ coxendix:anca
 crabro:calabrone
 Crantor:Crantor
 crapula:bocca impastata, risveglio dopo l'ebbrezza
+cras:domani
 crasse:grossolanamente, confusamente
 crassitudo:spessore, grossezza,
 crassus:spessi, grossolano (Crassus, i, m. : Crassus,
 crastinus:di domani (crastinum, i, n. : l'indomani,
-cras:domani
 Cratippus:Cratippe (filosofo greco)
 cratis:setaccio, traliccio,
 creator:il creatore
 creber:frequente. plurale: numerosi
-crebresco:propagarsi, spargersi sempre più, intensificarsi,
 crebre:frequentemente
+crebresco:propagarsi, spargersi sempre più, intensificarsi,
 crebro:spesso, frequentemente
 credibilis:credibile
 creditast:= accredita è
@@ -2395,8 +2384,8 @@ credo:I.1. confidare in prestito2. tenere per vero3. credere II. avere fiducia, 
 credulitas:la credulità
 credulus:credulo, fiducioso
 cremo:bruciare, un morto su un rogo,
-Creon:Créon
 creo:1. creare, generare, produrre,2. chiamare un magistrato
+Creon:Créon
 Crepereius:Crepereius
 crepida:sandalo
 crepido:zoccolo, piedistallo, sporgenza di una roccia, bordo della riva, lungofiume, molo, bordatura,
@@ -2432,11 +2421,11 @@ cruento:mettere in sangue, insanguinare, ferire, lacerare,
 cruentus:stringendo, sanguinaire,
 crumina:la borsa
 cruor:sangue
+crus:gamba
 crustallum:il ghiaccio, il cristallo,; il taglio
 crustularius:il commerciante di pasticcerie
 crustulum:dolce, caramella,
 crustum:il dolce
-crus:gamba
 crux:la croce
 crystallinum:il vaso di cristallo
 cubicularis:relativo alla camera a coricare
@@ -2451,7 +2440,6 @@ cucullus:cappa, cappuccio, cornetto,
 cuculus:cucù, un spasimante, un imbecille, un fannullone,
 cucurbita:zucca, borraccia,
 cudo:picchiare, colpire,; forgiare
-!cuilibet:non importa quale
 cujas:del quale paese
 culcita:materasso
 culex:zanzara
@@ -2463,8 +2451,9 @@ culpo:biasimare
 cultellus:il piccolo coltello
 culter:coltello
 cultor:quello che coltiva, onora, l'agricoltore
-cultus2:curato, ornato, ornato
 cultus:- 1 - cultura del suolo, aratura,; la cura materiale. - 2 - la cultura, l'educazione. - 3 - il culto (rispetto reso ai dei o agli uomini), rispetto 4 - il genere di vita, il genere di civiltà; i costumi; la vita di piacere, il lusso. - 5 - l'apparecchio, la parure, il bagno, l'abito, l'abito; l'ornamento, dello stile.
+cultus2:curato, ornato, ornato
+cum:1. Preposizione + abl. = con2. congiunzione + ind. = quando, quando, come, così come3. congiunzione + subj. : mentre
 Cumae:Cumes
 Cumanus:di Cumes
 cumba:barca
@@ -2472,7 +2461,6 @@ cuminum:cumino
 cumulate:con larghezza
 cumulo:ammucchiare, accumulare, ingrossare, incoronare,
 cumulus:ammasso, surplus, colmo, incoronazione,
-cum:1. Preposizione + abl. = con2. congiunzione + ind. = quando, quando, come, così come3. congiunzione + subj. : mentre
 cunabula:culla; luogo di nascita
 cunae:culla, piccola infanzia,
 cunctabundus:chi esita
@@ -2489,31 +2477,31 @@ cupido:1 - il desiderio, l'invidia, la passione, la brama. - 2 - la passione del
 cupidus:1 - che desidero che amo, appassionato, desiderosi di. - 2 - avido di denaro, cupido. - 3 - innamorati di amore, innamorati. - 4 - parziale.
 cupio:desiderare
 cupressus:il cipresso
+cura:cura, preoccupazione,
 curatio:1 - l'azione di curare, la cura. - 2 - il carico, l'ufficio, l'amministrazione, l'impiego. - 3 - la curatela. - 4 - la cura, il trattamento, per curarsi.
 curator:quello che al carico di, il curatore
-cura:cura, preoccupazione,
 Cures:Cure (città dei Sabins)
+curia:curia
 Curiatius:Curiace, al plurale,: i 3 fratelli Curiaces,
 curiatus:curiate
-curia:curia
 curiose:con cura, con interesse, con curiosità,
 curiositas:la cura a ricercare; la curiosità, l'indiscrezione, il desiderio di sapere.
 curiosus:accurati, scrupolosi, curiosi, avidi di sapere, indiscreto, vétilleux
 Curius:M' Curius Dentatus, vincitore dei Samnites e di Pirro
 curo:incaricarsi di, prendere cura di (curatus, ha, um: molto curato,
+cur:perché?
 curriculum:il carro di corsa
 curro:correre
 currus:il carro
 cursim:velocemente, correndo
-cursor:corridore, messaggero,
 curso:accorrere
+cursor:corridore, messaggero,
 cursura:la corsa
 cursus:la corsa, il percorso, il tragitto,
 curulis:curule: curule (curulis, is,: il sedia curule,
 curvamen:curvatura
 curvo:curvare, piegare, piegare,
 curvus:incurvato, sinuosi
-cur:perché?
 cuspis:la punta, l'arma, l'oggetto appuntito,
 Cuspius:Cuspius
 custodela:la guardia, la sorveglianza,
@@ -2536,18 +2524,17 @@ Cyrus:Cyrus
 Cythera:Cythère (isola del mare Egeo)
 Cythereus:di Cythère
 Cyzicus:Cyzique, in Turchia attuale,
-C:abbreviazione di Caius
+d:abbreviazione di diem
 Daedalus:Dedalo
 Dahae:i Dahes, popolo scythe,
 Dalmatia:la Dalmazia
 Damascus:di Damasco
 Damasippus:Damasippe
 damnatio:la condanna
-damnosus:chi causa del torto, dannoso, nocivo, funesto,
 damno:condannare (damnatus, ha, um: 1 - condannato, giudizialmente, tenuto di, obbligato di. - 2 - condannato, rigettato.)
+damnosus:chi causa del torto, dannoso, nocivo, funesto,
 damnum:lo scapito, il danno,; la perdita di truppe alla guerra
 Danai:i Danaens, i greci,
-Danuvius:il Danubio
 daps:soprattutto al plurale, dapes, dapum,: il sacrificio offerto ai dei, il pasto, il banchetto,
 Dardania:il Dardanie, troie,
 Dardanides:il discendente di Dardanus, il troiano,
@@ -2557,9 +2544,10 @@ Darius:Darius
 datast:= data è
 datio:l'azione di dare; il diritto di fare abbandono dei suoi beni
 Daunus:Daunus
-deambulo:passeggiare
-dearmo:disarmare, rubare, sottrarre,
 dea:dea
+deambulo:passeggiare
+de:a proposito di, dell'altezza di, di
+dearmo:disarmare, rubare, sottrarre,
 debello:finire la guerra per un combattimento, sottomettere per le armi,
 debeo:dovere
 debilis:1 - invalido, debole, debole; invalido. - 2 - al fig. debole, incompleto, difettosi.
@@ -2568,9 +2556,9 @@ debilito:indebolire, provare,
 debitor:debitore
 decanto:cantare senza interrompere; esaltare, vantare,
 decedo:partire, ritirarsi, morire,
+decem:dieci
 decemviralis:décemvirat, di decemvir,
 decemvir:décemvir (prete carico di interrogare i libri sybillins)
-decem:dieci
 decennium:lo spazio di dieci anni.
 decens:affascinando
 decerno:decretare, decidere,
@@ -2594,10 +2582,10 @@ declino:1. deviare, inclinare,2. fare deviare, piegare,3.. schivare
 declivis:chi è in pendenza
 decollo:decapitare
 decoquo:ridurre per la cottura, fare cuocere interamente,
+decor:fascino, eleganza, bellezza,
 decoriter:correttamente, dignitosamente
 decoro:decorare, onorare,
 decorus:chi invita chi si addice, ornato, ornato
-decor:fascino, eleganza, bellezza,
 decretum:decisione, decreto,
 decumanus:argomento alla decima; appartenendo alla decima legione, portò decumana: il porta décumane,
 decumbo:cadere
@@ -2618,8 +2606,8 @@ dedisco:disimparare, dimenticare ciò che si è insegnato
 dediticius:quello che si sottoporsi
 deditio:resa, sottomissione,
 deditus:consegnato a, dedito ad una passione
-dedolo:piallare; ricevere una batosta
 dedo:consegnare, rimettere,
+dedolo:piallare; ricevere una batosta
 deduco:1. fare scendere2. condurre3. fondare4. deviare di5. ritirare
 deductio:condotta, deduzione
 deductor:1 - quello che accompagna, un candidato o un magistrato di recente eletto, quello che fa corteo. - 2 - che porto che porto, l'autore di.
@@ -2629,8 +2617,8 @@ defectio:la defezione, lo sfinimento, il mancamento, il tradimento,
 defector:il traditore, il disertore,
 defendo:difendere, sostenere,
 defensio:la difesa, la protezione,
-defensor:il difensore
 defenso:respingere; difendere vigorosamente
+defensor:il difensore
 defero:1. portare di un luogo alzato in un luogo più basso, portare,2. presentare, accordare,3. rivelare4. denunciare
 defervesco:smettere di gorgogliare, di fermentare,
 defessus:stancato, stancato
@@ -2651,8 +2639,8 @@ deformo:imbruttire, sfigurare,
 defringo:rompere
 defritum:vino cuoce
 defungor:sdebitarsi di, morire (defunctus,a, um,: rilasciato di, morte)
-degenero:degenerare; alterare, rovinare,
 degener:degenerato che degenero, avvilito
+degenero:degenerare; alterare, rovinare,
 dego:passare il tempo
 degravo:sovraccaricare
 degredior:scendere di, allontanarsi di
@@ -2663,7 +2651,6 @@ dehonesto:disonorare, degradare, fare appassire,
 deicio:gettare giù, gettare,; abbattere, abbassare, cacciare,
 deinceps:uno dopo l'altro, successivamente
 deinde:poi
-dein:poi
 dejero:giurare, fare giuramento,
 delabor:cadere di; scendere verso
 delasso:esaurire
@@ -2692,9 +2679,9 @@ delirus:pazzo
 delitesco:tenersi nascosto, nascondersi,
 Delius:di Délos
 Delphicus:delphique
-delphinus:delfino
-delphin:il delfino
 Delphi:Delphes
+delphin:il delfino
+delphinus:delfino
 delta:delta
 delubrum:tempio, santuario,
 demano:colare, spargersi,
@@ -2720,20 +2707,20 @@ demonstro:mostrare
 demoror:fermare, fermarsi,
 demorsico:mordicchiare, rodere,
 Demosthenes:Demostene
-demoveo:spostare, scostare di
 demo:togliere, togliere,
+demoveo:spostare, scostare di
 demulceo:accarezzare
 demum:finalmente
 denarius:il denaro, dieci assi,
 denarro:raccontare nel dettaglio
 denego:1. negare molto, dire che no2. negare, rifiutare,
-denique:infine
 deni:dieci
+denique:infine
 denomino:chiamare, dare un nome,
 denoto:designare
+dens:dente
 denseo:rendere denso, ispessire, stringere,
 densus:spessi, denso
-dens:dente
 dentatus:dotato di denti; lucidato con un dente
 dentio:spingere, parlando dei denti,
 denubo:sposarsi, per una donna,
@@ -2858,18 +2845,16 @@ devolvo:circolare di basso in altezza
 devoro:divorare
 devotio:il voto; la devozione; la devozione
 devoveo:1. votare, dedicare, dedicare,2. maledire3. sottomettere ai sortilegi
-dextera:la mano diritta
 dexter:diritto; dextra: la mano diritta
 dextra:la mano diritta
-de:a proposito di, dell'altezza di, di
 diadema:il diadema, la benda reale,
+Dia:Dia (isola del mare del Creta), Naxos
 diaeta:camera, appartamento,
 dialecticus:logico, dialettico,
 dialis:di un giorno, dell'aria, aereo - Dialis, e,: di Giove
 Diana:Diana
 diarium:sing. giornale; plurale stipendio della giornata
 diatriba:discussione, colloquio,
-Dia:Dia (isola del mare del Creta), Naxos
 dicax:beffardo, mordendo
 dicio:dominio, potere,
 dico2:1 - dire, affermare, pronunciare, esprimere,; produrre, recitare. - 2 - dire il nome, chiamare, chiamare. - 3 - arringare, difendere. - 4 - celebrare, cantare, raccontare, descrivere, comporre, predire,. - 5 - fissare, assegnare, stabilire, regolare. - 6 - avvertire, fare sapere, notificare. - 7 - significare, volere dire. - 8 - chiamare, eleggere, proclamare, alzare alla riga di.
@@ -2879,14 +2864,14 @@ dictatura:la dittatura
 dictio:1. l'azione di dire, di esprimere, di pronunciare,2. l'impiego della parola, il discorso, la conversazione, il proposito,
 dictito:ripetere
 dicto:dire spesso, dettare,
-dictum:la parola
 dictu:dire
+dictum:la parola
 Dido2:Didone
 dido:distribuire
 diduco:dividere, dividere, scostare, distanziare,
 diecula:la piccola giornata, la tregua,
-Diespiter:Giove
 dies:giorno
+Diespiter:Giove
 diffamo:dire del male, divulgare, screditare, diffamare,
 differentia:la differenza
 differo:1. disperdere, disseminare, spargere dei rumori,2. differire, rimettere,3. essere differente (differi): essere tormentato,
@@ -2904,8 +2889,8 @@ digero:dividere, dividere,
 digitus:il dito, di piede, l'alluce, ad digitum,: fino in abbandono,
 dignatio:l'azione di giudicare degno, la stima, la considerazione,
 dignitas:dignità, considerazione, stima, prestigio, onorabilità,
-dignor:trovare degno, degnare,
 digno:giudicare degno di
+dignor:trovare degno, degnare,
 dignus:degno; + abl. : di qqch; dignus che + subj. : degno di...
 digredior:andare ne si
 dijudico:1 - giudicare tra parecchie cose, giudicare, decidere, troncare, decidere,. - 2 - discernere, distinguere.
@@ -2935,8 +2920,8 @@ dinosco:distinguere
 Diogenes:Diogene
 Diomedes:Diomède
 Dionysius:Denys (tiranno di Siracusa)
-diota:l'anfora, a due manici,
 dio:sub dio: arcaismo: all'aperto
+diota:l'anfora, a due manici,
 dipundius:la somma di due assi
 Dirce:Dircé (fontana di Tebe)
 diremptio:separazione, rottura,
@@ -2977,6 +2962,7 @@ discurso:andare e venire a, percorrere,
 discursus:l'andirivieni
 discus:disco, rondella,
 discutio:1. spaccare, fracassare,2. dissipare, scostare,
+Dis:Di', o Plutone (dio degli inferni)
 diserte:avec éloquence
 disertus:eloquente, espressivo
 disicio:disperdere, dividere,
@@ -3029,12 +3015,11 @@ distributio:la categoria
 distringo:mantenere aperto, lontano (districtus, ha, um: anchaîné, impossibilitato,; esitando,
 disturbatio:rovina, distruzione,
 disturbo:1 - disperdere, violentemente, sconvolgere. - 2 - demolire, distruggere. - 3 - al fig. demolire, distruggere, annientare, impedire.
-Dis:Di', o Plutone (dio degli inferni)
+diu:molto tempo
 diurnus:giornaliero
 diutinus:chi dura molto tempo, di lunga durata
 diuturnitas:la lunghezza del tempo, la lunga durata,
 diuturnus:duraturo, lungo, nel tempo,
-diu:molto tempo
 diva:la dea
 divello:mettere in locali, strappare,
 divendo:vendere in premi separati
@@ -3062,6 +3047,7 @@ doctor:il padrone
 doctrina:l'insegnamento, l'educazione,
 doctus:scienziato
 documentum:l'esempio, il modello, l'insegnamento, la dimostrazione,
+do:dare
 dodrans:i 9/12, i 3/4,
 dolens:chi causa del dolore
 doleo:1. soffrire2. essere afflitto
@@ -3071,19 +3057,19 @@ dolor:il dolore
 dolose:con astuzia
 dolus:l'indirizzo, l'astuzia,
 domesticus:priva, domestico
+domi:alla casa
 domicenium:cenare prese da si
 domicilium:il domicilio, l'abitazione, la casa,
+domina:la padrona
 dominatio:il dominio, la sovranità, il potere assoluto,
 dominator:il dominatore, il padrone,
 dominatus:il dominio, la sovranità, il potere,
-domina:la padrona
 dominium:1. la proprietà2. il festino
 dominor:1 - essere maestro, dominare, comandare, regnare. - 2 - senso passivo: essere governato, essere governato.
 dominus:padrone
 Domitianus:Domitien (imperatore)
 Domitius:Domitius
 domitor:il domatore
-domi:alla casa
 domo:domare
 domuitio:il ritorno alla casa
 domus:la casa
@@ -3096,9 +3082,8 @@ dormio:dormire, niente non fare
 dorsum:schiena
 dos:dote
 dotata:dotata, provvista di una dote
-do:dare
-draconteus:di drago
 draco:drago
+draconteus:di drago
 Drappes:Drappes
 Druentia:il Durance
 druida:il druide
@@ -3115,25 +3100,25 @@ dubius:dubbi
 duceni:due centesimi ciascuno
 ducentesima:un mezzo per cento, la duecentesima brilla,
 ducentesimus:duecentesimo
-ducenties:due volte cento; due centesimi
 ducenti:due centesimi
+ducenties:due volte cento; due centesimi
 duco:I. tirare1. tirare fuori da2. attirare3. fare ritornare4. contare, stimare II. condurre, portare, sposare,
-ductor:il capo
 ducto:portare a spasso
+ductor:il capo
 ductus:la condotta, il tracciato, il tratto,
 dudum:qualche tempo fa che
 Duilius:Duilius
+dulce:di un modo dolce, senza tregua, continuamente
 dulcedo:la dolcezza, il sapore dolce, il fascino, l'attrattiva,
 dulcesco:addolcirsi, diventare dolci,
-dulce:di un modo dolce, senza tregua, continuamente
 dulcis:dolci
 dulciter:dolcemente, piacevolmente
+dum:1. + ind. = mentre, finché2. + subj. : purché, il tempo sufficiente affinché
 dumetum:luogo coperto di spine, roncier,
 dummodo:purché (+ subj,
 Dumnorix:Dumnorix
 dumtaxat:di di meno
 dumus:cespuglio
-dum:1. + ind. = mentre, finché2. + subj. : purché, il tempo sufficiente affinché
 duodecim:dodici
 duodequadraginta:38
 duodesexagesimus:58
@@ -3141,28 +3126,26 @@ duodevicensimus:diciottesimo
 duodevicenus:ciascuno diciotto
 duodevicesimus:diciottesimo
 duodeviginti:diciotto
-duovicenus:ciascuno diciotto
 duo:due
+duovicenus:ciascuno diciotto
 duplex:doppio
 duplico:raddoppiare
 duritia:la durezza, l'ostruzione; la vita dura, la severità,
 Durocortorum:piazzaforte dei Rèmes (Reims)
+duro:indurire, indurire, rendere forte,
 Duronia:Duronia (città dei Samnites)
 Duronius:Duronius (tribuno della plebe)
-duro:indurire, indurire, rendere forte,
 durus:duro
 dux:il capo, la guida,
-dynasta:il principe, il signore, il piccolo sovrano
 Dyrrachium:Dyrrachium (città di Epire)
-d:abbreviazione di diem
 ea:per questo luogo
 ebibo:bere fino alla fine
 ebrius:ubriaco
 ebullio:gorgogliare, sgorgare,
+ebur:l'avorio
 eburneus:di avorio
 eburnus:in avorio, di avorio,
 Eburones:gli Eburons
-ebur:l'avorio
 ecastor:per Castoro
 ecbibo:bere
 ecce:ha, ha che
@@ -3218,6 +3201,7 @@ effulgeo:brillare, esplodere, luccicare,
 effundo:spargere, disperdere,
 effuse:precipitosamente
 effutio:spargere
+e:fuori da, di
 egens:1 - che è privato di che manco di, privo di, priva di. - 2 - bisognoso, povero, bisognosi. - 3 - che sente il bisogno, desiderosi.
 egenus:chi manca di
 egeo:mancare di
@@ -3226,8 +3210,6 @@ egero:- tr. - portare fuori, ritirare, togliere,
 egestas:1 - la mancanza, il difetto, la privazione, la scarsità, la penuria,. - 2 - l'indigenza, la miseria, il bisogno, lo sconforto, l'indigenza,.
 egestio:l'azione di rendere
 Egnatius:Egnatius
-egomet:io, io stesso,
-ego:io
 egredior:uscire
 egregius:1 - scelto, di scelta, di élite. - 2 - distinto, notevole, eminente, superiore, illustra, eminente. - 3 - favorevole, propizio. - 4 - gloriosi, onorabile.
 Egus:Egus (nome di uomo)
@@ -3281,6 +3263,7 @@ emancipo:liberare, si - alicui: abbandonarsi a qqn.)
 emano:colare di, conseguire di, spargersi, diventare pubblico,
 Emathia:l'Emathie (provincia del Macedonia), il Macedonia
 emax:chi ha la mania di acquistare, grande acquirente,
+em:ecco!
 emeditatus:finto
 emendico:mendicare
 emendo:correggere
@@ -3296,14 +3279,13 @@ eminus:da lontano
 emiror:essere stupito, stupefatto,
 emissio:l'emissione
 emitto:mandare, lasciare scappare, prosciugare, pubblicare,
+emo:acquistare
 emolumentum:il vantaggio, il profitto, il guadagno, l'emolumento,
 emorior:sparire, morire,
 emoveo:spostare, muovere, scuotere,
-emo:acquistare
 emptio:l'acquisto, il mercato, l'oggetto acquistato,
 emptor:l'acquirente
 emungo:soffiare il naso a, travasare,
-em:ecco!
 enarro:raccontare nei dettagli
 enascor:nascere, spingere,
 enato:scappare nuotando, sfuggire al naufragio,
@@ -3311,22 +3293,22 @@ Enceladus:Ancélade, un Titano fulminato da Zeus che l'incarcerò sotto l'Etna,
 Endymion:Endymion
 eneco:uccidere
 enervo:ritirare i nervi, indebolire,
+en:ha
 enico:fare morire
-enimvero:è un fatto, certamente
 enim:perché, difatti
+enimvero:è un fatto, certamente
 eniteo:essere brillante
 enitesco:cominciare a brillare
 Ennius:Ennius
 enodo:togliere i nodi, snodare, delucidare,
 enormis:molto grossi, molto grande
-enoto:prendere delle note
 eno:scappare (a nuoto, rubando,
+enoto:prendere delle note
 ensis:la spada, la spada,
 entheus:si ispirato ad una divinità, pieno di entusiasmo,
 enumero:contare, enumerare, raccontare in dettaglio,
 enuntio:dire alto e chiaro, annunciare, rivelare,
 enuptio:il matrimonio di una donna fuori dalla sua classe, il matrimonio con persona socialmente inferiore,
-en:ha
 eo2:a questo punto, seguito spesso di ut = che,
 eo:andare
 epaphaeresis:azione di tosare
@@ -3348,12 +3330,12 @@ Eporedorix:Eporedorix
 epoto:bere completamente
 Eppia:Eppia (personaggio fittizio in Juvénal)
 epulae:gli alimenti, il cibo, il pasto, il festino, il banchetto,
-epulor:mangiare, fare un pasto,
 epulo:l'épulon, prete che, all'epoca dei ludi publici presiedeva al pasto consacrato di Giove
+epulor:mangiare, fare un pasto,
 epulum:pasto pubblico, o sacro
 equa:la giumenta
-equester:equestre
 eques:cavaliere, cavallerizzo,
+equester:equestre
 equidem:certamente, evidentemente
 equile:scuderia
 equitatus:cavalleria
@@ -3361,12 +3343,12 @@ Equitius:Equitius
 equito:cavalcare, fare a cavallo delle corse,
 equuleus:il giovane cavallo, il puledro,; il cavalletto di tortura
 equus:cavallo
-Erato:Erato (regina dell'Armenia)
 era:la padrona
+Erato:Erato (regina dell'Armenia)
 Erebus:l'Erèbe, gli inferni,
+erga:davanti a, di fronte a
 Ergasilus:Ergasile
 ergastulum:l'ergastule, laboratorio di schiavi o edificio dove li si chiudeva; si chiudeva tanto certi condannati, (plurale = gli schiavi, i detenuti,
-erga:davanti a, di fronte a
 ergo:dunque
 erigo:innalzare, alzare (erectus, ha, um: alzato, addestrato, diritto, fidarsi, attento)
 Erinys:Erinys (una delle Furie)
@@ -3374,8 +3356,8 @@ eripio:1 - tirare bruscamente fuori da, mettere fuori, fare estrarre, strappare,
 erogo:1. pagare, prelevare del denaro,2. piegare
 errabundus:errando
 erratum:l'errore
-error:1 - azione di smarrirsi, scarto, svolta, circuito. - 2 - disprezzo, errore, illusione, accecamento, pregiudizio. - 3 - false credenze, idolatria. - 4 - errore, errore,; errore di grammatica. - 5 - furore, delirio, smarrimento. - 6 - astuzia, trappola. - 7 - incertezza.
 erro:errare, sbagliarsi,
+error:1 - azione di smarrirsi, scarto, svolta, circuito. - 2 - disprezzo, errore, illusione, accecamento, pregiudizio. - 3 - false credenze, idolatria. - 4 - errore, errore,; errore di grammatica. - 5 - furore, delirio, smarrimento. - 6 - astuzia, trappola. - 7 - incertezza.
 erubesco:arrossire
 eructo:rigettare, vomitare, rendere per la bocca,
 erudio:sgrossare, lavorare, insegnare, istruire, formare,
@@ -3386,8 +3368,8 @@ eruo:tirare, strappare,
 eruptio:l'uscita brusca
 erus:, o herus, padrone, di un schiavo,
 Eryx:il monte Eryx
-escarius:chi serve ai pasti (escaria, orum, n. : ciò che è buono a mangiare,
 esca:cibo
+escarius:chi serve ai pasti (escaria, orum, n. : ciò che è buono a mangiare,
 escendo:salire
 Esquiliae:gli Esquilies (quartiere di Roma)
 Esquilina:il porta Esquiline
@@ -3396,14 +3378,14 @@ essito:mangiare
 Essuvii:gli Essuviens
 esurio:avere fame
 esus:il cibo
+et:e. adv. perciò
 etenim:e difatti
+etiam:ancora, ne più, anche, stesso, bene più
 etiamnunc:ancora adesso
 etiamsi:anche se
-etiam:ancora, ne più, anche, stesso, bene più
 Etruria:Etrurie
 Etruscus:etrusco
 etsi:anche se
-et:e. adv. perciò
 Euboea:l'Eubée (isola del mare Egeo)
 Euboicus:dell'Eubée
 Euclio:Euclion (nome proprio)
@@ -3502,6 +3484,7 @@ exercitus:l'esercito
 exero:tirare fuori, estrarre, mostrare, produrre,
 exertus:attento
 exesus:roso
+ex:fuori da, di
 exhalo:esalare, liberare,
 exhaurio:svuotare attingendo, esaurire,
 exhibeo:produrre al giorno, presentare, fare sembrare - mostrare, fare prova di
@@ -3513,10 +3496,10 @@ exiguus:esiguo, piccolo
 exilio:saltare fuori, lanciarsi, alzarsi,
 exilis:in piccolo, magro
 exilium:esilio
+exim:di là, di questo luogo, in seguito, poi
 eximie:excellement, eminentemente, di un modo che esce dell'ordinario
 eximius:uscendo dell'ordinario, notevole, raro
 eximo:togliere, ritirare di, consumare fino alla fine
-exim:di là, di questo luogo, in seguito, poi
 exinanio:svuotare
 exintero:togliere gli intestini, svuotare,
 existimatio:l'opinione, il giudizio, la reputazione,
@@ -3583,7 +3566,6 @@ expromo:1 - tirare, una cosa di un luogo dove è stretta, tirare fuori, fare est
 expugnatio:l'azione di prendere di assalto, la presa,
 expugno:prendere per la forza, vincere,
 expungo:cancellare, verificare, finire,
-expuo:sputare
 exquiro:cercare di scoprire, ricercare, chiedere, informarsi,
 exquisite:con precisione
 exquisitus:scelto, distinto, raffinato, squisiti
@@ -3608,9 +3590,9 @@ exspuo:sputare
 exstinguo:spegnere, fare sparire, fare morire,
 exsto:superare, esistere, essere visibile, restare,; exstat: è sicuro che
 exstruo:accumulare, costruire, alzare,
+exsul:esiliato
 exsulo:essere esiliato
 exsulto:saltare, balzare, essere trasportato, di una violenta passione,
-exsul:esiliato
 exsuperantia:la superiorità
 exsurgo:alzarsi, quando si si è seduto,
 extabesco:asciugarsi, sparire, svenire,
@@ -3633,9 +3615,9 @@ extollo:sollevare fuori da, alzare, esaltare,
 extorqueo:- tr. - slogare, slogare,; dimettere, lussare (membro); strappare
 extorris:rigettato fuori da un paese, esule,
 exto:tenersi al di sotto, essere alzato,; essere visibile, mostrarsi,
+extra:all'infuori di, eccetto adv. : all'esterno, all'esterno, extra quam,: salvo, a meno che)
 extraho:estrarre, ritirare, togliere,
 extraneus:esterno, dell'esterno,
-extra:all'infuori di, eccetto adv. : all'esterno, all'esterno, extra quam,: salvo, a meno che)
 extremus:ultimo
 extrilidus:molto pallido
 extrinsecus:dell'esterno, dell'esterno,
@@ -3648,8 +3630,6 @@ exundo:colare abbondantemente fuori, oltrepassare
 exuo:liberare, liberarsi di, sbarazzarsi di, svestirsi
 exuro:bruciare interamente
 exuviae:le spoglie, tolte al nemico,
-ex:fuori da, di
-e:fuori da, di
 faba:fava
 fabella:racconto, racconto, aneddoto,
 faber:artigiano, operaio,
@@ -3672,11 +3652,11 @@ facilitas:la facilità, la facoltà,
 facinerosus:criminale
 facinus:1. l'azione, l'atto,2. il misfatto, il crimine,
 facio:fare
-factiosus:intigant, faziosi,
 factio:1. il potere di fare, la condotta,2. la truppa, l'associazione, il partito, la fazione,
+factiosus:intigant, faziosi,
 factito:fare spesso, abitualmente
-factum:il fatto, l'azione, il lavoro, il lavoro,
 factu:a fare, facile factu,
+factum:il fatto, l'azione, il lavoro, il lavoro,
 facultas:facoltà, facilità,
 facundus:eloquente, disert
 faetidus:chi sente cattivo, fetido, disgustando, sala
@@ -3692,9 +3672,9 @@ falsus:falso
 falx:falso, roncola,
 fama:la notizia, la voce, la reputazione,
 fames:fame
+familia:famiglia, famiglia,
 familiaris:familiare, amico della famiglia, intimo (familiaris, is, m. : il domestico,
 familiaritas:l'amicizia, il collegamento, la familiarità, l'intimità,
-familia:famiglia, famiglia,
 famosus:di cattiva reputazione
 famula:la domestica, lo schiavo,
 famulus:servitore
@@ -3703,20 +3683,20 @@ Fannius:Fannius
 fanum:tempio, santuario,
 farcimen:salsiccia
 farcio:foderare, guarnire, riempire, riempire,
+far:grano, dolce sacro,
 farreum:dolce di frumento
 farreus:di grano, di frumento,
-far:grano, dolce sacro,
 fasciculus:piccolo pacco
 fascino:fire dei fascini, incantare, gettare una sorte,
 fascis:pacco; plurale: fasci
+fas:diritto divino; fas è: è permesso dai dei di...
 fastidienter:con disprezzo
-fastidiosus:disgustato, sdegnosi, delicato
 fastidio:avere del disgusto, della ripugnanza, respingere con disdegno,
+fastidiosus:disgustato, sdegnosi, delicato
 fastidium:disgusto, disprezzo,
 fastigatus:alzato in punta
 fastigium:pendenza, inclinazione, cima, vetta,
 fastus:fasto. - (dies, fasti,: giorni fausti; fasti, orum, m. pl.): elenco dei giorni fausti, calendario, annali,
-fas:diritto divino; fas è: è permesso dai dei di...
 fatalis:fatale, funesto
 fataliter:seguendo l'ordine del destino
 fateor:riconoscere, confessare,
@@ -3745,34 +3725,34 @@ febris:febbre
 Februarius:di febbraio
 fecunditas:la fecondità
 fecundus:fecondo
+fel:fiele
 felicitas:felicità
 feliciter:fortunatamente, con felicità
 felix:felici
-fel:fiele
 femina:donna
 femineus:femminile
 femininus:femminile
 femur:la coscia, il femore, la gamba,
-fenerator:creditore, usuraio,
 fenerato:con interesse, con consumo,
+fenerator:creditore, usuraio,
 fenestra:finestra
 fenum:fieno
 fenus:il rapporto, il prodotto, l'interesse, del denaro, il guadagno,
+fera:la bestia selvaggia
 feralis:relativo ai dei mânes, funebre, funesto,
 ferax:fertile, fecondo
-fera:la bestia selvaggia
 ferbeo:fare bollire
 ferculum:il vassoio, per portare un servizio di tavolo, la barella, per portare le spoglie,
-feretrum:barella, funebre,
 fere:quasi
+feretrum:barella, funebre,
 feriae:feste, festivi,
 ferinus:di stupido selvaggio
 ferio:colpire; - foedus: concludere un trattato
 feritas:la barbarie, la crudeltà,
 ferme:pressappoco, circa, generalmente
 ferocia:la naturalezza focosa, violenta, irascibile, la fierezza,
-ferox:selvaggio, feroce
 fero:portare, sopportare, riportare,
+ferox:selvaggio, feroce
 ferratilis:incaricato di ferri
 ferreus:di ferro
 ferrugineus:colore di ferro
@@ -3807,8 +3787,8 @@ fidelis:ne che si può avere fiducia, sicuro, fedele,
 fideliter:fedelmente, amichevolmente
 Fidena:Fidène (città)
 fidens:+ Gén. = fiducioso
-fides2:lira
 fides:1. fede, fiducia,2. credito3. lealtà4. promessa, parola dato,5. protezione
+fides2:lira
 fidicen:il giocatore di lira
 fido:fidarsi, affidarsi, avere fiducia,
 fiducia:la fiducia
@@ -3893,22 +3873,22 @@ foraminatus:bucato
 foras:fuori, alla porta. - trivella + gén: fuori da
 forensis:del foro, pubblico, giudiziale,
 forent:forent = essent
-fore:infinitif futur de esse
 forinsecus:verso l'esterno, esternamente, pubblicamente
 foris2:fuori dalla casa, fuori
 foris:porta, raro al sing.)
 forma:forma, bellezza,
 Formianus:di Formies
 formica:formica
-formidolosus:paurosi, timoroso
 formido:il timore, la paura, lo spavento, il terrore,
+formidolosus:paurosi, timoroso
 formidulosus:terrificando
+formo:formare, lavorare,
 formonsitas:(o formositas, bellezza,
 formositas:(o formonsitas, bellezza,
 formosus:bello
-formo:formare, lavorare,
 formula:la cornice, la regola,
 fornix:la volta
+for:parlare, dire,
 forsan:forse
 fortasse:forse, probabilmente
 fortassis:forse
@@ -3916,27 +3896,26 @@ forte:per caso
 fortis:forte, vigorosi, coraggiosi,
 fortiter:coraggiosamente
 fortitudo:il coraggio
+fortuna:fortuna, fortuna,
 fortunate:di un modo felice
 fortunatus:felici, avvantaggiato per la fortuna
-fortuna:fortuna, fortuna,
 forum:camminato, foro
 forus:ponte, di una barca,
-for:parlare, dire,
 fossa:il fossato
 fovea:fossa, trappola,
 foveo:riscaldare, coccolare, sostenere,
 fractura:frattura
 fragilis:fragile
-fragmentum:frammento
 fragmen:il pezzo, il frammento,
+fragmentum:frammento
 fragor:lo scricchiolio, il fragore,
 fragosus:sonoro, rumoroso
 fragrantia:l'odore soave
 fragro:bruciare
 fragum:la fragola, soprattutto al plurale,
 frango:1. rompere, rompere, fracassare,2. mettere in locali3. annientare
-fraternus:di fratello, fraterno,
 frater:fratello
+fraternus:di fratello, fraterno,
 fraudo:fare del torto per frode a qqn (acc)
 fraus:malafede, inganno,
 Fregellae:Frégelles (città dei Volsques)
@@ -3977,8 +3956,8 @@ fucatus:colorito; falso, simulato,
 Fucinus:Fucinus lacus, il lago Fucin,
 fucus:il trucco
 fufae:puah!
-fugax:fugace, fuggitivo
 fuga:la fuga
+fugax:fugace, fuggitivo
 fugio:fuggire, fuggire,
 fugitivus:schiavo fuggitivo
 fugo:mettere in fuga
@@ -3986,8 +3965,8 @@ Fulcinius:Fulcinius
 fulcio:sostenere
 fulgeo:brillare, risplendere,
 fulgor:il chiarore, lo scoppio,
-fulguro:illuminare, fare dei lampi, brillare,
 fulgur:il lampo
+fulguro:illuminare, fare dei lampi, brillare,
 fuligo:la fuliggine, il fumo spesso, il nero, per sopracciglia,
 fullo:foulon (impiegato dei tessitori di lana)
 fulmen:fulmine
@@ -4000,8 +3979,8 @@ fumus:il fumo
 funale:la torcia
 funalis:di corda
 funambulus:il funambolo, il ballerino di corda
-fundamentum:il fondamento, la base, il supporto,
 funda:la fronda
+fundamentum:il fondamento, la base, il supporto,
 funditor:lo schernitore
 fundito:spargere
 funditus:completamente, fino al fondazioni
@@ -4014,19 +3993,19 @@ funis:la corda
 funus:funerale, sepoltura,; morto, rovina
 furax:incline al volo, ladro, rapace,
 furca:la forca, l'uncino,
-furialis:chi riguarda le Furie, atroce,
 furia:delirio, furia, furibondo, flagello; Furia: una Furia
+furialis:chi riguarda le Furie, atroce,
 furiosus:smentisce
 Furius:Furius (nome di uomo)
+fur:ladro
 Furnius:Furnius (nome di uomo)
+furo:essere fuori da si, essere pazzo,
 furor2:rubare
 furor:furore, follia furiosa,
-furo:essere fuori da si, essere pazzo,
 furtim:di nascosto, come un ladro
 furtivus:clandestino
 furtum:volo
 furunculus:piccolo ladro
-fur:ladro
 fuscus:bruno, affonda, oscuro
 fusilis:sciolto
 fustis:il bastone
@@ -4058,8 +4037,8 @@ gaudium:la contentezza, la soddisfazione, la gioia, la voluttà,
 Gavilla:Gavilla
 gaza:il tesoro reale, i tesori,
 gelidus:gelato, ghiacciato
-Gelotianus:di Gélos (s/e, domo,)
 gelo:gelare, fare gelare,
+Gelotianus:di Gélos (s/e, domo,)
 gelu:il gelo, unicamente emploué all'ablativo,
 gemellus:gemello, gemella
 gemino:raddoppiare, raddoppiare,
@@ -4071,9 +4050,9 @@ gemo:tr. ed intr. - gemere su, gemere, lamentarsi.
 gena:guancia
 generalis:chi appartiene ad una razza che ha munto alla natura di una cosa, generale,
 generatio:generazione, fecondazione,
-generosus:di buona razza, nobile,
-genero:fare nascere, dare nascita a
 gener:genero
+genero:fare nascere, dare nascita a
+generosus:di buona razza, nobile,
 genetivus:di nascita, naturale,
 genetrix:madre
 genialis:relativo alla nascita, nuziale,
@@ -4084,9 +4063,9 @@ genius:il buono genio, la buona cara,
 gens:tribù, famiglia, popolo,
 gentilicius:della famiglia
 gentilis:familiare; nazionale
+genu:ginocchio
 genuinus:di nascita, naturale, innato,
 genus:razza, origine, specie,
-genu:ginocchio
 geometricus:geometrico
 Germania:la Germania
 Germanicus:Germanicus
@@ -4104,8 +4083,8 @@ gestus:l'attirude del corpo, la mimica,
 gibbus:gobba
 gigno:generare, fare nascere,
 glacies:il ghiaccio
-gladiatorius:di gladiatore
 gladiator:gladiatore
+gladiatorius:di gladiatore
 gladiolus:il pugnale, la daga,
 gladius:spada
 glaeba:zolla di terra, terra,
@@ -4114,8 +4093,8 @@ glans:la ghianda (frutto della quercia)
 gleba:zolla di terra, terra,
 glisco:crescere, ingrossare, gonfiare,
 globus:l'ammasso, il globo, la palla, la massa,
-gloriabundus:tutto fiero
 gloria:1. la gloria, la reputazione, la rinomanza,2. il desiderio di gloria
+gloriabundus:tutto fiero
 glorior:gloriarsi, inorgoglirsi,
 gloriosus:spavaldo
 glubo:togliere la scorza (termine erotico)
@@ -4164,8 +4143,8 @@ gravidus:appesantito, gonfiato; grauida,ae: la donna incinta
 gravis:seri, triste, pesante
 gravitas:la pesantezza, la severità, la dignità, la maestà, la malattia,
 graviter:pesantemente, gravemente
-gravor:ripugnare a, rifiutarsi
 gravo:appesantire, appesantire (grauor, aris, atus sum,: fare delle difficoltà, ripugnare a, essere stanco di,
+gravor:ripugnare a, rifiutarsi
 gregalis:chi va in truppa; comune, volgare
 gregarius:semplice (soldato)
 gremium:seno materno
@@ -4182,14 +4161,14 @@ gusto:degustare
 gustum:entrata, di un pasto,
 gustus:l'azione di apprezzare, la degustazione,
 gutto:cadere goccia a goccia
-gutturosus:goîtreux
 guttur:la gola, la gola,
+gutturosus:goîtreux
 guttus:il vaso a collo stretto, l'ampolla,
 Gutuater:Gutuater
 Gyges:Gygès (re di Lydie)
 gymnasium:la palestra
-gymnasticus:della ginnastica
 gymnas:la lotta
+gymnasticus:della ginnastica
 gymnicus:di lotta
 gynaeceum:il gynécée
 gynaecium:il gynécée
@@ -4208,8 +4187,6 @@ habito:abitare
 habitus:modo di essere, apparenza,
 hactenus:solamente fino là
 Hadriaticus:del mare Adriatico
-haeccine:haeccine = haec-ne
-haecine:haecine = haecne
 haedillus:il piccolo capretto
 Haedui:Gli Eduens o i Héduens
 haedus:piccolo caprone, capretto,
@@ -4231,15 +4208,14 @@ Harudes:i Harudes (popolo germanico)
 harundo:il giunco, la freccia,
 haruspex:il haruspice
 Hasdrubal:Hasdrubal
-hastatus:armato di giavellotto
 hasta:la lancia, il frecciata, il giavellotto,
+hastatus:armato di giavellotto
 hastile:il bosco di un giavellotto
 Haterius:Haterius
-haudquaquam:non tutto
 haud:proprio non, non tutto
+haudquaquam:non tutto
 haurio:tirare a si, attingere, svuotare attingendo,; inghiottire, inghiottire, fare sparire, uccidere, trapassare, bucare, distruggere,,
 haustus:azione di bere
-hau:non tutto
 hebesco:smorzarsi
 hebes:smussato che ha perso la sua punta
 hebetudo:la stupidità
@@ -4251,14 +4227,14 @@ Heius:Heius
 Hellespontiacus:del Hellespont
 Helvetia:il Helvètie, la Svizzera,
 Helvetius:il Helvète, lo svizzero,
-hemitritaeus:hémitritée, febbre mezzo-terza,; quello che ne è raggiunto
 hem:ahimè!
+hemitritaeus:hémitritée, febbre mezzo-terza,; quello che ne è raggiunto
 Heniochi:i Hénioques, popolo Sarmate,
 herba:erba
 herbosus:coperto di erbe, erbosi,
 hercisco:dividere, un'eredità, - familia herciscunda, divisione di eredità
-Hercules:Ercole
 hercule:per Ercole!
+Hercules:Ercole
 Hercynia:(silua): la foresta Hercynienne (Foresta Nera)
 hereditas:l'eredità, l'eredità, la successione,
 Herennius:Herennius
@@ -4271,15 +4247,14 @@ Hernici:il Herniques popolo del Latium,
 heros:l'eroe
 Hesperius:del Hespérie
 hesternus:di ieri, della vigilia,
-heus:ehilà!, ehi!
 heu:ahimè!
+heus:ehilà!, ehi!
 hibernacula:i baraccamenti di inverno
 hiberna:i quartieri di inverno
 hiberno:arare, essere in quartieri di inverno,
 hibernus:di inverno, invernale,
 Hiberus:dell'Iberia
 hic2:qui
-hicine:è ciò che questo (questa)... ?
 hic:questo, questo, questo, questa,
 hiemo:arare
 hiems:l'inverno
@@ -4299,24 +4274,22 @@ hircus:caprone
 hirsutus:rizzato, irsuto
 Hirtius:Hirtius
 hirundo:rondine
-hisce:hisce = his
 Hispania:la Spagna
 Hispaniensis:di Hispanie
 Hispanus:spagnolo, del Hispanie (Hispani, orum = i Hispaniens,
 hispidus:rizzato, peloso
 Hispo:Hispo (nome di uomo)
-historiarumst:= historiarum è
 historia:la storia, il racconto, la chiacchiera,
+historiarumst:= historiarum è
 historicus2:di storia, di storico, storico.
 historicus:lo storico
 histricus:di istrione, di attore,
-histrionalis:di attore, di attore,
 histrio:l'attore
+histrionalis:di attore, di attore,
 hiulcus:la bocca spalancata
 hoccine:hoccine = hoc-ne
-hocine:hocine = hoc-ne (nom. neutre ou ablatif de hic-haec-hoc)
-hodiernus:di oggi
 hodie:oggi
+hodiernus:di oggi
 holitorius:chi riguarda le verdure; foro--: camminato alle verdure
 holitor:orticoltore, fruttivendolo,
 holocaustum:olocausto, sacrificio,
@@ -4330,10 +4303,10 @@ honesto:fare onore, rialzare,
 honestus:onesto
 honorarius:chi dà diritto ad una magistratura; onorifico
 honorificus:onorabile
-honoro:onorare
 honor:l'onore, l'omaggio, il carico, la magistratura, la parcella,
-Horatius:Orazio
+honoro:onorare
 hora:ora
+Horatius:Orazio
 hordeum:l'orzo
 horrendus:orribile, terribile, terribile
 horrens:rizzato
@@ -4361,16 +4334,15 @@ Hostilius:Hostilius
 hostis:nemico
 huc:qui, domanda quo,
 hujuscemodi:di questo tipo
-hujusce:huiusce = huius (génitif de hic, haec, hoc)
 hujusmodi:di questo tipo
 humanitas:l'umanità, la natura umana,
 humanus:umano
 humerus:la spalla
+humi:a terra
 humidus:umido, bagnato, liquido
 humilis:umile, povero
 humilitas:la bassezza, la debolezza,
 humiliter:in un luogo poco elevato, bassamente, umilmente, debolmente
-humi:a terra
 humor:acqua, liquido,
 humus:terra
 Hyas:i Hyades
@@ -4422,11 +4394,10 @@ illabor:fare scivolare, affondare, penetrare,
 illaesus:chi non è ferito, non danneggiato
 illatenus:fino là
 illecebra:l'attrattiva, il fascino,
-illecebrosius:comparativo di illecebrose: di un modo seducente
 ille:questo, questo, questo, questa, egli, lei,
 illicio:impegnare, trascinare a
-illico:subito
 illic:là
+illico:subito
 illido:colpire contro
 illigo:legare
 illimis:limpido
@@ -4472,10 +4443,10 @@ immoderatus:senza misura
 immodestia:la mancanza di trattenuti, l'eccesso, l'irregolarità,
 immodicus:smisurato, eccessivo, trattenuta senza
 immolo:sacrificare
+immo:non tutto, no, al contrario
 immoror:fermarsi, insistere, su qqch, in aliqua re, rei), fermarsi su qqch
 immortalis:immortale
 immotus:senza movimento, immobile,
-immo:non tutto, no, al contrario
 immundus:sala impuro, immondo
 immunis:libero, di ogni tassa,
 immutabilis:immutabile, impossibile a cambiare
@@ -4490,8 +4461,8 @@ impello:urtare contro, scuotere
 impendeo:appendere al di sotto, minacciare,
 impendo:spendere, dedicare, sborsare,
 impensa:spesa
-imperatorius:imperiale
 imperator:generale
+imperatorius:imperiale
 imperatum:l'ordine, il comando,
 imperito:comandare, essere imperatore,
 imperitus:ignorando di
@@ -4643,19 +4614,19 @@ incursio:l'attacco, l'incursione,
 incurso:correre contro, sciogliere su
 incursus:l'urto, lo shock,
 incurvus:curvato, curva, arrotondato,
+incus:l'incudine
 incuso:accusare, rimproverare,
 incustoditus:non custodito; trascurato, non osservato; imprudente
-incus:l'incudine
 incutio:ispirare, colpire, battere,
 indago:braccare, cercare con cura, ricercare,
 indecens:sconveniente, messéant
 indecorus:brutto, brutto
+inde:di là, dunque
 indefatigatus:infaticabile
 indefensus:chi è senza difesa
 indefessus:non stanco
 indefinitus:indefinito, indeterminato
 index:delatore, spia,; - digitus: indice
-inde:di là, dunque
 India:l'India
 indicium:l'indicazione, la rivelazione, la denuncia,
 indico2:mostrare
@@ -4675,8 +4646,8 @@ individuus:che non si può dividere che non divido
 indoctus:ignorando
 indolesco:soffrire
 indoles:le qualità native, i talenti, le inclinazioni,
-indomitus:indomito
 indo:mettere su, mettere in, dare un nome
+indomitus:indomito
 induco:introdurre
 inductorium:il rivestimento, la busta,
 inductorius:fallaci
@@ -4691,12 +4662,11 @@ indulgentia:tenerezza, indulgenza,
 indulgeo:1. essere indulgente, compiacente, benevolo2. coccolare, accordare, concedere,
 indumentum:vestito, abito, abito,
 induo:rivestire
+Indus:dell'India, indiano,
 industria:attività; di, ex -: volontariamente
 industrie:con attività, con zelo,
-Indus:dell'India, indiano,
 indutiae:armistizio, sospensione di armi, tregua,
 Indutiomarus:Indutiomare
-indu:forma arcaica per in
 inedia:il digiuno
 inefficax:senza effetto, inutile,
 inenarrabilis:indicibile, che non si può raccontare
@@ -4828,10 +4798,10 @@ innitor:appoggiarsi su
 innocens:innocente, virtuosi, innocuo,
 innocentia:l'innocuità; i costumi ineccepibili, l'integrità, l'innocenza,
 innocuus:innocuo, innocente
+inno:nuotare, in,
 innotesco:farsi conoscere, per qqch, aliqua re, diventare chiaro,
 innovo:rinnovare
 innoxius:chi non fa di male, innocuo, innocente
-inno:nuotare, in,
 innumerabilis:innumerevole
 innumerus:innumerevole
 innuo:fare segno
@@ -4842,7 +4812,6 @@ inopinans:sorpreso
 inopinatus:inatteso, inopinato
 inopinus:inatteso, inopinato, inaspettatamente
 inops:senza risorse, povero,
-inpeditius:comparativo neutro o avverbiale di impeditus, ha, um: embarassé
 inpeditus:incaricato difficilmente di bagagli, imbarazzati, praticabili
 inperatus:non preparato, senza preparazione
 inplacabilis:implacabile
@@ -4858,9 +4827,9 @@ inquieto:turbare, agitare, inquietare,
 inquietus:turbato, agitato
 inquino:sporcare, sporcare, rovinare, corrompere,
 inquiro:ricercare, cercare, scoprire,
+inquis:dici
 inquisitio:l'inchiesta
 inquisti:avere-tu-dice
-inquis:dici
 inquit:dice, dice
 inquiunt:dicono
 inreligiosus:empio
@@ -4902,12 +4871,12 @@ instrumentum:lo strumento, l'attrezzo,
 instruo:raccogliere, costruire, innalzare, disporre, attrezzare, attrezzare, istruire,.
 insuesco:abituarsi
 insuetus:insolito
-insularius:l'abitante di un insula, l'inquilino,
 insula:l'isola, il palazzo ad appartamenti
+insularius:l'abitante di un insula, l'inquilino,
 insulse:stupidamente, stupidamente
 insulto:saltare di, di dimenarsi, essere insolente, sfidare,
-insumo:adoperare a, dedicare a
 insum:essere in
+insumo:adoperare a, dedicare a
 insuo:cucire in, o su
 insuper:al di sotto
 insurgo:alzarsi
@@ -4919,7 +4888,6 @@ integritas:salute, onestà, imparzialità,
 intellectus:comprensione, intelligenza,
 intellego:comprendere
 intelligentia:l'azione di discernere, la facoltà di comprendere, l'intelligenza,
-intelligo:comprendere
 intemeratus:non guasto, puro, senza macchia
 intemperans:intemperante che non ha misura
 intemperanter:trattenuta senza, senza misura, eccessivamente
@@ -4942,8 +4910,8 @@ intercipio:prendere, fermare, togliere,
 intercursus:intervento
 interdico:vietare, difendere a qqn.
 interdictum:il vietato (editto del pretore a proposito di una contestazione di proprietà)
-interdius:durante il giorno
 interdiu:il giorno, durante il giorno
+interdius:durante il giorno
 interdum:talvolta, talvolta, durante questo tempo
 interea:intanto
 intereo:morire
@@ -4952,8 +4920,8 @@ interfector:omicida, assassino
 interficio:uccidere
 interfluo:colare tra; dividere
 intericio:porre tra
-interimo:sopprimere, uccidere,
 interim:durante questo tempo, intanto
+interimo:sopprimere, uccidere,
 interior:più all'interno
 interitus:la morte
 interjacio:essere posto entra
@@ -4981,11 +4949,11 @@ interrogo:interrogare
 interrumpo:interrompere
 interspersus:sparso çà e là, cosparso,
 intersum:partecipare a
+inter:tra, entra
 intervallum:l'intervallo, lo spazio,
 intervenio:arrivare, sopraggiungere,
 interventus:l'apparizione
 interviso:andare a vedere, visitare, rendere visita, ad intervalli
-inter:tra, entra
 intestatus:intestati che non ha provato
 intestina:intestini
 intestinus:interiore
@@ -5002,6 +4970,7 @@ intrepidus:coraggiosi, intrepido
 intritus:stritolato, frantumato; immerso
 introcedo:entrare
 introduco:fare introdurre, introdurre,
+intro:entrare
 introeo:entrare in, +acc.)
 introgredior:entrare in, penetrare all'interno
 introitus:l'entrata
@@ -5010,7 +4979,6 @@ introrsum:verso l'interno, verso il dentro
 introrsus:verso l'interno, all'interno
 introrumpo:precipitarsi all'interno, entrare bruscamente,
 introspicio:guardare in, guardare all'interno
-intro:entrare
 intueor:guardare, considerare,
 intumesco:gonfiarsi, di collera, ingrossare; crescere, crescere,
 intumus:il fondo di, ciò che è all'interno
@@ -5046,18 +5014,17 @@ invius:dove non c'è di strada, inaccessibile,
 invoco:invocare
 involo:rubare in; attaccare, afferrare,
 involvo:circolare in, avvolgere
-in:prép. (acc. ou abl.) dans, sur, contre
+io:io! oh!
 Ionicus:di Ionie
 Ionius:ionio
-io:io! oh!
 Iphianassa:Iphigénie
 ipse:anche (io stesso, tu stesso, ecc.)
+ira:collera
 iracundia:irascibilità, cattivo umore,
 iracundus:irritabile
 irascor:arrabbiarsi
 irate:con collera
 iratus:in collera, irritato,
-ira:collera
 Iris:il porcospino
 irreligiositas:l'irréligion
 irreparabilis:irreparabile
@@ -5072,23 +5039,20 @@ irrumpo:fare irruzione in, precipitarsi in
 irruo:precipitarsi, gettarsi contro
 Isaac:Isaac
 Isiacus:di isis
+is:questo, questo,; questo, questa,
 iste:questo
-Isthmus:l'istmo
 istic:là
 istinc:di qui
-istoscine:istoscine = isto-ne
 istuc:là [dove sei]
-istunc:istunc = istum
-is:questo, questo,; questo, questa,
+ita:così, così; ita... ut, così come
 Italia:Italia
 Italicus:italiano
 Italus:italiano
 itaque:questo è perché, anche, di conseguenza
-ita:così, così; ita... ut, così come
 item:parimenti
 itero:ricominciare, ripetere,
-iterum:di nuovo
 iter:strada
+iterum:di nuovo
 Ithacus:di Ithaque (isola di cui Ulisse faceva il re)
 itidem:dello stesso modo
 Itius:Boulogne-su-mare
@@ -5100,7 +5064,6 @@ jaceo:essere steso, distendersi,
 jacio:gettare
 jactabundus:chi sballotta, scatenato
 jactantia:la vanteria, la mostra,
-jactantius:con più di ostentazione, di vanteria,
 jactatio:l'azione di gettare, l'agitazione; l'ostentazione, la vanteria,
 jactatus:l'agitazione, il secoûment, il movimento,
 jacto:1. gettare, lanciare,2. agitare3. dibattere4. gettare con ostentazione, vantare,
@@ -5112,23 +5075,22 @@ jaculus:che si getta
 jajunitas:la grande fame
 jamdiu:da molto già
 jamdudum:da molto
-jampridem:da molto
 jam:già, all'istante, oramai
+jampridem:da molto
 Janiculum:il Janicule
 janitor:portiere
-Januarius:di Gennaio
 janua:la porta, di una casa,
+Januarius:di Gennaio
 Janus:Giano
 Javolenus:Javolenus
 jecur:fegato
-jejunitas:la grande fame
 jejunium:digiuno, fame,
-jocosus:piacendo
 joco:scherzare
+jocosus:piacendo
 jocus:scherzo
+juba:la cresta, la criniera, la capigliatura,
 jubar:Lucifero, la stella della mattina; lo splendore, la luce, il reparto,
 jubatus:chi ha una cresta
-juba:la cresta, la criniera, la capigliatura,
 jubeo:1. invitare a, impegnare a2. ordinare
 jucunditas:fascino, consenso, piacere,
 jucundus:piacevole
@@ -5144,8 +5106,8 @@ juglans:la noce
 jugulo:sgozzare, uccidere,
 jugulum:la gola, la clavicola,
 jugum:1. il giogo,2. l'attacco3. i legami,4. la cima, l'altezza,
-Julianus:di Giulio Cesare
 Julia:Julia, Julie,
+Julianus:di Giulio Cesare
 Julius:Jules
 jumentum:il bestiame
 junctim:essendo unito; consecutivamente, di seguito
@@ -5159,16 +5121,14 @@ jure:a buono diritto
 jurgiosus:attaccabrighe
 jurgium:lite, disputa, alterco,
 jurisdictio:la giurisdizione
-jurisjurandum:giuramento
 juro:giurare
+jus:1. la legge, il giuramento, il diritto,2. succo, salsa,
 jusjurandum:giuramento
 jussio:l'ordine
 jussum:l'ordine
-!jussu:sull'ordine di
 justitia:la giustizia, lo spirito di giustizia
 justitium:le vacanze dei tribunali, l'arresto degli affari di giustizia
 justus:appena, equo, ragionevole
-jus:1. la legge, il giuramento, il diritto,2. succo, salsa,
 juvenalis:in modo giovanile, giovanile
 juvenaliter:come un giovane uomo
 juvenca:la giovenca
@@ -5180,8 +5140,8 @@ juventa:la gioventù
 juventus:gioventù
 juvo:aiutare; quid iuuat: a che cosa buono?
 juxta:accanto; prép. acc. : accanto a
-Kalendae:calendes
 Kal:abbreviazione di Kalendis: i Calendes
+Kalendae:calendes
 Labdacus:Labdacus
 labefacio:scuotere, scuotere, rovesciare,
 labellum:piccolo labbro, labbro delicato,
@@ -5191,40 +5151,39 @@ Labicanus:di Labicum, introduci Tusculum e Préneste,
 Labici:gli abitanti di Lacinum
 Labienus:Labienus
 labor2:pena, sofferenza, lavoro faticoso,
+labor:cadere, scivolare,
 laboriosus:chi chiede del lavoro che si dà al lavoro, attivo, laboriosi,
 laboro:addolorare, lavorare, soffrire,
-labor:cadere, scivolare,
 labo:vacillare, vacillare, fare scivolare, colare,
 labrum:il labbro, il muso,
 Lacedaemonius:il Lacédémonien, lo spartano,
 Lacedaemon:Lacédémone, Sparta,
+lacer:mutilato, straziato, messi in locale
 lacerna:lacerne, capotto di grossa stoffa
 lacero:1. mettere in pezzi, lacerare,2. schernire3. fare male, fare soffrire,
 lacertus:muscolo, braccio,
-lacer:mutilato, straziato, messi in locale
 lacesso:assillare, eccitare, attaccare,
 Lachesis:Lachesis, parcheggia,
 lacinia:lembo di vestito, pezzo, estremità,
+lac:latte
+Laco:il Lacédémonien
 Laconicus:di Laconie
 Lacon:lacédémonien
-Laco:il Lacédémonien
 lacrima:lacrima
-lacrimosus:chi fa piangere
 lacrimo:piangere
+lacrimosus:chi fa piangere
 lacteo:têter, essere alla mammella,
 lacteus:di latte, lattei, colore di latte
 lacunar:il soffitto
-lacuna:buco, fossato,
 lacus:vasca, lago,
-lac:latte
 Ladicula:Ladicula
 laedo:ferire, danneggiare, nuocere a
 Laelius:Laelius
-Laenas:Laenas (soprannome del famiglia Popilia)
 laena:il capotto di inverno, caduto sulla tunica,
+Laenas:Laenas (soprannome del famiglia Popilia)
 laetitia:la gioia
-laetor:rallegrarsi, provare della gioia,
 laeto:rallegrare, arcaico,
+laetor:rallegrarsi, provare della gioia,
 laetus:1. gioiosi2. piacevole3. favorevole4. piacendo5. ricco, abbondante
 laevus:sinistro, oppositore, stupido, accecato; n. : la parte sinistra
 lagona:bottiglia
@@ -5232,8 +5191,8 @@ laguncula:la caraffa
 Laius:Laïos
 Lalage:Lalagè (nome greco)
 lambo:leccare
-lamentatio:i lamenti, i gemiti,
 lamenta:lamenti, gemiti,
+lamentatio:i lamenti, i gemiti,
 lamentor:piangere, gemere, lamentarsi,
 lamia:il lamie (tipo di vampiro di cui si minaccia i bambini)
 lampas:la torcia, la fiaccola, la lampada,
@@ -5272,8 +5231,8 @@ largior:accordare generosamente, dare largamente,
 largiter:in un largo misuro
 largitio:la distribuzione generosa, la larghezza, la generosità, la profusione,
 largus:largo
-larua:il fantasma
 lar:lare
+larua:il fantasma
 lasarpicifer:fertile in resina
 lascivia:l'umore pazzerello, l'allegria, il brio,; la licenza, l'irregolarità, il libertinaggio, la dissolutezza,
 lascivio:folleggiare, scherzare, giocare,
@@ -5287,8 +5246,8 @@ latebrosus:pieno di nascondigli, ritirato, segreto
 latenter:di nascosto
 lateo:nascondersi
 latericius:di mattone
-latex:il liquore, il liquido,
 late:su una vasta superficie; a lungo
+latex:il liquore, il liquido,
 latibulum:il nascondiglio, la pensione, la tana,
 laticlavius:chi porta il laticlave, il senatore,
 Latine:ne, buono, latino
@@ -5313,8 +5272,8 @@ Laurentes:i Laurentes (popolo del Latium)
 Laureolus:Laureolus, celebre ladro,
 lauriger:incoronato di allori
 laurus:alloro
-Lausus:Lausus (figlio di Mézence)
 laus:lode, gloria, onore,
+Lausus:Lausus (figlio di Mézence)
 laute:brillantemente
 lautitia:il lusso
 lautus:brillando
@@ -5324,9 +5283,9 @@ lavo:lavare, pulire (lautus, ha, um: brillando, sontuosi, distinto); passivo: la
 laxamentum:la pausa, il riposo, la tregua,
 laxo:rilasciare
 laxus:largo, spaziosi
+lectica:la lettiera
 lecticariolus:corridore di portatore di lettiere
 lecticarius:il portatore di lettiera
-lectica:la lettiera
 lectio:lettura, ad alta voce,
 lectisterniator:quello che dispone i letti dovuti i tavoli
 lectisternium:lectisterne
@@ -5338,8 +5297,8 @@ lectus:letto
 Leda:Léda
 legatio:deputazione, ambasciata, funzione,
 legatus:legato, inviato,
-legionarius:di una legione, legionario,
 legio:legione
+legionarius:di una legione, legionario,
 legitime:legittimamente
 legitimus:legittima
 lego2:lasciare per testamento, tramandare, mandare in ambasciata,; prendere per tenente
@@ -5353,8 +5312,8 @@ lenis:dolci
 lenitas:la dolcezza
 leniter:dolcemente
 lenocinium:il mettier di intermediario, l'artificio di bagno, la parure ricercata,
-lenonius:di protettore
 leno:l'intermediario
+lenonius:di protettore
 lente:lentamente
 Lentulus:Lentulus (nome di uomo)
 lentus:agile, molle, apatico, indolente, impassibile
@@ -5388,24 +5347,23 @@ Liber3:Liber
 liberalis:nobile, liberale, generosi,
 liberalitas:la bontà, la dolcezza, l'indulgenza,
 liberaliter:come un uomo libero, nobilmente, dignitosamente
-liberator:il liberatore
 Libera:Proserpine, Cérès,
+liberator:il liberatore
 libere:liberamente, temuta senza, apertamente, spontaneamente
 liberi:bambini, figli e ragazze,
+liber:libero
 libero:liberare
-libertas:la libertà
 liberta:l'affrancata
+libertas:la libertà
 libertinus:di affrancato
 libertus:liberato
-liber:libero
-libet:piace
 libidinosus:lascivo, libidinosi
 libido:desiderio, invidia, dissolutezza,
 Libitaina:Libitina, Libitine,
 libita:le fantasie
 libo:1. staccare di2. assaggiare qqch., mangiare o bere un poco di3. sfiorare4. versare, spargere in onore di un dio, fare una libagione ad un dio,
-libraria:la libreria
 libra:libro [peso], bilancia
+libraria:la libreria
 libripens:il portatore di bilancia
 libritor:quello che fa giocare le macchine di guerra
 libro:mettere di livello
@@ -5424,7 +5382,6 @@ licitumst:contr. = licitum est, licuit
 lictor:il littore
 ligneus:in bosco, di bosco,
 lignum:il bosco
-!Ligones:i Ligons
 ligo:legare
 ligurrio:leccare
 Lilybaeum:Lilybée (promontorio della Sicilia)
@@ -5433,8 +5390,8 @@ limen:soglia, entrata,
 limes:il sentiero, la strada, la strada, il solco, la traccia,
 limosus:melmosi, paludosi
 limus:limo, fango,
-lineamentum:la linea, il tratto,
 linea:la linea, la separazione, il cordone, lo spago,
+lineamentum:la linea, il tratto,
 lineola:la piccola linea tracciata
 Lingo:i Lingons
 lingua:lingua
@@ -5471,8 +5428,8 @@ locuples:ricco, opulento
 locupleto:rendere ricco
 locus:luogo, luogo,; posto, riga,; situazione. Il plurale è neutro, salvo al senso dei luoghi comuni (loci)
 lodicula:coperta
-Lollianus:di Lollius
 Lollia:Lollia
+Lollianus:di Lollius
 Lollius:Lollius
 lomentum:lomentum (farina di fave) o di riso,
 longe:a lungo, in lontananza
@@ -5539,13 +5496,13 @@ lustrum:I. il sacrificio espiatorio II. muovilo, la tana,
 lusus:gioco, divertimento,
 luteus:giallo
 lutum:il fango; pro - esse, essere a meschino prezzo,
+lux:luce, giorno,
 luxo:slogare, dimettere,
 luxuria:l'abbondanza, la profusione, l'intemperanza, l'arbitrarietà,
+luxurio:abbandonarsi alla mollezza
 luxuriose:in modo sregolata, voluttuosamente
 luxuriosus:sovrabbondando, esuberante,; eccessivo, smodato
-luxurio:abbandonarsi alla mollezza
 luxus:eccesso, dissolutezza, fasto,; lussazione
-lux:luce, giorno,
 Lycia:il Lycie, Asia Mineure,
 Lycius:il Lycien
 Lyde:Lydè
@@ -5556,26 +5513,27 @@ lympha:l'acqua
 lympho:rendere pazzo, gettare nel delirio,
 Lynceus:Lyncée
 lyra:lira
+M:abbreviazione di Marcus
+Macedo:Macedo (nome di uomo), macedone
 Macedonia:il Macedonia
 Macedonicus:Macedone
-Macedo:Macedo (nome di uomo), macedone
 macellum:marcia
-macero:indebolire, esaurire, consumare, minare,
 macer:magro
+macero:indebolire, esaurire, consumare, minare,
 machaera:la sciabola
+machina:l'arnese, la macchina,
 machinamentum:la macchina, lo strumento,
 machinatio:la macchina
 machinator:il meccanico, l'inventore, il macchinatore,
 machinatrix:quella che ordisce, il machinatrice,
-machina:l'arnese, la macchina,
 machinor:ordire, ourdir, un complotto,
 macies:magrezza
 mactatus:il sacrificio insanguinato
 macte:applauso!
 macto:sacrificare
 macula:macchia
-maculosus:pieno di macchie, macchiato, picchiettato,
 maculo:sporcare, sporcare,
+maculosus:pieno di macchie, macchiato, picchiettato,
 madeo:essere bagnato
 madidus:umido
 Maecenas:Mecenate
@@ -5586,10 +5544,10 @@ maeror:l'afflizione, la tristezza,
 maestitia:la tristezza
 maestus:profondamente triste
 Magalesiacus:mégalésien
+magis:più
 magisterium:la funzione di precettore, la tutela,
 magister:padrone, di scuola,
 magistratus:carico, funzione pubblica, magistratura,
-magis:più
 magnanimus:nobile, generosi, magnanimo,
 Magnetes:gli abitanti di Magnesia
 magnificenter:con grandezza, con magnificenza,
@@ -5599,8 +5557,8 @@ magnifico:onorare
 magnificus:sontuosi, grandioso
 magnitudo:grande taglia
 magnopere:1.. vivamente, grandemente, fortemente2. molto, molto
-magnust:= magnus è
 magnus:grande
+magnust:= magnus è
 magus:magio
 majestas:la grandezza, la dignità, l'onore, lex maiestatis,: l'alto tradimento,
 majores:gli antenati
@@ -5613,9 +5571,9 @@ maledictum:insulto, ingiuria, oltraggio,
 malefactum:la cattiva azione
 maleficium:la malefatta, il danno,
 maleficus:malefico, cattivo; nocivo, funesto
+male:male, malamente
 malesuadus:chi consiglia male
 malevolus:malevolo
-male:male, malamente
 malignus:solforando, perfido, invidiosi, avaro
 malitia:cattiveria, astuzia, finezza,
 malleus:martello, mazzuolo,
@@ -5640,11 +5598,11 @@ mancus:mutilato, invalido
 mandatum:il vaglia, la missione,
 mando:confidare
 Mandubracius:Mandubracius (nome di uomo)
+mane:inv. : la mattina
 maneo:restare
 Manes:mânes, spiriti delle morti
-mane:inv. : la mattina
-manicatus:chi è a maniche
 manica:la manica
+manicatus:chi è a maniche
 manifesto:chiaramente
 manifestus:chiaro, evidente; + Gén. : convinto di
 Manilius:Manilius
@@ -5671,8 +5629,8 @@ marcidus:fatto appassire, fatto appassire; debole, languido
 Marcius:Marcius
 Marcomani:i Marcomans (popolo della Germania)
 Marcus:Marcus
-Mareoticus:del Maréotide, della Libia,
 mare:mare
+Mareoticus:del Maréotide, della Libia,
 margarita:perla
 margo:bordatura
 marinus:marino
@@ -5694,18 +5652,18 @@ Martius:di Marzo, guerriero,
 Marus:il Marus (fiume della Germania)
 masculinus:maschile
 masculus:maschio, uomo,
+mas:il maschio
 massa:la massa, l'ammasso, il mucchio,
 Massicum:vino del Massico
 Massilia:Marsiglia
 Massinissa:Massinissa
 Mastama:Mastama
 Mastarna:Mastarna
-mas:il maschio
 materia:materia, argomento, pretesto,
 materies:la materia, i materiali, l'argomento, la tesi,
+mater:madre
 maternus:materno
 matertera:zia materna
-mater:madre
 mathematicus:matematico (mathematicus, i, m. : il matematico,
 matrimonium:matrimonio; in - conlocare: sposare
 matrona:la matrona, la sposa, la madre di famiglia; Matrona, ae,: la Marna
@@ -5721,7 +5679,6 @@ Mavors:Marzo
 maxilla:mascella
 Mazippa:Mazippa, capo numide,
 meabilis:praticabile
-meapte:= mea
 meatus:il passaggio, la corsa, la strada, il passaggio,
 mecastor:per Castoro!
 mecum:con me
@@ -5729,12 +5686,13 @@ Medea:Médée
 medela:il medicinale, il rimedio,
 medella:il medicinale, il rimedio,
 medeor:curare, trattare,
-medicamentum:rimedio, droga, veleno,
-medicamen:il medicinale, il rimedio,
-medicatus:trattato, preparato, avvelenato
 medica:il donna medico
+medicamen:il medicinale, il rimedio,
+medicamentum:rimedio, droga, veleno,
+medicatus:trattato, preparato, avvelenato
 medicina:la scienza della medicina, la medicina,; il rimedio, la pozione, il sollievo,
 medicus:medico
+Medi:i Mèdes
 mediocris:mezzo, passabile,
 mediocritas:la media, l'inferiorità,
 mediocriter:moderatamente, debolmente
@@ -5744,29 +5702,27 @@ meditor:meditare, pensare a, riflettere a
 meditullium:mezzo, spazio intermedio,
 medium:mezzo, centro,
 medius:chi è al mezzo, nel suo mezzo,
-Medi:i Mèdes
 Medullina:Medullina
 Megalensis:relativo a Cybèle (Megalensia, ium, n. : i Mégalésiennes,
 Megalesiacus:mégalésien
-Megaravicus:Magaravicus
 Megara:Mégare (città di grèce)
-mehercules:per Ercole!
+Megaravicus:Magaravicus
 mehercule:per Ercole! il mio dio!
+mehercules:per Ercole!
+mel:1. il miele2. la dolcezza
 Meldi:i Mèldes (oggi): Meaux,
 Melissa:Melissa
 melium:collana di cane
 mellitus:emmiellé, di miele,
-mel:1. il miele2. la dolcezza
 membrum:membro, organo,
-memento:ricordasiti
 memini:ricordarsi
 Memnon:Memnon (faraone)
 memorabilis:notevole, memorabile
 memorandus:memorabile, famosi, gloriosi
 memoratus:famosi, celebre
+memor:chi ha ricordarsilo
 memoria:memoria, ricordarsi,
 memoro:ricordare al ricordo, raccontare, riportare,
-memor:chi ha ricordarsilo
 Menaechmi:Menecmi
 Menapii:i Ménapiens
 mendacium:la menzogna
@@ -5777,11 +5733,11 @@ Menenius:Menenius
 Menippaeus:Ménippée, nome di un'opera di Varon: il Satira Ménippée,
 mensa:tavolo
 mensis:mese
+mens:spirito
 menstrualis:mensile, della durata di un mese,
 mensus:v. metior
-mens:spirito
-mentior:mentire
 mentio:la menzione, il richiamo,
+mentior:mentire
 mentula:il sesso, la verga,
 mentum:il mento
 meo:passare a, arrivare,
@@ -5792,8 +5748,8 @@ mercatus:il commercio, il mercato,
 merces:stipendio, ricompensa, prezzo,
 mercor:trattare, acquistare,
 Mercurius:Mercurio
-mereor:guadagnare, meritare,
 mereo:meritare, guadagnare,; merere o mereri (stipendia): toccare il soldo militare
+mereor:guadagnare, meritare,
 Mererio:Mérérion
 meretricius:di cortigiana
 meretrix:prostituita
@@ -5813,14 +5769,14 @@ Messalinus:Messalinus
 Messana:Messina (città della Sicilia)
 messis:mietitura, raccolto,
 messor:mietitore
-metallum:aria, metallo, minerale,
 meta:limite, bone che segna l'arrivo di una corsa.
+metallum:aria, metallo, minerale,
 Metellus:Métellus
 Methymnaeus:di Méthymne
 Metilius:Metilius
 metior:misurare, stimare, valutare,
-metor:delimitare; castra - fissare l'area di un campo
 meto:mietere
+metor:delimitare; castra - fissare l'area di un campo
 metreta:il vaso, la giara,
 Mettus:Mettus
 metuo:temere
@@ -5850,7 +5806,6 @@ minax:minacciando
 Minerva:Minerva
 minime:molto poco
 minimum:molto poco, meno possibile
-!minimus:molto piccolo
 ministerium:servizio, compito,
 minister:servitore
 ministro:dirigere, governare, servire,
@@ -5879,13 +5834,13 @@ miserabilis:pietoso, patetico
 miserabiliter:in modo da eccitare la compassione
 miserandus:degno di pietà
 miseratio:pietà
-misereor:avere compassione, pietà,
+miser:disgraziati
 misere:miserabilmente, in modo pietoso
+misereor:avere compassione, pietà,
 miseria:la disgrazia, l'avversità, l'inquietudine, la preoccupazione,
 misericordia:pietà
 misericors:compatendo, sensibile alla pietà,
 miseror:compiangere, deplorare,
-miser:disgraziati
 missilis:che si può lanciare
 missio:il rinvio, la grazia accordata ad un gladiatore,
 missor:quello che lancia, il fulmine,
@@ -5902,7 +5857,6 @@ mitio:addolcire
 mitis:dolci
 mitra:mitra, turbante,
 mitto:I.1. mandare2. dedicare3. emettere4. gettare, lanciare II. lasciare andare a, licenziare,
-mi:mi = mihi (datif de ego); vocatif de meus, a, um
 mobilis:mobile, spostato, flessibile
 mobilitas:incostanza, velleità,
 moderanter:dirigendo
@@ -5925,10 +5879,10 @@ modus:misura, limite, modo,
 moechus:uomo adultera
 moenia:i muri, le muraglie,
 Moesia:Il Mésie (provincia tra il Danubio e le Tracia)
+moles:la massa
 moleste:difficilmente, faticosamente
 molestia:la pena, il dispiacere, il dispiacere, il disagio,
 molestus:faticoso, difficile
-moles:la massa
 molimentum:lo sforzo per realizzare qqch.
 molior:mettere in movimento, costruire, intraprendere,
 molitio:il trambusto
@@ -5937,8 +5891,8 @@ mollio:rendere agile, addolcire, attenuare,
 mollis:fiaccamente, fluido, agile, flessibile
 molliter:mollemente, con dolcezza
 mollitia:la dolcezza
-Molossicus:il molosse
 molo:macinare
+Molossicus:il molosse
 momentarius:di un momento che duro solamente un momento
 momentum:il movimento, l'influenza, il peso,
 moneo:avvertire, impegnare a
@@ -5949,10 +5903,10 @@ monitio:l'avvertimento, il parere, il consiglio,
 monitum:l'avertissemnt
 monitus:l'avvertimento
 monotropus:solo, solitario
+mons:montagna
 monstro:mostrare
 monstrum:tutto ciò che esce della natura, il mostro, la mostruosità,
 monstruosus:mostruosi
-mons:montagna
 montanus:relativo in montagna, di montagna,
 monumentum:ricordarsi, oggetto carico di custodire il ricordo
 mora:termine, ritardo, ostacolo,
@@ -5965,15 +5919,15 @@ Morini:i Morins
 morior:morire
 moror:attardarsi, rimanere, nihil -: non preoccuparsi di,
 morosus:difficile, uggioso, scorbutici, dispiacere
-morsus:morso
 mors:morto
+morsus:morso
 mortalis:mortale
 mortarium:mortaio
 mortifer:mortale, fatale,
 mortuus:morto
 Mosa:la Mosa
-Mosteni:gli abitanti di Mostène (Lydie)
 mos:singolare: costume, modo,; plurale: costumi
+Mosteni:gli abitanti di Mostène (Lydie)
 motor:quello che muove che culla
 motus:movimento, agitazione, rivolta, emozione, eccitazione, scossa,
 moveo:spostare, commuovere,
@@ -6025,8 +5979,8 @@ munio:fortificare, costruire, riparare, proteggere (munitus, ha, um: difeso, for
 munitio:il lavoro di sterramento, la fortificazione, il bastione,
 munitor:il soldato che lavora alle fortificazioni
 munitus:fortificato, rinforzato, protetto
-munusculum:piccolo regalo
 munus:1. l'ufficio, la funzione,2. l'obbligo, il carico,3. il prodotto4. il servizio reso5. il dono, il presente,6. lo spettacolo pubblico, i combattimenti di gladiatori
+munusculum:piccolo regalo
 muraena:il murène
 murex:il murex (frutto di mare), le punte di ferro
 murmur:il mormorio, il rombo,
@@ -6040,9 +5994,9 @@ mussito:borbottare
 musso:parlare tra i denti, borbottare,
 mustaceus:tipo di dolce, con vino dolce ed alloro,
 mustela:donnola
+mus:topo, topo,
 mustus:spesa, nuovo,
 Musulamii:i Musulames (popolo di Numidie)
-mus:topo, topo,
 mutabilis:cambiando
 mutatio:cambiamento, scambio. - mutatio rerum: rivoluzione
 mutilus:mutilato, troncato
@@ -6055,10 +6009,9 @@ mutus:muto
 mutuus:ricambia, reciproco
 Mycenae:Mycènes (patria di Agamennone)
 Myrina:Myrina (città di Eolie)
-myropola:il parfumeur
 Myro:Myron
+myropola:il parfumeur
 myrtus:il mirto (pianta verde)
-M:abbreviazione di Marcus
 Nabataeus:del Nabathée (Nabataei, orum,: i Nabathéens (popolo dell'Arabia)
 Naiades:le Naiadi
 Nais:naiade
@@ -6068,10 +6021,10 @@ Nanneius:Nanneius
 Nantuates:i Nantuates
 Narbonensis:di Narbonne
 Narcissus:Narciso
+Nar:il Nar
 naris:le narici
 narratio:narrazione
 narro:raccontare, raccontare,
-Nar:il Nar
 nascor:1. nascere; natus = vecchio di2. prendere la sua origine, provenire,
 Nasica:Nasica (cognomen di Scipion)
 nassa:nassa
@@ -6081,16 +6034,16 @@ nates:glutei
 natio:nazione, nazionalità,
 nativus:naturale
 nato:nuotare, fluitare,
+natu:per la nascita; maior, minor natu, l'aîné(e, egli (lei, più giovane,),
 naturalis:naturale
 natura:natura
 natus:sing. (poét.) figlio; pl. : piccoli di un animale
-natu:per la nascita; maior, minor natu, l'aîné(e, egli (lei, più giovane,),
 nauclerius:di padrone di nave
 naucum:noce. uniche forme utilizzate: nauci e nauco
 naufragium:naufragio
 naufragus:naufrago che ha tutto perso
-naumachiarius:quello che partecipa ad un combattimento navale
 naumachia:il naumachie, il combattimento-navale,
+naumachiarius:quello che partecipa ad un combattimento navale
 Nauportus:Nauportus (città dell'Alto Pannonie)
 nausia:la nausea
 Nausicaa:Nausicaa
@@ -6110,6 +6063,7 @@ Neapolis:Napoli
 nebula:vapore
 nebulo:il mascalzone, il garnement,
 necdum:e non ancora
+nec:e...non...non
 necessario:necessariamente
 necessarius2:inevitabile, indispensabile, intimo
 necessarius:il genitore, l'amico, l'alleato,
@@ -6122,21 +6076,21 @@ neco:uccidere
 nectareus:di nettare, come il nettare,
 nectar:il nettare
 necto:legare, annodare, rendere schiavo per debiti,
-nec:e...non...non
 nedum:a maggior ragione
 nefandus:empio, criminale
 nefarius:abominevole
-nefastus:difeso dalla legge divina
 nefas:criminale, sacrilegio,
+nefastus:difeso dalla legge divina
 negito:negare a differenti riprese
 neglegens:distratto, poco attento, negligente
 neglegentia:negligenza
 neglego:trascurare
+nego:negare
 negotiator:il negoziante, il commerciante, il trafficante,
 negotior:fare del commercio
 negotiosus:occupato, assorto
 negotium:affare, missione,
-nego:negare
+nemo:nessuno
 nempe:certamente, sicuramente
 nemus:la foresta, il bosco,
 nepos:il piccolo figlio; péj. : il dissipatore, lo spendaccione,
@@ -6148,8 +6102,9 @@ Neptunus:Nettuno
 nequam:mascalzone, mascalzone,
 nequaquam:per niente
 nequedum:e non ancora
-nequeo:non potere; - quin: non potere trattenersi di.
 neque:= e no; e non
+nequeo:non potere; - quin: non potere trattenersi di.
+ne:... quidem: non stesso, non (difesa); conj. + subj. : che (verbi di timore e di impedimento), affinché non, di non (verbi di volontà)
 nequior:comp. di nequam, mascalzone,
 nequiquam:in vano, inutilmente
 nequitia:la cattiva qualità di caeactère, l'irregolarità, la dissolutezza,
@@ -6158,23 +6113,22 @@ Nereides:i Néréides
 Nereius:di Nérée, del mare, marino,
 Nereus:Nérée (dio del mare)
 Neria:Néria (dea dei Sabins) sposa di Marzo,
-Neronianus:néronien
 Nero:Nerone
+Neronianus:néronien
 Nerva:Nerva
 Nervii:i Nerviens
 nervus:ferri, prigione,
-nescioquis:non so che
 nescio:ignorare
+nescioquis:non so che
 nescius:chi non sa, ignorando
 Nestor:Nestor
-neuter:nessuno dei due
 neu:e che non
+neuter:nessuno dei due
 Nevius:Naevius
 nexilis:legato insieme, abbracciato
+nex:morto, omicidio
 nexum:contratto di vendita, diritto di vendere,
 nexus:il legame, il nodo, il legame, la graffa,
-nex:morto, omicidio
-ne:... quidem: non stesso, non (difesa); conj. + subj. : che (verbi di timore e di impedimento), affinché non, di non (verbi di volontà)
 Nicopolis:Nicopolis (città di Epire)
 nicto:fare segno degli occhi
 nidor:l'odore che si libera di un oggetto che cuoce,
@@ -6183,7 +6137,6 @@ niger:nero
 nigresco:annerire
 nihilominus:non meno, tuttavia
 nihilo:non tutto
-nihil:niente
 Niliacus:del Nilo
 Nilus:Nilo
 nimbus:la nuvola
@@ -6193,6 +6146,7 @@ nimis:troppo
 nimium:troppo
 nimius:eccessivo
 Niobe:Niobé
+ni:se... non... non
 nisi:se... non... non; eccettuato
 nisus:sforzo
 niteo:risplendere, luccicare, brillare,
@@ -6202,55 +6156,54 @@ nivalis:di neve
 nivatus:rinfrescato nella neve
 niveus:di neve
 nix:neve
-ni:se... non... non
 nobilis:conosciuto, nobile
 nobilitas:reputazione, nobiltà,
 nobiscum:= cum nobis: con noi
 nocens:nocivo, colpevole
 noceo:nuocere
 noctua:civetta, gufo,
-nocturnus:notturno
 noctu:di notte, la notte,
+nocturnus:notturno
 nodus:nodo, giuntura, articolazione, difficoltà,
 Nola:Nola (città della Campania)
-nolite:= fr. non + imperativo
 noli:= fr. non + imperativo
+nolite:= fr. non + imperativo
 nolo:non volere, rifiutare,
-Nomentanus:di Nomentum
 nomen:1. il nome, la denominazione,2. il titolo3. la rinomanza, la celebrità, nomine = per riguardo per, a causa di, sotto pretesto di,
+Nomentanus:di Nomentum
 nominatim:per il loro nome
 nomino:chiamare, dare un nome,
 nonagesimus:90
 nonanus:chi fa parte della nona legione
 nondum:non ancora
 nonne:è ciò che. non
+non:non...non
 nonnulli:(quasi sempre al plurale, certi,
 nonnumquam:talvolta
 nonnunquam:talvolta, talvolta
+no:nuotare
 nonus:nono
-non:non...non
 Norbanus:Norbanus
 Noricus:del Norique (Norici, orum,: gli abitanti del Norique,
 noscitabundus:cercando di riconoscere
 noscito:riconoscere
 nosco:apprendere; pf. sapere
-nosmet:rafforzamento di nostri
+nos:noi, io,
 noster:adj. nostro, il nostro pronome,: il nostro, i nostri,
 nostin:conosci?
 nostras:del nostro paese, da noi,
-nos:noi, io,
 notabilis:notevole
 notarius:il segretario
-notatio:marca, esame, ritratto (vedere nota),
 nota:segno, segno segreto,
+notatio:marca, esame, ritratto (vedere nota),
 notesco:farsi conoscere, diventare conosciuto,
 notitia:conoscenza, fama,
 noto:segnare, notare,
 notus:conosciuto, famosi, familiare
 novacula:rasoio
 novem:nove
-novercalis:di suocera, marâtre, in suocera,
 noverca:la suocera, il marâtre,
+novercalis:di suocera, marâtre, in suocera,
 novies:nove volte
 novitas:novità, condizione di un uomo che, il primo della sua famiglia, arriva agli onori; stranezza, carattere straordinario,
 novo:rinnovare, rifare,; inventare; cambiare, innovare,
@@ -6259,7 +6212,6 @@ noxa:torto, pregiudizio, castigo,
 noxia:l'errore
 noxius:chi nuoce, colpevole, criminale
 nox:notte
-no:nuotare
 nubes:la nuvola, la nuvola, il nugolo,
 nubilum:tempo coperto
 nubilus:nuvolosi, affonda, agitazione (spirito), disgraziati.
@@ -6274,6 +6226,7 @@ nullus:nessuno
 Numantia:Numance
 Numantinus:numantin (abitando di Numance)
 Numa:Numa
+num:è ciò che per caso, è ciò che
 numen:assenso, volontà,; volontà dei dei, potere divino,; un dio, una divinità,
 numero:contare; dare in presente
 numerus:il numero
@@ -6282,10 +6235,9 @@ Numitor:Numitor
 nummus:denaro, moneta, sesterce,
 numquam:non... mai
 numquid:è ciò che
-num:è ciò che per caso, è ciò che
+nunc:adesso
 nunciam:all'istante
 nuncupo:chiamare; pronunciare solennemente
-nunc:adesso
 nunquam:mai
 nuntio:annunciare
 nuntius:1. il messaggero2. la notizia
@@ -6307,9 +6259,10 @@ nympha:ninfa
 nymphe:la ninfa, forma greca,
 Nysa:Nysa, montagna dell'India, dedicata a Bacco,
 Nysigenus:nato a Nysa, montagna dell'India dedicata a Bacco,
+ob:a causa di
 obambulo:passeggiare davanti a, andare davanti a
-obdormisco:addormentarsi
 obdo:mettere davanti a, chiudere
+obdormisco:addormentarsi
 obduco:condurre davanti a, ricoprire, velare, cicatrizzare,
 obduro:tenere duro
 obeo:1. morire2. visitare, incaricarsi di
@@ -6356,8 +6309,8 @@ obsequor:piegarsi ai desideri di qqn., ubbidire
 obsero:vérouiller
 observatio:osservazione, attenzione, scrupolo,
 observo:osservare
-obsessor:l'assediante
 obses:l'ostaggio
+obsessor:l'assediante
 obsideo:essere sedutosi; occupare un luogo, assediare, bloccare, investire,
 obsidio:sede, di una città,
 obsigno:chiudere di un sigillo, sigillare, sigillare,
@@ -6366,7 +6319,6 @@ obsonatus:l'acquisto di provviste
 obsonium:piatto, cibo,
 obsono:acquistare delle provviste
 obstinatus:si ostinato
-obstipesco:diventare immobile, intorpidito, paralizzato
 obstipus:inclinato, prono avanti
 obsto:fare ostacolo a, disturbare
 obstrepo:fare il rumore, echeggiare,
@@ -6394,7 +6346,6 @@ obverto:girare verso
 obviam:sulla strada, in strada,
 obvius:chi si trova sul passaggio di qqn., banale
 obvolvo:coprire
-ob:a causa di
 occano:suonare, della tromba, suonare, parlando della tromba,
 occasio:l'opportunità, il momento favorevole,
 occasus:coricarlo, del sole,
@@ -6436,12 +6387,12 @@ octonus:otto (ciascuno)
 octo:otto
 oculus:occhio
 odeum:il piccolo teatro, l'odéon,
+odi:odiare
 odiosicus:dispiacendo
 odiosus:odiosi, importuno
 odium:odio
-odi:odiare
-odorus:chi sente buono o cattivi che ha del fiuto
 odor:odore, profumo,
+odorus:chi sente buono o cattivi che ha del fiuto
 offa:il buono pezzo
 offendo:urtarsi contro, urtare, urtare, ferire, incontrare qqn., trovare
 offensa:urto, shock, malessere, malcontento, offesa,
@@ -6449,8 +6400,8 @@ offensio:l'azione di provare un insuccesso, l'insuccesso, il rovescio,
 offensus:ostile
 offero:offrire, dare,
 officina:il laboratorio
-officiosus:ufficiosi, cortese, servizievole
 officio:1. mettersi davanti a, fare ostacolo, disturbare,2. disturbare, impacciare,
+officiosus:ufficiosi, cortese, servizievole
 officium:1. il servizio, la funzione, il dovere,2. la compiacenza, la cortesia, l'educazione,3. l'obbligo morale
 offirmo:irrobustire, consolidare (offirmatus, ha, um: fattoria, risoluto)
 offoco:stringere la gola, soffocare,
@@ -6465,7 +6416,6 @@ oleum:l'olio di oliva
 olfacio:sentire
 olidus:chi sente cattivo, putrido, puzzolente
 olim:una volta
-olitor:orticoltore, fruttivendolo,
 olivum:l'olio di oliva
 olla:marmitta, vaso,
 olor:cigno
@@ -6480,10 +6430,11 @@ omnipotens:tutto potente
 omnis:tutto
 onager:onagre
 onerarius:di trasporto
-onerosus:pesando
 onero:incaricare
-onustus:incaricato di
+onerosus:pesando
 onus:fardello
+onustus:incaricato di
+o:oh, oh (esclamazione)
 opacus:opaco, ombreggiato, spessi, folto
 opera:la cura, lo sforzo, operam dare,: dedicarsi a,
 operculum:coperchio
@@ -6524,16 +6475,15 @@ optineo:occupare, tenere,
 optingo:arrivare, toccare,
 optio:la scelta
 opto:augurare
-optumus:superlativo di bonus, ha, um: buono
 opulentia:lo splendore, la ricchezza,
 opulentus:ricco, opulento
-opust:= opus è, occorre
 opus:il lavoro
+opust:= opus è, occorre
+ora:bordo, limite, margine, costa,
 oraclum:l'oracolo, il tempio,
 oraculum:l'oracolo, la parola di un dio, l'adagio,
 oratio:il linguaggio, la parola, l'esposizione, il discorso,
 orator:oratore
-ora:bordo, limite, margine, costa,
 orbis:cerchio, globo. - terrarum: il mondo
 orbitas:la perdita dei suoi bambini, la perdita,
 orbo:privare dei suoi bambini, privare di
@@ -6555,7 +6505,6 @@ Orestes:Oreste, si può avere gli al genitivo,
 Orgia:le orge, i misteri di Bacco
 oriens:il sole levante, l'oriente, il levante, l'est,
 origo:l'origine
-Orion:Orion (costellazione)
 orior:nascere, tirare la sua origine, alzarsi (sole),
 oriundus:nato di, generato di, originario di
 ornamentum:1. l'apparecchio, l'attrezzatura,2. l'ornamento, la parure,
@@ -6570,10 +6519,11 @@ orthius:alzato, acuto; --carmen: canto sul modo acuto
 ortus:sollevare, nascita, origine,
 os2:il viso, la bocca, l'entrata, l'apertura,
 osculatio:il bacio
-osculor:baciare, baciare,
 osculo:baciare, baciare,
+osculor:baciare, baciare,
 osculum:baciare
 Osismi:gli Osismes (popolo lungo l'oceano)
+os:osso
 ostendo:tendere, mostrare,
 ostentatio:l'ostentazione, la mostra, la parata,
 ostentator:il rouleur di meccaniche
@@ -6583,14 +6533,13 @@ Ostia:Ostie (porto di Roma)
 ostium:porta
 ostreum:ostrica
 ostrum:la porpora
-os:osso
 Otho:Othon
 otiosus:ozioso, neutro, indifferente, calma
 otium:il tempo libero, la calma, il riposo,
 ovis:pecora, pecora,
 ovo:trionfare per ovazione, applaudire,
 ovum:uovo
-o:oh, oh (esclamazione)
+P:abbreviazione di Publius
 pabulor:prendere la sua pastura, nutrirsi,
 pabulum:il foraggio, l'alimento,
 pacatus:pacifico
@@ -6613,18 +6562,18 @@ Palaemon:Palémon, cambiato in dio marino,
 palaestra:palestre
 palaestricus:chi riguarda il palestre
 palam:apertamente, pubblicamente
-Palatium:il monte Palatino, il palazzo,
 pala:pala, gattino, di anello,
+Palatium:il monte Palatino, il palazzo,
+palla:capotto di donna
 Palladium:il Palladio, statua di Pallas-Athèna,
 Pallas:Pallas, Minerva, Athèna,
-palla:capotto di donna
 palleo:essere pallido, impallidire,
 pallidus:pallido, livido
 palliolum:piccolo pallio, piccolo capotto, cappuccio,
 pallium:capotto greco
 pallor:il pallore
-palmatus:ornato di palme che hanno la forma di una palma
 palma:la palma, il palmo, la mano, la palma, il dattero,
+palmatus:ornato di palme che hanno la forma di una palma
 palmula:palmo della mano
 palor:errare çà e là, disperdersi,
 palpebra:la palpebra
@@ -6632,8 +6581,8 @@ palpo:accarezzare, adulare,
 paludamentum:il capotto
 paludatus:vestito del capotto militare
 palumbus:Palumbus, la colomba,
-paluster:paludosi; palustria, um,: paludi
 palus:palude, stagno,
+paluster:paludosi; palustria, um,: paludi
 Pamphylia:il Pamphylie
 panarium:cesto a pane
 Pandateria:Pandataria (isola nel mare Tirreno)
@@ -6676,21 +6625,21 @@ parma:lo scudo
 paro:preparare, procurare (paratus, ha, um: pronto, preparato a, molto preparato, molto fornito,
 parricida:il parricidio
 parricidium:l'omicidio di un genitore; l'alto tradimento
+par:simile, simile - per, scommesse, m. : coppia, paio,
 parsimonia:economia, risparmio,
 pars:partita, lato
 Parthus:Parthe
 partiarius:chi partecipa a che ha una parte
 particeps:chi partecipa
 partim:in parte
-partior:dividere, dividere, ripartire,
 partio:dividere, ripartire,
+partior:dividere, dividere, ripartire,
 parturio:essere in lavoro, partorire,
 partus:il parto, il neonato,
 parumper:un poco, per un istante, momentaneamente
 parum:poco
 parvulus:tutto piccolo
 parvus:piccolo
-par:simile, simile - per, scommesse, m. : coppia, paio,
 pasco:fare pascolasse, nutrire
 Pasiphaa:Pasiphaé, tanto Pasiphae, sei)
 Passenus:Passenus
@@ -6713,8 +6662,8 @@ patibulum:il patibule, la forca patibolare,
 patiens:+ gén., solito a patire, indurito a; indulgente, flemmatico
 patientia:la pazienza, la passività,
 patientius:con abbastanza pazienza, con più di pazienza, con troppa pazienza,
-patinarius:del piatto cavo, struices -: mucchi di piatti, - piscis: pesce alla salsa,
 patina:casseruola
+patinarius:del piatto cavo, struices -: mucchi di piatti, - piscis: pesce alla salsa,
 patior:sopportare, soffrire, essere vittima di, essere aggredito per
 patratus:tj. paternostro patratus, capo dei féciaux
 patria:patria
@@ -6722,14 +6671,14 @@ patricius:patrizio, nobile,
 patrimonium:il patrimonio, il bene di famiglia
 patrius:chi riguarda il padre, trasmessi di padre in figlio
 patrocinium:il patronato, la protezione,
+patro:compiere, eseguire,
 patrona:protettrice
 patronus:l'avvocato, il difensore, il padrone,
-patro:compiere, eseguire,
 patruelis:in rapporto col fratello del padre
 patruus:lo zio
 patulus:largo
-paulatim:poco a poco
 Paula:Paule
+paulatim:poco a poco
 Paulina:Paulina
 paulisper:uno momentino
 paulo:un poco
@@ -6737,11 +6686,11 @@ paululum:un poco
 paulum:un poco
 Paulus:Paulus
 pauperies:povertà
+pauper:povero
 paupertas:povertà
 paupertinus:miserabile
-pauper:povero
-Pausanias:Pausanias
 pausa:la cessazione, l'arresto, la pausa,
+Pausanias:Pausanias
 pauxillatim:poco a poco
 pauxillum:una, molto, piccola quantità
 pavefacio:spaventare
@@ -6749,8 +6698,8 @@ paveo:essere turbato, temere, temere,
 pavesco:spaventarsi all'inferiore rumore, temere, temere,
 pavidus:spaventato, spaventato
 pavimentum:pavimentazione
-pavor:paura
 pavo:pavone
+pavor:paura
 pax:pace
 pecco:commettere un errore
 pecto:pettinare
@@ -6759,13 +6708,13 @@ pecuarius:di gregge, di bestiame,
 peculatus:deviazione di fondi
 peculiaris:acquistati col suo gruzzolo, a si, in proprio, personale,
 peculium:il gruzzolo, piccolo bene ammassato dallo schiavo,
-pecuniarius:di denaro, pecuniario,
 pecunia:denaro
+pecuniarius:di denaro, pecuniario,
 pecuniosus:ricco; chi riporta
 pecus2:bestia addomestica, di gregge,
 pecus:il bestiame
-pedester:di fante, di fanteria,
 pedes:il fante, il pedone,
+pedester:di fante, di fanteria,
 pedica:il legame ai piedi; i lacci, la trappola, i ferri,
 pedico:sodomizzare
 pedisequa:la domestica, lo schiavo che accompagna,
@@ -6773,7 +6722,6 @@ pedisequus:lo schiavo che accompagna, il lacchè,
 peditatus:la fanteria
 pedo:péter
 pegma:la pedana, la macchina di teatro
-pejero:spergiurare, per salutem alicuius - = fare un falso giuramento sulla testa di qqn.)
 pejus:(in modo, più peggiore
 pelagius:marittimo
 pelagus:il mare
@@ -6791,8 +6739,8 @@ Penates:pénates
 pendeo:essere sospeso
 pendo:pesare, apprezzare,
 pendulus:durante, inclinato che è in suspense
-penest:= catenacci sono
 penes:in possesso di
+penest:= catenacci sono
 penetrabilis:segreto, ritirato,; penetrando, acuto,
 penetrale:il luogo più remoto
 penetralis:posto nel luogo più ritirato
@@ -6808,12 +6756,13 @@ penuria:mancanza, penuria, carestia,
 penus2:le provviste di bocca
 penus:le provviste di bocca
 peplum:il peplum (vestito di Pallas Atena)
+pera:bisaccia
 perago:compiere, finire,
 peragro:percorrere
 peramanter:molto affettuosamente
 perambulo:passeggiare
 perantiquus:molto vecchio
-pera:bisaccia
+per:attraverso, per
 percarus:molto caro, molto costosi, molto amato
 percello:rovesciare, rovesciare,
 Percennius:Percennius
@@ -6828,8 +6777,8 @@ percussio:percussione, colpo, misura,
 percussor:l'assassino
 percutio:colpire
 perdius:chi dura tutto il giorno
-perdomo:sottomettere, domare,
 perdo:1. distruggere, rovinare, annientare,2. perdere perditus, ha, um: perso, disgraziati, eccessivo, depravato)
+perdomo:sottomettere, domare,
 perduco:portare, condurre,
 perduellio:il crimine di alto tradimento
 perduellis:il nemico
@@ -6876,10 +6825,10 @@ periniquus:molto ingiusto
 perinsignis:molto notevole
 Perinthus:Perinthe (città della Tracia)
 periodicus:periodico
+peri:parola greca: a proposito di
 periscelis:il périscélide, il braccialetto portato al di sotto le caviglie,
 peritia:la conoscenza, l'esperienza; la scienza, il talento,
 peritus:perito, scienziato, conoscitore,
-peri:parola greca: a proposito di
 perjuro:spergiurare, tradire,
 perjurus:spergiuro, bugiardo,
 perlego:leggere interamente
@@ -6929,7 +6878,6 @@ perpudesco:provare una grande vergogna
 perquam:completamente
 perquiro:ricercare con cura, informarsi con cura,
 perrumpo:fracassare; passare con la forza attraverso
-Persae:i perses
 persalsus:molto piccante, molto spirituale
 perscribo:scrivere in dettaglio, scrivere tutto intero,
 persedeo:restare seduti
@@ -6982,25 +6930,24 @@ pervinco:vincere complétement, trionfare,
 pervius:accessibile
 pervolo:rubare attraverso, percorrere rubando
 pervulgo:spargere dovunque, divulgare,
-per:attraverso, per
+pes:piede
 pessimus:molto cattivi, il peggio
 pessulus:il catenaccio
 pessum:al fondo, alla sua rovina, alla sua perdita, pessum dare,: rovinare,
 pestifer:maledetto, funesto
 pestilens:pestilenziale, appestato, malsano, funesto, perniciosi
 pestis:la malattia contagiosa, l'epidemia, il flagello,
-pes:piede
 petitio:la candidatura, la campagna elettorale,
 petitor:richiedente, postulando, candidato,
-petorritum:il carro sospeso (origine gallica)
 peto:1. cercare di raggiungere, attaccare,2. cercare di ottenere, ricercare, bramare, chiedere,
+petorritum:il carro sospeso (origine gallica)
 petulans:sfrontato
 petulantia:l'insolenza, l'impudenza, la sfrontatezza,
 pexatus:vestito di nuovo
 Phaethon:Phaéton
 Phalaris:Phalaris
-phaleratus:ornato di phalères
 phalera:esisti solamente al plurale: phalerae, arum,: i phalères (placche di metallo servente di ornamento per i cavalli)
+phaleratus:ornato di phalères
 Pharmacussa:Pharmacuse (isola vicino al Creta)
 Phasis:la Fase (fiume)
 phiala:taglio
@@ -7031,8 +6978,8 @@ piger:pigri, facendo smorfie
 piget:sono addolorato, accusativo della persona, gén. della cosa, + inf. = ne costa
 pignus:il pegno
 pigritia:la pigrizia
-Pilatus:Pilato, Ponzio-Pilato,
 pila:palla
+Pilatus:Pilato, Ponzio-Pilato,
 pileatus:pettinato del pileus (berretto di schiavo)
 pilentum:il carro, di origine gallica, l'automobile per signore
 pileus:pilleus, berretto di affrancato
@@ -7043,8 +6990,8 @@ Pindus:il Pinde (montagna della Tracia)
 pineus:di pino
 pingo:dipingere
 pinguis:grassi
-pinnatus:chi ha degli ali, pennuto,
 pinna:piuma, ala,
+pinnatus:chi ha degli ali, pennuto,
 pinnula:piccola piuma, piccola ala,
 pinso:picchiare
 pinus:il pino
@@ -7085,8 +7032,8 @@ Plancina:Plancina
 planctus:l'azione di colpire con rumore, il colpo,
 Plancus:Plancus
 plane:veramente, completamente, chiaramente
-plangor:lamenti
 plango:1. colpire2. picchiarsi di dolore3. lamentarsi
+plangor:lamenti
 planitia:la superficie piana, la pianura,
 planities:la pianura
 planta:la pianta, del piede,
@@ -7122,7 +7069,6 @@ plumbeus:di piombo
 plumbum:il piombo
 plumula:piccola piuma, peluria,
 pluo:impermeabili. : piove pers. : cadere come la pioggia
-plures:pl. più di, più numerosi
 plurifariam:in differenti luoghi
 plurimum:molto, al superlativo, molto spesso
 plurimus:svt. al pl., più numerosi, il più grande, frequente
@@ -7155,10 +7101,10 @@ pollucibiliter:splendidamente
 polluctura:il pasto splendido, l'offerta,
 polluo:sporcare
 Pollux:Pollux
+pol:per Pollux, perbacco!
 polus:il polo, il cielo,
 Polybius:Polybius, Polybe,
 Polyclitus:Polyclète
-pol:per Pollux, perbacco!
 pomarius:di frutteto
 pomerium:il pomérium (spazio dedicato all'infuori dei muri di Roma) dove non era permesso né di costruire, né di coltivare,
 Pometia:Pometia (città dei Volsques)
@@ -7201,25 +7147,24 @@ porcus:maiale
 porrigo:dirigere avanti, stendere, distendere,
 porro:avanti, più lontano, in lontananza, più tardi, inoltre
 porrum:il porro
-Porsenna:Porsenna
 porta:porta, di una città,
 portendo:presagire, predire,
 porticus:il portico
 portio:parte, proporzione,
 portitor:il portiere, il nocher,
-portorium:il pedaggio
 porto:portare
+portorium:il pedaggio
 Portunus:Portunus, m. : Portunus (dio dei porti)
 portus:porto
 posco:richiedere, chiedere,
 Posides:Posidès, affrancato di Claude,
 possessio:possesso
-possessorius:possessoire (termine di diritto)
 possessor:il possessore, il proprietario,
+possessorius:possessoire (termine di diritto)
 possideo:avere nel suo possesso, possedere,
 possum:potere
-posteaquam:dopo che
 postea:poi
+posteaquam:dopo che
 posterior:chi viene dopo, ultimo
 posteritas:posterità, avvenire,
 posterius:più tardi
@@ -7228,6 +7173,7 @@ postfero:porre dopo, mettere alla seconda riga
 posthabeo:porre in secondo linea, stimare meno,
 posthac:in seguito
 postilla:= postea
+post:indietro, dietro; dopo, poi; prép. + Acc. : dopo
 postis:l'importo, di porta,
 postliminium:il ritorno, il rientro nella sua patria, il diritto di ritornare
 postmodo:in seguito, un giorno
@@ -7242,19 +7188,18 @@ postulatio:la domanda, il reclamo,
 postulo:chiedere, richiedere,
 Postumius:Postumius
 Postumus:Postumus
-post:indietro, dietro; dopo, poi; prép. + Acc. : dopo
 potatio:l'orgia, l'orgia,
 potens:potente
 potentia:1. la forza2. il potere, il potere, l'autorità, l'influenza,
 poterium:il taglio
 potesse:potesse = posse
 potestas:1. il potere, il potere,2. il potere di un magistrato3. la facoltà, l'opportunità di fare qqch.
+potio:l'azione di bere, la bevanda, il beveraggio,
 potiono:amministrare un beveraggio
 potior2:migliore, preferibile,; di più di prezzo, superiore,
 potior:impossessarsi di
-potio:l'azione di bere, la bevanda, il beveraggio,
-potissimus:principale, il più importante, essenziale
 potis:chi può, potente; amico è, è possibile
+potissimus:principale, il più importante, essenziale
 potius:piuttosto
 poto:bere
 potus:la bevanda
@@ -7279,19 +7224,19 @@ praecipuus:principale, essenziale
 praeclare:chiaramente, perfettamente
 praeclarus:luminosi, scintillante; brillando, notevole,
 praecludo:chiudere davanti a qqn, a qqn, sbarrare,
+praeco:hérault, urlatore pubblico,
 praeconium:l'ufficio di urlatore pubblico, la pubblicazione, l'annuncio,
 praecordia:le viscere, il cuore, i sentimenti,
-praeco:hérault, urlatore pubblico,
 praecurro:correre davanti a, precedere
-praedatitius:provenendo dal bottino
 praeda:il bottino, le spoglie, la preda,
+praedatitius:provenendo dal bottino
 praedicatio:l'azione di gridare in pubblico, l'apologia,
 praedico2:dire prima di, fissare di anticipo, determinare,
 praedico:dire pubblicamente, proclamare,
 praeditus:dotato di, dotato di
 praedium:proprietà, campo,
-praedor:fare del bottino, dedicarsi al saccheggio,
 praedo:brigante, bandito,
+praedor:fare del bottino, dedicarsi al saccheggio,
 praedulcis:molto dolci
 praeduro:indurire, indurirsi,
 praedurus:molto duro
@@ -7371,16 +7316,16 @@ praesertim:soprattutto
 praeses:quello che è alla testa di, il capo
 praesideo:proteggere, vegliare su, dirigere, comandare,
 praesidium:guardia
+praes:l'impegno
 praestabilis:notevole, distinto
 praestantia:superiorità
 praesto2:qui, vicino, sottomano
-praestolor:aspettare
 praesto:il prevalere su, stare posteggiando, fornire (praestat),: imp. : è meglio,
+praestolor:aspettare
 praestringo:stringere, raggiungere, smussare,
 praestruo:costruire di accesso
-praesumo:prendere in anticipo, presentire,
 praesum:comandare, dirigere,
-praes:l'impegno
+praesumo:prendere in anticipo, presentire,
 praetempto:allungare; esplorare tastando; sondare, provare, provare,
 praetendo:tendere avanti, davanti a si,
 praetenuis:molto sottile, molto magro
@@ -7392,8 +7337,8 @@ praetermitto:omettere, lasciare passare,
 praeterquam:eccettuato, salvo
 praeter:salvo, se non è prép. : davanti a, lungo, al di là di, eccetto
 praetexo:bordare
-praetextatus:vestito del toga pretesto
 praetexta:il pretesto, il toga pretesto,
+praetextatus:vestito del toga pretesto
 praetorianus:il prétorien
 praetorius:di pretore
 praetor:pretore
@@ -7414,7 +7359,6 @@ pravius:chi precede chi vai davanti a, guida
 pravus:di traverso, deforme, cattivi
 Praxitelius:di Praxitèle
 precarius:precario, assicurato male, passeggero
-prex:preghiera
 precor:pregare, supplicare,
 prehendo:prendere
 prelum:stampa, pressa,
@@ -7427,6 +7371,7 @@ pressura:la pressione
 pressus:compresso, appoggiato, aumentato, raddoppiato
 pretiosus:1. preziosi che ha del prezzo2. chi costa caro3. chi paga caro, generosi
 pretium:il prezzo, il valore, la ricompensa, lo stipendio,
+prex:preghiera
 Priamus:Priam
 Priapus:Priape
 pridem:da molto
@@ -7437,12 +7382,12 @@ primipilaris:il centurione primipile
 primipilus:primipile, centurione primipilaire,
 primitivus:primo, primogenito, primitivo,
 primitus:innanzitutto
+primo:di accesso, in primo luogo
 primogenitus:primogenito, maggiore,
 primordium:l'inizio, il principio,
 primoris:il primo, la prima,
-primo:di accesso, in primo luogo
-primumdum:di accesso
 primum:di accesso, per la prima volta,
+primumdum:di accesso
 primus:primo, comparativo,: prior,
 princeps:primo, capo, imperatore,
 principaliter:principalmente
@@ -7451,8 +7396,8 @@ principium:1. il principio2. il fondamento, l'origine (principia, orum,: la prim
 prior:di parte anteriore, precedente,
 priscus:vecchi, vecchio
 pristinus:vecchio, delle origini
-priusquam:prima che
 prius:prima, prima; ... quam: prima che
+priusquam:prima che
 privatim:privatamente, a titolo individuale
 privatus:priva
 privignus:il figlio di un primo letto
@@ -7464,8 +7409,8 @@ probo:provare, approvare, provare,
 probrosus:infame, disonorato; infamante, disonorevole
 probrum:turpitudine, adulterio, incesto, vergogna, infamia, insulto, oltraggi,,
 probus:onesto
-procax:sfrontato, sfrontato
 Proca:Proca (re di Albe)
+procax:sfrontato, sfrontato
 procedo:avvicinarsi, finire a
 procella:la tempesta
 proceres:i personaggi eminenti, i grande,
@@ -7482,14 +7427,15 @@ proconsul:proconsul
 procreo:dare la vita a, generare
 Proculeia:Proculeia (nome di donna)
 Proculeius:Proculeius
-Proculus:Proculus
 procul:lontano, in lontananza, da lontano
+Proculus:Proculus
 procumbo:chinarsi, cadere a terra, stendersi,
 procuratio:l'azione di amministrare, la gestione, la direzione,
 procurator:il procurateur (amministratore di una provincia), il gerente, l'amministratore,
 procuro:occuparsi
 procurro:inseguire avanti, lanciarsi a passo di corsa, correre più lontano,
 procus:quello che chiede una donna in matrimonio, il pretendente, l'amante,
+pro:davanti a, per, al posto di, in considerazione di
 prodeo:avvicinarsi, uscire,; sembrare in pubblico
 prodico:predire; diem -: fissare più lontano una data, rinviare,
 prodigium:prodigio.
@@ -7542,15 +7488,14 @@ Prometheus:Prométhée
 promico:crescere, spingere, estrarre, sembrare,
 prominens:chi si avvicina, sporgendo: prominens, entis, n. : la sporgenza, l'eminenza,
 promisce:indistintamente, alla rinfusa, in dédordre
-promiscue:alla rinfusa, in modo sconsiderato
 promiscus:indistinto, comune; confuso, indifferente
 promiscuus:comune, indistinto
 promissio:la promessa
 promissum:la promessa
 promissus:lungo che appende, che si è lasciato spingere
 promitto:lasciare avanti, mandare a, promettere, accettare un invito (promissus, ha, um: che si è lasciato spingere che appende,
-promoveo:fare avanzare, ingrandire, promuovere,
 promo:mostrare, fare uscire, afferrare (promtus, ha, um: visibile, manifesto; pronto, disponibile; disposto, risoluto)
+promoveo:fare avanzare, ingrandire, promuovere,
 promptarius:promptaria cella = la dispensa, la guardia-carne,
 promptus:pronto, agevole, veloce
 promulgo:affiggere, pubblicare,
@@ -7568,8 +7513,8 @@ propere:in fretta, rapidamente
 propero:affrettarsi (+ inf,
 Propertius:Properce
 properus:pronto, veloce, urgente
-propexus:pettinato avanti che appende
 prope:vicino a
+propexus:pettinato avanti che appende
 propino:bere il primo, passare il taglio, offrire a bere,
 propinquitas:prossimità
 propinquo:avvicinarsi
@@ -7582,8 +7527,8 @@ propositum:intenzione, argomento trattato,
 propraetor:propréteur
 proprietas:la proprietà, il carattere proprio, il diritto di proprietà
 proprius:proprio, particolare
-propterea:a causa di ciò, - quod: perché
 propter:a causa di, accanto
+propterea:a causa di ciò, - quod: perché
 propugnator:il difensore, il combattente,; il protettore
 propugno:combatre avanti, proteggere, difendere,
 propulso:respingere
@@ -7630,18 +7575,16 @@ provenio:venier avanti, avvicinarsi; nascere, sbocciare,; prodursisi, avere luog
 proverbium:proverbio, detto,
 providentia:la previdenza, la provvidenza, il potere soprannaturale,
 provideo:prevedere, organizzare,
+provincia:la provincia
 provincialis2:di provincia (adj).)
 provincialis:provinciale (nome)
 provinciatim:per provincia
-provincia:la provincia
 provisus:l'azione di vedere a distanza, la previsione, l'azione di dotare
 provoco:chiamare fuori, provocare, eccitare, rivaleggiare,; chiamare ne, prendere parte,
 provolvo:circolare avanti
 proximum:il vicinato, i dintorni,
 proximus:vicino; primus... proximus: il 1... il secondo
 proxumo:(s') avvicinare, essere vicino,
-proxumus:très proche
-pro:davanti a, per, al posto di, in considerazione di
 prudens:saggio, previdente,
 prudenter:con sagacia, con prudenza, con chiaroveggenza,
 prudentia:la previdenza, la previsione,
@@ -7670,24 +7613,23 @@ pudice:pudicamente, virtuosamente
 pudicitia:la castità, il pudore, la moralità,
 pudicus:virtuosi, onesto
 pudor:vergogna
-puellaris:di ragazza
 puella:ragazza, ragazza,
+puellaris:di ragazza
 puellus:il piccolo bambino
+puer:bambino, giovane schiavo,
 puerilis:infantile, di bambino, precipitoso,
 puerilitas:la puerilità, l'infanzia,
 pueriliter:in modo infantile
 pueritia:infanzia
 puerpera:l'assistita durante il parto, i donna strati,
-puer:bambino, giovane schiavo,
 pugilatus:il pugilato
-pugillares:le tavolette, a scrivere,
 pugil:il pugiliste
+pugillares:le tavolette, a scrivere,
 pugio:il pugnale
 pugnaciter:con accanimento
 pugna:la battaglia, il combattimento, il pugilato,
 pugno:combattere
 pugnus:pugno
-pulcer:bello
 pulcher:bello
 pulchre:graziosamente, bene
 pulchritudo:bellezza
@@ -7697,13 +7639,13 @@ pullati:persone male vestite, (con le tuniche scure,
 pullulo:avere dei germogli, pullulare, moltiplicarsi, spargersi,
 pullus2:il piccolo di un animale
 pullus:nero, affonda, bruno
-pulpamentum:il pezzo di carne
 pulpa:carne, carne,
+pulpamentum:il pezzo di carne
 pulpitum:il cavalletto, la pedana, la scena di tavole
-pulso:scuotere, colpire,
 puls:la fatta bollire
-pulvinarium:il cuscino di letto, si poneva le statue dei dei per il festino,
+pulso:scuotere, colpire,
 pulvinar:il cuscino di letto su che si poneva le statue dei dei per un festino
+pulvinarium:il cuscino di letto, si poneva le statue dei dei per il festino,
 pulvis:polvere
 pumex:pietra pomice
 punctulum:la piccola puntura
@@ -7717,13 +7659,13 @@ puppis:poppa
 pupulus:il ragazzino
 pure:propriamente
 purgo:liberare, pulire, si -) discolparsi
-purpuratus:vestito di porpora (purpuratus, i = l'alto dignitario,
 purpura:il purpureo
+purpuratus:vestito di porpora (purpuratus, i = l'alto dignitario,
 purpureus:di porpora
 purus:puro
 pusillus:tutto piccolo, meschino
-pustulatus:purificato al fuoco, puro,
 pustula:la pustola, la lampadina,
+pustulatus:purificato al fuoco, puro,
 putamen:la conchiglia di noce
 puteal:il margelle, il putéal,
 puteo:essere marcito
@@ -7745,7 +7687,6 @@ Pyrgopolinices:Pyrgopolinice
 Pyrrhus:Pirro (re di Epire)
 Pythicus:del Pythie
 pyxis:scatola, piccola scatola,
-P:abbreviazione di Publius
 Quadi:i Quades (peuplade di Moravie)
 quadragenus:al plurale: quaranta ciascuno, ogni volta quaranta,
 quadragesimus:quarantesimo
@@ -7768,31 +7709,31 @@ quaerito:cercare a lungo
 quaero:cercare, chiedere,
 quaeso:per favore, ti prego
 quaestio:la ricerca, la domanda, l'inchiesta,
-quaestorius:di questeur
 quaestor:il questeur
+quaestorius:di questeur
 quaestus:la ricerca, il guadagno, il profitto,
 qualis:come
 qualitas:qualità
 qualiter:di quale modo2. relat. così come, come
+quam:1. accusativo femminile del pronome relativo = che2. accusativo femminile sing dell'interrogativo = quale? chi? 3. dopo si, nisi, non, num = aliquam4. relativo di collegamento = ed eam5. introduce il secondo termine del paragone = che6. adv. = quanto
 quamdiu:quanto tempo?
 quamlibet:a qualche grado che
 quamobrem:perché
 quamprimum:appena possibile
 quamquam:sebbene
 quamvis:sebbene
-quam:1. accusativo femminile del pronome relativo = che2. accusativo femminile sing dell'interrogativo = quale? chi? 3. dopo si, nisi, non, num = aliquam4. relativo di collegamento = ed eam5. introduce il secondo termine del paragone = che6. adv. = quanto
-quandoquidem:poiché
 quando:quando; dopo si, nisi, non, num = aliquando = talvolta; conj. : quando, poiché
-quanquam:quoque, sebbene
+quandoquidem:poiché
 quantitas:quantità
 quanto:quanto?, con tanto = tanto che
 quantulumcumque:così piccolo che
 quantulum:quanto poco
 quantuluscumque:così piccolo
 quantum2:tanto... tanto
-quantumvis:tanto di quanto si volesse
 quantum:quanto?
+quantumvis:tanto di quanto si volesse
 quantus:quale, parlando di grandezza,
+qua:per dove, per là
 quapropter:per le/laquelle; adv. : questo è perché
 quare:questo è perché, perché
 quartadecumanus:il soldato della 14 legione
@@ -7805,7 +7746,6 @@ quater:quattro volte
 quatio:agitare
 quattuordecim:quattordici
 quattuor:quattro
-qua:per dove, per là
 quemadmodum:di quale modo, come
 queo:potere
 querceus:di quercia
@@ -7818,22 +7758,22 @@ querulus:lamentoso, dispiacere, uggioso,
 questus:il lamento
 qui2:chi che che cosa di cui, quale...
 quia:perché
-quicquis:chiunque, qualunque cosa questo sia
-quicumque:chiunque che questo sia, qualunque cosa questo sia
+qui:chi; interr. quale? quale?
 quicum:contr. = cum quo
+quicumque:chiunque che questo sia, qualunque cosa questo sia
 quidam:un certo, qualcuno, qualche cosa,
 quidem:certo, non -) non stesso
-quidlibet:tutto ciò che si vorrà
 quidni:perché dunque?
 quid:perché? dopo si, nisi, non, num, aliquid diventa quid
 quiesco:riposarsi, dormire,
 quies:tranquillità
 quietus:pacifico, calma, senza ambizione,
 quilibet:chiunque che cosa, il primo venuto
+quin:1. perché non... non?, bene più2. conj. che, coi verbi di impedimento o di dubbio preceduto di una negazione, non possum facere quin, non dubito quin,
 quinam:chi dunque, quale dunque
 Quinctius:Quinctius
-quindecimviri:i quindici, i 15 preti carichi dei libri Sybillins,
 quindecim:quindici
+quindecimviri:i quindici, i 15 preti carichi dei libri Sybillins,
 quingeni:cinque centesimi ciascuno
 quingenti:cinque centesimi
 quini:ciascuno cinque, cinque ogni volta
@@ -7842,8 +7782,8 @@ quinquagesimus:cinquantesimo
 quinquagiens:cinquanta volte
 quinquaginta:cinquanta
 Quinquatrus:i Quinquatries (feste in onore di Minerva)
-quinquennium:lo spazio di cinque anni
 quinque:cinque
+quinquennium:lo spazio di cinque anni
 quinquiens:cinque volte
 quinquies:cinque volte
 quinquiplico:quintuplicare
@@ -7853,30 +7793,26 @@ quintanus:il soldato della quinta legione
 Quintilius:Quintilius
 Quintus2:Quintus
 quintus:quinto
-quin:1. perché non... non?, bene più2. conj. che, coi verbi di impedimento o di dubbio preceduto di una negazione, non possum facere quin, non dubito quin,
 quippe:perché, certo
 Quirinalis:di Quirinus, di Romolo, il Quirinal,
 Quirinius:Quirinius
 Quirinus:Quirinus (Romolo)
 Quiris:Quirite = cittadino romano. Raro al sing.
 quiritatus:il lamento
+quis:chi? che cosa? dopo si, nisi, non, num, quis è l'equivalente di aliquis (qualcuno, qualche cosa.
 quisnam:chi dunque?, che cosa dunque?
 quispiam:qualche
 quisquam:circa, qualcuno, qualche cosa,
 quisque:ogni, ciascuno, ogni cosa,
 quisquis:chiunque, qualunque cosa questo sia
-quis:chi? che cosa? dopo si, nisi, non, num, quis è l'equivalente di aliquis (qualcuno, qualche cosa.
 quivis:non importa quale, chiunque
-qui:chi; interr. quale? quale?
+quo:1. Abl. M. o N. del pronome relativo. 2. Abl. M. o N. del pronome o dell'aggettivo interrogativo. 3. Falso relativo = ed eo. 4. Dopo si, nisi, non, num = aliquo. 5. Adv. =dove? , con cambiamento di luogo,6. seguito di un comparativo = di tanto7. conj. : affinché per là
 quoad:finché, tanto molto tempo che
 quocumque:in qualche luogo che, dovunque
 quodammodo:in qualche modo, in qualche modo
-quodcumque:tutto questo che
-quodsi:= quod se, se che se
 quod:chi, che2. falso relativo = ed id3. congiunzione: perché, il fatto che4. dopo si, nisi, non, num = aliquod = qualche cosa5. aggettivo interrogativo nome. o acc. neutro sing. = quale?
+quodsi:= quod se, se che se
 quoiquam:quoiquam = cuiquam (datif de quisquam = chacun)
-quoi:quoi = cui
-quojus:quoius = cuius
 quominus:costruzione dei verbi di impedimento: = che o di
 quomodo:di quale modo, come
 quoniam:poiché
@@ -7888,11 +7824,9 @@ quotidianus:quotidiano, di tutti i giorni, giornaliero; familiare, abituale
 quotidie:ogni giorno, tutti i giorni
 quotienscumque:ogni volta che
 quotiens:tutte le volte che, spesso con... totiens,
-quotus:in quale numero?
 quot:tanti; presto... quot, altrettanto di... che; totidem... quot, tanto spesso... che
+quotus:in quale numero?
 quousque:fino a quando
-quo:1. Abl. M. o N. del pronome relativo. 2. Abl. M. o N. del pronome o dell'aggettivo interrogativo. 3. Falso relativo = ed eo. 4. Dopo si, nisi, non, num = aliquo. 5. Adv. =dove? , con cambiamento di luogo,6. seguito di un comparativo = di tanto7. conj. : affinché per là
-quum:= cum: come
 rabidus:furiosi, arrabbiato
 rabies:rabbia
 rabiosus:si arrabbiato
@@ -7914,15 +7848,15 @@ rapto:trascinare, portare,
 raro:raramente
 rarus:1. poco stretto, poco denso2. distanziato, rado3. raro4. poco frequente
 raster:il hoyau, la vanga,
-rationarium:statistico, stato [di qqch.]
 ratio:la ragione, il ragionamento, il conto,
+rationarium:statistico, stato [di qqch.]
 ratis:la zattera, la nave,
 ratus:approvato, adottato, ratificato
 raucisonus:chi ha un suono rauco
 raucus:rauco, al suono rauco
 Ravenna:Ravenna
-Reatinus:l'abitante di Réate (città desSabins)
 rea:l'imputata
+Reatinus:l'abitante di Réate (città desSabins)
 rebellio:la ripresa delle ostilità, la rivolta, la ribellione,
 rebellis:chi ricomincia la guerra, ribelle,
 rebello:combattere di nuovo
@@ -8018,8 +7952,8 @@ relatio:il rapporto di un magistrato al senato; la relazione, la narrazione,
 relego2:relegare, esiliare,
 relego:raccogliere di nuovo, percorrere di nuovo, rileggere,
 relicuus:chi resta, di resto
-religiosus:coscienziosi, onesto; devoti, scrupolosi, superstiziosi
 religio:scrupolo religioso
+religiosus:coscienziosi, onesto; devoti, scrupolosi, superstiziosi
 religo:legare indietro, legare, legare, collegare,
 relinquo:lasciare, abbandonare,
 reliquus:restando
@@ -8045,8 +7979,8 @@ remulcum:cavo da rimorchio
 remuneror:rimunerare, replicare,
 remus:il remo; Remo, i,: il Rème o Rémus (fratello di Romolo)
 renideo:rinviare dei reparti, risplendere, brillare,
-renovo:rinnovare, rinfrescare, rigenerare,
 reno:casacca di pelliccia
+renovo:rinnovare, rinfrescare, rigenerare,
 renuntio:annunciare, al suo ritorno,
 renuo:fare un segno negativo, rifiutare,
 reor:calcolare, pensare,
@@ -8063,11 +7997,11 @@ repertor:l'inventore, l'autore,
 repeto:cercare di nuovo, cercare di ricuperare,
 repleo:riempire, riempire (abl),
 repletus:pieno di, +abl.)
+repo:1. strisciare2. camminare difficilmente
 repono:ricollocare, rimettere, rimettere,
 reporrigo:presentare di nuovo
 reporto:riportare, riportare,
 reposco:richiedere, ridomandare,
-repo:1. strisciare2. camminare difficilmente
 repraesento:mettere davanti agli occhi, rappresentare, pagare immediatamente, fare subito,
 reprehendo:mettere la mano su, prendere
 reprehensio:biasimo, critico,
@@ -8093,6 +8027,7 @@ resideo:sedersi
 residuus:chi resta chi rimango
 resigno:aprire, scoprire, svelare, annullare, rompere,
 resisto:rimanere, resistere a, fermarsi
+res:la cosa, l'avvenimento, la circostanza, l'affare giudiziale,; i beni
 resolvo:snodare, liberare, rompere,
 resono:rinviare dei suoni, echeggiare,
 resonus:echeggiando
@@ -8113,10 +8048,9 @@ restringo:legare
 resulto:saltare indietro, rimbalzare, echeggiare, rinviare in eco,
 resupinus:inclinato indietro
 resurgo:rialzare
-res:la cosa, l'avvenimento, la circostanza, l'affare giudiziale,; i beni
 retendo:allentare
-retexo:détisser, decomporre,
 rete:rete, trappola,
+retexo:détisser, decomporre,
 retiarius:il rétiaire
 reticeo:tacere su, tacere, custodire il silenzio,
 retinens:legato a
@@ -8146,8 +8080,8 @@ Rhenus:il Reno
 Rhescuporis:Rhescuporis (re della Tracia)
 rhetor:rhéteur
 Rhodanus:il Rodano
-Rhodopeius:del Rhodope
 Rhodope:il Rhodope (montagna della Tracia)
+Rhodopeius:del Rhodope
 Rhodus:Rodi
 Rhoecogenes:Rhoecogenes
 Rhoemetalces:Rhoemetalces (re della Tracia)
@@ -8156,8 +8090,8 @@ rideo:ridere
 ridiculus:ridicolo, piacevole, divertente (ridiculus, i, m. : il buffone,
 rigeo:essere roide, irrigidito, indurito
 rigidus:rude, severo
-rigor:la rigidità, la durezza, la rigidità, il rigore, la severità,
 rigo:fare colare dirigendo, annaffiare, bagnare,
+rigor:la rigidità, la durezza, la rigidità, il rigore, la severità,
 rima:fessura, crepa,
 rimor:spaccare, aprire,; perquisire, scrutare, ricercare,
 ripa:riva
@@ -8186,9 +8120,9 @@ roro:cadere in pioggia fine; spargere, della rugiada,
 rosa:rosa
 roscidus:coperto di rugiada
 roseus:di rosa, ammobiliato di rose, rosa, rosé, vermiglio,
+ros:la rugiada, ros marinus,: il rosmarino,
 rostratus:curvato, come un becco, ammobiliato di un sperone, di barca,
 rostrum:il becco, al plurale,: i rostri,
-ros:la rugiada, ros marinus,: il rosmarino,
 rota:ruota, carro, disco del sole
 rotundus:rotondo, arrotondato
 Roucillus:Roucillus
@@ -8218,12 +8152,12 @@ rurestris:agreste, grossolano
 ruro:vivere alla campagna
 rursum:in compenso, un secondo volta, di nuovo
 rursus:di nuovo, al contrario
+rus:la campagna
 Ruspina:Ruspina (città vicino a Leptis)
 russeus:rosso, rosso scuro,
 rusticatio:vita alla campagna - pl. lavori dei campi
 rusticus2:campestre, campagnolo, grossolano,
 rusticus:contadino
-rus:la campagna
 ruta:via
 Rutuli:I Rutules, vecchio popolo del Latium,
 rutundus:rotondo, arrotondato
@@ -8233,17 +8167,17 @@ Sabinus:Sabin
 sacculus:borsa
 saccus:borsa
 sacellum:cappella, piccolo santuario,
+sacer:consacrato
 sacerdos:il prete
 sacerdotium:sacerdozio
-sacer:consacrato
 sacramentum:la posta, il giuramento militare,
 sacrarium:il santuario, il tesoro, luogo dove si custodisce gli oggetti sacri,
 sacrificalis:chi riguarda i sacrifici
 sacrificium:sacrificio
 sacrifico:sacrificare, fare un sacrificio,
 sacrilegus:sacrilegio
-sacrosanctus:inviolabile
 sacro:dedicare, dedicare,
+sacrosanctus:inviolabile
 sacrum:la cerimonia, il sacrificio, il tempio,
 saeclaris:secolare
 saeclum:generazione, epoca,
@@ -8257,9 +8191,9 @@ saevitia:il furore, la violenza, la durezza, la crudeltà,
 saevus:crudele
 saga:la maga
 sagino:ingrassare, gli animali,
+sagitta:freccia
 sagittarius:l'arciere
 sagittatus:armato di frecce
-sagitta:freccia
 sagittula:la piccola freccia, la freccetta,
 sagulum:il sayon (capotto)
 sagum:il sayon (tipo di capotto dei germanico), il vestito degli schiavi
@@ -8270,6 +8204,7 @@ salarius:il commerciante di salature
 salebra:spesso al pl., difficoltà, scosse, incidenti, del suolo,
 Saliaris:salien
 Salii:i preti di Marzo, i Saliens,
+sal:il sale, gli scherzi,
 salio:saltare
 Sallustius:Salluste
 salse:con sale, con spirito,
@@ -8286,10 +8221,8 @@ salutaris:salutare, utile, vantaggiosi (- digitus = l'indice,
 salutatio:saluto, visita dei clienti
 salutator:cliente, cortigiano,
 saluto:salutare
-salveo:essere in buona salute
 salve:Buongiorno! ; Ciao!
-salvus:in buona salute
-sal:il sale, gli scherzi,
+salveo:essere in buona salute
 Samiolus:in terra di Samos
 Samnites:Samnites
 Samothraces:, dii, i dei Cabires, adorati nei misteri di Sampthrace,
@@ -8303,8 +8236,8 @@ sane:veramente, perfettamente
 Sanga:Sanga (nome di uomo)
 sanguinarius:sanguinaire
 sanguineus:stringendo
-sanguinolentus:coperto di sangue
 sanguino:1. salassare, essere insanguinato,2. picchiare fino al sangue
+sanguinolentus:coperto di sangue
 sanguis:il sangue, il vigore,
 sanies:il sangue sporco, il pus,
 sanitas:salute, buonsenso,
@@ -8326,6 +8259,7 @@ Sardis:il sarde (Asia minorenne)
 Sarmata:il Sarmate (Polonia, Moscovie)
 sarracenus:saraceno
 Saserna:Saserna (nome di uomo)
+sat:abbastanza, sufficientemente
 satelles:la guardia del corpo, il compagno, il servitore, il complice,
 satietas:la sazietà, il disgusto, la noia, la sazietà,
 satin:= satisne: essere-questo-che cosa abbastanza?
@@ -8339,7 +8273,6 @@ Saturnus:Saturno
 satur:saziato, grassi, scuro (colore).
 satyra:la satira
 satyrus:il Satiro (compagno di Bacco)
-sat:abbastanza, sufficientemente
 saucio:ferire, lacerare,
 saucius:insanguinato
 savior:baciare, baciare,
@@ -8367,9 +8300,8 @@ scelus:crimine
 sceptrifer:chi porta un scettro
 sceptrum:lo scettro
 schida:foglio di carta
-scholasticus:studiando, alunno,
 schola:lezione, scuola,
-scibo:fut. = sciam
+scholasticus:studiando, alunno,
 scientia:la conoscenza
 scilicet:va di si, beninteso
 scindo:tagliare
@@ -8385,9 +8317,9 @@ Scorpus:Scorpus
 scortum:la prostituta
 screator:quello che sputa, lo sputatore,
 scriblita:tipo di torta, il dolce,
+scribo:1. tracciare, scrivere,2. mettere per iscritto3. redigere4. iscrivere, arruolare,
 Scribonia:Scribonia (sposa di Auguste)
 Scribonius:Scribonius (cognome romano)
-scribo:1. tracciare, scrivere,2. mettere per iscritto3. redigere4. iscrivere, arruolare,
 scrinium:il bagagliaio, a libri,
 scriptor:il redattore, il nessuno che scrive, lo storico,
 scriptura:la scrittura, la tassa sul pascolo
@@ -8402,6 +8334,7 @@ scyphus:taglio
 Scytha:lo Scythe
 Scythicus:di Scythie
 Scytholatronia:lo Schytolatronie (paese dei briganti Scythes)
+S:da' il saluto
 secedo:allontanarsi, dividersi di
 secessio:la separazione, la secessione,
 secessus:separazione, pensione,
@@ -8427,16 +8360,16 @@ sedecim:sedici
 sedeo:1. essere sedutosi2. sedere3. soggiornare, rimanere,
 sedes:sede, posto,
 sedile:la sede, la panca, il riposo su una sede
-seditiosus:sovversivo
 seditio:la sedizione, la divisione, la discordia, il sollevamento, la rivolta,
+seditiosus:sovversivo
+sed:ma
 sedo:acquietare (sedatus, ha, um: calma, sopito)
 seduco:dividere
 sedulo:coscienziosamente
 sedulus:diligente, zelante, applicato
 Seduni:gli abitanti di Sédunum (Sion in Svizzera)
-sed:ma
-Segestes:Segestes (capo germanico)
 seges:il campo, la mietitura,
+Segestes:Segestes (capo germanico)
 Segidenses:gli abitanti di Ségida
 Segimerus:Ségimère (nome di uomo)
 Segimundus:Segimundus
@@ -8451,10 +8384,9 @@ Selenium:Sélénie (cortigiana)
 Seleucia:Séleucie (nome di parecchie città dell'Asia)
 sella:sedia
 semel:una (unica, volta,)
-sementis:semina, semina,
 semen:il seme, il seme,
+sementis:semina, semina,
 semermus:chi è armato a metà, armato a mezzo
-semet:rafforzamento di si
 semicrudus:mezzo-crudo
 semideus:il semidio
 semifultus:appoggiato a metà
@@ -8462,8 +8394,8 @@ semihians:socchiuso
 seminarium:il vivaio
 semirotundus:semi circolare
 semirutus:a mezzo crollato
-semisomnus:semiaddormentato, assopito
 semis:metà
+semisomnus:semiaddormentato, assopito
 Semnones:i Semnons (popolo che fa parte dei Suèves)
 semotus:allontanato, ritirato
 semper:sempre
@@ -8472,8 +8404,8 @@ Sempronius2:Sempronius
 Sempronius:di Sempronius, lex Sempronia,
 semustus:a mezzo bruciato, consumato a metà
 senariolus:iambe sénaire, piccolo sénaire,
-senatorius:senatoriale, di senatore
 senator:il senatore
+senatorius:senatoriale, di senatore
 senatusconsultum:sénatus-consultalo, la decisione del senato
 senatus:senato
 Seneca:Seneca
@@ -8483,10 +8415,10 @@ senectus2:vecchi, vecchio
 senectus:vecchiaia
 senesco:invecchiare
 senex:vecchio
+seni:ciascuno sei
 senilis:di vecchio
 senior:vecchio
 senium:la grande età, la senilità,; il dispiacere, il dolore,
-seni:ciascuno sei
 Senones:i Sénons
 sensim:insensibilmente, poco a poco
 sensus:il senso, i sentimenti,
@@ -8501,12 +8433,11 @@ sepelio:seppellire, seppellire,
 sepio:chiudere, recintare, cingere, proteggere,
 sepono:relegare
 September:settembre
-septemtrio:sette
 septem:sette
+septemtrio:sette
 septeni:ciascuno sette
 septentrionalis:settentrionale
 septentrio:septentrion, nord,
-!septenus:ciascuno sette
 Septimius:Septimius
 septimus:settimo
 septingenti:sette centesimi
@@ -8545,7 +8476,6 @@ servio:essere schiavo
 servitium:la schiavitù, la condizione di schiavo, la schiavitù,
 servitus:la schiavitù, la schiavitù,
 Servius:Servius
-servolus:il piccolo schiavo, lo schiavo,
 servo:vegliare su, salvare
 servula:piccolo schiavo
 servulus:piccolo schiavo
@@ -8553,7 +8483,7 @@ servus:lo schiavo
 sescenti:sei centesimi
 Sescentoplagus:Sei-centesimi-colpo (soprannome di schiavo)
 sescentus:sei centesimi
-sese:= si
+se:si, si,
 sesquiopus:una volta e mezzo il lavoro
 sestertius:il sesterce
 Sestus:Sestus
@@ -8570,19 +8500,18 @@ sexagesimus:sessantesimo
 sexaginta:sessanta
 sexcenti:sei centesimi
 sexiens:sei volte
-Sextius:Sextius
-Sextus:Sextus
-sextus2:sesto
-sexus:il sesso
 sex:sei
-se:si, si,
+Sextius:Sextius
+sextus2:sesto
+Sextus:Sextus
+sexus:il sesso
 sibilo:fischiare
 sibilus2:fischio
 sibilus:fischiando
 Sibylla:la Sibilla
 Sibyllinus:sybillin, si detto dei libri Sybillins,
-sicarius:assassino
 sica:il pugnale
+sicarius:assassino
 siccitas:la siccità
 sicco:(fare, asciugare,
 siccus:secco
@@ -8590,9 +8519,8 @@ Sicilia:Sicilia
 Sicinius:Sicinius
 sicubi:così da qualche parte
 Siculus:Siciliano
-sicuti:come
 sicut:come
-sic:così; sic... ut: così... che
+sicuti:come
 sidereus:stellato, relativo al sole, divino,
 sido:sedersi, posarsi,; fissarsi, fermarsi; crollare
 sidus:stella, astro,
@@ -8617,7 +8545,6 @@ simia:la scimmia
 similis:simile
 similiter:dello stesso modo
 similitudo:la somiglianza, l'analogia,
-!simillimus:superlativo di similis, e,: simile
 Simonides:Simonide
 simplex:semplice, non mescolato, naturale
 simplicitas:la semplicità, l'ingenuità,
@@ -8627,7 +8554,6 @@ simulator:quello che finge che simula
 simulatque:appena
 simulo:1. rendere simile2. simulare, simulare, fare finta,
 simultas:la rivalità, l'inimicizia, la lotta,
-simul:adv. allo stesso tempo, conj: appena
 sinape:senape
 sincerus:puro, intatto, naturale, sincero
 sine:senza
@@ -8638,11 +8564,11 @@ singuli:pl. ciascuno in particolare, ciascuno uno
 singultus:il singhiozzo, il rantolo, il râlement,
 sinister:sinistro
 sinistra:la mano sinistra
+sin:ma se, così al contrario
 Sinon:Se no
 sino:permettere, lasciare,
 sinuo:curvare, piegare,
 sinus:il seno, la curvatura, il golfo, il manico,
-sin:ma se, così al contrario
 siparum:la piccola vela di pappagallo
 Sipylus:il monte Sipyle, in Lydie,
 siquidem:così veramente, poiché
@@ -8657,7 +8583,6 @@ sitis:sete
 situs2:la posizione, la situazione,; lo stato di abbandono
 situs:posto, situato
 sive:siue... siue: o... o
-si:se
 smaragdus:smeraldo
 sobrinus:cugino germanico
 sobrius:chi n' non ha bevuto, a digiuno, sobrio
@@ -8683,12 +8608,10 @@ solemnis:annuo, solenne
 soleo:avere l'abitudine di (solitus, ha, um: abituale, ordinario)
 solido:rendere solido, consolidare, indurire,
 solidum:il solido, il campo solido, la base solida,
-solidus:solido, massiccio, compatto,; intero
 solitudo:solitudine, deserto,
 solitum:l'ordinario
 solium:trono
 sollemne:la solennità, la festa, la cerimonia,
-sollemnis:chi ritorna ogni anno, dedicato, abituale
 sollemniter:solennemente
 sollers:abile, abile, ingegnosi, intelligente
 sollertia:l'indirizzo, l'abilità, l'ingegnosità,
@@ -8697,12 +8620,12 @@ sollicito:1. muovere, agitare, scuotere,2. turbare3. eccitare a, provocare a4. s
 sollicitudo:tormento, grossa inquietudine,
 sollicitus:inquieto, preoccupati
 solor:riconfortare, addolcire,
+sol:sole
 solstitialis:solsticial, dell'estate
 solum:il suolo
 solus:solo
 solutus:svenuto, libero, libero, rilassato, negligente
 solvo:staccare, pagare, snodare (- nauem = sollevare l'ancora,
-sol:sole
 somnium:il sogno, il sogno,
 somnus:sonno
 sonax:echeggiando, rumoroso, sonoro,
@@ -8729,6 +8652,7 @@ sortior:tirare alla sorte, scegliere per la sorte,,
 sortito:per tiro alla sorte
 sospes:salvato
 sospito:conservare sano e salvo
+Sp:abbreviazione di Spurius
 spado:eunuco
 spargo:1. gettare çà e là, spargere,2. disperdere, disseminare,3. cospargere, giuncare,
 Spartanus:di Saprte (Spartani, orum,: gli spartani,
@@ -8769,8 +8693,8 @@ spolio:saccheggiare, scuoiare,
 spolium:lo spoglia, il bottino,
 spondeo:impegnarsi a, stare garante
 spongia:la spugna
-sponsalis:di fidanzamenti (sponsalia, ium, n. : i fidanzamenti,
 sponsa:la fidanzata
+sponsalis:di fidanzamenti (sponsalia, ium, n. : i fidanzamenti,
 sponsio:la scommessa
 sponsor:rispondendolo, la cauzione,
 sponsus:il fidanzato
@@ -8781,7 +8705,6 @@ spuma:la schiuma, la bava,
 spumo:schiumare
 spurcus:sala
 sputator:lo sputatore, il baveur, il postillonneur,
-Sp:abbreviazione di Spurius
 squaleo:essere rizzato, sala, trascurato
 squalidus:aspro, irto; sala, sporco, trascurato
 squalor:la sporcizia, la sporcizia, il lutto,
@@ -8870,7 +8793,6 @@ sturnus:sbadato
 Styga:lo Styx (fiume degli inferni)
 Stygius:dello Styx
 suadeo:consigliare
-suapte:suapte = sua
 suasorius:chi consiglia chi tende a persuadere (suasoria, ae, f. : il discorso per consigliare,
 suasor:quello che consiglia, il consigliere,
 suavisaviatio:l'azione di dare dei teneri baci
@@ -8880,10 +8802,10 @@ suaviter:piacevolmente
 subaudio:1. sentire un poco2. sottintendere
 subblandior:coccolare
 subcubo:perire
+subdo:1. mettere sotto, porre sotto2. sottomettere, assoggettare,3. mettere in sostituzione
 subdole:in modo sornione
 subdolus:giocato d'astuzia
 subdomo:domare
-subdo:1. mettere sotto, porre sotto2. sottomettere, assoggettare,3. mettere in sostituzione
 subduco:ritirare, sottrarre,
 subeo:andare sotto, presentarsi a, entrare in
 subflavus:un poco biondo
@@ -8925,6 +8847,7 @@ subsequor:seguire immediatamente
 subsidiarius:chi forma la riserva
 subsidium:la truppa di riserva, l'aiuto, il soccorso,
 subsisto:1. fermarsi2. restare, rimanere,3. resistere, fare faccia,
+sub:sotto
 substerno:stendere sotto
 substituo:mettere al posto, sostituire,
 substrepens:mormorando
@@ -8942,7 +8865,6 @@ subvecto:trasportare, trasportare,
 subveho:trasportare di basso in altezza
 subvenio:venire in aiuto, rimediare a
 subverto:rovesciare
-sub:sotto
 succedo:andare sotto, percorrere, salire, andare ai piedi di, succedere
 succendo:infiammare
 successor:il successore in una funzione
@@ -8984,11 +8906,11 @@ Sullanus:di Sylla
 Sulla:Sylla
 sulphuratum:fiammifero
 Sulpicius:Sulpicius (nome di uomo)
-sulpur:soffri
 sultis:= così uultis
 sumen:mammella di scrofa
-summas:della più alta riga
+sum:essere; in testa di frase: c'è
 summa:l'insieme
+summas:della più alta riga
 summisse:modestamente, umilmente
 summissus:abbassato, abbassato
 summus:superlativo di magnus. molto grande, estremo
@@ -8997,10 +8919,9 @@ sumptuarius:chi riguarda la spesa, suntuario,
 sumptuosius:a troppo grande spesa
 sumptuosus:spendaccione
 sumptus:spesa, spesa,
-sum:essere; in testa di frase: c'è
-suopte:suopte = suo
 supellex:stoviglie, mobilio, attrezzatura, militaris supellex,
 superabilis:chi può essere superato; di cui si può trionfare
+super:al disopra di, a proposito di
 superbe:orgogliosamente, con arroganza
 superbia:orgoglio, fierezza,
 superbio:essere orgogliosi, inorgoglirsi; essere fidarsi
@@ -9024,7 +8945,6 @@ superurgens:chi preme di in altezza
 superus:chi è al disopra; Superi: i dei
 supervacuus:inutile
 supervenio:sopraggiungere
-super:al disopra di, a proposito di
 supino:coricare sulla schiena, rovesciare indietro,
 supinus:girato verso l'alto, prono indietro, rovesciato sulla schiena, disteso,
 suppedito:bastare
@@ -9041,7 +8961,6 @@ suppositio:azione di porre sotto, sostituzione fraudolenta,
 suppostus:sottomessi
 supprimo:contenere, fermare, sopprimere,
 supra:al disopra; prép. + acc. : al disopra di, al di là di
-!supremus:più alto, l'ultimo
 suptilitas:la finezza, il rénuité,; la precisione rigorosa, la semplicità di stile
 surdus:sordo
 surgo:alzarsi
@@ -9052,6 +8971,7 @@ Surus:Siriano (Inacidito, orum: i siriani,
 susceptus:cliente di un avvocato
 suscipio:1. prendere sotto, sostenere, sollevare, generare, accogliere,2. prendere su si, assumere, subire,3. intraprendere. bellum -: intraprendere una guerra
 suscito:alzare, svegliare,
+sus:il maiale - f. : la scrofa
 suspecto:guardare in altezza; sospettare, sospettare,
 suspendium:l'azione di appendersi, l'impiccagione,
 suspendo:sospendere
@@ -9064,7 +8984,6 @@ suspirium:sospiro
 sustento:sostenere, mantenere, conservare in buono stato,
 sustineo:sostenere, sopportare,
 susurrus:il chucotement, il mormorio,
-sus:il maiale - f. : la scrofa
 sutor:il calzolaio
 sutrina:bottega di calzolaio
 suus:adj. : suo; pronome: il suo, il loro,
@@ -9081,7 +9000,7 @@ Syracusae:Siracusa (città della Sicilia)
 Syracusanus:l'abitante di Siracusa, il Syracusain,
 Syria:la Siria
 Syrus:Siriano
-S:da' il saluto
+T:abbreviazione di Tito
 tabellarius:relativo alle lettere, alle schede elettorali,
 tabella:tavoletta, scheda elettorale, voto,
 tabernaculum:la tenda
@@ -9110,11 +9029,11 @@ talentum:il talento, moneta greca,
 talis:tale; ... qualis: tale.. che
 talitrum:il buffetto
 talus:caviglia, tacco, ossicino, dado,
+tam:così, tanto
 tamdiu:tanto molto tempo, così molto tempo
 tamen:tuttavia
 tametsi:sebbene, tuttavia, del resto
 tamquam:come, come, per così dire; tamquam se: come se
-tam:così, tanto
 Tanaquil:Tanaquil (donna di Tarquin)
 tandem:infine
 Tanfana:Tanfana (divinità germanica)
@@ -9154,8 +9073,8 @@ taxus:il tasso
 Taygetus:Il Taygète (montagna di Laconie)
 tectum:tetto, casa,
 tecum:con te
-tegimentum:la busta, il vestito,
 tegimen:il vestito, la corazza, il casco, la protezione,
+tegimentum:la busta, il vestito,
 tegmen:il vestito; la corazza, l'armatura; il casco
 tego:1. coprire, ricoprire,2. nascondere, riparare,3. garantire, proteggere,
 tegula:la tegola
@@ -9234,7 +9153,6 @@ testis:testimone
 testor:manifestare, attestare, dimostrare,
 testudo:tartaruga
 Tethys:Tethys (donna dell'oceano) madre dei fiumi,
-tetrarcha:tétrarque, principe protetto per Roma,
 Teucria:il Troade (regione della Troia)
 Teucri:i troiani
 Teutoburgiensis:di Teuteberg (città di Pannonie inferiore)
@@ -9248,7 +9166,6 @@ Thaliarchus:Thaliarque
 theatralis:di teatro
 theatrum:teatro
 Thebae:Tebe (città di Grecia e dell'Egitto)
-thensaurus:il tesoro
 Theophilus:Theophilus, Théophile,
 thermae:le terme
 Thermodontius:del Thermodon (fiume di Cappadoce vicino del quale abitava le amazzoni)
@@ -9268,6 +9185,7 @@ Threicius:della Tracia
 Thymoetes:Thymoetes (nipote di Priam)
 thyrsiger:chi porta un thyrse
 thyrsus:thyrse
+Ti:abréviation de Tiberius
 Tiberinus:il Tevere
 Tiberis:il Tevere
 Tiberius:Tibère
@@ -9295,11 +9213,10 @@ Titius:di Titius
 titubo:vacillare
 titulus:il titolo, l'iscrizione, il manifesto,
 Titus:Tito
-Ti:abréviation de Tiberius
 Tmolus:Tmolus (città di Lydie)
+toga:toga
 togatulus:piccolo cliente
 togatus:vestito della toga, dunque: cittadino romano
-toga:toga
 togula:piccola toga
 tolerabilis:tollerabile, sopportabile
 tolero:1. portare, sopportare,2. sostenere, mantenere,3. resistere a
@@ -9310,8 +9227,8 @@ tomaclum:il cervelas, il salame,
 Tonans:Tuonando (uno degli attributi di Giove)
 tondeo:radere, tosare, brucare,
 tonitrus:il tuono, lo scoppio di tuono,
-tonsorius:chi serve a tosare, a tagliare le unghie,
 tonsor:barbiere, parrucchiere,
+tonsorius:chi serve a tosare, a tagliare le unghie,
 tonstricula:piccolo barbière, operaia parrucchiera.
 tormentum:macchina di guerra, tortura,
 torpeo:essere intorpidito, irrigidito, immobile
@@ -9325,8 +9242,8 @@ torus:rigonfiamento, muscolo sporgente,; letto
 torvus:di traverso
 totidem:tutto tanto che; ... quot: tanto... tanto
 totiens:tanta volta; ... quotiens: altrettanto di volta... che
-totus:tutto intero
 tot:tanto, così numerosi
+totus:tutto intero
 toxicum:il veleno
 trabea:il trabée (capotto bianco ornato di bande di porpora)
 trabs:la trave, l'albero,
@@ -9349,6 +9266,7 @@ Transalpinus:transalpino
 transcendo:superare
 transcribo:trascrivere, fare passare in, registrare
 transcurro:correre oltre, passare velocemente
+trans:dall'altro lato
 transduco:condurre al di là di, fare passare
 transeo:passare a, attraversare,
 transfero:trasportare, trasferire, trascrivere,
@@ -9372,7 +9290,6 @@ transporto:portare attraverso, trasportare
 transscribo:trascrivere, registrare,
 Transtiberinus:del Trastévère
 transversus:obliquo
-trans:dall'altro lato
 traversus:trasversale, in larghezza
 Trebellenus:Trebellenus (nome di uomo)
 Trebius:Trebius (nome di uomo)
@@ -9389,8 +9306,8 @@ trepidatio:l'agitazione, il disordine, l'agitazione,
 trepide:in disordine
 trepido:tremare, agitarsi, di dimenarsi,
 trepidus:tremando, fremente,
-tresviri:i triumviri, carichi della polizia e delle prigioni,
 tres:tre
+tresviri:i triumviri, carichi della polizia e delle prigioni,
 Treviri:i Trévires
 triangulus:triangolare
 tribunal:il tribunale
@@ -9442,7 +9359,6 @@ Trivia:soprannome di Diana (dea degli incroci)
 trivium:incrocio
 Trojanus:troiano
 Troja:Troia
-tropaeum:il trofeo
 trucido:sgozzare, massacrare, uccidere,
 truculentia:la durezza, l'asprezza, la durezza del clima
 truculentus:selvatico, duro, burbero; crudele, minaccioso
@@ -9464,6 +9380,7 @@ Tullianum:Tullianum
 Tullia:Tullia
 Tullius:(Marcus, Tullius (svt). Cicerone,
 Tullus:Tullus, terzo re di Roma,
+tum:allora
 tumefacio:gonfiare
 tumeo:essere gonglé, gonfiato,
 tumesco:gonfiarsi di orgoglio
@@ -9473,16 +9390,15 @@ tumultuarius:arruolato precipitosamente;, armato in fretta
 tumultuor:essere nell'agitazione, l'agitazione, fare rumore,
 tumultus:tumulto
 tumulus:poggio, sepolcro,
-tum:allora
 tunc:allora
 tundo:colpire, picchiare,; pestare, stritolare,; assomer, stancare,
 tunica:tunica
 tun:= tune
 Turannius:Turannius
+turba:folla, disordine, turbamento,
 turbatio:l'agitazione, il disordine, la perturbazione,
 turbator:quello che turba, l'agitatore,
 turbatus:turbato, agitato
-turba:folla, disordine, turbamento,
 turbide:in disordine
 turbidus:turbato
 turbo2:il turbine, il turbinio,
@@ -9514,8 +9430,8 @@ tutor2:vegliare su, difendere, (si, proteggere,
 tutor:il difensore, il protécteur,; il tutore, il curatore,
 tuto:senza rischio, in sicurezza,
 tutus:in sicurezza, sicuro,
-tuus:tuo, il tuo,
 tu:tu, tu, tu,
+tuus:tuo, il tuo,
 Tydides:Tydudes
 tympanum:tamburello
 typhonas:il tifone
@@ -9523,12 +9439,11 @@ Typhon:Tifone
 tyrannus:tiranno
 Tyrius:Tyrien, cartaginese,
 Tyrrhenus:l'etrusco
-T:abbreviazione di Tito
-ubertim:abbondantemente
 uber:seno, mammelle,
+ubertim:abbondantemente
+ubi:dove, dove?; conj. quando
 Ubii:gli Ubiens (peuplade germanico)
 ubique:dovunque
-ubi:dove, dove?; conj. quando
 udus:umido
 ulciscor:vendicare, vendicarsi,
 Ulia:Ulia (città vicino a Cordova)
@@ -9557,16 +9472,16 @@ umiditas:l'umidità
 umidus:umido
 umor:acqua, liquido,
 umquam:una sola volta; con una negazione: mai
-unanimus:chi ha gli stessi sentimenti che vivono in accordo
 una:insieme, allo stesso tempo
+unanimus:chi ha gli stessi sentimenti che vivono in accordo
 unctio:la frizione
 unctito:ungere, spalmare,
 unda:l'onda, l'acqua, il fiotto,
-undecimus:undicesimo
 undecim:undici
+undecimus:undicesimo
 undecumque:di ovunque
-undeviginti:diciannove
 unde:di dove, di dove?
+undeviginti:diciannove
 undique:da tutte le parti, di ogni lato
 undo:inondare, bagnare,
 Unelli:gli Unelles (popolo lungo locéan)
@@ -9613,9 +9528,9 @@ usurpo:fare uso di, servirsi di; arrogarsi illegalmente, usurpare,
 ususfructus:l'usufrutto
 usus:l'uso, l'utilità,
 utensilia:tutto ciò che è utile ai nostri bisogni; i mezzi di esistenza
+uter:quale dei due?, uno dei due
 uterque:ciascuno dei due
 uterus:ventre, della madre,
-uter:quale dei due?, uno dei due
 utilis:utile
 utilitas:utilità
 utinam:purché... !, se solamente... !
@@ -9623,11 +9538,11 @@ utique:in ogni caso, soprattutto
 uti:uti = ut
 utor:utilizzare
 utpote:siccome è naturale, siccome si può dirlo
+ut:quando, da quando; + subj; : affinché che, di, scopo o verbo di volontà, così che, conseguenza, adv. : come, così come
 utqui:= ut
 utriculus:la piccola oltre
 utrimque:di parte e di altro
 utrum:ciò è che?
-ut:quando, da quando; + subj; : affinché che, di, scopo o verbo di volontà, così che, conseguenza, adv. : come, così come
 uva:uva, vite,
 uvidus:umido, bagnato, un poco ubriaco
 uxorius:di sposa, di donna sposata,
@@ -9642,8 +9557,8 @@ vacuefacio:rendere vuoto, svuotare,
 vacuum:il campo libero
 vacuus:vuoto
 vadimonium:impegno, promessa di comparire
-vadosus:chi ha molti guadi, spesso guadabile, ondosi
 vado:andare
+vadosus:chi ha molti guadi, spesso guadabile, ondosi
 vadum:il bassofondo
 vae:stanchi! ahimè! disgrazia!
 vafer:giocato d'astuzia, abile
@@ -9653,12 +9568,12 @@ vagor:errare
 vagus:vagabondo, errante, nomade, incerto, indefinito, sregolato
 Vahalis:il Waal (braccio del Reno)
 valde:certamente, perfettamente
+vale:addio, arrivederci
 valeo:avere del valore, essere bravo,
 Valeria:Valeria
 Valerius:Valerius
 valesco:diventare forte, vigorosi
 valetudo:[cattiva] salute
-vale:addio, arrivederci
 validus:molto portante, forte, solido; agendo, efficace, potente,
 valitudo:la salute, buona o cattiva,
 vallaris:di bastione
@@ -9669,8 +9584,8 @@ valvae:battenti di una porta, porta a doppio battente
 vanesco:svenire
 Vannius:Vannius
 vanus:vuoto, cavo, vano, senza consistenza
-vaporosus:pieno di vapore, di caldo,
 vapor:il vapore
+vaporosus:pieno di vapore, di caldo,
 vapulo:essere picchiato, ricevere dei colpi,
 Varianus:di Varus
 varietas:la varietà, la diversità,
@@ -9687,7 +9602,6 @@ vastus:vuoto, deserto, spiacente, vasto,
 vasum:come uas, uasis,: vaso, vascello,
 vas:vaso
 vates:l'indovino, il poeta,
-vatia:Vatia
 vaticinatio:la predizione, l'oracolo, la profezia,
 vaticinor:profetizzare, extravaguer,
 Vatinius:Vatinius (nome di uomo)
@@ -9716,19 +9630,19 @@ vello:depilare
 vellus:bandelette di lana
 velocitas:la rapidità
 velociter:velocemente
-velox:veloce
-velo:velare, coprire, avvolgere, nascondere,
-velum:la vela
-veluti:come, come se
-velut:come
 vel:o, o, stesso, particolarmente, uel... uel... : o... o...)
+velo:velare, coprire, avvolgere, nascondere,
+velox:veloce
+velum:la vela
+velut:come
+veluti:come, come se
 venabulum:épieu
+vena:la vena
 venalis:a vendere
 venaticus:di caccia
 venatio:caccia, spettacolo che imita la caccia,
 venator:cacciatore
 venatus:la caccia
-vena:la vena
 venditator:chi tira vanità
 venditio:la vendita
 vendito:vendere
@@ -9754,7 +9668,6 @@ ventito:venire spesso
 ventosus:rinchiudendo del vento che gira a tutti i venti, leggero,
 ventus:vento
 venum:vendita
-venundo:vendere
 venustas:bellezza (fisica), eleganza, fascino, consenso, gioia,
 venustulus:carino
 venustus:bello, affascinante, elegante
@@ -9777,8 +9690,9 @@ Vergiliae:le Pleiadi
 Verginius:Verginius
 vergo:1. essere girato verso, inclinare, inclinare,2. al passivo: inclinarsi
 veritas:1. la verità, il vero,2. la realtà
-vernaculus:della casa, della terra, nazionale,
+ver:la primavera
 verna:1. lo schiavo nato nella casa, il buffone,2. l'indigeno, nato nel paese,
+vernaculus:della casa, della terra, nazionale,
 vernus:primaverile
 vero:ma
 verres:verro, maiale,
@@ -9786,17 +9700,16 @@ verro:scopare
 versiculus:piccolo verso
 versipellis2:chi cambia pelle
 versipellis:il lupo mannaro
-versor:1. trovarsi abitualmente, vivere,2. occuparsi di, applicarsi a
 verso:1. girare spesso, fare girare, muovere,2. piegare3. presentare di modi diversi
+versor:1. trovarsi abitualmente, vivere,2. occuparsi di, applicarsi a
 versus:1. il solco2. la linea, il verso,
 vertex:la cima
 verto:girare, cambiare, tradurre,
+veru:lo spiedo
 verum:veramente, in verità, ma
 verus:vero
 verutum:il frecciata (tipo di pungiglione)
-veru:lo spiedo
 vervex:la pecora
-ver:la primavera
 vesania:la follia, l'irragionevolezza, il delirio, la stravaganza,
 vesanus:insensato, pazzo
 vescor:nutrirsi, di,
@@ -9804,8 +9717,8 @@ Vescularius:Vescularius
 vesica:vescica
 vespa:vespa
 vesper2:sera
-vesperasco:arrivare alla sera
 vespera:la serata
+vesperasco:arrivare alla sera
 vesper:sera
 Vestalis:di Vesta; n. : vestale
 Vesta:Vesta
@@ -9828,10 +9741,10 @@ vetus:vecchi
 vexillarius:il porta-alfiere, plurale,: i vexillaires (corpo di veterani sotto l'emire)
 vexillum:lo stendardo, la bandiera,
 vexo:scuotere violentemente; osteggiare, saccheggiare,
+via:strada, strada, viaggio,
 viaticum:ciò che serve a fare la strada, le provviste,; il bottino, il gruzzolo,
 viaticus:di viaggio
 viator:il viaggiatore, l'appariteur che apre la via,
-via:strada, strada, viaggio,
 Vibidius:Vibidius
 Vibilius:Vibilius
 Vibius:Vibius (nome di uomo)
@@ -9839,11 +9752,11 @@ vibro:agitare, scuotere,
 Vibulanus:Vibulanus
 Vibulenus:Vibulenus (nome di uomo)
 vicarius:sostituendo
+vice:contro
 viceni:ciascuno venti, ogni volta venti,
 vicenus:ciascuno venti, ogni volta venti,
 vicesimanus:il soldato della ventesima legione
 vicesimus:ventesimo
-vice:contro
 vicies:venti volte
 vicinia:vicinato, quartiere,
 vicinitas:vicinato
@@ -9871,9 +9784,9 @@ vigil:svegliato che tiene sveglio
 viginti:venti
 vigor:il vigore, la forza vitale,
 vilicus:fattore
+vili:giù prezzo
 vilis:di pochi prezzi, meschino,
 vilitas:il basso prezzo, l'a buon mercato, l'inconsistenza,
-vili:giù prezzo
 villa:casa di campagna, campo,
 villosus:coperto di peli, peloso, irti di serpenti
 vimen:vimini, cesto,
@@ -9922,13 +9835,13 @@ Viromandui:i Viromanduens (peuplade belga): Verdun,
 virtus:coraggio, onestà,
 vir:uomo, per opp. a mulier, donna), marito.
 viscus:carne, viscere,
+vis:forza
 visio:visione, immagine,
 viso:vedere, visitare,
 Vispania:Vispania
 Vistilia:Vistilia (nome di donna)
 Visurgis:il Weser (fiume della Germania)
 visus:la vista
-vis:forza
 vita:vita
 Vitellianus:di Vitellius
 Vitellius:Vitellius
@@ -9944,8 +9857,8 @@ vitupero:biasimare
 vividus:pieno di vita, vigorosi, vivo, energico,
 vivo:vivere
 vivus:vivendo
-vixdum:appena
 vix:appena
+vixdum:appena
 vobiscum:uobiscum = cum uobis
 vocabulum:il nome proprio
 vocalis:chi ha l'andatura di una voce
@@ -9954,27 +9867,21 @@ vocito:chiamare
 voco:chiamare
 volatilis:alato, veloce
 Volesius:Volesius
-volgo:comunemente, in folla
-volgus:la folla
 volito:volteggiare, svolazzare, inseguire çà e là
-volnero:ferire
-volnus:ferita
 volo2:rubare
 volo:volere
 Volscus:Volsque
 Volturcius:Volturcius
 Volturcus:Volturcus (nome di uomo)
-voltur:l'avvoltoio
-voltus:= uultus, usi, m. : sguardo
 volubilis:chi gira chi si avvolge, alla parola facile, incostante
 volucris:uccello
 volumen:la cosa avvolta, l'arrotolamento, il manoscritto, il libro,
 Volumnia:Volumnia (sposa di Coriolan)
 voluntarius:volontario
 voluntas:volontà
+volup:piacevolmente, con piacere
 voluptarius:sensuale, voluttuosi
 voluptas:voluttà
-volup:piacevolmente, con piacere
 Volusenus:Volusenus
 volutatio:il fatto di arrotolare, la capriola,
 voluto:arrotolare, fare circolare,
@@ -9986,7 +9893,6 @@ vomo:vomitare
 Vonones:Vonon (re dei Parthes)
 vorago:il baratro, il turbine,
 vorax:divorando che inghiotte, vorace,
-vosmet:uosmet = uos
 vos:voi
 votivus:votivo, votato
 votum:voto, offerta,

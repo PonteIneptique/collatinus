@@ -38,8 +38,8 @@
 Radical::Radical(QString g, int n, QObject *parent)
 {
     _lemme = qobject_cast<Lemme *>(parent);
-    _grq = g;
-    _gr = Ch::atone(_grq);
+    _grq = Ch::communes(g);
+    _gr = Ch::atone(g);
     _numero = n;
 }
 
@@ -48,13 +48,22 @@ Radical::Radical(QString g, int n, QObject *parent)
  * \brief Renvoie la graphie du radical
  *        dépourvue de diacritiques.
  */
-QString Radical::gr() { return _gr; }
+QString Radical::gr()
+{
+    return _gr;
+}
+
+
 /**
  * \fn QString Radical::grq ()
  * \brief Renvoie la graphie du radical
  *        pourvue de ѕes diacritiques.
  */
-QString Radical::grq() { return _grq; }
+QString Radical::grq() const
+{
+    return _grq;
+}
+
 /**
  * \fn Lemme* Radical::lemme ()
  * \brief Le lemme auquel appartient le radical.
@@ -79,10 +88,10 @@ int Radical::numRad() { return _numero; }
  * \brief Constructeur de la classe Lemme à partire de la
  *        ligne linea. *parent est le lemmatiseur (classe Lemmat).
  */
-Lemme::Lemme(QString linea, int origin, QObject *parent)
+Lemme::Lemme(const QString linea, const int origin, QObject *parent)
 {
-    // cădo|lego|cĕcĭd|cās|is, ere, cecidi, casum
-    //   0   1    2     3          4
+    // cădo|lego|cĕcĭd|cās|is, ere, cecidi, casum|687
+    //   0 | 1  | 2   | 3 |     4                | 5
     _lemmatiseur = qobject_cast<Lemmat *>(parent);
     QStringList eclats = linea.split('|');
     QStringList lg = eclats.at(0).split('=');
@@ -92,30 +101,45 @@ Lemme::Lemme(QString linea, int origin, QObject *parent)
         _grq = _grd;
     else
         _grq = lg.at(1);
-    _gr = Ch::atone(_grq);
+    // pour l'affichage des dictionnaires, on élimine les doubles de la forme canonique
+    _gr = Ch::atone(_grq.section(',',0,0));
     _grModele = eclats.at(1);
     _modele = _lemmatiseur->modele(_grModele);
     _hyphen = "";
     _origin = origin;
+    _nbOcc = 1; // Tous les lemmes doivent avoir été rencontrés une fois
+    // contrôle de format. la liste doit avoir 6 items
+    if (eclats.count() < 6)
+    {
+        qDebug() << "Ligne mal formée : "<<_gr<<"dernier champ"<<eclats.last()<< linea;
+        //return;
+    }
     // lecture des radicaux, champs 2 et 3
     for (int i = 2; i < 4; ++i)
         if (!eclats.at(i).isEmpty())
         {
             QStringList lrad = eclats.at(i).split(',');
             foreach (QString rad, lrad)
-                _radicaux.insert(i - 1, new Radical(rad, i - 1, this));
+                _radicaux[i-1].append(new Radical(rad, i-1, this));
         }
     _lemmatiseur->ajRadicaux(this);
 
-    // écrire un contrôle d'erreur
-
     _indMorph = eclats.at(4);
+    QRegExp c("cf\\.\\s(\\w+)$");
+    int pos = c.indexIn(_indMorph);
+    if (pos > -1)
+    {
+        _renvoi = c.cap(1);
+    }
+    else
+        _renvoi = "";
+
     _pos.clear();
     if (_indMorph.contains("adj."))
         _pos.append('a');
     if (_indMorph.contains("conj"))
         _pos.append('c');
-    if (_indMorph.contains("excl"))
+    if (_indMorph.contains("excl."))
         _pos.append('e');
     if (_indMorph.contains("interj"))
         _pos.append('i');
@@ -127,28 +151,36 @@ Lemme::Lemme(QString linea, int origin, QObject *parent)
         _pos.append('r');
     if (_indMorph.contains("adv"))
         _pos.append('d');
-    if (_indMorph.contains(" n.") || _indMorph.contains("npr."))
+    if (_indMorph.contains(" nom ") || _indMorph.contains("npr."))
         _pos.append('n');
     if (_pos.isEmpty())
+    {
         _pos.append(_modele->pos());
+        // Je prends le POS du modèle
+        if (_pos == "d" && !_renvoi.isEmpty())
+            _pos = "";
+        // S'il y a un renvoi (cf.) et que le modèle a donné le POS "d" (adverbe),
+        // je prendrai le pos du renvoi (les indéclinables ont le POS par défaut "d").
+        // Je ne peux pas le faire maintenant !
+    }
+    // nombre d'occurrences
+    _nbOcc = eclats.at(5).toInt();
 
+
+/* Avec l'internationalisation des morphos, le genre dépend de la langue choisie.
+ * Il faut donc le définir à la demande.
     _genre.clear();
     if (_indMorph.contains(" m."))
-        _genre.append(" masculin"); // Peut-être mieux d'utiliser Flexion::genres[0] ?
+        _genre.append(" " + _lemmatiseur->genre(0));
+//        _genre.append(" masculin"); // Peut-être mieux d'utiliser Flexion::genres[0] ?
     if (_indMorph.contains(" f."))
-        _genre.append(" féminin");
+        _genre.append(" " + _lemmatiseur->genre(1));
+//        _genre.append(" féminin");
     if (_indMorph.contains(" n."))
-        _genre.append(" neutre");
+        _genre.append(" " + _lemmatiseur->genre(2));
+//        _genre.append(" neutre");
     _genre = _genre.trimmed();
-
-    QRegExp c("cf\\.\\s(\\w+)$");
-    int pos = c.indexIn(_indMorph);
-    if (pos > -1)
-    {
-        _renvoi = c.cap(1);
-    }
-    else
-        _renvoi = "";
+*/
 }
 
 /**
@@ -168,13 +200,27 @@ void Lemme::ajIrreg(Irreg *irr)
 }
 
 /**
+ * \fn void Lemme::ajNombre(int n)
+ * \brief Ajoute l'entier n au nombre d'occurrences du lemme.
+ *
+ *      Un lemme de Collatinus peut être associé à plusieurs lemmes du LASLA.
+ *      D'où la somme.
+ */
+void Lemme::ajNombre(int n)
+{
+    _nbOcc += n;
+    // Un lemme de Collatinus peut être associé à plusieurs lemmes du LASLA.
+    // D'où la somme.
+}
+
+/**
  * \fn void Lemme::ajRadical (int i, Radical* r)
  * \brief Ajoute le radical r de numéro i à la map des
  *        radicaux du lemme.
  */
 void Lemme::ajRadical(int i, Radical *r)
 {
-    _radicaux.insert(i, r);
+    _radicaux[i].append(r);
 }
 
 /**
@@ -182,7 +228,13 @@ void Lemme::ajRadical(int i, Radical *r)
  * \brief ajoute la traduction t de langue l à
  *        la map des traductions du lemme.
  */
-void Lemme::ajTrad(QString t, QString l) { _traduction[l] = t; }
+void Lemme::ajTrad(QString t, QString l)
+{
+//    if (_traduction.contains(l) && _traduction[l] != "")
+//        qDebug() << _grq << t << l << _traduction[l];
+    _traduction[l] = t;
+}
+
 /**
  * \fn QString Lemme::ambrogio()
  * \brief Renvoie dans une chaîne un résumé
@@ -240,8 +292,30 @@ bool Lemme::estIrregExcl(int nm)
     return _morphosIrrExcl.contains(nm);
 }
 
+/**
+ * @brief Lemme::genre
+ * @return : le (ou les) genre(s) du mot.
+ *
+ * Cette routine convertit les indications morphologiques,
+ * données dans le fichier lemmes.la,
+ * pour exprimer le genre du mot dans la langue courante.
+ *
+ * Introduite pour assurer l'accord entre un nom et son adjectif.
+ *
+ */
 QString Lemme::genre()
 {
+    QString _genre;
+    if (_indMorph.contains(" m."))
+        _genre.append(" " + _lemmatiseur->genre(0));
+// J'ai ainsi le genre dans la langue choisie.
+    if (_indMorph.contains(" f."))
+        _genre.append(" " + _lemmatiseur->genre(1));
+//        _genre.append(" féminin");
+    if (_indMorph.contains(" n."))
+        _genre.append(" " + _lemmatiseur->genre(2));
+//        _genre.append(" neutre");
+    _genre = _genre.trimmed();
     if (!_renvoi.isEmpty() && _genre.isEmpty())
     {
         Lemme *lr = _lemmatiseur->lemme(_renvoi);
@@ -283,7 +357,7 @@ QString Lemme::grModele()
  *        ses indications morphologiques et sa traduction dans la langue l.
  *        Si html est true, le retour est au format html.
  */
-QString Lemme::humain(bool html, QString l)
+QString Lemme::humain(bool html, QString l, bool nbr)
 {
     QString res;
     QString tr;
@@ -291,18 +365,37 @@ QString Lemme::humain(bool html, QString l)
     {
         Lemme *lr = _lemmatiseur->lemme(_renvoi);
         if (lr != 0)
-            tr = _lemmatiseur->lemme(_renvoi)->traduction(l);
+            tr = lr->traduction(l);
         else
             tr = "renvoi non trouvé";
     }
     else
         tr = traduction(l);
+    QTextStream flux(&res);
+    QString grq = _grq;
+    if (grq.contains(","))
+    {
+        grq.replace(",",", ");
+        grq.replace("  "," ");
+    }
     if (html)
-        QTextStream(&res) << "<strong>" << _grq << "</strong> "
-                          << "<em>" << _indMorph << "</em> : " << tr;
+        flux << "<strong>" << grq << "</strong>, "
+                          << "<em>" << _indMorph << "</em>";
     else
-        QTextStream(&res) << _grq << ", " << _indMorph << " : " << tr;
+        flux << grq << ", " << _indMorph;
+    if ((_nbOcc != 1) && nbr)
+    {
+        if (html)
+            flux << " <small>(" << _nbOcc << ")</small>";
+        else flux << " (" << _nbOcc << ")";
+    }
+    flux << " : " << tr;
     return res;
+}
+
+QString Lemme::indMorph()
+{
+    return _indMorph;
 }
 
 /**
@@ -333,6 +426,24 @@ Modele *Lemme::modele()
 }
 
 /**
+ * \fn int Lemme::nbOcc()
+ * \brief Renvoie le nombre d'occurrences du lemme dans les textes du LASLA.
+ */
+int Lemme::nbOcc() const
+{
+    return _nbOcc;
+}
+
+/**
+ * @brief Lemme::clearOcc
+ * Initialise le nombre d'occurrences.
+ */
+void Lemme::clearOcc()
+{
+    _nbOcc = 1;
+}
+
+/**
  * \fn int Lemme::nh()
  * \brief Renvoie le numéro d'homonymie du lemme.
  */
@@ -341,6 +452,10 @@ int Lemme::nh()
     return _nh;
 }
 
+/**
+ * \fn int Lemme::origin()
+ * \brief Renvoie l'origine du lemme : 0 pour le lexique de base, 1 pour l'extension.
+ */
 int Lemme::origin()
 {
     return _origin;
@@ -366,14 +481,14 @@ QString Lemme::oteNh(QString g, int &nh)
 }
 
 /**
- * \fn QChar Lemme::pos ()
+ * \fn QString Lemme::pos ()
  * \brief Renvoie un caractère représentant la
  *        catégorie (part of speech, pars orationis)
  *        du lemme.
  */
 QString Lemme::pos()
 {
-    if (!_renvoi.isEmpty())
+    if (_pos.isEmpty() && !_renvoi.isEmpty())
     {
         Lemme *lr = _lemmatiseur->lemme(_renvoi);
         if (lr != NULL) return lr->pos();
@@ -387,7 +502,7 @@ QString Lemme::pos()
  */
 QList<Radical *> Lemme::radical(int r)
 {
-    return _radicaux.values(r);
+    return _radicaux.value(r);
 }
 
 /**
@@ -400,24 +515,44 @@ bool Lemme::renvoi() { return _indMorph.contains("cf. "); }
 /**
  * \fn QString Lemme::traduction(QString l)
  * \brief Renvoie la traduction du lemme dans la langue
- *        cible l (2 caractères).
+ *        cible l (2 caractères, éventuellement plus
+ *        pour donner l'ordre des langues de secours).
+ *        J'ai opté pour un format "l1.l2.l3" où
+ *        les trois langues sont en 2 caractères.
  */
 QString Lemme::traduction(QString l)
 {
+    if (l.size() == 2)
+    {
     if (_traduction.keys().contains(l))
         return _traduction[l];
     else if (_traduction.keys().contains("fr"))
         return _traduction["fr"];
-    else return _traduction["uk"];
+    else return _traduction["en"];
+    }
+    else if (_traduction.keys().contains(l.mid(0,2)))
+        return _traduction[l.mid(0,2)];
+    else if (_traduction.keys().contains(l.mid(3,2)))
+        return _traduction[l.mid(3,2)];
+    else if ((l.size() == 8) && _traduction.keys().contains(l.mid(6,2)))
+        return _traduction[l.mid(6,2)];
+    return "non traduit / Translation not available.";
 }
 
 /**
  * \fn bool Lemme::operator<(Lemme &l)
- * \brief vrai si la graphie du lemme de gauche
+ * \brief vrai si la fréquence du lemme de gauche est
+ *        inférieure à celle de celui de droite.
+ *        commenté : vrai si la graphie du lemme de gauche
  *        précède celle de celui de droite dans
  *        l'ordre alphabétique.
  */
-bool Lemme::operator<(Lemme &l) { return _gr < l.gr(); }
+bool Lemme::operator<(const Lemme &l) const
+{
+    //qDebug()<<"operator<"<<_gr;
+    return _nbOcc < l.nbOcc();
+    //return _gr < l.gr();
+}
 
 /**
  * @brief Lemme::setHyphen

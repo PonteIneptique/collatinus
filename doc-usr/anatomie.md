@@ -14,7 +14,7 @@ déplacés et redimensionnés :
 
 ![Lemmatisation détachée](detach.png "La partie lemmatisation a été détachée")
 
-Une description complète de l'utilisation des dictionnaire est donné
+Une description complète de l'utilisation des dictionnaires est donnée
 au chapitre [dictionnaires](dictionnaires.html).
 
 Précédent : [index](index.html) suivant : [Pour débuter](debuter.html)
